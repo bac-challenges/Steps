@@ -57,7 +57,8 @@ class AchievementsCell: UITableViewCell, ReusableCell {
 
 // MARK: - Configurable
 extension AchievementsCell: Configurable {
-	func configure(_ model: String) {
+	func configure(_ model: StepsViewModel) {
+		emptyView.configure(model)
 	}
 }
 

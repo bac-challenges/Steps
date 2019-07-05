@@ -64,6 +64,14 @@ class AchievementsEmpty: UIView {
 	}
 }
 
+// MARK: - Configurable
+extension AchievementsEmpty: Configurable {
+	func configure(_ model: StepsViewModel) {
+		titleLabel.text = model.noAchievementsTitleText
+		detailLabel.text = model.noAchievementsSubtitleText
+	}
+}
+
 // MARK: - UI
 extension AchievementsEmpty {
 	
@@ -72,8 +80,6 @@ extension AchievementsEmpty {
 		addSubview(image)
 		addSubview(titleLabel)
 		addSubview(detailLabel)
-		titleLabel.text = "No achievements yet"
-		detailLabel.text = "Keep walking!"
 		setupLayout()
 	}
 	

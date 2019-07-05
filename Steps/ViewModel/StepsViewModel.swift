@@ -34,19 +34,31 @@ import Foundation
 
 struct StepsViewModel {
 	
-	var profilePicture: String {
+	var profileName: String {
+		return "Neil Armstrong"
+	}
+	
+	var profileImage: String {
 		return "profile-photo"
 	}
 	
-	var stepsLabel: String {
+	var stepsLabelText: String {
 		return "Steps"
 	}
 	
-	var stepsCountLabel: String {
+	var stepsCountText: String {
 		return "12.350"
 	}
 	
-	var stepsDateRangeLabel: String {
+	var stepsDateRangeText: String {
 		return "Nov 12 - Dec 12 2018"
+	}
+	
+	var noAchievementsTitleText: String {
+		return "No achievements yet"
+	}
+	
+	var noAchievementsSubtitleText: String {
+		return "Keep walking!"
 	}
 }
