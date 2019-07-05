@@ -20,9 +20,19 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: F18C0B31-3853-4CFD-BBAF-94B947257762
+//	ID: DA5F6911-E244-49E1-9363-7FA73B5314BC
 //
 //	Pkg: Steps
 //
+//	Swift: 5.0 
+//
 //	MacOS: 10.15
 //
+
+import Foundation
+
+extension String {
+	func localized(withComment comment: String? = nil) -> String {
+		return NSLocalizedString(self, comment: comment ?? "")
+	}
+}

@@ -1,4 +1,3 @@
-
 //	MIT License
 //
 //	Copyright © 2019 Emile, Blue Ant Corp
@@ -21,44 +20,12 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 60067050-097B-446D-9D11-60E454F49C7C
+//	ID: F18C0B31-3853-4CFD-BBAF-94B941593762
 //
 //	Pkg: Steps
-//
-//	Swift: 5.0 
 //
 //	MacOS: 10.15
 //
 
-import Foundation
-
-struct StepsViewModel {
-	
-	var profileName: String {
-		return "Neil Armstrong"
-	}
-	
-	var profileImage: String {
-		return "profile-photo"
-	}
-	
-	var stepsLabelText: String {
-		return "Steps".localized()
-	}
-	
-	var stepsCountText: String {
-		return "12.350"
-	}
-	
-	var stepsDateRangeText: String {
-		return "Nov 12 - Dec 12 2018"
-	}
-	
-	var noAchievementsTitleText: String {
-		return "No achievements yet".localized()
-	}
-	
-	var noAchievementsSubtitleText: String {
-		return "Keep walking!".localized()
-	}
-}
+"CFBundleDisplayName" = "Steps";
+"NSHumanReadableCopyright" = "(C) 2019";
