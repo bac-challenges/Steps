@@ -32,11 +32,28 @@
 import UIKit
 
 class StepsController: UITableViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 	
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		return .lightContent
+	@IBOutlet weak var profileCell: ProfileCell!
+	@IBOutlet weak var stepsCell: StepsCell!
+	@IBOutlet weak var chartCell: ChartCell!
+	@IBOutlet weak var achievementsCell: AchievementsCell!
+	
+	lazy private var viewModel = StepsViewModel()
+
+	override func viewDidLoad() {
+        super.viewDidLoad()
+		setupView()
+    }
+}
+
+// MARK: - UI
+extension  StepsController {
+	
+	private func setupView() {
+		title = viewModel.profileName
+		profileCell.configure(viewModel)
+		stepsCell.configure(viewModel)
+		chartCell.configure(viewModel)
+		achievementsCell.configure(viewModel)
 	}
 }

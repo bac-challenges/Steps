@@ -55,7 +55,7 @@ class ChartCell: UITableViewCell, ReusableCell {
 
 // MARK: - Configurable
 extension ChartCell: Configurable {
-	func configure(_ model: String) {
+	func configure(_ model: StepsViewModel) {
 	}
 }
 
