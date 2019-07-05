@@ -33,14 +33,7 @@ import UIKit
 
 class ProfileCell: UITableViewCell, ReusableCell {
 	
-	private lazy var separator: UIView = {
-		let view = UIView()
-		view.backgroundColor = .white
-		view.alpha = 0.2
-		return view
-	}()
-	
-	private lazy var profileImage = UIImageView("profile-photo", rounded: true)
+	var profileImage = UIImageView("profile-photo", rounded: true)
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,13 +59,12 @@ class ProfileCell: UITableViewCell, ReusableCell {
 // MARK: - Configurable
 extension ProfileCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		profileImage = UIImageView(model.profileImage, rounded: true)
+		profileImage = UIImageView(model.profileImage, rounded: false)
 	}
 }
 
 // MARK: - UI
 extension  ProfileCell {
-	
 	private func resetView() {
 		profileImage.image = nil
 	}
@@ -80,20 +72,11 @@ extension  ProfileCell {
 	private func setupView() {
 		selectionStyle = .none
 		preservesSuperviewLayoutMargins = true
-		addSubview(separator)
 		addSubview(profileImage)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
-		
-		separator.anchor(top: topAnchor,
-						 left: leftAnchor,
-						 paddingLeft: 16,
-						 right: rightAnchor,
-						 paddingRight: 16,
-						 height: 1)
-		
 		profileImage.anchor(width: 180,
 							height:180,
 							centerX: centerXAnchor,

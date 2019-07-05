@@ -20,41 +20,9 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 7A1892BB-BE84-48DB-85D1-65685022878E
+//	ID: F18C0B31-3853-4CFD-BBAF-94B947257762
 //
 //	Pkg: Steps
 //
-//	Swift: 4.0 
-//
 //	MacOS: 10.15
 //
-
-import UIKit
-
-class StepsController: UITableViewController {
-	
-	@IBOutlet weak var profileCell: ProfileCell!
-	@IBOutlet weak var stepsCell: StepsCell!
-	@IBOutlet weak var chartCell: ChartCell!
-	@IBOutlet weak var achievementsCell: AchievementsCell!
-	
-	lazy private var viewModel = StepsViewModel()
-
-	override func viewDidLoad() {
-        super.viewDidLoad()
-		setupView()
-    }
-}
-
-// MARK: - UI
-extension  StepsController {
-	
-	private func setupView() {
-		title = viewModel.profileName
-		tableView.separatorStyle = .singleLine
-		profileCell.configure(viewModel)
-		stepsCell.configure(viewModel)
-		chartCell.configure(viewModel)
-		achievementsCell.configure(viewModel)
-	}
-}
