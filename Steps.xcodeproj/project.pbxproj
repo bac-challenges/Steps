@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		60664F8F22CF1CA0004506FB /* SF-Compact-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */; };
+		60664F9622CF2432004506FB /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9422CF2432004506FB /* ProfileCell.swift */; };
+		60664F9922CF25DC004506FB /* StepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9822CF25DC004506FB /* StepsCell.swift */; };
+		60664F9B22CF260C004506FB /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9A22CF260C004506FB /* ChartCell.swift */; };
+		60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9C22CF2644004506FB /* AchievementsCell.swift */; };
+		60664F9F22CF273F004506FB /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9E22CF273F004506FB /* AchievementsView.swift */; };
+		60664FA122CF2773004506FB /* AchievementsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA022CF2773004506FB /* AchievementsEmpty.swift */; };
 		606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF6A22CE432000EE7BAB /* AppDelegate.swift */; };
 		606ABF7022CE432000EE7BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606ABF6E22CE432000EE7BAB /* Main.storyboard */; };
 		606ABF7322CE432000EE7BAB /* Steps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */; };
@@ -19,6 +25,12 @@
 
 /* Begin PBXFileReference section */
 		60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Semibold.otf"; sourceTree = "<group>"; };
+		60664F9422CF2432004506FB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		60664F9822CF25DC004506FB /* StepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCell.swift; sourceTree = "<group>"; };
+		60664F9A22CF260C004506FB /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		60664F9C22CF2644004506FB /* AchievementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCell.swift; sourceTree = "<group>"; };
+		60664F9E22CF273F004506FB /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		60664FA022CF2773004506FB /* AchievementsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsEmpty.swift; sourceTree = "<group>"; };
 		606ABF6722CE432000EE7BAB /* Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606ABF6A22CE432000EE7BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		606ABF6F22CE432000EE7BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				606ABF8B22CE86C500EE7BAB /* StepsController.swift */,
+				60664F9422CF2432004506FB /* ProfileCell.swift */,
+				60664F9822CF25DC004506FB /* StepsCell.swift */,
+				60664F9A22CF260C004506FB /* ChartCell.swift */,
+				60664F9C22CF2644004506FB /* AchievementsCell.swift */,
+				60664F9E22CF273F004506FB /* AchievementsView.swift */,
+				60664FA022CF2773004506FB /* AchievementsEmpty.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,7 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60664F9F22CF273F004506FB /* AchievementsView.swift in Sources */,
+				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
+				60664FA122CF2773004506FB /* AchievementsEmpty.swift in Sources */,
+				60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */,
 				606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */,
+				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
+				60664F9922CF25DC004506FB /* StepsCell.swift in Sources */,
 				606ABF7322CE432000EE7BAB /* Steps.xcdatamodeld in Sources */,
 				606ABF8C22CE86C500EE7BAB /* StepsController.swift in Sources */,
 			);
