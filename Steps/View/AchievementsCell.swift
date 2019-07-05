@@ -33,7 +33,8 @@ import UIKit
 
 class AchievementsCell: UITableViewCell, ReusableCell {
 	
-	private lazy var emptyView = AchievementsEmpty()
+	private lazy var emptyView = AchievementsEmptyView()
+	private lazy var statsView = AchievementsStatsView()
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -48,36 +49,35 @@ class AchievementsCell: UITableViewCell, ReusableCell {
 		super.init(coder: coder)
 		setupView()
 	}
-	
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		resetView()
-	}
 }
 
 // MARK: - Configurable
 extension AchievementsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
 		emptyView.configure(model)
+		statsView.configure(model)
 	}
 }
 
 // MARK: - UI
 extension AchievementsCell {
 	
-	private func resetView() {
-		
-	}
 	
 	private func setupView() {
 		selectionStyle = .none
 		preservesSuperviewLayoutMargins = true
 		addSubview(emptyView)
+		addSubview(statsView)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
 		emptyView.anchor(top: layoutMarginsGuide.topAnchor,
+						 bottom: layoutMarginsGuide.bottomAnchor,
+						 left: layoutMarginsGuide.leftAnchor,
+						 right: layoutMarginsGuide.rightAnchor)
+		
+		statsView.anchor(top: layoutMarginsGuide.topAnchor,
 						 bottom: layoutMarginsGuide.bottomAnchor,
 						 left: layoutMarginsGuide.leftAnchor,
 						 right: layoutMarginsGuide.rightAnchor)
