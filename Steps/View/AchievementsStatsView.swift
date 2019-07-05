@@ -90,6 +90,7 @@ extension AchievementsStatsView {
 		titleLabel.anchor(top: topAnchor, left: leftAnchor)
 		detailLabel.anchor(top: topAnchor, right: rightAnchor)
 		achievementsList.anchor(top: titleLabel.bottomAnchor,
+								paddingTop: 10,
 								left: titleLabel.leftAnchor,
 								right: detailLabel.rightAnchor,
 								height: 180)
