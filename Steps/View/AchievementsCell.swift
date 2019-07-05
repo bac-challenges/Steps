@@ -73,9 +73,9 @@ extension AchievementsCell {
 	
 	private func setupLayout() {
 		layoutMargins = UIEdgeInsets(top: layoutMargins.top,
-									 left: 30,
+									 left: 25,
 									 bottom: layoutMargins.bottom,
-									 right: 30)
+									 right: 25)
 		
 		emptyView.anchor(top: layoutMarginsGuide.topAnchor,
 						 bottom: layoutMarginsGuide.bottomAnchor,
@@ -84,7 +84,7 @@ extension AchievementsCell {
 		
 		statsView.anchor(top: layoutMarginsGuide.topAnchor,
 						 bottom: layoutMarginsGuide.bottomAnchor,
-						 left: layoutMarginsGuide.leftAnchor,
-						 right: layoutMarginsGuide.rightAnchor)
+						 left: leftAnchor,
+						 right: rightAnchor)
 	}
 }

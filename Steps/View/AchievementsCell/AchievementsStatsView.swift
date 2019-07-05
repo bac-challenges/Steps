@@ -77,9 +77,7 @@ extension AchievementsStatsView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		titleLabel.text = model.achievementsTitleText
 		detailLabel.text = model.achievementsCountText
-		
-		// Debug
-		for item in model.achievedGoals {
+		model.achievedGoals.forEach { item in
 			let itemView = AchievementsItemView()
 			itemView.configure(item)
 			stackView.addArrangedSubview(itemView)
@@ -99,19 +97,22 @@ extension AchievementsStatsView {
 	}
 	
 	private func setupLayout() {
-		titleLabel.anchor(top: topAnchor, left: leftAnchor)
+		titleLabel.anchor(top: topAnchor,
+						  left: layoutMarginsGuide.leftAnchor)
 		
-		detailLabel.anchor(top: topAnchor, right: rightAnchor)
+		detailLabel.anchor(top: topAnchor,
+						   right: layoutMarginsGuide.rightAnchor)
 		
 		scrollView.anchor(top: titleLabel.bottomAnchor,
 						  paddingTop: 10,
-						  left: titleLabel.leftAnchor,
-						  right: detailLabel.rightAnchor,
+						  left: leftAnchor,
+						  right: rightAnchor,
 						  height: 180)
 		
 		stackView.anchor(top: scrollView.topAnchor,
 						 bottom: scrollView.bottomAnchor,
 						 left: scrollView.leftAnchor,
+						 paddingLeft: 25,
 						 right: scrollView.rightAnchor)
 	}
 }

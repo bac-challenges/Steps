@@ -106,13 +106,16 @@ extension StepsCell {
 	}
 	
 	private func setupLayout() {
+		layoutMargins = UIEdgeInsets(top: layoutMargins.top,
+									 left: 25,
+									 bottom: layoutMargins.bottom,
+									 right: 25)
+		
 		titleLabel.anchor(top: topAnchor,
-						  left: leftAnchor,
-						  paddingLeft: 16)
+						  left: layoutMarginsGuide.leftAnchor)
 		
 		detailLabel.anchor(top: titleLabel.topAnchor,
-						   right: rightAnchor,
-						   paddingRight: 16)
+						   right: layoutMarginsGuide.rightAnchor)
 		
 		subtitleLabel.anchor(top: titleLabel.bottomAnchor,
 							 left: titleLabel.leftAnchor)
