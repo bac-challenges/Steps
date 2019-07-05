@@ -33,6 +33,9 @@ import UIKit
 
 class AchievementsListView: UIView {
 
+	private lazy var stackView = UIStackView()
+	private lazy var scrollView = UIScrollView()
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupView()

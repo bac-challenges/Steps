@@ -35,7 +35,7 @@ class AchievementsStatsView: UIView {
 	
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
-		label.textAlignment = .center
+		label.textAlignment = .left
 		label.textColor = .white
 		label.font = .systemFont(ofSize: 24, weight: .bold)
 		return label
@@ -43,7 +43,7 @@ class AchievementsStatsView: UIView {
 	
 	private lazy var detailLabel: UILabel = {
 		let label = UILabel()
-		label.textAlignment = .center
+		label.textAlignment = .right
 		label.textColor = UIColor(named: "blueLabel")
 		label.font = .systemFont(ofSize: 24, weight: .bold)
 		return label
@@ -79,11 +79,20 @@ extension AchievementsStatsView {
 		addSubview(detailLabel)
 		addSubview(achievementsList)
 		setupLayout()
+		
+		// Debug
+		debugMode()
+		titleLabel.debugMode()
+		detailLabel.debugMode()
 	}
 	
 	private func setupLayout() {
 		titleLabel.anchor(top: topAnchor, left: leftAnchor)
 		detailLabel.anchor(top: topAnchor, right: rightAnchor)
+		achievementsList.anchor(top: titleLabel.bottomAnchor,
+								left: titleLabel.leftAnchor,
+								right: detailLabel.rightAnchor,
+								height: 180)
 	}
 }
 
