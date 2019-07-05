@@ -32,13 +32,63 @@
 import UIKit
 
 class AchievementsEmpty: UIView {
+	
+	private lazy var image = UIImageView("no-steps")
+	
+	private lazy var titleLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .center
+		label.textColor = .white
+		label.numberOfLines = 0
+		label.font = .systemFont(ofSize: 24, weight: .heavy)
+		return label
+	}()
+	
+	private lazy var detailLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .center
+		label.textColor = .white
+		label.alpha = 0.5
+		label.font = .systemFont(ofSize: 24, weight: .medium)
+		return label
+	}()
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		setupView()
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		setupView()
+	}
+}
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+// MARK: - UI
+extension AchievementsEmpty {
+	
+	private func setupView() {
+		preservesSuperviewLayoutMargins = true
+		addSubview(image)
+		addSubview(titleLabel)
+		addSubview(detailLabel)
+		titleLabel.text = "No achievements yet"
+		detailLabel.text = "Keep walking!"
+		setupLayout()
+	}
+	
+	private func setupLayout() {
+		image.anchor(width: 116,
+					 height: 116,
+					 centerX: centerXAnchor,
+					 centerY: centerYAnchor,
+					 paddingCenterY: -63)
+		
+		titleLabel.anchor(top: image.bottomAnchor,
+						  paddingTop: 5,
+						  centerX: image.centerXAnchor)
+		
+		detailLabel.anchor(top: titleLabel.bottomAnchor,
+						   centerX: image.centerXAnchor)
+	}
 }

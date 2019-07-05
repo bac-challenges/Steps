@@ -33,6 +33,8 @@ import UIKit
 
 class AchievementsCell: UITableViewCell, ReusableCell {
 	
+	private lazy var emptyView = AchievementsEmpty()
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 	}
@@ -63,14 +65,20 @@ extension AchievementsCell: Configurable {
 extension AchievementsCell {
 	
 	private func resetView() {
+		
 	}
 	
 	private func setupView() {
 		selectionStyle = .none
 		preservesSuperviewLayoutMargins = true
+		addSubview(emptyView)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
+		emptyView.anchor(top: layoutMarginsGuide.topAnchor,
+						 bottom: layoutMarginsGuide.bottomAnchor,
+						 left: layoutMarginsGuide.leftAnchor,
+						 right: layoutMarginsGuide.rightAnchor)
 	}
 }

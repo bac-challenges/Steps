@@ -40,7 +40,7 @@ class ProfileCell: UITableViewCell, ReusableCell {
 		return view
 	}()
 	
-	private lazy var profileImage = UIImageView(image: "profile-photo")
+	private lazy var profileImage = UIImageView("profile-photo", rounded: true)
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -63,12 +63,6 @@ class ProfileCell: UITableViewCell, ReusableCell {
 	}
 }
 
-// MARK: - Configurable
-extension ProfileCell: Configurable {
-	func configure(_ model: String) {
-	}
-}
-
 // MARK: - UI
 extension  ProfileCell {
 	
@@ -88,28 +82,14 @@ extension  ProfileCell {
 		
 		separator.anchor(top: topAnchor,
 						 left: leftAnchor,
+						 paddingLeft: 16,
 						 right: rightAnchor,
-						 height:1)
+						 paddingRight: 16,
+						 height: 1)
 		
 		profileImage.anchor(width: 180,
 							height:180,
 							centerX: centerXAnchor,
 							centerY: centerYAnchor)
-	}
-}
-
-//
-extension UIImageView {
-	
-	convenience init(image: String) {
-		let image = UIImage(named: image)
-		self.init(image: image)
-		self.roundedImage()
-		self.contentMode = .scaleAspectFit
-	}
-	
-	func roundedImage() {
-		self.layer.cornerRadius = self.frame.size.width / 2
-		self.clipsToBounds = true
 	}
 }

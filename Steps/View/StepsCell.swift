@@ -81,6 +81,8 @@ class StepsCell: UITableViewCell, ReusableCell {
 // MARK: - Configurable
 extension StepsCell: Configurable {
 	func configure(_ model: String) {
+		detailLabel.text = "12.350"
+		subtitleLabel.text = "Nov 12 - Dec 12 2018"
 	}
 }
 
@@ -88,7 +90,6 @@ extension StepsCell: Configurable {
 extension StepsCell {
 	
 	private func resetView() {
-		titleLabel.text = nil
 		detailLabel.text = nil
 		subtitleLabel.text = nil
 	}
@@ -99,12 +100,8 @@ extension StepsCell {
 		addSubview(titleLabel)
 		addSubview(detailLabel)
 		addSubview(subtitleLabel)
-		setupLayout()
-		
-		// Debug
 		titleLabel.text = "Steps"
-		detailLabel.text = "12.350"
-		subtitleLabel.text = "Nov 12 - Dec 12 2018"
+		setupLayout()
 	}
 	
 	private func setupLayout() {

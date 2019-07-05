@@ -33,3 +33,5 @@ import UIKit
 
 class AchievementsView: UIView {
 }
+
+//UIFont(name: "SFCompactText-Semibold", size: 24)

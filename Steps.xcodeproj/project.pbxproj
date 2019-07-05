@@ -17,6 +17,7 @@
 		60664FA322CF2AF3004506FB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA222CF2AF3004506FB /* UIView.swift */; };
 		60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA422CF2C04004506FB /* ReusableCell.swift */; };
 		60664FA722CF2C04004506FB /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA522CF2C04004506FB /* Configurable.swift */; };
+		60664FA922CF4B80004506FB /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA822CF4B80004506FB /* UIImageView.swift */; };
 		606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF6A22CE432000EE7BAB /* AppDelegate.swift */; };
 		606ABF7022CE432000EE7BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606ABF6E22CE432000EE7BAB /* Main.storyboard */; };
 		606ABF7322CE432000EE7BAB /* Steps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */; };
@@ -37,6 +38,8 @@
 		60664FA222CF2AF3004506FB /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		60664FA422CF2C04004506FB /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		60664FA522CF2C04004506FB /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		60664FA822CF4B80004506FB /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		60664FAB22CF5711004506FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		606ABF6722CE432000EE7BAB /* Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606ABF6A22CE432000EE7BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		606ABF6F22CE432000EE7BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				60664FA522CF2C04004506FB /* Configurable.swift */,
+				60664FA822CF4B80004506FB /* UIImageView.swift */,
 				60664FA422CF2C04004506FB /* ReusableCell.swift */,
 				60664FA222CF2AF3004506FB /* UIView.swift */,
 			);
@@ -239,6 +243,7 @@
 				60664FA322CF2AF3004506FB /* UIView.swift in Sources */,
 				60664F9F22CF273F004506FB /* AchievementsView.swift in Sources */,
 				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
+				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
 				60664FA122CF2773004506FB /* AchievementsEmpty.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
 				60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */,
@@ -258,6 +263,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				606ABF6F22CE432000EE7BAB /* Base */,
+				60664FAB22CF5711004506FB /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
