@@ -43,7 +43,7 @@ struct StepsViewModel {
 	}
 	
 	var stepsLabelText: String {
-		return "Steps".localized()
+		return "58033C81".localized(withComment: "Steps")
 	}
 	
 	var stepsCountText: String {
@@ -55,10 +55,10 @@ struct StepsViewModel {
 	}
 	
 	var noAchievementsTitleText: String {
-		return "No achievements yet".localized()
+		return "89DCAC96".localized(withComment: "No achievements yet")
 	}
 	
 	var noAchievementsSubtitleText: String {
-		return "Keep walking!".localized()
+		return "11427B1F".localized(withComment: "Keep walking!")
 	}
 }
