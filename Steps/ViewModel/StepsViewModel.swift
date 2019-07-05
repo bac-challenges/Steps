@@ -61,4 +61,12 @@ struct StepsViewModel {
 	var noAchievementsSubtitleText: String {
 		return "11427B1F".localized(withComment: "Keep walking!")
 	}
+	
+	var achievementsTitleText: String {
+		return "A1239E36".localized(withComment: "Achievements")
+	}
+	
+	var achievementsGoalText: String {
+		return "730BDAB5".localized(withComment: "Goal achievement")
+	}
 }
