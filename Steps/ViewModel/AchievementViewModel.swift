@@ -24,13 +24,33 @@
 //
 //	Pkg: Steps
 //
-//	Swift: 5.0 
+//	Swift: 4.0 
 //
 //	MacOS: 10.15
 //
 
 import Foundation
 
-struct AchievementViewModel {
+struct AchievementViewModel: GenericViewModel {
 	
+	var model: Achievement
+	
+	init(_ model: Achievement) {
+		self.model = model
+	}
+}
+
+// MARK: - String
+extension AchievementViewModel {
+	var achievementsGoalText: String {
+		return "730BDAB5".localized(withComment: "Goal achievement")
+	}
+	
+	var image: String {
+		return "\(model.steps)k"
+	}
+	
+	var steps: String {
+		return "\(model.steps)k"
+	}
 }

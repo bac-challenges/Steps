@@ -67,10 +67,13 @@ struct StepsViewModel {
 	}
 	
 	var achievementsCountText: String {
-		return "3"
+		return "\(achievedGoals.count)"
 	}
 	
-	var achievementsGoalText: String {
-		return "730BDAB5".localized(withComment: "Goal achievement")
+	var achievedGoals: [AchievementViewModel] {
+		let result = [10,15,20,25,30,35,40].map {
+			AchievementViewModel(Achievement(steps: $0))
+		}
+		return result
 	}
 }

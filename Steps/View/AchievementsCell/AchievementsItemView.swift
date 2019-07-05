@@ -66,9 +66,10 @@ class AchievementsItemView: UIView {
 
 // MARK: - Configurable
 extension AchievementsItemView: Configurable {
-	func configure(_ model: StepsViewModel) {
+	func configure(_ model: AchievementViewModel) {
 		titleLabel.text = model.achievementsGoalText
-		detailLabel.text = "10k"
+		detailLabel.text = model.steps
+		image.image = UIImage(named: model.steps)
 	}
 }
 

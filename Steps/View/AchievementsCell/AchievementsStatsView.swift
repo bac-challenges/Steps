@@ -79,10 +79,10 @@ extension AchievementsStatsView: Configurable {
 		detailLabel.text = model.achievementsCountText
 		
 		// Debug
-		for _ in 0...6 {
-			let item = AchievementsItemView()
-			item.configure(model)
-			stackView.addArrangedSubview(item)
+		for item in model.achievedGoals {
+			let itemView = AchievementsItemView()
+			itemView.configure(item)
+			stackView.addArrangedSubview(itemView)
 		}
 	}
 }

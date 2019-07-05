@@ -32,6 +32,5 @@
 import Foundation
 
 struct Achievement {
-	let image: String
 	let steps: Int
 }
