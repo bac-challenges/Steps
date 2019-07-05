@@ -31,9 +31,45 @@
 
 import UIKit
 
-class StepsCell: UITableViewCell {
+class StepsCell: UITableViewCell, ReusableCell {
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		backgroundColor = .red
+	}
+	
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+		super.init(style: .value1, reuseIdentifier: nil)
+		setupView()
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		resetView()
+	}
+}
+
+// MARK: - Configurable
+extension StepsCell: Configurable {
+	func configure(_ model: String) {
+	}
+}
+
+// MARK: - UI
+extension StepsCell {
+	
+	private func resetView() {
+	}
+	
+	private func setupView() {
+		selectionStyle = .none
+		preservesSuperviewLayoutMargins = true
+		setupLayout()
+	}
+	
+	private func setupLayout() {
 	}
 }
