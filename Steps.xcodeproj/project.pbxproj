@@ -13,6 +13,7 @@
 		606ABF7522CE432200EE7BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606ABF7422CE432200EE7BAB /* Assets.xcassets */; };
 		606ABF7822CE432200EE7BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606ABF7622CE432200EE7BAB /* LaunchScreen.storyboard */; };
 		606ABF8222CE436700EE7BAB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606ABF8122CE436700EE7BAB /* HealthKit.framework */; };
+		606ABF8C22CE86C500EE7BAB /* StepsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF8B22CE86C500EE7BAB /* StepsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		606ABF7922CE432200EE7BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		606ABF7F22CE436700EE7BAB /* Steps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Steps.entitlements; sourceTree = "<group>"; };
 		606ABF8122CE436700EE7BAB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		606ABF8B22CE86C500EE7BAB /* StepsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,10 @@
 			isa = PBXGroup;
 			children = (
 				606ABF6A22CE432000EE7BAB /* AppDelegate.swift */,
-				606ABF8522CE48A800EE7BAB /* UI */,
+				606ABF8A22CE869B00EE7BAB /* View */,
+				606ABF8E22CE874200EE7BAB /* ViewModel */,
 				606ABF8422CE489C00EE7BAB /* Model */,
+				606ABF8522CE48A800EE7BAB /* UI */,
 				606ABF8322CE472700EE7BAB /* Resources */,
 			);
 			path = Steps;
@@ -100,6 +104,21 @@
 				606ABF6E22CE432000EE7BAB /* Main.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		606ABF8A22CE869B00EE7BAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				606ABF8B22CE86C500EE7BAB /* StepsController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		606ABF8E22CE874200EE7BAB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +199,7 @@
 			files = (
 				606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */,
 				606ABF7322CE432000EE7BAB /* Steps.xcdatamodeld in Sources */,
+				606ABF8C22CE86C500EE7BAB /* StepsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
