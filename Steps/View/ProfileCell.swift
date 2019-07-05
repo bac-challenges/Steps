@@ -33,12 +33,14 @@ import UIKit
 
 class ProfileCell: UITableViewCell, ReusableCell {
 	
+	// UI
 	var profileImage: UIImageView = {
 		let view = UIImageView("profile-photo-placeholder", rounded: true)
 		view.tintColor = .darkGray
 		return view
 	}()
 	
+	// Init
     override func awakeFromNib() {
         super.awakeFromNib()
 		setupView()

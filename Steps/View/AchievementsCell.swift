@@ -33,9 +33,11 @@ import UIKit
 
 class AchievementsCell: UITableViewCell, ReusableCell {
 	
+	// UI
 	private lazy var emptyView = AchievementsEmptyView()
 	private lazy var statsView = AchievementsStatsView()
 	
+	// Init
 	override func awakeFromNib() {
 		super.awakeFromNib()
 	}
@@ -61,8 +63,6 @@ extension AchievementsCell: Configurable {
 
 // MARK: - UI
 extension AchievementsCell {
-	
-	
 	private func setupView() {
 		selectionStyle = .none
 		preservesSuperviewLayoutMargins = true

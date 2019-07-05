@@ -33,6 +33,7 @@ import UIKit
 
 class StepsCell: UITableViewCell, ReusableCell {
 	
+	// UI
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .left
@@ -58,6 +59,7 @@ class StepsCell: UITableViewCell, ReusableCell {
 		return label
 	}()
 	
+	// Init
 	override func awakeFromNib() {
 		super.awakeFromNib()
 	}
@@ -89,7 +91,6 @@ extension StepsCell: Configurable {
 
 // MARK: - UI
 extension StepsCell {
-	
 	private func resetView() {
 		detailLabel.text = nil
 		subtitleLabel.text = nil

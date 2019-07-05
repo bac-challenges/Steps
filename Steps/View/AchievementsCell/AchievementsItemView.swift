@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: B96B0FB4-5E56-4045-A4CB-3E4FC8F5C5CF
+//	ID: 96FA3EFA-20C8-4F83-B1D1-4F78A605D950
 //
 //	Pkg: Steps
 //
@@ -31,16 +31,16 @@
 
 import UIKit
 
-class AchievementsEmptyView: UIView {
-	
-	private lazy var image = UIImageView("no-steps")
+class AchievementsItemView: UIView {
+
+	private lazy var image = UIImageView("10k", rounded: true)
 	
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
 		label.textColor = .white
 		label.numberOfLines = 0
-		label.font = .systemFont(ofSize: 24, weight: .heavy)
+		label.font = .systemFont(ofSize: 16, weight: .heavy)
 		return label
 	}()
 	
@@ -49,7 +49,7 @@ class AchievementsEmptyView: UIView {
 		label.textAlignment = .center
 		label.textColor = .white
 		label.alpha = 0.5
-		label.font = .systemFont(ofSize: 24, weight: .medium)
+		label.font = UIFont(name: "SFCompactText-Semibold", size: 13)
 		return label
 	}()
 	
@@ -65,18 +65,17 @@ class AchievementsEmptyView: UIView {
 }
 
 // MARK: - Configurable
-extension AchievementsEmptyView: Configurable {
+extension AchievementsItemView: Configurable {
 	func configure(_ model: StepsViewModel) {
-		titleLabel.text = model.noAchievementsTitleText
-		detailLabel.text = model.noAchievementsSubtitleText
+		titleLabel.text = model.achievementsGoalText
+		detailLabel.text = "10k"
 	}
 }
 
 // MARK: - UI
-extension AchievementsEmptyView {
+extension AchievementsItemView {
 	private func setupView() {
 		preservesSuperviewLayoutMargins = true
-		alpha = 0
 		addSubview(image)
 		addSubview(titleLabel)
 		addSubview(detailLabel)
@@ -84,17 +83,23 @@ extension AchievementsEmptyView {
 	}
 	
 	private func setupLayout() {
-		image.anchor(width: 116,
-					 height: 116,
-					 centerX: centerXAnchor,
-					 centerY: centerYAnchor,
-					 paddingCenterY: -63)
+		anchor(width: 116, height: 180)
+		
+		image.anchor(top: topAnchor,
+					 left: leftAnchor,
+					 right: rightAnchor,
+					 width: 116,
+					 height: 116)
 		
 		titleLabel.anchor(top: image.bottomAnchor,
-						  paddingTop: 5,
+						  paddingTop: 6,
+						  left: image.leftAnchor,
+						  right: image.rightAnchor,
 						  centerX: image.centerXAnchor)
 		
 		detailLabel.anchor(top: titleLabel.bottomAnchor,
+						   left: image.leftAnchor,
+						   right: image.rightAnchor,
 						   centerX: image.centerXAnchor)
 	}
 }

@@ -33,13 +33,16 @@ import UIKit
 
 class StepsController: UITableViewController {
 	
+	// UI
 	@IBOutlet weak var profileCell: ProfileCell!
 	@IBOutlet weak var stepsCell: StepsCell!
 	@IBOutlet weak var chartCell: ChartCell!
 	@IBOutlet weak var achievementsCell: AchievementsCell!
 	
+	// Model
 	lazy private var viewModel = StepsViewModel()
 
+	// Init
 	override func viewDidLoad() {
         super.viewDidLoad()
 		setupView()
@@ -48,7 +51,6 @@ class StepsController: UITableViewController {
 
 // MARK: - UI
 extension  StepsController {
-	
 	private func setupView() {
 		title = viewModel.profileName
 		tableView.separatorStyle = .none

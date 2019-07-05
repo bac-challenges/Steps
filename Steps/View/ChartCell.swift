@@ -33,6 +33,7 @@ import UIKit
 
 class ChartCell: UITableViewCell, ReusableCell {
 	
+	// Init
 	override func awakeFromNib() {
 		super.awakeFromNib()
 	}
@@ -61,7 +62,6 @@ extension ChartCell: Configurable {
 
 // MARK: - UI
 extension ChartCell {
-	
 	private func resetView() {
 	}
 	

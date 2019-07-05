@@ -33,6 +33,7 @@ import UIKit
 
 class AchievementsStatsView: UIView {
 	
+	// UI
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .left
@@ -59,6 +60,7 @@ class AchievementsStatsView: UIView {
 		return view
 	}()
 	
+	// Init
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupView()
@@ -75,6 +77,13 @@ extension AchievementsStatsView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		titleLabel.text = model.achievementsTitleText
 		detailLabel.text = model.achievementsCountText
+		
+		// Debug
+		for _ in 0...6 {
+			let item = AchievementsItemView()
+			item.configure(model)
+			stackView.addArrangedSubview(item)
+		}
 	}
 }
 
@@ -86,11 +95,6 @@ extension AchievementsStatsView {
 		addSubview(detailLabel)
 		addSubview(scrollView)
 		scrollView.addSubview(stackView)
-		
-		for _ in 0...6 {
-			stackView.addArrangedSubview(AchievementsItemView())
-		}
-		
 		setupLayout()
 		
 		// Debug
@@ -100,7 +104,9 @@ extension AchievementsStatsView {
 	
 	private func setupLayout() {
 		titleLabel.anchor(top: topAnchor, left: leftAnchor)
+		
 		detailLabel.anchor(top: topAnchor, right: rightAnchor)
+		
 		scrollView.anchor(top: titleLabel.bottomAnchor,
 						  paddingTop: 10,
 						  left: titleLabel.leftAnchor,

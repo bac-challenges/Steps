@@ -20,21 +20,41 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 96FA3EFA-20C8-4F83-B1D1-4F78A605D950
+//	ID: B96B0FB4-5E56-4045-A4CB-3E4FC8F5C5CF
 //
 //	Pkg: Steps
 //
-//	Swift: 5.0 
+//	Swift: 4.0 
 //
 //	MacOS: 10.15
 //
 
 import UIKit
 
-class AchievementsItemView: UIView {
+class AchievementsEmptyView: UIView {
 	
-	//UIFont(name: "SFCompactText-Semibold", size: 24)
+	// UI
+	private lazy var image = UIImageView("no-steps")
 	
+	private lazy var titleLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .center
+		label.textColor = .white
+		label.numberOfLines = 0
+		label.font = .systemFont(ofSize: 24, weight: .heavy)
+		return label
+	}()
+	
+	private lazy var detailLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .center
+		label.textColor = .white
+		label.alpha = 0.5
+		label.font = .systemFont(ofSize: 24, weight: .medium)
+		return label
+	}()
+	
+	// Init
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupView()
@@ -47,22 +67,36 @@ class AchievementsItemView: UIView {
 }
 
 // MARK: - Configurable
-extension AchievementsItemView: Configurable {
+extension AchievementsEmptyView: Configurable {
 	func configure(_ model: StepsViewModel) {
+		titleLabel.text = model.noAchievementsTitleText
+		detailLabel.text = model.noAchievementsSubtitleText
 	}
 }
 
 // MARK: - UI
-extension AchievementsItemView {
+extension AchievementsEmptyView {
 	private func setupView() {
 		preservesSuperviewLayoutMargins = true
+		alpha = 0
+		addSubview(image)
+		addSubview(titleLabel)
+		addSubview(detailLabel)
 		setupLayout()
-		
-		// Debug
-		debugMode()
 	}
 	
 	private func setupLayout() {
-		anchor(width: 116, height: 180)
+		image.anchor(width: 116,
+					 height: 116,
+					 centerX: centerXAnchor,
+					 centerY: centerYAnchor,
+					 paddingCenterY: -63)
+		
+		titleLabel.anchor(top: image.bottomAnchor,
+						  paddingTop: 5,
+						  centerX: image.centerXAnchor)
+		
+		detailLabel.anchor(top: titleLabel.bottomAnchor,
+						   centerX: image.centerXAnchor)
 	}
 }
