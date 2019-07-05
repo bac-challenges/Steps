@@ -20,23 +20,35 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 7A1892BB-BE84-48DB-85D1-65685022878E
+//	ID: 3176A25A-CC41-41F9-8F28-A421BA4E7840
 //
 //	Pkg: Steps
 //
-//	Swift: 4.0 
+//	Swift: 4.0
 //
 //	MacOS: 10.15
 //
 
 import UIKit
 
-class StepsController: UITableViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+public struct Appearance {
 	
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		return .lightContent
+	static func apply() {
+		
+		// Global
+		let windowAppearace = UIWindow.appearance()
+		windowAppearace.backgroundColor = .black
+		windowAppearace.tintColor = .white
+		
+		// Navigation
+		let navigationBarAppearace = UINavigationBar.appearance()
+		navigationBarAppearace.isTranslucent = false
+		navigationBarAppearace.barTintColor = .black
+		navigationBarAppearace.prefersLargeTitles = false
+		
+		navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+													  NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .black)]
+		
+		
 	}
 }
