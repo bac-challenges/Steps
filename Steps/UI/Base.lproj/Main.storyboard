@@ -42,36 +42,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oOL-5k-cqt" id="YMa-uW-Dcq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yA2-bm-N10">
-                                                    <rect key="frame" x="16" y="0.0" width="91" height="39"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnR-us-8np">
-                                                    <rect key="frame" x="259" y="0.0" width="100" height="39"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                    <color key="textColor" red="0.51764705882352935" green="0.7803921568627451" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 12 - Dec 12 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woH-wQ-7Ko">
-                                                    <rect key="frame" x="16" y="39" width="173" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="cnR-us-8np" secondAttribute="trailing" constant="16" id="GHT-k7-TVR"/>
-                                                <constraint firstItem="yA2-bm-N10" firstAttribute="leading" secondItem="YMa-uW-Dcq" secondAttribute="leading" constant="16" id="LTq-ia-gs2"/>
-                                                <constraint firstItem="yA2-bm-N10" firstAttribute="top" secondItem="YMa-uW-Dcq" secondAttribute="top" id="Qk1-c5-a5S"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="woH-wQ-7Ko" secondAttribute="trailing" constant="20" symbolic="YES" id="ZVq-DC-DoX"/>
-                                                <constraint firstItem="cnR-us-8np" firstAttribute="top" secondItem="YMa-uW-Dcq" secondAttribute="top" id="paO-LJ-dCy"/>
-                                                <constraint firstItem="woH-wQ-7Ko" firstAttribute="leading" secondItem="YMa-uW-Dcq" secondAttribute="leading" constant="16" id="tmf-qu-6OS"/>
-                                                <constraint firstItem="woH-wQ-7Ko" firstAttribute="top" secondItem="yA2-bm-N10" secondAttribute="bottom" id="um0-QY-pi9"/>
-                                                <constraint firstItem="cnR-us-8np" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yA2-bm-N10" secondAttribute="trailing" constant="8" symbolic="YES" id="ywr-2J-4jg"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
@@ -517,7 +487,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKw-5l-MXX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKw-5l-MXX">
                                                     <rect key="frame" x="16" y="0.0" width="91" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

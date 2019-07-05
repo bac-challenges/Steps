@@ -33,6 +33,31 @@ import UIKit
 
 class StepsCell: UITableViewCell, ReusableCell {
 	
+	private lazy var titleLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .left
+		label.textColor = .white
+		label.font = .systemFont(ofSize: 32, weight: .heavy)
+		return label
+	}()
+	
+	private lazy var detailLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .right
+		label.textColor = UIColor(named: "greenLabel")
+		label.font = .systemFont(ofSize: 32, weight: .regular)
+		return label
+	}()
+	
+	private lazy var subtitleLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .left
+		label.textColor = .white
+		label.alpha = 0.5
+		label.font = .systemFont(ofSize: 18, weight: .regular)
+		return label
+	}()
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 	}
@@ -63,14 +88,35 @@ extension StepsCell: Configurable {
 extension StepsCell {
 	
 	private func resetView() {
+		titleLabel.text = nil
+		detailLabel.text = nil
+		subtitleLabel.text = nil
 	}
 	
 	private func setupView() {
 		selectionStyle = .none
 		preservesSuperviewLayoutMargins = true
+		addSubview(titleLabel)
+		addSubview(detailLabel)
+		addSubview(subtitleLabel)
 		setupLayout()
+		
+		// Debug
+		titleLabel.text = "Steps"
+		detailLabel.text = "12.350"
+		subtitleLabel.text = "Nov 12 - Dec 12 2018"
 	}
 	
 	private func setupLayout() {
+		titleLabel.anchor(top: topAnchor,
+						  left: leftAnchor,
+						  paddingLeft: 16)
+		
+		detailLabel.anchor(top: titleLabel.topAnchor,
+						   right: rightAnchor,
+						   paddingRight: 16)
+		
+		subtitleLabel.anchor(top: titleLabel.bottomAnchor,
+							 left: titleLabel.leftAnchor)
 	}
 }
