@@ -30,6 +30,9 @@
 		606ABF7522CE432200EE7BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606ABF7422CE432200EE7BAB /* Assets.xcassets */; };
 		606ABF8222CE436700EE7BAB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606ABF8122CE436700EE7BAB /* HealthKit.framework */; };
 		606ABF8C22CE86C500EE7BAB /* StepsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF8B22CE86C500EE7BAB /* StepsController.swift */; };
+		60BEFA8522CFB4870081A9EC /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8422CFB4870081A9EC /* Achievement.swift */; };
+		60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */; };
+		60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		606ABF7F22CE436700EE7BAB /* Steps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Steps.entitlements; sourceTree = "<group>"; };
 		606ABF8122CE436700EE7BAB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		606ABF8B22CE86C500EE7BAB /* StepsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsController.swift; sourceTree = "<group>"; };
+		60BEFA8422CFB4870081A9EC /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
+		60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		60664FD222CF7945004506FB /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */,
 				60664FA522CF2C04004506FB /* Configurable.swift */,
 				60664FA422CF2C04004506FB /* ReusableCell.swift */,
 			);
@@ -177,6 +184,7 @@
 		606ABF8422CE489C00EE7BAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				60BEFA8422CFB4870081A9EC /* Achievement.swift */,
 				606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */,
 			);
 			path = Model;
@@ -198,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				60664FAC22CF6394004506FB /* StepsViewModel.swift */,
+				60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,9 +302,12 @@
 			files = (
 				60664FA322CF2AF3004506FB /* UIView.swift in Sources */,
 				60664F9F22CF273F004506FB /* AchievementsStatsView.swift in Sources */,
+				60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */,
+				60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */,
 				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
 				60664FA122CF2773004506FB /* AchievementsEmptyView.swift in Sources */,
+				60BEFA8522CFB4870081A9EC /* Achievement.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
 				60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,

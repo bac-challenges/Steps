@@ -96,10 +96,6 @@ extension AchievementsStatsView {
 		addSubview(scrollView)
 		scrollView.addSubview(stackView)
 		setupLayout()
-		
-		// Debug
-		titleLabel.debugMode()
-		detailLabel.debugMode()
 	}
 	
 	private func setupLayout() {
