@@ -33,29 +33,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R6y-Od-ON0" id="1b5-uB-ubv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view alpha="0.20000000000000001" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQX-5G-Lyn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="asz-Yb-ufd"/>
-                                                    </constraints>
-                                                </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-photo" translatesAutoresizingMaskIntoConstraints="NO" id="9nL-xv-GzQ">
-                                                    <rect key="frame" x="97.666666666666686" y="20" width="180" height="180"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="180" id="5aJ-Ss-vgn"/>
-                                                        <constraint firstAttribute="width" constant="180" id="SL6-19-SCj"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="9nL-xv-GzQ" firstAttribute="centerX" secondItem="1b5-uB-ubv" secondAttribute="centerX" id="2LQ-hg-eZG"/>
-                                                <constraint firstItem="LQX-5G-Lyn" firstAttribute="top" secondItem="1b5-uB-ubv" secondAttribute="top" id="Fv3-a2-gbg"/>
-                                                <constraint firstItem="LQX-5G-Lyn" firstAttribute="leading" secondItem="1b5-uB-ubv" secondAttribute="leading" id="L87-Pz-jIR"/>
-                                                <constraint firstItem="9nL-xv-GzQ" firstAttribute="centerY" secondItem="1b5-uB-ubv" secondAttribute="centerY" id="NYb-wG-ico"/>
-                                                <constraint firstAttribute="trailing" secondItem="LQX-5G-Lyn" secondAttribute="trailing" id="fTT-1t-gSr"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
@@ -508,7 +485,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="219.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view alpha="0.20000000298023224" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj0-iG-8b2">
+                                                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nj0-iG-8b2">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>

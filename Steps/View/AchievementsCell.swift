@@ -38,12 +38,13 @@ class AchievementsCell: UITableViewCell, ReusableCell {
 	}
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: .value1, reuseIdentifier: nil)
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setupView()
 	}
 	
 	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		super.init(coder: coder)
+		setupView()
 	}
 	
 	override func prepareForReuse() {

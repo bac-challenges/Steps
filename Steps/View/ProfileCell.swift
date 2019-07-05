@@ -33,17 +33,28 @@ import UIKit
 
 class ProfileCell: UITableViewCell, ReusableCell {
 	
+	private lazy var separator: UIView = {
+		let view = UIView()
+		view.backgroundColor = .white
+		view.alpha = 0.2
+		return view
+	}()
+	
+	private lazy var profileImage = UIImageView(image: "profile-photo")
+	
     override func awakeFromNib() {
         super.awakeFromNib()
+		setupView()
     }
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: .value1, reuseIdentifier: nil)
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setupView()
 	}
 	
 	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		super.init(coder: coder)
+		setupView()
 	}
 	
 	override func prepareForReuse() {
@@ -62,14 +73,43 @@ extension ProfileCell: Configurable {
 extension  ProfileCell {
 	
 	private func resetView() {
+		profileImage.image = nil
 	}
 	
 	private func setupView() {
 		selectionStyle = .none
 		preservesSuperviewLayoutMargins = true
+		addSubview(separator)
+		addSubview(profileImage)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
+		
+		separator.anchor(top: topAnchor,
+						 left: leftAnchor,
+						 right: rightAnchor,
+						 height:1)
+		
+		profileImage.anchor(width: 180,
+							height:180,
+							centerX: centerXAnchor,
+							centerY: centerYAnchor)
+	}
+}
+
+//
+extension UIImageView {
+	
+	convenience init(image: String) {
+		let image = UIImage(named: image)
+		self.init(image: image)
+		self.roundedImage()
+		self.contentMode = .scaleAspectFit
+	}
+	
+	func roundedImage() {
+		self.layer.cornerRadius = self.frame.size.width / 2
+		self.clipsToBounds = true
 	}
 }
