@@ -63,6 +63,13 @@ class ProfileCell: UITableViewCell, ReusableCell {
 	}
 }
 
+// MARK: - Configurable
+extension ProfileCell: Configurable {
+	func configure(_ model: StepsViewModel) {
+		profileImage = UIImageView(model.profilePicture, rounded: true)
+	}
+}
+
 // MARK: - UI
 extension  ProfileCell {
 	

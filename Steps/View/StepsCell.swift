@@ -80,9 +80,10 @@ class StepsCell: UITableViewCell, ReusableCell {
 
 // MARK: - Configurable
 extension StepsCell: Configurable {
-	func configure(_ model: String) {
-		detailLabel.text = "12.350"
-		subtitleLabel.text = "Nov 12 - Dec 12 2018"
+	func configure(_ model: StepsViewModel) {
+		titleLabel.text = model.stepsLabel
+		detailLabel.text = model.stepsCountLabel
+		subtitleLabel.text = model.stepsDateRangeLabel
 	}
 }
 
@@ -100,7 +101,6 @@ extension StepsCell {
 		addSubview(titleLabel)
 		addSubview(detailLabel)
 		addSubview(subtitleLabel)
-		titleLabel.text = "Steps"
 		setupLayout()
 	}
 	
