@@ -51,7 +51,7 @@ extension  StepsController {
 	
 	private func setupView() {
 		title = viewModel.profileName
-		tableView.separatorStyle = .singleLine
+		tableView.separatorStyle = .none
 		profileCell.configure(viewModel)
 		stepsCell.configure(viewModel)
 		chartCell.configure(viewModel)

@@ -33,7 +33,11 @@ import UIKit
 
 class ProfileCell: UITableViewCell, ReusableCell {
 	
-	var profileImage = UIImageView("profile-photo", rounded: true)
+	var profileImage: UIImageView = {
+		let view = UIImageView("profile-photo-placeholder", rounded: true)
+		view.tintColor = .darkGray
+		return view
+	}()
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,7 +63,7 @@ class ProfileCell: UITableViewCell, ReusableCell {
 // MARK: - Configurable
 extension ProfileCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		profileImage = UIImageView(model.profileImage, rounded: false)
+		profileImage.image = UIImage(named: model.profileImage)
 	}
 }
 
@@ -72,6 +76,7 @@ extension  ProfileCell {
 	private func setupView() {
 		selectionStyle = .none
 		preservesSuperviewLayoutMargins = true
+		profileImage.tintColor = .darkGray
 		addSubview(profileImage)
 		setupLayout()
 	}

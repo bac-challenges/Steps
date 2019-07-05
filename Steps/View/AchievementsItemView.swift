@@ -63,5 +63,6 @@ extension AchievementsItemView {
 	}
 	
 	private func setupLayout() {
+		anchor(width: 116, height: 180)
 	}
 }

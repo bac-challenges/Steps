@@ -69,9 +69,6 @@ extension AchievementsCell {
 		addSubview(emptyView)
 		addSubview(statsView)
 		setupLayout()
-		
-		// Debug
-		debugMode()
 	}
 	
 	private func setupLayout() {

@@ -49,7 +49,15 @@ class AchievementsStatsView: UIView {
 		return label
 	}()
 	
-	private lazy var achievementsList = AchievementsListView()
+	private lazy var scrollView = UIScrollView()
+	
+	private lazy var stackView: UIStackView = {
+		let view = UIStackView()
+		view.distribution = .fill
+		view.alignment = .fill
+		view.spacing = 30
+		return view
+	}()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -67,7 +75,6 @@ extension AchievementsStatsView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		titleLabel.text = model.achievementsTitleText
 		detailLabel.text = model.achievementsCountText
-		achievementsList.configure(model)
 	}
 }
 
@@ -77,11 +84,16 @@ extension AchievementsStatsView {
 		preservesSuperviewLayoutMargins = true
 		addSubview(titleLabel)
 		addSubview(detailLabel)
-		addSubview(achievementsList)
+		addSubview(scrollView)
+		scrollView.addSubview(stackView)
+		
+		for _ in 0...6 {
+			stackView.addArrangedSubview(AchievementsItemView())
+		}
+		
 		setupLayout()
 		
 		// Debug
-		debugMode()
 		titleLabel.debugMode()
 		detailLabel.debugMode()
 	}
@@ -89,11 +101,16 @@ extension AchievementsStatsView {
 	private func setupLayout() {
 		titleLabel.anchor(top: topAnchor, left: leftAnchor)
 		detailLabel.anchor(top: topAnchor, right: rightAnchor)
-		achievementsList.anchor(top: titleLabel.bottomAnchor,
-								paddingTop: 10,
-								left: titleLabel.leftAnchor,
-								right: detailLabel.rightAnchor,
-								height: 180)
+		scrollView.anchor(top: titleLabel.bottomAnchor,
+						  paddingTop: 10,
+						  left: titleLabel.leftAnchor,
+						  right: detailLabel.rightAnchor,
+						  height: 180)
+		
+		stackView.anchor(top: scrollView.topAnchor,
+						 bottom: scrollView.bottomAnchor,
+						 left: scrollView.leftAnchor,
+						 right: scrollView.rightAnchor)
 	}
 }
 
