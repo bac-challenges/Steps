@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60664F8F22CF1CA0004506FB /* SF-Compact-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */; };
 		606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF6A22CE432000EE7BAB /* AppDelegate.swift */; };
 		606ABF7022CE432000EE7BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606ABF6E22CE432000EE7BAB /* Main.storyboard */; };
 		606ABF7322CE432000EE7BAB /* Steps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Semibold.otf"; sourceTree = "<group>"; };
 		606ABF6722CE432000EE7BAB /* Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606ABF6A22CE432000EE7BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		606ABF6F22CE432000EE7BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,10 +92,11 @@
 		606ABF8322CE472700EE7BAB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				606ABF7422CE432200EE7BAB /* Assets.xcassets */,
-				606ABF7622CE432200EE7BAB /* LaunchScreen.storyboard */,
-				606ABF7F22CE436700EE7BAB /* Steps.entitlements */,
 				606ABF7922CE432200EE7BAB /* Info.plist */,
+				606ABF7F22CE436700EE7BAB /* Steps.entitlements */,
+				606ABF7622CE432200EE7BAB /* LaunchScreen.storyboard */,
+				606ABF7422CE432200EE7BAB /* Assets.xcassets */,
+				60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				606ABF7822CE432200EE7BAB /* LaunchScreen.storyboard in Resources */,
 				606ABF7522CE432200EE7BAB /* Assets.xcassets in Resources */,
+				60664F8F22CF1CA0004506FB /* SF-Compact-Text-Semibold.otf in Resources */,
 				606ABF7022CE432000EE7BAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
