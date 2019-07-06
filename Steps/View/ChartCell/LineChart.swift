@@ -262,32 +262,20 @@ class LineChart: UIView {
                 let path = UIBezierPath()
                 path.move(to: CGPoint(x: 0, y: height))
                 path.addLine(to: CGPoint(x: gridLayer.frame.size.width, y: height))
-                
-                let lineLayer = CAShapeLayer()
-                lineLayer.path = path.cgPath
-                lineLayer.fillColor = UIColor.clear.cgColor
-                lineLayer.strokeColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
-                lineLayer.lineWidth = 0.5
 				
+				// Vertical Line Layer
+				let lineLayer = verticalLineLayer(path: path)
                 gridLayer.addSublayer(lineLayer)
-                
+				
+				var lineValue:Int = 0
                 var minMaxGap:CGFloat = 0
-                var lineValue:Int = 0
-                if let max = dataEntries.max()?.value,
-                    let min = dataEntries.min()?.value {
+                if let max = dataEntries.max()?.value, let min = dataEntries.min()?.value {
                     minMaxGap = CGFloat(max - min) * topHorizontalLine
                     lineValue = Int((1-value) * minMaxGap) + Int(min)
                 }
-                
-                let textLayer = CATextLayer()
-                textLayer.frame = CGRect(x: frame.width-30, y: height, width: 50, height: 16)
-                textLayer.foregroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
-                textLayer.backgroundColor = UIColor.clear.cgColor
-                textLayer.contentsScale = UIScreen.main.scale
-                textLayer.font = UIFont.systemFont(ofSize: 0) //CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
-                textLayer.fontSize = 11
-                textLayer.string = "\(lineValue)"
-                
+				
+				// Vertical labels
+                let textLayer = verticalTextLabel(width: 50, height: height, value: lineValue)
                 gridLayer.addSublayer(textLayer)
             }
         }
@@ -302,4 +290,35 @@ class LineChart: UIView {
         dataLayer.sublayers?.forEach({$0.removeFromSuperlayer()})
         gridLayer.sublayers?.forEach({$0.removeFromSuperlayer()})
     }
+	
+	// Create Vertical Line Layer
+	private func verticalLineLayer(path: UIBezierPath) -> CAShapeLayer {
+		let lineLayer = CAShapeLayer()
+		lineLayer.path = path.cgPath
+		lineLayer.fillColor = UIColor.clear.cgColor
+		lineLayer.strokeColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+		lineLayer.lineWidth = 0.5
+		return lineLayer
+	}
+	
+	// Create Vertical Text Label
+	private func verticalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
+		
+		// Calculate padding
+		let topPadding: CGFloat = 2
+		let top = height+topPadding
+		let leftPadding: CGFloat = 16+topPadding
+		let left = frame.width-width-leftPadding
+		
+		let textLayer = CATextLayer()
+		textLayer.frame = CGRect(x: left, y: top, width: width, height: 16)
+		textLayer.foregroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+		textLayer.backgroundColor = UIColor.clear.cgColor
+		textLayer.contentsScale = UIScreen.main.scale
+		textLayer.font = UIFont.systemFont(ofSize: 0, weight: .semibold)
+		textLayer.fontSize = 11
+		textLayer.alignmentMode = .right
+		textLayer.string = "\(value)"
+		return textLayer
+	}
 }

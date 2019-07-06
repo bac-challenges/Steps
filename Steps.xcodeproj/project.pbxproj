@@ -37,6 +37,8 @@
 		60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8D22D03B5E0081A9EC /* UIImage.swift */; };
 		60BEFA9322D0441E0081A9EC /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9022D0441E0081A9EC /* CurveAlgorithm.swift */; };
 		60BEFA9522D0441E0081A9EC /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9222D0441E0081A9EC /* LineChart.swift */; };
+		60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9622D08B3D0081A9EC /* Formatter.swift */; };
+		60BEFA9922D08B710081A9EC /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9822D08B710081A9EC /* Int.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		60BEFA8D22D03B5E0081A9EC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		60BEFA9022D0441E0081A9EC /* CurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
 		60BEFA9222D0441E0081A9EC /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		60BEFA9622D08B3D0081A9EC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		60BEFA9822D08B710081A9EC /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				60664FA222CF2AF3004506FB /* UIView.swift */,
 				60BEFA8D22D03B5E0081A9EC /* UIImage.swift */,
 				60664FA822CF4B80004506FB /* UIImageView.swift */,
+				60BEFA9622D08B3D0081A9EC /* Formatter.swift */,
+				60BEFA9822D08B710081A9EC /* Int.swift */,
 				60664FCF22CF7920004506FB /* String.swift */,
 			);
 			path = Extensions;
@@ -334,6 +340,8 @@
 				60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */,
 				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
+				60BEFA9922D08B710081A9EC /* Int.swift in Sources */,
+				60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */,
 				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
 				60664FA122CF2773004506FB /* AchievementsEmptyView.swift in Sources */,
 				60BEFA8522CFB4870081A9EC /* Achievement.swift in Sources */,
