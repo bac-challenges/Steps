@@ -29,7 +29,7 @@
 //	MacOS: 10.15
 //
 
-import Foundation
+import UIKit
 
 struct AchievementViewModel: GenericViewModel {
 	
@@ -46,11 +46,19 @@ extension AchievementViewModel {
 		return "730BDAB5".localized(withComment: "Goal achievement")
 	}
 	
-	var image: String {
+	var image: UIImage? {
+		return UIImage(named: imageString)
+	}
+	
+	var imageString: String {
 		return "\(model.steps)k"
 	}
 	
-	var steps: String {
+	var steps: Int {
+		return model.steps
+	}
+	
+	var stepsString: String {
 		return "\(model.steps)k"
 	}
 }
