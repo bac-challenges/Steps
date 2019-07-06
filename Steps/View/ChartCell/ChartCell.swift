@@ -97,7 +97,7 @@ extension ChartCell {
 			let value = Int(arc4random() % 20000)
 			
 			let formatter = DateFormatter()
-			formatter.dateFormat = "d MMM"
+			formatter.dateFormat = "d"
 			var date = Date()
 			date.addTimeInterval(TimeInterval(24*60*60*i))
 			

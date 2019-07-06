@@ -58,9 +58,7 @@ extension  StepsController {
 		tableView.separatorStyle = .none
 		
 		// Change navigationBar shadow color
-		if let color = UIColor(named: "separatorColor") {
-			navigationController?.navigationBar.shadowImage = UIImage.image(color)
-		}
+		navigationController?.navigationBar.shadowImage = UIImage.image(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5))
 		
 		// Configure cells
 		profileCell.configure(viewModel)

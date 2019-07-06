@@ -22,10 +22,11 @@ extension PointEntry: Comparable {
     }
 }
 
+@IBDesignable
 class LineChart: UIView {
     
     /// gap between each point
-    let lineGap: CGFloat = 60.0
+    let lineGap: CGFloat = 20.0
     
     /// preseved space at top of the chart
     let topSpace: CGFloat = 40.0
@@ -38,17 +39,8 @@ class LineChart: UIView {
     
     var isCurved: Bool = false
 
-    /// Active or desactive animation on dots
-    var animateDots: Bool = false
-
-    /// Active or desactive dots
-    var showDots: Bool = false
-
     /// Dot inner Radius
     var innerRadius: CGFloat = 8
-
-    /// Dot outer Radius
-    var outerRadius: CGFloat = 12
     
     var dataEntries: [PointEntry]? {
         didSet {
@@ -71,7 +63,8 @@ class LineChart: UIView {
     /// Contains horizontal lines
     private let gridLayer: CALayer = CALayer()
     
-    /// An array of CGPoint on dataLayer coordinate system that the main line will go through. These points will be calculated from dataEntries array
+    /// An array of CGPoint on dataLayer coordinate system that the main line will go through.
+	/// These points will be calculated from dataEntries array
     private var dataPoints: [CGPoint]?
 
     override init(frame: CGRect) {
@@ -97,37 +90,57 @@ class LineChart: UIView {
         scrollView.layer.addSublayer(gradientLayer)
         self.layer.addSublayer(gridLayer)
         self.addSubview(scrollView)
-        self.backgroundColor = #colorLiteral(red: 0, green: 0.3529411765, blue: 0.6156862745, alpha: 1)
+        self.backgroundColor = .clear
     }
     
     override func layoutSubviews() {
-        scrollView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
-        if let dataEntries = dataEntries {
-            scrollView.contentSize = CGSize(width: CGFloat(dataEntries.count) * lineGap, height: self.frame.size.height)
-            mainLayer.frame = CGRect(x: 0, y: 0, width: CGFloat(dataEntries.count) * lineGap, height: self.frame.size.height)
-            dataLayer.frame = CGRect(x: 0, y: topSpace, width: mainLayer.frame.width, height: mainLayer.frame.height - topSpace - bottomSpace)
+		
+		scrollView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+		
+		if let dataEntries = dataEntries {
+            scrollView.contentSize = CGSize(width: CGFloat(dataEntries.count) * lineGap,
+											height: self.frame.size.height)
+			
+            mainLayer.frame = CGRect(x: 0,
+									 y: 0,
+									 width: CGFloat(dataEntries.count) * lineGap,
+									 height: self.frame.size.height)
+			
+            dataLayer.frame = CGRect(x: 0,
+									 y: topSpace,
+									 width: mainLayer.frame.width,
+									 height: mainLayer.frame.height - topSpace - bottomSpace)
+			
             gradientLayer.frame = dataLayer.frame
+			
             dataPoints = convertDataEntriesToPoints(entries: dataEntries)
-            gridLayer.frame = CGRect(x: 0, y: topSpace, width: self.frame.width, height: mainLayer.frame.height - topSpace - bottomSpace)
-            if showDots { drawDots() }
+			
+            gridLayer.frame = CGRect(x: 0,
+									 y: topSpace,
+									 width: self.frame.width,
+									 height: mainLayer.frame.height - topSpace - bottomSpace)
+			
             clean()
+			
             drawHorizontalLines()
+			
             if isCurved {
                 drawCurvedChart()
             } else {
                 drawChart()
             }
+			
             maskGradientLayer()
-            drawLables()
+			
+			drawLables()
         }
     }
     
-    /**
-     Convert an array of PointEntry to an array of CGPoint on dataLayer coordinate system
-     */
+    // Convert an array of PointEntry to an array of CGPoint on dataLayer coordinate system
     private func convertDataEntriesToPoints(entries: [PointEntry]) -> [CGPoint] {
+		
         if let max = entries.max()?.value,
-            let min = entries.min()?.value {
+		   let min = entries.min()?.value {
             
             var result: [CGPoint] = []
             let minMaxRange: CGFloat = CGFloat(max - min) * topHorizontalLine
@@ -142,13 +155,10 @@ class LineChart: UIView {
         return []
     }
     
-    /**
-     Draw a zigzag line connecting all points in dataPoints
-     */
+    //  Draw a zigzag line connecting all points in dataPoints
     private func drawChart() {
-        if let dataPoints = dataPoints,
-            dataPoints.count > 0,
-            let path = createPath() {
+		
+        if let dataPoints = dataPoints, dataPoints.count > 0, let path = createPath() {
             
             let lineLayer = CAShapeLayer()
             lineLayer.path = path.cgPath
@@ -158,9 +168,7 @@ class LineChart: UIView {
         }
     }
 
-    /**
-     Create a zigzag bezier path that connects all points in dataPoints
-     */
+    // Create a zigzag bezier path that connects all points in dataPoints
     private func createPath() -> UIBezierPath? {
         guard let dataPoints = dataPoints, dataPoints.count > 0 else {
             return nil
@@ -174,9 +182,7 @@ class LineChart: UIView {
         return path
     }
     
-    /**
-     Draw a curved line connecting all points in dataPoints
-     */
+    // Draw a curved line connecting all points in dataPoints
     private func drawCurvedChart() {
         guard let dataPoints = dataPoints, dataPoints.count > 0 else {
             return
@@ -190,22 +196,21 @@ class LineChart: UIView {
         }
     }
     
-    /**
-     Create a gradient layer below the line that connecting all dataPoints
-     */
+    // Create a gradient layer below the line that connecting all dataPoints
     private func maskGradientLayer() {
-        if let dataPoints = dataPoints,
-            dataPoints.count > 0 {
+		
+        if let dataPoints = dataPoints, dataPoints.count > 0 {
             
             let path = UIBezierPath()
             path.move(to: CGPoint(x: dataPoints[0].x, y: dataLayer.frame.height))
             path.addLine(to: dataPoints[0])
-            if isCurved,
-                let curvedPath = CurveAlgorithm.shared.createCurvedPath(dataPoints) {
+			
+            if isCurved, let curvedPath = CurveAlgorithm.shared.createCurvedPath(dataPoints) {
                 path.append(curvedPath)
             } else if let straightPath = createPath() {
                 path.append(straightPath)
             }
+			
             path.addLine(to: CGPoint(x: dataPoints[dataPoints.count-1].x, y: dataLayer.frame.height))
             path.addLine(to: CGPoint(x: dataPoints[0].x, y: dataLayer.frame.height))
             
@@ -219,16 +224,13 @@ class LineChart: UIView {
         }
     }
     
-    /**
-     Create titles at the bottom for all entries showed in the chart
-     */
+    //  Create titles at the bottom for all entries showed in the chart
     private func drawLables() {
-        if let dataEntries = dataEntries,
-            dataEntries.count > 0 {
+        if let dataEntries = dataEntries, dataEntries.count > 0 {
             for i in 0..<dataEntries.count {
                 let textLayer = CATextLayer()
                 textLayer.frame = CGRect(x: lineGap*CGFloat(i) - lineGap/2 + 40, y: mainLayer.frame.size.height - bottomSpace/2 - 8, width: lineGap, height: 16)
-                textLayer.foregroundColor = #colorLiteral(red: 0.5019607843, green: 0.6784313725, blue: 0.8078431373, alpha: 1).cgColor
+                textLayer.foregroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
                 textLayer.backgroundColor = UIColor.clear.cgColor
                 textLayer.alignmentMode = CATextLayerAlignmentMode.center
                 textLayer.contentsScale = UIScreen.main.scale
@@ -240,9 +242,7 @@ class LineChart: UIView {
         }
     }
     
-    /**
-     Create horizontal lines (grid lines) and show the value of each line
-     */
+    // Create horizontal lines (grid lines) and show the value of each line
     private func drawHorizontalLines() {
         guard let dataEntries = dataEntries else {
             return
@@ -254,6 +254,7 @@ class LineChart: UIView {
         } else if dataEntries.count >= 4 {
             gridValues = [0, 0.25, 0.5, 0.75, 1]
         }
+		
         if let gridValues = gridValues {
             for value in gridValues {
                 let height = value * gridLayer.frame.size.height
@@ -265,12 +266,9 @@ class LineChart: UIView {
                 let lineLayer = CAShapeLayer()
                 lineLayer.path = path.cgPath
                 lineLayer.fillColor = UIColor.clear.cgColor
-                lineLayer.strokeColor = #colorLiteral(red: 0.2784313725, green: 0.5411764706, blue: 0.7333333333, alpha: 1).cgColor
+                lineLayer.strokeColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
                 lineLayer.lineWidth = 0.5
-                if (value > 0.0 && value < 1.0) {
-                    lineLayer.lineDashPattern = [4, 4]
-                }
-                
+				
                 gridLayer.addSublayer(lineLayer)
                 
                 var minMaxGap:CGFloat = 0
@@ -282,12 +280,12 @@ class LineChart: UIView {
                 }
                 
                 let textLayer = CATextLayer()
-                textLayer.frame = CGRect(x: 4, y: height, width: 50, height: 16)
-                textLayer.foregroundColor = #colorLiteral(red: 0.5019607843, green: 0.6784313725, blue: 0.8078431373, alpha: 1).cgColor
+                textLayer.frame = CGRect(x: frame.width-30, y: height, width: 50, height: 16)
+                textLayer.foregroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
                 textLayer.backgroundColor = UIColor.clear.cgColor
                 textLayer.contentsScale = UIScreen.main.scale
-                textLayer.font = CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
-                textLayer.fontSize = 12
+                textLayer.font = UIFont.systemFont(ofSize: 0) //CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
+                textLayer.fontSize = 11
                 textLayer.string = "\(lineValue)"
                 
                 gridLayer.addSublayer(textLayer)
@@ -303,34 +301,5 @@ class LineChart: UIView {
         })
         dataLayer.sublayers?.forEach({$0.removeFromSuperlayer()})
         gridLayer.sublayers?.forEach({$0.removeFromSuperlayer()})
-    }
-    /**
-     Create Dots on line points
-     */
-    private func drawDots() {
-        var dotLayers: [DotCALayer] = []
-        if let dataPoints = dataPoints {
-            for dataPoint in dataPoints {
-                let xValue = dataPoint.x - outerRadius/2
-                let yValue = (dataPoint.y + lineGap) - (outerRadius * 2)
-                let dotLayer = DotCALayer()
-                dotLayer.dotInnerColor = UIColor.white
-                dotLayer.innerRadius = innerRadius
-                dotLayer.backgroundColor = UIColor.white.cgColor
-                dotLayer.cornerRadius = outerRadius / 2
-                dotLayer.frame = CGRect(x: xValue, y: yValue, width: outerRadius, height: outerRadius)
-                dotLayers.append(dotLayer)
-
-                mainLayer.addSublayer(dotLayer)
-
-                if animateDots {
-                    let anim = CABasicAnimation(keyPath: "opacity")
-                    anim.duration = 1.0
-                    anim.fromValue = 0
-                    anim.toValue = 1
-                    dotLayer.add(anim, forKey: "opacity")
-                }
-            }
-        }
     }
 }

@@ -18,10 +18,12 @@ class CurveAlgorithm {
     
     private func controlPointsFrom(points: [CGPoint]) -> [CurvedSegment] {
         var result: [CurvedSegment] = []
+		
+		// The value that help to choose temporary control points.
+        let delta: CGFloat = 0.3
         
-        let delta: CGFloat = 0.3 // The value that help to choose temporary control points.
-        
-        // Calculate temporary control points, these control points make Bezier segments look straight and not curving at all
+        // Calculate temporary control points, these control points make Bezier
+		// segments look straight and not curving at all
         for i in 1..<points.count {
             let A = points[i-1]
             let B = points[i]
@@ -33,19 +35,19 @@ class CurveAlgorithm {
         
         // Calculate good control points
         for i in 1..<points.count-1 {
-            /// A temporary control point
+            // A temporary control point
             let M = result[i-1].controlPoint2
             
-            /// A temporary control point
+            // A temporary control point
             let N = result[i].controlPoint1
             
-            /// central point
+            // central point
             let A = points[i]
             
-            /// Reflection of M over the point A
+            // Reflection of M over the point A
             let MM = CGPoint(x: 2 * A.x - M.x, y: 2 * A.y - M.y)
             
-            /// Reflection of N over the point A
+            // Reflection of N over the point A
             let NN = CGPoint(x: 2 * A.x - N.x, y: 2 * A.y - N.y)
             
             result[i].controlPoint1 = CGPoint(x: (MM.x + N.x)/2, y: (MM.y + N.y)/2)
@@ -55,9 +57,7 @@ class CurveAlgorithm {
         return result
     }
     
-    /**
-     Create a curved bezier path that connects all points in the dataset
-     */
+    // Create a curved bezier path that connects all points in the dataset
     func createCurvedPath(_ dataPoints: [CGPoint]) -> UIBezierPath? {
         let path = UIBezierPath()
         path.move(to: dataPoints[0])
