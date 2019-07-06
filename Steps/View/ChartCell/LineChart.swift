@@ -11,7 +11,7 @@ import UIKit
 class LineChart: UIView {
     
     /// gap between each point
-    let lineGap: CGFloat = 10.0
+    var lineGap: CGFloat = 60
     
     /// preseved space at top of the chart
     let topSpace: CGFloat = 40.0

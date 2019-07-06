@@ -88,17 +88,11 @@ extension ChartCell {
 #warning("REMOVE AFTER INTEGRATION OF CHARTS")
 extension ChartCell {
 	private func generateRandomEntries() -> [PointEntry] {
-		var result: [PointEntry] = []
-		for i in 0..<30 {
-			let value = Int.random(in: 5000...20000)
-			print(value.formattedWithSeparator)
-			
-			let formatter = DateFormatter()
-			formatter.dateFormat = "d"
-			var date = Date()
-			date.addTimeInterval(TimeInterval(24*60*60*i))
-			
-			result.append(PointEntry(value: value, label: formatter.string(from: date)))
+		var result = [PointEntry]()
+		[1,5,10,15,25,30].forEach { date in
+			let value = Int.random(in: 5...20)
+			result.append(PointEntry(value: value, label: "\(date)|\(value)"))
+			print(value)
 		}
 		return result
 	}
