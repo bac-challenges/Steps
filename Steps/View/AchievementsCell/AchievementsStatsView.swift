@@ -45,7 +45,7 @@ class AchievementsStatsView: UIView {
 	private lazy var detailLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .right
-		label.textColor = #colorLiteral(red: 0.4648197889, green: 0.6529648304, blue: 0.5710337758, alpha: 1)
+		label.textColor = #colorLiteral(red: 0, green: 0.6566036344, blue: 1, alpha: 1)
 		label.font = .systemFont(ofSize: 24, weight: .bold)
 		return label
 	}()
