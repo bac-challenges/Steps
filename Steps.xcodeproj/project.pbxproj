@@ -108,9 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				60664FA222CF2AF3004506FB /* UIView.swift */,
+				60BEFA8D22D03B5E0081A9EC /* UIImage.swift */,
 				60664FA822CF4B80004506FB /* UIImageView.swift */,
 				60664FCF22CF7920004506FB /* String.swift */,
-				60BEFA8D22D03B5E0081A9EC /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,11 +199,10 @@
 		606ABF8A22CE869B00EE7BAB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				60BEFA8F22D042EC0081A9EC /* ChartCell */,
+				60BEFA8222CFAABD0081A9EC /* AchievementsCell */,
 				60664F9422CF2432004506FB /* ProfileCell.swift */,
 				60664F9822CF25DC004506FB /* StepsCell.swift */,
-				60664F9A22CF260C004506FB /* ChartCell.swift */,
-				60664F9C22CF2644004506FB /* AchievementsCell.swift */,
-				60BEFA8222CFAABD0081A9EC /* AchievementsCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +219,7 @@
 		60BEFA8222CFAABD0081A9EC /* AchievementsCell */ = {
 			isa = PBXGroup;
 			children = (
+				60664F9C22CF2644004506FB /* AchievementsCell.swift */,
 				60664FA022CF2773004506FB /* AchievementsEmptyView.swift */,
 				60664F9E22CF273F004506FB /* AchievementsStatsView.swift */,
 				60590DF922CF86E600F848B1 /* AchievementsItemView.swift */,
@@ -233,6 +233,14 @@
 				60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		60BEFA8F22D042EC0081A9EC /* ChartCell */ = {
+			isa = PBXGroup;
+			children = (
+				60664F9A22CF260C004506FB /* ChartCell.swift */,
+			);
+			path = ChartCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -46,34 +46,26 @@ class StepsController: UITableViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		setupView()
-
-		#warning ("Test NavBar separator change")
-		navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(color: .red)
     }
 }
 
 // MARK: - UI
 extension  StepsController {
 	private func setupView() {
+		
+		// View properties
 		title = viewModel.profileName
 		tableView.separatorStyle = .none
+		
+		// Change navigationBar shadow color
+		if let color = UIColor(named: "separatorColor") {
+			navigationController?.navigationBar.shadowImage = UIImage.image(color)
+		}
+		
+		// Configure cells
 		profileCell.configure(viewModel)
 		stepsCell.configure(viewModel)
 		chartCell.configure(viewModel)
 		achievementsCell.configure(viewModel)
-	}
-}
-
-// MARK: - Test NavBar separator change
-#warning ("Test NavBar separator change")
-extension UIImage {
-	class func imageWithColor(color: UIColor) -> UIImage {
-		let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 0.5)
-		UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
-		UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.5).setFill()
-		UIRectFill(rect)
-		let image : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-		UIGraphicsEndImageContext()
-		return image
 	}
 }
