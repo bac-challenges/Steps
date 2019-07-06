@@ -228,15 +228,7 @@ class LineChart: UIView {
     private func drawLables() {
         if let dataEntries = dataEntries, dataEntries.count > 0 {
             for i in 0..<dataEntries.count {
-                let textLayer = CATextLayer()
-                textLayer.frame = CGRect(x: lineGap*CGFloat(i) - lineGap/2 + 40, y: mainLayer.frame.size.height - bottomSpace/2 - 8, width: lineGap, height: 16)
-                textLayer.foregroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-                textLayer.backgroundColor = UIColor.clear.cgColor
-                textLayer.alignmentMode = CATextLayerAlignmentMode.center
-                textLayer.contentsScale = UIScreen.main.scale
-                textLayer.font = CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
-                textLayer.fontSize = 11
-                textLayer.string = dataEntries[i].label
+				let textLayer = horizontalTextLabel(width: lineGap, height: 16, value: i)
                 mainLayer.addSublayer(textLayer)
             }
         }
@@ -301,24 +293,37 @@ class LineChart: UIView {
 		return lineLayer
 	}
 	
+	// Create Horizontal Text Label
+	private func horizontalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
+		let x = lineGap*CGFloat(value) - lineGap/2 + 40
+		let y = mainLayer.frame.size.height - bottomSpace/2 - 8
+		
+		var textLayer = CATextLayer()
+		textLayer.frame = CGRect(x: x, y: y, width: width, height: height)
+		textLayer.alignmentMode = .center
+		styleTextLayer(&textLayer, value: dataEntries![value].label)
+		return textLayer
+	}
+	
 	// Create Vertical Text Label
 	private func verticalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
+		let x = frame.width - width - 16
+		let y = height + 2
 		
-		// Calculate padding
-		let topPadding: CGFloat = 2
-		let top = height+topPadding
-		let leftPadding: CGFloat = 16+topPadding
-		let left = frame.width-width-leftPadding
-		
-		let textLayer = CATextLayer()
-		textLayer.frame = CGRect(x: left, y: top, width: width, height: 16)
+		var textLayer = CATextLayer()
+		textLayer.frame = CGRect(x: x, y: y, width: width, height: 16)
+		textLayer.alignmentMode = .right
+		styleTextLayer(&textLayer, value:  "\(value)")
+		return textLayer
+	}
+	
+	// Chart Legent Text Label
+	private func styleTextLayer( _ textLayer: inout CATextLayer, value: String) {
 		textLayer.foregroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
 		textLayer.backgroundColor = UIColor.clear.cgColor
 		textLayer.contentsScale = UIScreen.main.scale
 		textLayer.font = UIFont.systemFont(ofSize: 0, weight: .semibold)
 		textLayer.fontSize = 11
-		textLayer.alignmentMode = .right
-		textLayer.string = "\(value)"
-		return textLayer
+		textLayer.string = value
 	}
 }
