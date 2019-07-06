@@ -70,7 +70,7 @@ extension UIImage {
 	class func imageWithColor(color: UIColor) -> UIImage {
 		let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 0.5)
 		UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
-		UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.5).setFill()
+		UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.5).setFill()
 		UIRectFill(rect)
 		let image : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()

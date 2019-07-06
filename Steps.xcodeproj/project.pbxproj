@@ -33,6 +33,7 @@
 		60BEFA8522CFB4870081A9EC /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8422CFB4870081A9EC /* Achievement.swift */; };
 		60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */; };
 		60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */; };
+		60BEFA8C22D01D0A0081A9EC /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		60BEFA8422CFB4870081A9EC /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
+		60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				606ABF8A22CE869B00EE7BAB /* View */,
 				606ABF8E22CE874200EE7BAB /* ViewModel */,
 				606ABF8422CE489C00EE7BAB /* Model */,
+				60BEFA8A22D01CD80081A9EC /* Service */,
 				60664F8922CEE3AA004506FB /* Utils */,
 				606ABF8322CE472700EE7BAB /* Resources */,
 			);
@@ -219,6 +222,14 @@
 				60590DF922CF86E600F848B1 /* AchievementsItemView.swift */,
 			);
 			path = AchievementsCell;
+			sourceTree = "<group>";
+		};
+		60BEFA8A22D01CD80081A9EC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +329,7 @@
 				60664F9922CF25DC004506FB /* StepsCell.swift in Sources */,
 				60664FD022CF7920004506FB /* String.swift in Sources */,
 				606ABF7322CE432000EE7BAB /* Steps.xcdatamodeld in Sources */,
+				60BEFA8C22D01D0A0081A9EC /* HealthKitManager.swift in Sources */,
 				606ABF8C22CE86C500EE7BAB /* StepsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

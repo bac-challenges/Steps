@@ -31,40 +31,16 @@
 
 import UIKit
 import CoreData
-import HealthKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		
-//		let healthStore = HKHealthStore()
-//
-//		func getTodaysSteps(completion: @escaping (Double) -> Void) {
-//			let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
-//
-//			let now = Date()
-//			let startOfDay = Calendar.current.startOfDay(for: now)
-//			let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
-//
-//			let query = HKStatisticsQuery(quantityType: stepsQuantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, _ in
-//				guard let result = result, let sum = result.sumQuantity() else {
-//					completion(0.0)
-//					return
-//				}
-//				completion(sum.doubleValue(for: HKUnit.count()))
-//			}
-//
-//			healthStore.execute(query)
-//		}
-//
-//		getTodaysSteps { steps in
-//			print("Boom!!! \(steps)")
-//		}
-
+		HealthKitManager.shared.checkHealthDataAvailable()
+		
 		return true
 	}
 
