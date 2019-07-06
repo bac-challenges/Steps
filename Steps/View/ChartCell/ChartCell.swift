@@ -33,6 +33,14 @@ import UIKit
 
 class ChartCell: UITableViewCell, ReusableCell {
 	
+	// UI
+	private lazy var chart: LineChart = {
+		let view = LineChart()
+		view.dataEntries = generateRandomEntries()
+		view.isCurved = false
+		return view
+	}()
+	
 	// Init
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -68,9 +76,33 @@ extension ChartCell {
 	private func setupView() {
 		selectionStyle = .none
 		preservesSuperviewLayoutMargins = true
+		addSubview(chart)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
+		chart.anchor(top: topAnchor,
+					 bottom: bottomAnchor,
+					 left: leftAnchor,
+					 right: rightAnchor)
+	}
+}
+
+// MARK: - Debug
+#warning("REMOVE AFTER INTEGRATION OF CHARTS")
+extension ChartCell {
+	private func generateRandomEntries() -> [PointEntry] {
+		var result: [PointEntry] = []
+		for i in 0..<100 {
+			let value = Int(arc4random() % 20000)
+			
+			let formatter = DateFormatter()
+			formatter.dateFormat = "d MMM"
+			var date = Date()
+			date.addTimeInterval(TimeInterval(24*60*60*i))
+			
+			result.append(PointEntry(value: value, label: formatter.string(from: date)))
+		}
+		return result
 	}
 }
