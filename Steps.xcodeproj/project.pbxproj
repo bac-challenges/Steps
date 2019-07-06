@@ -34,6 +34,7 @@
 		60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */; };
 		60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */; };
 		60BEFA8C22D01D0A0081A9EC /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */; };
+		60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8D22D03B5E0081A9EC /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		60BEFA8D22D03B5E0081A9EC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				60664FA222CF2AF3004506FB /* UIView.swift */,
 				60664FA822CF4B80004506FB /* UIImageView.swift */,
 				60664FCF22CF7920004506FB /* String.swift */,
+				60BEFA8D22D03B5E0081A9EC /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */,
 				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
+				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
 				60664FA122CF2773004506FB /* AchievementsEmptyView.swift in Sources */,
 				60BEFA8522CFB4870081A9EC /* Achievement.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
