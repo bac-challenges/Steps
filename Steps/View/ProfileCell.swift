@@ -35,8 +35,9 @@ class ProfileCell: UITableViewCell, ReusableCell {
 	
 	// UI
 	var profileImage: UIImageView = {
-		let view = UIImageView("profile-photo-placeholder", rounded: true)
-		view.tintColor = .darkGray
+		let view = UIImageView()
+		view.image = #imageLiteral(resourceName: "profile-photo-placeholder")
+		view.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
 		return view
 	}()
 	

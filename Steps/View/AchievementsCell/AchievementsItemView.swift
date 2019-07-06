@@ -40,7 +40,7 @@ class AchievementsItemView: UIView {
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
-		label.textColor = .white
+		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		label.numberOfLines = 0
 		label.font = .systemFont(ofSize: 16, weight: .heavy)
 		return label
@@ -49,7 +49,7 @@ class AchievementsItemView: UIView {
 	private lazy var detailLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
-		label.textColor = .white
+		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		label.alpha = 0.5
 		label.font = UIFont(name: "SFCompactText-Semibold", size: 13)
 		return label

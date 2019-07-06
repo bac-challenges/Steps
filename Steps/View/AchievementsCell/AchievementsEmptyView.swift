@@ -39,7 +39,7 @@ class AchievementsEmptyView: UIView {
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
-		label.textColor = .white
+		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		label.numberOfLines = 0
 		label.font = .systemFont(ofSize: 24, weight: .heavy)
 		return label
@@ -48,7 +48,7 @@ class AchievementsEmptyView: UIView {
 	private lazy var detailLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
-		label.textColor = .white
+		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		label.alpha = 0.5
 		label.font = .systemFont(ofSize: 24, weight: .medium)
 		return label

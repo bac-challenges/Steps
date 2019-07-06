@@ -37,7 +37,7 @@ class StepsCell: UITableViewCell, ReusableCell {
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .left
-		label.textColor = .white
+		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		label.font = .systemFont(ofSize: 32, weight: .heavy)
 		return label
 	}()
@@ -45,7 +45,7 @@ class StepsCell: UITableViewCell, ReusableCell {
 	private lazy var detailLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .right
-		label.textColor = UIColor(named: "greenLabel")
+		label.textColor = #colorLiteral(red: 0.5176470588, green: 0.7803921569, blue: 0.6509803922, alpha: 1)
 		label.font = .systemFont(ofSize: 32, weight: .regular)
 		return label
 	}()
@@ -53,7 +53,7 @@ class StepsCell: UITableViewCell, ReusableCell {
 	private lazy var subtitleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .left
-		label.textColor = .white
+		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		label.alpha = 0.5
 		label.font = .systemFont(ofSize: 18, weight: .regular)
 		return label
