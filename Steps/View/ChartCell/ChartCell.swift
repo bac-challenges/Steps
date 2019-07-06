@@ -24,7 +24,7 @@
 //
 //	Pkg: Steps
 //
-//	Swift: 4.0
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
@@ -34,12 +34,7 @@ import UIKit
 class ChartCell: UITableViewCell, ReusableCell {
 	
 	// UI
-	private lazy var chart: LineChart = {
-		let view = LineChart()
-		view.dataEntries = generateRandomEntries()
-		view.isCurved = false
-		return view
-	}()
+	private lazy var chart = LineChart()
 	
 	// Init
 	override func awakeFromNib() {
@@ -65,6 +60,7 @@ class ChartCell: UITableViewCell, ReusableCell {
 // MARK: - Configurable
 extension ChartCell: Configurable {
 	func configure(_ model: StepsViewModel) {
+		chart.dataEntries =  generateRandomEntries()
 	}
 }
 
@@ -93,8 +89,9 @@ extension ChartCell {
 extension ChartCell {
 	private func generateRandomEntries() -> [PointEntry] {
 		var result: [PointEntry] = []
-		for i in 0..<100 {
-			let value = Int(arc4random() % 20000)
+		for i in 0..<30 {
+			let value = Int.random(in: 5000...20000)
+			print(value.formattedWithSeparator)
 			
 			let formatter = DateFormatter()
 			formatter.dateFormat = "d"

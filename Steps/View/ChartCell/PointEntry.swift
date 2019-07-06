@@ -20,22 +20,27 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 09B53B51-8676-4751-BC4B-26D31135EFDF
+//	ID: 3FD80ED5-B19B-4B9D-8E79-1C59D7A6483C
 //
 //	Pkg: Steps
 //
-//	Swift: 4.2 
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
 
 import Foundation
 
-extension Formatter {
-	static let withSeparator: NumberFormatter = {
-		let formatter = NumberFormatter()
-		formatter.groupingSeparator = "."
-		formatter.numberStyle = .decimal
-		return formatter
-	}()
+struct PointEntry {
+	let value: Int
+	let label: String
+}
+
+extension PointEntry: Comparable {
+	static func <(lhs: PointEntry, rhs: PointEntry) -> Bool {
+		return lhs.value < rhs.value
+	}
+	static func ==(lhs: PointEntry, rhs: PointEntry) -> Bool {
+		return lhs.value == rhs.value
+	}
 }

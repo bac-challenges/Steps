@@ -39,6 +39,7 @@
 		60BEFA9522D0441E0081A9EC /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9222D0441E0081A9EC /* LineChart.swift */; };
 		60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9622D08B3D0081A9EC /* Formatter.swift */; };
 		60BEFA9922D08B710081A9EC /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9822D08B710081A9EC /* Int.swift */; };
+		60BEFA9B22D0A1C70081A9EC /* PointEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		60BEFA9222D0441E0081A9EC /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		60BEFA9622D08B3D0081A9EC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		60BEFA9822D08B710081A9EC /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 			children = (
 				60664F9A22CF260C004506FB /* ChartCell.swift */,
 				60BEFA9222D0441E0081A9EC /* LineChart.swift */,
+				60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */,
 				60BEFA9022D0441E0081A9EC /* CurveAlgorithm.swift */,
 			);
 			path = ChartCell;
@@ -345,6 +348,7 @@
 				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
 				60664FA122CF2773004506FB /* AchievementsEmptyView.swift in Sources */,
 				60BEFA8522CFB4870081A9EC /* Achievement.swift in Sources */,
+				60BEFA9B22D0A1C70081A9EC /* PointEntry.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
 				60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,

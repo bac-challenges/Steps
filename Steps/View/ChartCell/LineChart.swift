@@ -8,25 +8,10 @@
 
 import UIKit
 
-struct PointEntry {
-    let value: Int
-    let label: String
-}
-
-extension PointEntry: Comparable {
-    static func <(lhs: PointEntry, rhs: PointEntry) -> Bool {
-        return lhs.value < rhs.value
-    }
-    static func ==(lhs: PointEntry, rhs: PointEntry) -> Bool {
-        return lhs.value == rhs.value
-    }
-}
-
-@IBDesignable
 class LineChart: UIView {
     
     /// gap between each point
-    let lineGap: CGFloat = 20.0
+    let lineGap: CGFloat = 10.0
     
     /// preseved space at top of the chart
     let topSpace: CGFloat = 40.0
@@ -35,12 +20,7 @@ class LineChart: UIView {
     let bottomSpace: CGFloat = 40.0
     
     /// The top most horizontal line in the chart will be 10% higher than the highest value in the chart
-    let topHorizontalLine: CGFloat = 110.0 / 100.0
-    
-    var isCurved: Bool = false
-
-    /// Dot inner Radius
-    var innerRadius: CGFloat = 8
+    let topHorizontalLine: CGFloat = 100.0 / 100.0
     
     var dataEntries: [PointEntry]? {
         didSet {
@@ -50,10 +30,7 @@ class LineChart: UIView {
     
     /// Contains the main line which represents the data
     private let dataLayer: CALayer = CALayer()
-    
-    /// To show the gradient below the main line
-    private let gradientLayer: CAGradientLayer = CAGradientLayer()
-    
+
     /// Contains dataLayer and gradientLayer
     private let mainLayer: CALayer = CALayer()
     
@@ -84,22 +61,14 @@ class LineChart: UIView {
     
     private func setupView() {
         mainLayer.addSublayer(dataLayer)
-        scrollView.layer.addSublayer(mainLayer)
-        
-        gradientLayer.colors = [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor, UIColor.clear.cgColor]
-        scrollView.layer.addSublayer(gradientLayer)
-        self.layer.addSublayer(gridLayer)
-        self.addSubview(scrollView)
-        self.backgroundColor = .clear
+        layer.addSublayer(gridLayer)
+		layer.addSublayer(mainLayer)
+		backgroundColor = .clear
     }
     
     override func layoutSubviews() {
-		
-		scrollView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
-		
+
 		if let dataEntries = dataEntries {
-            scrollView.contentSize = CGSize(width: CGFloat(dataEntries.count) * lineGap,
-											height: self.frame.size.height)
 			
             mainLayer.frame = CGRect(x: 0,
 									 y: 0,
@@ -111,8 +80,6 @@ class LineChart: UIView {
 									 width: mainLayer.frame.width,
 									 height: mainLayer.frame.height - topSpace - bottomSpace)
 			
-            gradientLayer.frame = dataLayer.frame
-			
             dataPoints = convertDataEntriesToPoints(entries: dataEntries)
 			
             gridLayer.frame = CGRect(x: 0,
@@ -121,17 +88,8 @@ class LineChart: UIView {
 									 height: mainLayer.frame.height - topSpace - bottomSpace)
 			
             clean()
-			
             drawHorizontalLines()
-			
-            if isCurved {
-                drawCurvedChart()
-            } else {
-                drawChart()
-            }
-			
-            maskGradientLayer()
-			
+			drawCurvedChart()
 			drawLables()
         }
     }
@@ -196,34 +154,6 @@ class LineChart: UIView {
         }
     }
     
-    // Create a gradient layer below the line that connecting all dataPoints
-    private func maskGradientLayer() {
-		
-        if let dataPoints = dataPoints, dataPoints.count > 0 {
-            
-            let path = UIBezierPath()
-            path.move(to: CGPoint(x: dataPoints[0].x, y: dataLayer.frame.height))
-            path.addLine(to: dataPoints[0])
-			
-            if isCurved, let curvedPath = CurveAlgorithm.shared.createCurvedPath(dataPoints) {
-                path.append(curvedPath)
-            } else if let straightPath = createPath() {
-                path.append(straightPath)
-            }
-			
-            path.addLine(to: CGPoint(x: dataPoints[dataPoints.count-1].x, y: dataLayer.frame.height))
-            path.addLine(to: CGPoint(x: dataPoints[0].x, y: dataLayer.frame.height))
-            
-            let maskLayer = CAShapeLayer()
-            maskLayer.path = path.cgPath
-            maskLayer.fillColor = UIColor.white.cgColor
-            maskLayer.strokeColor = UIColor.clear.cgColor
-            maskLayer.lineWidth = 0.0
-            
-            gradientLayer.mask = maskLayer
-        }
-    }
-    
     //  Create titles at the bottom for all entries showed in the chart
     private func drawLables() {
         if let dataEntries = dataEntries, dataEntries.count > 0 {
@@ -248,28 +178,29 @@ class LineChart: UIView {
         }
 		
         if let gridValues = gridValues {
-            for value in gridValues {
-                let height = value * gridLayer.frame.size.height
-                
-                let path = UIBezierPath()
-                path.move(to: CGPoint(x: 0, y: height))
-                path.addLine(to: CGPoint(x: gridLayer.frame.size.width, y: height))
+            gridValues.forEach { value in
+				let height = value * gridLayer.frame.size.height
+				
+				let path = UIBezierPath()
+				path.move(to: CGPoint(x: 0, y: height))
+				path.addLine(to: CGPoint(x: gridLayer.frame.size.width, y: height))
 				
 				// Vertical Line Layer
 				let lineLayer = verticalLineLayer(path: path)
-                gridLayer.addSublayer(lineLayer)
+				gridLayer.addSublayer(lineLayer)
 				
-				var lineValue:Int = 0
-                var minMaxGap:CGFloat = 0
-                if let max = dataEntries.max()?.value, let min = dataEntries.min()?.value {
-                    minMaxGap = CGFloat(max - min) * topHorizontalLine
-                    lineValue = Int((1-value) * minMaxGap) + Int(min)
-                }
+				// Vertical text labels position
+				let min = 0
+				let max = 20000
+				var lineValue: Int = 0
+				var minMaxGap: CGFloat = 0
+				minMaxGap = CGFloat(max - min) * topHorizontalLine
+				lineValue = Int((1-value) * minMaxGap) + Int(min)
 				
 				// Vertical labels
-                let textLayer = verticalTextLabel(width: 50, height: height, value: lineValue)
-                gridLayer.addSublayer(textLayer)
-            }
+				let textLayer = verticalTextLabel(width: 50, height: height, value: lineValue)
+				gridLayer.addSublayer(textLayer)
+			}
         }
     }
     
@@ -308,7 +239,7 @@ class LineChart: UIView {
 	// Create Vertical Text Label
 	private func verticalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
 		let x = frame.width - width - 16
-		let y = height + 2
+		let y = height-16
 		
 		var textLayer = CATextLayer()
 		textLayer.frame = CGRect(x: x, y: y, width: width, height: 16)

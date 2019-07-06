@@ -24,7 +24,7 @@
 //
 //	Pkg: Steps
 //
-//	Swift: 4.0
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
@@ -32,6 +32,8 @@
 import Foundation
 
 extension Int {
+	
+	// Formatted string eg. 1000 = 1.000
 	var formattedWithSeparator: String {
 		return Formatter.withSeparator.string(for: self) ?? ""
 	}
