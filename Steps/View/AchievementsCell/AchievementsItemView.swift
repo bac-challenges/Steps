@@ -33,6 +33,8 @@ import UIKit
 
 class AchievementsItemView: UIView {
 
+	private lazy var container = UIView(frame: CGRect(x: 0, y: 0, width: 116, height: 180))
+	
 	private lazy var image = UIImageView("10k", rounded: true)
 	
 	private lazy var titleLabel: UILabel = {
@@ -68,8 +70,18 @@ class AchievementsItemView: UIView {
 extension AchievementsItemView: Configurable {
 	func configure(_ model: AchievementViewModel) {
 		titleLabel.text = model.achievementsGoalText
-		detailLabel.text = model.steps
-		image.image = UIImage(named: model.steps)
+		detailLabel.text = model.stepsString
+		image.image = model.image
+		
+		// Animate
+		let delay = TimeInterval(model.steps)/50
+		UIView.animate(withDuration: 2,
+					   delay: delay,
+					   usingSpringWithDamping: 1,
+					   initialSpringVelocity: 4,
+					   options: [.curveEaseOut],
+					   animations: { self.container.frame.origin.y -= 180.00 },
+					   completion: nil)
 	}
 }
 
@@ -77,9 +89,10 @@ extension AchievementsItemView: Configurable {
 extension AchievementsItemView {
 	private func setupView() {
 		preservesSuperviewLayoutMargins = true
-		addSubview(image)
-		addSubview(titleLabel)
-		addSubview(detailLabel)
+		addSubview(container)
+		container.addSubview(image)
+		container.addSubview(titleLabel)
+		container.addSubview(detailLabel)
 		setupLayout()
 	}
 	
@@ -87,17 +100,16 @@ extension AchievementsItemView {
 		anchor(width: 116, height: 180)
 		
 		image.anchor(top: topAnchor,
-					 left: leftAnchor,
-					 right: rightAnchor,
 					 width: 116,
-					 height: 116)
+					 height: 116,
+					 centerX: centerXAnchor)
 		
 		titleLabel.anchor(top: image.bottomAnchor,
 						  paddingTop: 6,
 						  left: image.leftAnchor,
 						  right: image.rightAnchor,
 						  centerX: image.centerXAnchor)
-		
+
 		detailLabel.anchor(top: titleLabel.bottomAnchor,
 						   left: image.leftAnchor,
 						   right: image.rightAnchor,
