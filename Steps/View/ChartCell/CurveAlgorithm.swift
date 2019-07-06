@@ -13,7 +13,8 @@ struct CurvedSegment {
     var controlPoint2: CGPoint
 }
 
-class CurveAlgorithm {
+struct CurveAlgorithm {
+	
     static let shared = CurveAlgorithm()
     
     private func controlPointsFrom(points: [CGPoint]) -> [CurvedSegment] {
