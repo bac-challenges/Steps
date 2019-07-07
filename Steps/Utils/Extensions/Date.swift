@@ -20,35 +20,22 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: DA5F6911-E244-49E1-9363-7FA73B5314BC
+//	ID: 46643E7F-889F-4104-BEA6-475H72F1FCBC
 //
 //	Pkg: Steps
 //
-//	Swift: 4.2 
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
 
 import Foundation
 
-// MARK: - Localized
-extension String {
-	func localized(withComment comment: String? = nil) -> String {
-		return NSLocalizedString(self, comment: comment ?? "")
-	}
-}
-
-// MARK: - Sring to Date
-extension String {
-	func toDate(withFormat format: String = "yyyy-MM-dd") -> Date? {
+extension Date {
+	func toString(withFormat format: String = "yyyy-MM-dd") -> String {
 		let dateFormatter = DateFormatter()
 		dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
 		dateFormatter.dateFormat = format
-		
-		guard let date = dateFormatter.date(from: self) else {
-			print("Invalid format.")
-			return nil
-		}
-		return date
+		return dateFormatter.string(from: self)
 	}
 }
