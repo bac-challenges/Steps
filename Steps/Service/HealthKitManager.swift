@@ -54,32 +54,13 @@ struct HealthKitManager {
 //
 //						}
 //					}
-					self.appleSample()
+//					self.appleSample()
 				}
 			}
 		}
 	}
 	
-	// Read steps from HKHealthStore
-	public func readSteps(start: Date, end: Date, completion: @escaping (Double) -> ()) {
-		if let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) {
-			let predicate = HKQuery.predicateForSamples(withStart: start,
-														end: end,
-														options: .strictStartDate)
-
-			let query = HKStatisticsQuery(quantityType: stepsQuantityType,
-										  quantitySamplePredicate: predicate,
-										  options: .cumulativeSum) { _, result, error in
-				guard let result = result, let sum = result.sumQuantity() else {
-					fatalError("Could not read from store: \(error!)")
-				}
-
-				completion(sum.doubleValue(for: HKUnit.count()))
-			}
-			healthStore.execute(query)
-		}
-	}
-	
+	//
 	public func readStepsCollection(start: Date, end: Date, completion: @escaping (Double) -> ()) {
 		
 		var interval = DateComponents()
@@ -117,27 +98,57 @@ struct HealthKitManager {
 	}
 }
 
+// MARK: - Read Data Methods
+extension HealthKitManager {
+	
+	// Read steps from HKHealthStore
+	public func readSteps(start: Date, end: Date, completion: @escaping (Double) -> ()) {
+		if let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) {
+			let predicate = HKQuery.predicateForSamples(withStart: start,
+														end: end,
+														options: .strictStartDate)
+			
+			let query = HKStatisticsQuery(quantityType: stepsQuantityType,
+										  quantitySamplePredicate: predicate,
+										  options: .cumulativeSum) { _, result, error in
+											guard let result = result, let sum = result.sumQuantity() else {
+												fatalError("Could not read from store: \(error!)")
+											}
+											
+											completion(sum.doubleValue(for: HKUnit.count()))
+			}
+			healthStore.execute(query)
+		}
+	}
+}
+
 // MARK: - Write Methods
 extension HealthKitManager {
 	
-	/// Write number of steps to HKHealthStore
+	/// Saves number of steps to HKHealthStore
 	/// - Parameters:
 	///		- count: Number of steps
 	///		- startDate: Count start date
 	/// 	- endDate: Count end date
-	/// 	- completion:
-	public func writeSteps(count: Double, startDate start: Date, endDate end: Date, completion: @escaping (Error?) -> ()) {
+	///		- completion: A block that this method calls as soon as the save operation is complete.
+	public func saveSteps(count: Double, startDate start: Date, endDate end: Date, completion: @escaping (Error?) -> ()) {
 		let sample = quantitySample(count: count, startDate: startDate, endDate: endDate)
-		writeQuantitySample(sample, completion: completion)
+		saveQuantitySample(sample, completion: completion)
 	}
 	
-	/// Write Quantity Sample to HKHealthStore
-	private func writeQuantitySample(_ sample: HKQuantitySample, completion: @escaping (Error?) -> ()?) {
-		writeQuantitySamples([sample], completion: completion)
+	/// Saves HKQuantitySample to HKHealthStore
+	/// - Parameters:
+	///		- sample: HKQuantitySample to be written
+	///		- completion: A block that this method calls as soon as the save operation is complete.
+	private func saveQuantitySample(_ sample: HKQuantitySample, completion: @escaping (Error?) -> ()?) {
+		saveQuantitySamples([sample], completion: completion)
 	}
 	
-	/// Write Quantity Samples to HKHealthStore
-	private func writeQuantitySamples(_ samples: [HKQuantitySample], completion: @escaping (Error?) -> ()?) {
+	/// Saves HKQuantitySample Collection to HKHealthStore
+	/// - Parameters:
+	///		- samples: HKQuantitySample to be written.
+	///		- completion: A block that this method calls as soon as the save operation is complete.
+	private func saveQuantitySamples(_ samples: [HKQuantitySample], completion: @escaping (Error?) -> ()?) {
 		healthStore.save(samples) { success, error in
 			print("Saving steps to healthStore - success: \(success ? "true":"false")")
 			DispatchQueue.main.async {
@@ -146,17 +157,18 @@ extension HealthKitManager {
 		}
 	}
 	
-	/// Create HKQuantitySample
+	/// Creates HKQuantitySample
 	/// - Parameters:
 	///		- count: Number of steps
 	///		- startDate: Count start date
 	/// 	- endDate: Count end date
-	///
 	/// - Returns: New HKQuantitySample
 	private func quantitySample(count: Double, startDate start: Date, endDate end: Date) -> HKQuantitySample {
+		
 		guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
 			fatalError()
 		}
+		
 		let unit = HKUnit.count()
 		let quantity = HKQuantity(unit: unit, doubleValue: count)
 		let sample = HKQuantitySample(type: stepsQuantityType,
@@ -205,6 +217,6 @@ extension HealthKitManager {
 						   startDate: sampleData.startDate,
 						   endDate: sampleData.endDate)
 		}
-		writeQuantitySamples(sampleData, completion: completion)
+		saveQuantitySamples(sampleData, completion: completion)
 	}
 }
