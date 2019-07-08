@@ -117,12 +117,13 @@ struct HealthKitManager {
 	}
 	
 	/// Write number of steps to HKHealthStore
-	/// - Parameter count: Number of steps
-	/// - Parameter start: Count start date
-	/// - Parameter end: Count end date
-	/// - Parameter completion:
-	public func writeSteps(count: Double, start: Date, end: Date, completion: @escaping (Error?) -> ()) {
-		let sample = quantitySample(steps: count, startDate: startDate, endDate: endDate)
+	/// - Parameters:
+	///		- count: Number of steps
+	///		- startDate: Count start date
+	/// 	- endDate: Count end date
+	/// 	- completion:
+	public func writeSteps(count: Double, startDate start: Date, endDate end: Date, completion: @escaping (Error?) -> ()) {
+		let sample = quantitySample(count: count, startDate: startDate, endDate: endDate)
 		writeQuantitySample(sample, completion: completion)
 	}
 	
@@ -141,16 +142,23 @@ struct HealthKitManager {
 		}
 	}
 	
-	private func quantitySample(steps: Double, startDate: Date, endDate: Date) -> HKQuantitySample {
+	/// Create HKQuantitySample
+	/// - Parameters:
+	///		- count: Number of steps
+	///		- startDate: Count start date
+	/// 	- endDate: Count end date
+	///
+	/// - Returns: New HKQuantitySample
+	private func quantitySample(count: Double, startDate start: Date, endDate end: Date) -> HKQuantitySample {
 		guard let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
 			fatalError()
 		}
 		let unit = HKUnit.count()
-		let quantity = HKQuantity(unit: unit, doubleValue: steps)
+		let quantity = HKQuantity(unit: unit, doubleValue: count)
 		let sample = HKQuantitySample(type: stepsQuantityType,
 									  quantity: quantity,
-									  start: startDate,
-									  end: endDate)
+									  start: start,
+									  end: end)
 		return sample
 	}
 }
@@ -190,7 +198,7 @@ extension HealthKitManager {
 	// Generate sample data for test purposes
 	func generateSampleSteps(completion: @escaping (Error?) -> ()) {
 		let sampleData = stepsRange.map { sampleData in
-			quantitySample(steps: sampleData.steps,
+			quantitySample(count: sampleData.steps,
 						   startDate: sampleData.startDate,
 						   endDate: sampleData.endDate)
 		}
