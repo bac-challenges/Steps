@@ -45,7 +45,14 @@ class StepsController: UITableViewController {
 	// Init
 	override func viewDidLoad() {
         super.viewDidLoad()
-		setupView()
+		
+		HealthKitManager.shared.isHealthDataAvailable { success, error in
+			if success {
+				self.setupView()
+			} else {
+				
+			}
+		}
     }
 }
 
