@@ -60,7 +60,8 @@ class ChartCell: UITableViewCell, ReusableCell {
 // MARK: - Configurable
 extension ChartCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		chart.dataEntries =  generateRandomEntries()
+		#warning("Use result object array")
+//		chart.dataEntries = 
 	}
 }
 
@@ -81,18 +82,5 @@ extension ChartCell {
 					 bottom: bottomAnchor,
 					 left: leftAnchor,
 					 right: rightAnchor)
-	}
-}
-
-// MARK: - Debug
-#warning("REMOVE AFTER INTEGRATION OF CHARTS")
-extension ChartCell {
-	private func generateRandomEntries() -> [PointEntry] {
-		var result = [PointEntry]()
-		for i in 0..<30 {
-			let value = Int.random(in: 5000...20000)
-				result.append(PointEntry(value: value, label: "\(i+1)"))
-		}
-		return result
 	}
 }

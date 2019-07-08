@@ -20,49 +20,22 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 7A1892BB-BE84-48DB-85D1-65685022878E
+//	ID: 46643E7F-889F-4104-BEA6-475H72F1FCBC
 //
 //	Pkg: Steps
 //
-//	Swift: 4.2 
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
 
-import UIKit
+import Foundation
 
-class StepsController: UITableViewController {
-	
-	// UI
-	@IBOutlet weak var profileCell: ProfileCell!
-	@IBOutlet weak var stepsCell: StepsCell!
-	@IBOutlet weak var chartCell: ChartCell!
-	@IBOutlet weak var achievementsCell: AchievementsCell!
-	
-	// Model
-	lazy private var viewModel = StepsViewModel()
-
-	// Init
-	override func viewDidLoad() {
-        super.viewDidLoad()
-		self.setupView()
-    }
-}
-
-// MARK: - UI
-extension  StepsController {
-	private func setupView() {
-		// View properties
-		title = viewModel.profileName
-		tableView.separatorStyle = .none
-		
-		// Change navigationBar shadow color
-		navigationController?.navigationBar.shadowImage = UIImage.image(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5))
-		
-		// Configure cells
-		profileCell.configure(viewModel)
-		stepsCell.configure(viewModel)
-		chartCell.configure(viewModel)
-		achievementsCell.configure(viewModel)
+extension Date {
+	func toString(withFormat format: String = "yyyy-MM-dd") -> String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+		dateFormatter.dateFormat = format
+		return dateFormatter.string(from: self)
 	}
 }

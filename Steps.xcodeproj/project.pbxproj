@@ -40,6 +40,7 @@
 		60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9622D08B3D0081A9EC /* Formatter.swift */; };
 		60BEFA9922D08B710081A9EC /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9822D08B710081A9EC /* Int.swift */; };
 		60BEFA9B22D0A1C70081A9EC /* PointEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */; };
+		60CF6EEB22D2914400808A9D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF6EE922D2914400808A9D /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		60BEFA9622D08B3D0081A9EC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		60BEFA9822D08B710081A9EC /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointEntry.swift; sourceTree = "<group>"; };
+		60CF6EE522D24F4600808A9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		60CF6EE922D2914400808A9D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +123,10 @@
 				60664FA222CF2AF3004506FB /* UIView.swift */,
 				60BEFA8D22D03B5E0081A9EC /* UIImage.swift */,
 				60664FA822CF4B80004506FB /* UIImageView.swift */,
-				60BEFA9622D08B3D0081A9EC /* Formatter.swift */,
 				60BEFA9822D08B710081A9EC /* Int.swift */,
 				60664FCF22CF7920004506FB /* String.swift */,
+				60CF6EE922D2914400808A9D /* Date.swift */,
+				60BEFA9622D08B3D0081A9EC /* Formatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -151,6 +155,7 @@
 		606ABF5E22CE432000EE7BAB = {
 			isa = PBXGroup;
 			children = (
+				60CF6EE522D24F4600808A9D /* README.md */,
 				606ABF6922CE432000EE7BAB /* Steps */,
 				606ABF6822CE432000EE7BAB /* Products */,
 				606ABF8022CE436700EE7BAB /* Frameworks */,
@@ -362,6 +367,7 @@
 				60BEFA9522D0441E0081A9EC /* LineChart.swift in Sources */,
 				606ABF7322CE432000EE7BAB /* Steps.xcdatamodeld in Sources */,
 				60BEFA8C22D01D0A0081A9EC /* HealthKitManager.swift in Sources */,
+				60CF6EEB22D2914400808A9D /* Date.swift in Sources */,
 				606ABF8C22CE86C500EE7BAB /* StepsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

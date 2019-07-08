@@ -34,6 +34,11 @@ import Foundation
 
 struct StepsViewModel {
 	
+}
+
+// MARK: - View Properties
+extension StepsViewModel {
+	
 	var profileName: String {
 		return "Neil Armstrong"
 	}

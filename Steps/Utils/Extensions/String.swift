@@ -31,8 +31,24 @@
 
 import Foundation
 
+// MARK: - Localized
 extension String {
 	func localized(withComment comment: String? = nil) -> String {
 		return NSLocalizedString(self, comment: comment ?? "")
+	}
+}
+
+// MARK: - Sring to Date
+extension String {
+	func toDate(withFormat format: String = "yyyy-MM-dd") -> Date? {
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+		dateFormatter.dateFormat = format
+		
+		guard let date = dateFormatter.date(from: self) else {
+			print("Invalid format.")
+			return nil
+		}
+		return date
 	}
 }
