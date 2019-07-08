@@ -75,6 +75,10 @@ extension StepsViewModel {
 		return "\(achievedGoals.count)"
 	}
 	
+	var isDataAvailable: Bool {
+		return chartPoints?.count != 0 ? true : false
+	}
+	
 	var authFailedTitleText: String {
 		return "F7A68F39".localized(withComment: "HealthKit Authorization Failed")
 	}

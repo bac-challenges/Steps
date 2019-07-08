@@ -84,7 +84,7 @@ extension  StepsController {
 // MARK: UITableViewDataSource
 extension StepsController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return Sections.allValues.count
+		return viewModel.isDataAvailable ? Sections.allValues.count : Sections.noStepsValues.count
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,8 +97,8 @@ extension StepsController {
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let section = Sections.allValues[indexPath.section]
-		switch section {
+		let section = viewModel.isDataAvailable ? Sections.allValues : Sections.noStepsValues
+		switch section[indexPath.section] {
 		case .profile: let cell: ProfileCell = tableView.dequeueReusableCell(for: indexPath)
 			cell.configure(viewModel)
 			return cell
@@ -119,12 +119,18 @@ extension StepsController {
 }
 
 // MARK: - TableView Structure
+#warning("Move to ViewModel?")
 extension StepsController {
 	enum Sections: Int {
+		#warning("Add no steps case - No data available or generate data button.")
 		case profile, steps, chart, achievements
-		
+
 		static var allValues: [Sections] {
 			return [.profile, .steps, .chart, .achievements]
+		}
+		
+		static var noStepsValues: [Sections] {
+			return [.profile, .achievements]
 		}
 		
 		var identifier: String {
@@ -136,6 +142,7 @@ extension StepsController {
 			}
 		}
 		
+		#warning("Convert to dynamic height for cells")
 		var rowHeight: CGFloat {
 			switch self {
 			case .profile: return 220
