@@ -78,6 +78,19 @@ class AuthFailedController: UIViewController {
         super.viewDidLoad()
 		setupView()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(updateView),
+											   name: UIApplication.willEnterForegroundNotification,
+											   object: nil)
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		NotificationCenter.default.removeObserver(self)
+	}
 }
 
 // MARK: - Actions
@@ -97,12 +110,28 @@ extension AuthFailedController {
 
 // MARK: - UI
 extension AuthFailedController {
+	
+	@objc private func updateView() {
+		
+		// Check if HealthKit is avaliable
+		HealthKitManager.shared.isHealthDataAvailable { success, error in
+			
+			// Switch to main view
+			DispatchQueue.main.sync {
+				 UIApplication.shared.windows.first?.rootViewController = StepsController()
+			}
+		}
+	}
+	
 	func setupView() {
 		view.addSubview(titleLabel)
 		view.addSubview(detailLabel)
 		view.addSubview(button)
 		view.addSubview(iconView)
-		
+		self.setupLayout()
+	}
+	
+	private func setupLayout() {
 		titleLabel.anchor(centerX: view.centerXAnchor,
 						  centerY: view.centerYAnchor,
 						  paddingCenterY: -80)
