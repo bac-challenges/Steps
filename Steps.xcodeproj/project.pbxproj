@@ -46,6 +46,7 @@
 		60BEFA9B22D0A1C70081A9EC /* PointEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */; };
 		60CF6EEB22D2914400808A9D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF6EE922D2914400808A9D /* Date.swift */; };
 		60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2124E22D3D64D0082745A /* CoreDataManager.swift */; };
+		60F2125122D3E8F80082745A /* AuthFailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		60CF6EE522D24F4600808A9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60CF6EE922D2914400808A9D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		60F2124E22D3D64D0082745A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFailedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 		606ABF8E22CE874200EE7BAB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */,
 				60664FAC22CF6394004506FB /* StepsViewModel.swift */,
 				60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */,
 			);
@@ -381,6 +384,7 @@
 				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
 				60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */,
 				60590DFA22CF86E600F848B1 /* AchievementsItemView.swift in Sources */,
+				60F2125122D3E8F80082745A /* AuthFailedViewModel.swift in Sources */,
 				60664F9922CF25DC004506FB /* StepsCell.swift in Sources */,
 				60BEFA9322D0441E0081A9EC /* CurveAlgorithm.swift in Sources */,
 				60664FD022CF7920004506FB /* String.swift in Sources */,

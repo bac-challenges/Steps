@@ -34,7 +34,7 @@ import UIKit
 class AuthFailedController: UIViewController {
 
 	// Model
-	private lazy var model = StepsViewModel()
+	private lazy var model = AuthFailedViewModel()
 	
 	// UI
 	private lazy var titleLabel: UILabel = {
