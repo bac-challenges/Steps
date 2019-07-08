@@ -59,10 +59,38 @@ extension  StepsController {
 	private func setupView() {
 		// View properties
 		title = viewModel.profileName
-		tableView.separatorStyle = .none
-		tableView.backgroundColor = .black
 		
 		// Change navigationBar shadow color
 		navigationController?.navigationBar.shadowImage = UIImage.image(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5))
+		
+		// TableView
+		tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.identifier)
+		tableView.register(StepsCell.self, forCellReuseIdentifier: StepsCell.identifier)
+		tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
+		tableView.register(AchievementsCell.self, forCellReuseIdentifier: AchievementsCell.identifier)
+		tableView.separatorStyle = .singleLine
+		tableView.backgroundColor = .black
+		tableView.contentInsetAdjustmentBehavior = .automatic
+		tableView.rowHeight = UITableView.automaticDimension
+		tableView.estimatedRowHeight = 70
+	}
+}
+
+// MARK: UITableViewDataSource
+extension StepsController {
+	
+	override func numberOfSections(in tableView: UITableView) -> Int {
+		return 4
+	}
+	
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 1
+	}
+	
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		
+		//let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+		
+		return UITableViewCell(style: .default, reuseIdentifier: "Cell")
 	}
 }
