@@ -47,8 +47,12 @@ class StepsController: UITableViewController {
 
 		// Read steps from HealthKit
 		DispatchQueue.main.async {
-			HealthKitManager.shared.readSampleSteps {
-				print("DONE \($0)")
+			HealthKitManager.shared.readSampleSteps { result in
+				DispatchQueue.main.sync {
+					self.viewModel.chartPoints = result
+					self.tableView.reloadData()
+					self.tableView.alpha = 1
+				}
 			}
 		}
 	}
