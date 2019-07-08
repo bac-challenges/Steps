@@ -44,15 +44,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			
 			// Setup views
 			DispatchQueue.main.sync {
-				
+
 				// RootViewController
 				let rootViewController = success ? StepsController() : AuthFailedController()
 				
+				// Create window
 				self.window = UIWindow(frame: UIScreen.main.bounds)
 				self.window?.makeKeyAndVisible()
 				self.window?.rootViewController = UINavigationController(rootViewController: rootViewController)
 			}
 		}
+		
+		// Appearance
+		Appearance.apply()
+		
 		return true
 	}
 

@@ -20,49 +20,37 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 7A1892BB-BE84-48DB-85D1-65685022878E
+//	ID: BC53EFBC-7957-4DBE-A40F-3957EF74233F
 //
 //	Pkg: Steps
 //
-//	Swift: 4.2 
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
 
 import UIKit
 
-class StepsController: UITableViewController {
+struct Appearance {
 	
-	// Model
-	lazy private var viewModel = StepsViewModel()
-
-	// Life Cycle
-	override func viewDidLoad() {
-        super.viewDidLoad()
-		self.setupView()
-    }
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
+	/// Apply appearance properties
+	public static func apply() {
 		
-		// Read steps from HealthKit
-		DispatchQueue.main.async {
-			HealthKitManager.shared.readSampleSteps {
-				print("DONE \($0)")
-			}
-		}
-	}
-}
-
-// MARK: - UI
-extension  StepsController {
-	private func setupView() {
-		// View properties
-		title = viewModel.profileName
-		tableView.separatorStyle = .none
-		tableView.backgroundColor = .black
+		typealias Key = NSAttributedString.Key
 		
-		// Change navigationBar shadow color
-		navigationController?.navigationBar.shadowImage = UIImage.image(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5))
+		// Global
+		let window = UIWindow.appearance()
+		window.backgroundColor = .black
+		window.tintColor = .white
+		
+		// Navigation
+		let navigationBarAppearace = UINavigationBar.appearance()
+		
+		navigationBarAppearace.prefersLargeTitles = false
+		navigationBarAppearace.isTranslucent = false
+		navigationBarAppearace.barTintColor = .black
+		
+		navigationBarAppearace.titleTextAttributes = [Key.foregroundColor: UIColor.white,
+													  Key.font: UIFont.systemFont(ofSize: 14, weight: .black)]
 	}
 }

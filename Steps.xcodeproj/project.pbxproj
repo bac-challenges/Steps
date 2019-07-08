@@ -31,6 +31,7 @@
 		606ABF8222CE436700EE7BAB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606ABF8122CE436700EE7BAB /* HealthKit.framework */; };
 		606ABF8C22CE86C500EE7BAB /* StepsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF8B22CE86C500EE7BAB /* StepsController.swift */; };
 		609DBBDA22D379BD00A353C8 /* AuthFailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBD922D379BD00A353C8 /* AuthFailedController.swift */; };
+		609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBDB22D37C4400A353C8 /* Appearance.swift */; };
 		60BEFA8522CFB4870081A9EC /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8422CFB4870081A9EC /* Achievement.swift */; };
 		60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */; };
 		60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */; };
@@ -75,6 +76,7 @@
 		606ABF8122CE436700EE7BAB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		606ABF8B22CE86C500EE7BAB /* StepsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsController.swift; sourceTree = "<group>"; };
 		609DBBD922D379BD00A353C8 /* AuthFailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFailedController.swift; sourceTree = "<group>"; };
+		609DBBDB22D37C4400A353C8 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		60BEFA8422CFB4870081A9EC /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		60664F8922CEE3AA004506FB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				609DBBDB22D37C4400A353C8 /* Appearance.swift */,
 				60664FD122CF7937004506FB /* Extensions */,
 				60664FD222CF7945004506FB /* Protocols */,
 			);
@@ -354,6 +357,7 @@
 				60BEFA9922D08B710081A9EC /* Int.swift in Sources */,
 				60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */,
 				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
+				609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */,
 				60664FA122CF2773004506FB /* AchievementsEmptyView.swift in Sources */,
 				60BEFA8522CFB4870081A9EC /* Achievement.swift in Sources */,
 				60BEFA9B22D0A1C70081A9EC /* PointEntry.swift in Sources */,
