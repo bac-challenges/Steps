@@ -33,7 +33,7 @@
 import Foundation
 
 struct StepsViewModel {
-	
+	var chartPoints: [PointEntry]?
 }
 
 // MARK: - View Properties

@@ -60,8 +60,7 @@ class ChartCell: UITableViewCell {
 // MARK: - Configurable
 extension ChartCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		#warning("Use result object array")
-//		chart.dataEntries = 
+		chart.dataEntries = model.chartPoints
 	}
 }
 

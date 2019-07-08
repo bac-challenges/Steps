@@ -69,7 +69,7 @@ class AuthFailedController: UIViewController {
 	
 	private lazy var iconView: UIImageView = {
 		let imageView = UIImageView("heart")
-		imageView.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+		imageView.tintColor = #colorLiteral(red: 0, green: 0.6566036344, blue: 1, alpha: 1)
 		return imageView
 	}()
 	
