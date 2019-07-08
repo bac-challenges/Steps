@@ -36,21 +36,21 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	
+	private lazy var stepsController = UINavigationController(rootViewController: StepsController())
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		
-		let manager = HealthKitManager.shared
-		manager.isHealthDataAvailable { success, error in
+
+		// Check if HealthKit is avaliable
+		HealthKitManager.shared.isHealthDataAvailable { success, error in
 			
-			if !success {
-				fatalError("Not authorized: \(error.debugDescription)")
-			}
-			
-			DispatchQueue.main.async {
-				manager.readSampleSteps { print("DONE \($0)") }
+			// Setup views
+			DispatchQueue.main.sync {
+				self.window = UIWindow(frame: UIScreen.main.bounds)
+				self.window?.makeKeyAndVisible()
+				self.window?.rootViewController = success ? self.stepsController : AuthFailedController()
 			}
 		}
-		
 		return true
 	}
 

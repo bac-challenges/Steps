@@ -20,60 +20,34 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 7A1892BB-BE84-48DB-85D1-65685022878E
+//	ID: 4E7219B2-2EC7-4E41-932C-7F3E7A173704
 //
 //	Pkg: Steps
 //
-//	Swift: 4.2 
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
 
 import UIKit
 
-class StepsController: UITableViewController {
-	
-	// UI
-//	@IBOutlet weak var profileCell: ProfileCell!
-//	@IBOutlet weak var stepsCell: StepsCell!
-//	@IBOutlet weak var chartCell: ChartCell!
-//	@IBOutlet weak var achievementsCell: AchievementsCell!
-	
-	// Model
-	lazy private var viewModel = StepsViewModel()
+class AuthFailedController: UIViewController {
 
-	// Life Cycle
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-		self.setupView()
-    }
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		// Read steps from HealthKit
-		DispatchQueue.main.async {
-			HealthKitManager.shared.readSampleSteps {
-				print("DONE \($0)")
-			}
-		}
-	}
-}
 
-// MARK: - UI
-extension  StepsController {
-	private func setupView() {
-		// View properties
-		title = viewModel.profileName
-		tableView.separatorStyle = .none
-		
-		// Change navigationBar shadow color
-		navigationController?.navigationBar.shadowImage = UIImage.image(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5))
-		
-		// Configure cells
-//		profileCell.configure(viewModel)
-//		stepsCell.configure(viewModel)
-//		chartCell.configure(viewModel)
-//		achievementsCell.configure(viewModel)
-	}
+        // Do any additional setup after loading the view.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
