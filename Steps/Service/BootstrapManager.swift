@@ -24,9 +24,13 @@
 //
 //	Pkg: Steps
 //
-//	Swift: 5.0 
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
 
 import Foundation
+
+struct BootstrapManager {
+	
+}
