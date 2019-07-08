@@ -29,7 +29,7 @@
 //	MacOS: 10.15
 //
 
-import Foundation
+import UIKit
 
 public protocol Configurable {
 	associatedtype T

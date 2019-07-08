@@ -33,7 +33,7 @@
 import Foundation
 
 struct StepsViewModel {
-	
+	var chartPoints: [PointEntry]?
 }
 
 // MARK: - View Properties
@@ -75,6 +75,20 @@ extension StepsViewModel {
 		return "\(achievedGoals.count)"
 	}
 	
+	var authFailedTitleText: String {
+		return "F7A68F39".localized(withComment: "HealthKit Authorization Failed")
+	}
+	
+	
+	var authFailedDetailText: String {
+		return "84583374".localized(withComment: "Enable Access in Health App")
+	}
+	
+	
+	var authFailedButtonTitleText: String {
+		return "1865C359".localized(withComment: "Open Health App")
+	}
+
 	var achievedGoals: [AchievementViewModel] {
 		let result = [10,15,20,25,30,35,40].map {
 			AchievementViewModel(Achievement(steps: $0))

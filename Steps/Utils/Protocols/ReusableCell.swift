@@ -29,7 +29,7 @@
 //	MacOS: 10.15
 //
 
-import Foundation
+import UIKit
 
 public protocol ReusableCell {
 	static var identifier: String { get }
@@ -40,3 +40,5 @@ public extension ReusableCell {
 		return String(describing: self)
 	}
 }
+
+extension UITableViewCell: ReusableCell {}

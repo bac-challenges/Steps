@@ -31,7 +31,7 @@
 
 import UIKit
 
-class StepsCell: UITableViewCell, ReusableCell {
+class StepsCell: UITableViewCell {
 	
 	// UI
 	private lazy var titleLabel: UILabel = {
@@ -98,6 +98,7 @@ extension StepsCell {
 	
 	private func setupView() {
 		selectionStyle = .none
+		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
 		addSubview(titleLabel)
 		addSubview(detailLabel)

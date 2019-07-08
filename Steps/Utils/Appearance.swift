@@ -20,18 +20,37 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: F18C0B31-3853-4CFD-BBAF-94B947257762
+//	ID: BC53EFBC-7957-4DBE-A40F-3957EF74233F
 //
 //	Pkg: Steps
+//
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
 
-"58033C81" = "Steps";
-"89DCAC96" = "No achievements yet";
-"11427B1F" = "Keep walking!";
-"A1239E36" = "Achievements";
-"730BDAB5" = "Goal achievement";
-"F7A68F39" = "HealthKit Authorization Failed";
-"84583374" = "Enable Access in Health App";
-"1865C359" = "Open Health App";
+import UIKit
+
+struct Appearance {
+	
+	/// Apply appearance properties
+	public static func apply() {
+		
+		typealias Key = NSAttributedString.Key
+		
+		// Global
+		let window = UIWindow.appearance()
+		window.backgroundColor = .black
+		window.tintColor = .white
+		
+		// Navigation
+		let navigationBarAppearace = UINavigationBar.appearance()
+		
+		navigationBarAppearace.prefersLargeTitles = false
+		navigationBarAppearace.isTranslucent = false
+		navigationBarAppearace.barTintColor = .black
+		
+		navigationBarAppearace.titleTextAttributes = [Key.foregroundColor: UIColor.white,
+													  Key.font: UIFont.systemFont(ofSize: 14, weight: .black)]
+	}
+}

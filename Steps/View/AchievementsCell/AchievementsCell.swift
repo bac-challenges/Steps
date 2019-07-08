@@ -31,7 +31,7 @@
 
 import UIKit
 
-class AchievementsCell: UITableViewCell, ReusableCell {
+class AchievementsCell: UITableViewCell {
 	
 	// UI
 	private lazy var emptyView = AchievementsEmptyView()
@@ -65,6 +65,7 @@ extension AchievementsCell: Configurable {
 extension AchievementsCell {
 	private func setupView() {
 		selectionStyle = .none
+		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
 		addSubview(emptyView)
 		addSubview(statsView)

@@ -20,18 +20,22 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: F18C0B31-3853-4CFD-BBAF-94B947257762
+//	ID: 81EADE19-EFE1-4F51-B2A2-275BCD22BBBB
 //
 //	Pkg: Steps
+//
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
 
-"58033C81" = "Steps";
-"89DCAC96" = "No achievements yet";
-"11427B1F" = "Keep walking!";
-"A1239E36" = "Achievements";
-"730BDAB5" = "Goal achievement";
-"F7A68F39" = "HealthKit Authorization Failed";
-"84583374" = "Enable Access in Health App";
-"1865C359" = "Open Health App";
+import UIKit
+
+extension UITableView {
+	func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+		guard let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {
+			fatalError("Unable to Dequeue Reusable Table View Cell")
+		}
+		return cell
+	}
+}

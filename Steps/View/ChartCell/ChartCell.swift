@@ -31,7 +31,7 @@
 
 import UIKit
 
-class ChartCell: UITableViewCell, ReusableCell {
+class ChartCell: UITableViewCell {
 	
 	// UI
 	private lazy var chart = LineChart()
@@ -60,8 +60,7 @@ class ChartCell: UITableViewCell, ReusableCell {
 // MARK: - Configurable
 extension ChartCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		#warning("Use result object array")
-//		chart.dataEntries = 
+		chart.dataEntries = model.chartPoints
 	}
 }
 
@@ -72,6 +71,7 @@ extension ChartCell {
 	
 	private func setupView() {
 		selectionStyle = .none
+		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
 		addSubview(chart)
 		setupLayout()
