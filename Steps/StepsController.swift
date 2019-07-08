@@ -44,11 +44,15 @@ class StepsController: UITableViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
+
 		// Read steps from HealthKit
 		DispatchQueue.main.async {
-			HealthKitManager.shared.readSampleSteps {
-				print("DONE \($0)")
+			HealthKitManager.shared.readSampleSteps { result in
+				DispatchQueue.main.sync {
+					self.viewModel.chartPoints = result
+					self.tableView.reloadData()
+					self.tableView.alpha = 1
+				}
 			}
 		}
 	}
@@ -73,12 +77,12 @@ extension  StepsController {
 		tableView.contentInsetAdjustmentBehavior = .automatic
 		tableView.rowHeight = UITableView.automaticDimension
 		tableView.estimatedRowHeight = 70
+		tableView.alpha = 0
 	}
 }
 
 // MARK: UITableViewDataSource
 extension StepsController {
-	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return Sections.allValues.count
 	}
@@ -88,7 +92,7 @@ extension StepsController {
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return Sections.allValues[indexPath.section].rowHeight
+		return UITableView.automaticDimension
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -130,15 +134,6 @@ extension StepsController {
 			case .steps: return StepsCell.identifier
 			case .chart: return ChartCell.identifier
 			case .achievements: return AchievementsCell.identifier
-			}
-		}
-		
-		var rowHeight: CGFloat {
-			switch self {
-			case .profile: return 220
-			case .steps: return 60
-			case .chart: return 170
-			case .achievements: return 280
 			}
 		}
 	}

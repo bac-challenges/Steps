@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			DispatchQueue.main.sync {
 
 				// RootViewController
-				let rootViewController = !success ? StepsController() : AuthFailedController()
+				let rootViewController = success ? StepsController() : AuthFailedController()
 				
 				// Create window
 				self.window = UIWindow(frame: UIScreen.main.bounds)

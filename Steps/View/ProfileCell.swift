@@ -81,9 +81,12 @@ extension  ProfileCell {
 	}
 	
 	private func setupLayout() {
-		profileImage.anchor(width: 180,
+		profileImage.anchor(top: layoutMarginsGuide.topAnchor,
+							paddingTop: 20,
+							bottom: layoutMarginsGuide.bottomAnchor,
+							paddingBottom: 20,
+							width: 180,
 							height:180,
-							centerX: centerXAnchor,
-							centerY: centerYAnchor)
+							centerX: centerXAnchor)
 	}
 }
