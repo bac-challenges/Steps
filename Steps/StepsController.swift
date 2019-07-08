@@ -92,13 +92,12 @@ extension StepsController {
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return UITableView.automaticDimension
+		return Sections.allValues[indexPath.section].rowHeight
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let section = Sections.allValues[indexPath.section]
-		
 		switch section {
 		case .profile: let cell: ProfileCell = tableView.dequeueReusableCell(for: indexPath)
 			cell.configure(viewModel)
@@ -134,6 +133,15 @@ extension StepsController {
 			case .steps: return StepsCell.identifier
 			case .chart: return ChartCell.identifier
 			case .achievements: return AchievementsCell.identifier
+			}
+		}
+		
+		var rowHeight: CGFloat {
+			switch self {
+			case .profile: return 220
+			case .steps: return 60
+			case .chart: return 170
+			case .achievements: return 280
 			}
 		}
 	}

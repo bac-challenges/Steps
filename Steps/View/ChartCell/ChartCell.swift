@@ -79,7 +79,6 @@ extension ChartCell {
 	
 	private func setupLayout() {
 		chart.anchor(top: layoutMarginsGuide.topAnchor,
-					 bottom: layoutMarginsGuide.bottomAnchor,
 					 left: leftAnchor,
 					 right: rightAnchor,
 					 height: 170)
