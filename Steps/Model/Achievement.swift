@@ -20,45 +20,17 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 685BB963-D174-43AA-80EF-989A7D58C2A1
+//	ID: 7C4C55E0-B672-455C-B5A9-D9BC373FDFFC
 //
 //	Pkg: Steps
 //
-//	Swift: 4.2 
+//	Swift: 5.0 
 //
 //	MacOS: 10.15
 //
 
-import UIKit
+import Foundation
 
-struct AchievementViewModel: GenericViewModel {
-	
-	var model: Achievement
-	
-	init(_ model: Achievement) {
-		self.model = model
-	}
-}
-
-// MARK: - String
-extension AchievementViewModel {
-	var achievementsGoalText: String {
-		return "730BDAB5".localized(withComment: "Goal achievement")
-	}
-	
-	var image: UIImage? {
-		return UIImage(named: imageString)?.noir
-	}
-	
-	var imageString: String {
-		return "\(model.steps)k"
-	}
-	
-	var steps: Int {
-		return model.steps
-	}
-	
-	var stepsString: String {
-		return "\(model.steps)k"
-	}
+struct Achievement {
+	let steps: Int
 }
