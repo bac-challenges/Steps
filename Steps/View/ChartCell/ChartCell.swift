@@ -60,7 +60,7 @@ class ChartCell: UITableViewCell, ReusableCell {
 // MARK: - Configurable
 extension ChartCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		#warning("Implement with real data")
+		#warning("Use result object array")
 //		chart.dataEntries = 
 	}
 }

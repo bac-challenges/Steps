@@ -45,21 +45,13 @@ class StepsController: UITableViewController {
 	// Init
 	override func viewDidLoad() {
         super.viewDidLoad()
-		
-		HealthKitManager.shared.isHealthDataAvailable { success, error in
-			if success {
-				self.setupView()
-			} else {
-				
-			}
-		}
+		self.setupView()
     }
 }
 
 // MARK: - UI
 extension  StepsController {
 	private func setupView() {
-		
 		// View properties
 		title = viewModel.profileName
 		tableView.separatorStyle = .none

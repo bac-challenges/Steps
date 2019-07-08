@@ -39,6 +39,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		
+		let manager = HealthKitManager.shared
+		manager.isHealthDataAvailable { success, error in
+			
+			if !success {
+				fatalError("Not authorized: \(error.debugDescription)")
+			}
+			
+			DispatchQueue.main.async {
+				manager.readSampleSteps { print("DONE \($0)") }
+			}
+		}
+		
 		return true
 	}
 
@@ -49,7 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	// MARK: - Core Data stack
-
 	lazy var persistentContainer: NSPersistentContainer = {
 	    /*
 	     The persistent container for the application. This implementation
@@ -78,7 +89,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}()
 
 	// MARK: - Core Data Saving support
-
 	func saveContext () {
 	    let context = persistentContainer.viewContext
 	    if context.hasChanges {
@@ -92,6 +102,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	        }
 	    }
 	}
-
 }
 

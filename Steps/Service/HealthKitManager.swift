@@ -102,6 +102,9 @@ extension HealthKitManager {
 					print("\(value)|\(date.description)")
 				}
 			}
+			
+			#warning("Implement result object")
+			completion(666)
 		}
 		healthStore.execute(query)
 	}
@@ -198,12 +201,12 @@ extension HealthKitManager {
 	}
 
 	/// Read sample steps data
-	func readSampleSteps(completion: @escaping (Double) -> ()) {
-		readSteps(startDate: startDate, endDate: endDate, completion: completion)
+	func readSampleSteps(completion: @escaping (Double) -> Void) {
+		readStepsCollection(startDate: startDate, endDate: endDate, completion: completion)
 	}
 	
 	/// Generate sample data for test purposes
-	func generateSampleSteps(completion: @escaping (Error?) -> ()) {
+	func generateSampleSteps(completion: @escaping (Error?) -> Void) {
 		let sampleData = stepsRange.map { sampleData in
 			quantitySample(count: sampleData.steps,
 						   startDate: sampleData.startDate,
