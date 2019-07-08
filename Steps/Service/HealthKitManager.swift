@@ -115,6 +115,10 @@ struct HealthKitManager {
 		}
 		healthStore.execute(query)
 	}
+}
+
+// MARK: - Write Methods
+extension HealthKitManager {
 	
 	/// Write number of steps to HKHealthStore
 	/// - Parameters:
@@ -163,7 +167,6 @@ struct HealthKitManager {
 	}
 }
 
-
 // MARK: - Sample Data
 extension HealthKitManager {
 	
@@ -190,12 +193,12 @@ extension HealthKitManager {
 		return result
 	}
 
-	// Read sample steps data
+	/// Read sample steps data
 	func readSampleSteps(completion: @escaping (Double) -> ()) {
 		readSteps(start: startDate, end: endDate, completion: completion)
 	}
 	
-	// Generate sample data for test purposes
+	/// Generate sample data for test purposes
 	func generateSampleSteps(completion: @escaping (Error?) -> ()) {
 		let sampleData = stepsRange.map { sampleData in
 			quantitySample(count: sampleData.steps,
