@@ -47,6 +47,7 @@
 		60CF6EEB22D2914400808A9D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF6EE922D2914400808A9D /* Date.swift */; };
 		60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2124E22D3D64D0082745A /* CoreDataManager.swift */; };
 		60F2125122D3E8F80082745A /* AuthFailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */; };
+		60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125222D3F7D70082745A /* BootstrapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		60CF6EE922D2914400808A9D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		60F2124E22D3D64D0082745A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFailedViewModel.swift; sourceTree = "<group>"; };
+		60F2125222D3F7D70082745A /* BootstrapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 		60BEFA8A22D01CD80081A9EC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				60F2125222D3F7D70082745A /* BootstrapManager.swift */,
 				60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */,
 				60F2124E22D3D64D0082745A /* CoreDataManager.swift */,
 			);
@@ -381,6 +384,7 @@
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,
 				609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */,
 				606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */,
+				60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */,
 				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
 				60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */,
 				60590DFA22CF86E600F848B1 /* AchievementsItemView.swift in Sources */,

@@ -20,17 +20,13 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: ADFA0C34-137E-405A-B7E4-96FC6387A830
+//	ID: 4FCAC0BE-DD3C-408D-92E9-3CC52D04C378
 //
 //	Pkg: Steps
 //
-//	Swift: 4.2
+//	Swift: 5.0 
 //
 //	MacOS: 10.15
 //
 
 import Foundation
-
-struct Achievement {
-	let steps: Int
-}
