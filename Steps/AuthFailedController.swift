@@ -67,12 +67,6 @@ class AuthFailedController: UIViewController {
 		return button
 	}()
 	
-	private lazy var iconView: UIImageView = {
-		let imageView = UIImageView("heart")
-		imageView.tintColor = #colorLiteral(red: 0, green: 0.6566036344, blue: 1, alpha: 1)
-		return imageView
-	}()
-	
 	// Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,7 +112,8 @@ extension AuthFailedController {
 			
 			// Switch to main view
 			DispatchQueue.main.sync {
-				 UIApplication.shared.windows.first?.rootViewController = StepsController()
+				let mainController = UINavigationController(rootViewController: StepsController())
+				UIApplication.shared.windows.first?.rootViewController = mainController
 			}
 		}
 	}
@@ -127,7 +122,6 @@ extension AuthFailedController {
 		view.addSubview(titleLabel)
 		view.addSubview(detailLabel)
 		view.addSubview(button)
-		view.addSubview(iconView)
 		self.setupLayout()
 	}
 	
@@ -144,11 +138,5 @@ extension AuthFailedController {
 					  paddingBottom: 40,
 					  left: detailLabel.leftAnchor,
 					  right: detailLabel.rightAnchor)
-		
-		iconView.anchor(bottom: titleLabel.topAnchor,
-						right: titleLabel.rightAnchor,
-						paddingRight: -13,
-						width: 30,
-						height: 30)
 	}
 }
