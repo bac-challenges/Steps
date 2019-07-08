@@ -32,8 +32,24 @@
 
 import Foundation
 
-struct StepsViewModel {
+class StepsViewModel {
 	var chartPoints: [PointEntry]?
+}
+
+// MARK: - Data Management
+extension StepsViewModel {
+	
+	/// Read steps from HealthKit
+	func loadSteps(completion: @escaping () -> Void) {
+		DispatchQueue.main.async {
+			HealthKitManager.shared.readSampleSteps { result in
+				DispatchQueue.main.sync {
+					self.chartPoints = result
+					completion()
+				}
+			}
+		}
+	}
 }
 
 // MARK: - View Properties
@@ -77,20 +93,6 @@ extension StepsViewModel {
 	
 	var isDataAvailable: Bool {
 		return chartPoints?.count != 0 ? true : false
-	}
-	
-	var authFailedTitleText: String {
-		return "F7A68F39".localized(withComment: "HealthKit Authorization Failed")
-	}
-	
-	
-	var authFailedDetailText: String {
-		return "84583374".localized(withComment: "Enable Access in Health App")
-	}
-	
-	
-	var authFailedButtonTitleText: String {
-		return "1865C359".localized(withComment: "Open Health App")
 	}
 
 	var achievedGoals: [AchievementViewModel] {

@@ -44,22 +44,29 @@ class StepsController: UITableViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-
-		// Read steps from HealthKit
-		DispatchQueue.main.async {
-			HealthKitManager.shared.readSampleSteps { result in
-				DispatchQueue.main.sync {
-					self.viewModel.chartPoints = result
-					self.tableView.reloadData()
-					self.tableView.alpha = 1
-				}
-			}
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(updateView),
+											   name: UIApplication.willEnterForegroundNotification,
+											   object: nil)
+		// Load steps
+		viewModel.loadSteps {
+			self.updateView()
 		}
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		NotificationCenter.default.removeObserver(self)
 	}
 }
 
 // MARK: - UI
 extension  StepsController {
+	@objc private func updateView() {
+		self.tableView.reloadData()
+		self.tableView.alpha = 1
+	}
+	
 	private func setupView() {
 		// View properties
 		title = viewModel.profileName
