@@ -68,7 +68,7 @@ extension  StepsController {
 		tableView.register(StepsCell.self, forCellReuseIdentifier: StepsCell.identifier)
 		tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
 		tableView.register(AchievementsCell.self, forCellReuseIdentifier: AchievementsCell.identifier)
-		tableView.separatorStyle = .singleLine
+		tableView.separatorStyle = .none
 		tableView.backgroundColor = .black
 		tableView.contentInsetAdjustmentBehavior = .automatic
 		tableView.rowHeight = UITableView.automaticDimension
@@ -80,17 +80,66 @@ extension  StepsController {
 extension StepsController {
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 4
+		return Sections.allValues.count
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 1
 	}
 	
+	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return Sections.allValues[indexPath.section].rowHeight
+	}
+	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		//let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+		let section = Sections.allValues[indexPath.section]
 		
-		return UITableViewCell(style: .default, reuseIdentifier: "Cell")
+		switch section {
+		case .profile: let cell: ProfileCell = tableView.dequeueReusableCell(for: indexPath)
+			cell.configure(viewModel)
+			return cell
+		
+		case .steps: let cell: StepsCell = tableView.dequeueReusableCell(for: indexPath)
+			cell.configure(viewModel)
+			return cell
+		
+		case .chart: let cell: ChartCell = tableView.dequeueReusableCell(for: indexPath)
+			cell.configure(viewModel)
+			return cell
+		
+		case .achievements: let cell: AchievementsCell = tableView.dequeueReusableCell(for: indexPath)
+			cell.configure(viewModel)
+			return cell
+		}
+	}
+}
+
+// MARK: - TableView Structure
+extension StepsController {
+	enum Sections: Int {
+		case profile, steps, chart, achievements
+		
+		static var allValues: [Sections] {
+			return [.profile, .steps, .chart, .achievements]
+		}
+		
+		var identifier: String {
+			switch self {
+			case .profile: return ProfileCell.identifier
+			case .steps: return StepsCell.identifier
+			case .chart: return ChartCell.identifier
+			case .achievements: return AchievementsCell.identifier
+			}
+		}
+		
+		var rowHeight: CGFloat {
+			switch self {
+			case .profile: return 220
+			case .steps: return 60
+			case .chart: return 170
+			case .achievements: return 280
+			}
+		}
 	}
 }

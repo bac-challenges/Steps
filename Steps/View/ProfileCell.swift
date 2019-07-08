@@ -31,7 +31,7 @@
 
 import UIKit
 
-class ProfileCell: UITableViewCell, ReusableCell {
+class ProfileCell: UITableViewCell {
 	
 	// UI
 	var profileImage = UIImageView("profile-photo-placeholder", rounded: true)
@@ -73,6 +73,7 @@ extension  ProfileCell {
 	
 	private func setupView() {
 		selectionStyle = .none
+		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
 		profileImage.tintColor = .darkGray
 		addSubview(profileImage)

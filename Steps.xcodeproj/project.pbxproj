@@ -32,6 +32,7 @@
 		606ABF8C22CE86C500EE7BAB /* StepsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF8B22CE86C500EE7BAB /* StepsController.swift */; };
 		609DBBDA22D379BD00A353C8 /* AuthFailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBD922D379BD00A353C8 /* AuthFailedController.swift */; };
 		609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBDB22D37C4400A353C8 /* Appearance.swift */; };
+		609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBDD22D3942500A353C8 /* UITableView.swift */; };
 		60BEFA8522CFB4870081A9EC /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8422CFB4870081A9EC /* Achievement.swift */; };
 		60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */; };
 		60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */; };
@@ -77,6 +78,7 @@
 		606ABF8B22CE86C500EE7BAB /* StepsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsController.swift; sourceTree = "<group>"; };
 		609DBBD922D379BD00A353C8 /* AuthFailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFailedController.swift; sourceTree = "<group>"; };
 		609DBBDB22D37C4400A353C8 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		609DBBDD22D3942500A353C8 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		60BEFA8422CFB4870081A9EC /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				60664FA222CF2AF3004506FB /* UIView.swift */,
 				60BEFA8D22D03B5E0081A9EC /* UIImage.swift */,
 				60664FA822CF4B80004506FB /* UIImageView.swift */,
+				609DBBDD22D3942500A353C8 /* UITableView.swift */,
 				60BEFA9822D08B710081A9EC /* Int.swift */,
 				60664FCF22CF7920004506FB /* String.swift */,
 				60CF6EE922D2914400808A9D /* Date.swift */,
@@ -365,6 +368,7 @@
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
 				60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,
+				609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */,
 				606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */,
 				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
 				60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */,

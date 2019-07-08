@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: D7CA8878-03F8-4381-B723-27DFD8B73352
+//	ID: 81EADE19-EFE1-4F51-B2A2-275BCD22BBBB
 //
 //	Pkg: Steps
 //
@@ -31,57 +31,11 @@
 
 import UIKit
 
-class ChartCell: UITableViewCell {
-	
-	// UI
-	private lazy var chart = LineChart()
-	
-	// Init
-	override func awakeFromNib() {
-		super.awakeFromNib()
-	}
-	
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		setupView()
-	}
-	
-	required init?(coder: NSCoder) {
-		super.init(coder: coder)
-		setupView()
-	}
-	
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		resetView()
-	}
-}
-
-// MARK: - Configurable
-extension ChartCell: Configurable {
-	func configure(_ model: StepsViewModel) {
-		#warning("Use result object array")
-//		chart.dataEntries = 
-	}
-}
-
-// MARK: - UI
-extension ChartCell {
-	private func resetView() {
-	}
-	
-	private func setupView() {
-		selectionStyle = .none
-		backgroundColor = .black
-		preservesSuperviewLayoutMargins = true
-		addSubview(chart)
-		setupLayout()
-	}
-	
-	private func setupLayout() {
-		chart.anchor(top: topAnchor,
-					 bottom: bottomAnchor,
-					 left: leftAnchor,
-					 right: rightAnchor)
+extension UITableView {
+	func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+		guard let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {
+			fatalError("Unable to Dequeue Reusable Table View Cell")
+		}
+		return cell
 	}
 }
