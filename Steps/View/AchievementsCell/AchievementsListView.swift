@@ -31,7 +31,7 @@
 
 import UIKit
 
-class AchievementsStatsView: UIView {
+class AchievementsListView: UIView {
 	
 	// UI
 	private lazy var titleLabel: UILabel = {
@@ -49,7 +49,7 @@ class AchievementsStatsView: UIView {
 		label.font = .systemFont(ofSize: 24, weight: .bold)
 		return label
 	}()
-	
+	#warning("Fix scrolling on a small screen.")
 	private lazy var scrollView = UIScrollView()
 	
 	private lazy var stackView: UIStackView = {
@@ -73,7 +73,7 @@ class AchievementsStatsView: UIView {
 }
 
 // MARK: - Configurable
-extension AchievementsStatsView: Configurable {
+extension AchievementsListView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		titleLabel.text = model.achievementsTitleText
 		detailLabel.text = model.achievementsCountText
@@ -86,7 +86,7 @@ extension AchievementsStatsView: Configurable {
 }
 
 // MARK: - UI
-extension AchievementsStatsView {
+extension AchievementsListView {
 	private func setupView() {
 		preservesSuperviewLayoutMargins = true
 		addSubview(titleLabel)

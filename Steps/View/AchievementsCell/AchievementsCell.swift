@@ -35,7 +35,7 @@ class AchievementsCell: UITableViewCell {
 	
 	// UI
 	private lazy var emptyView = AchievementsEmptyView()
-	private lazy var statsView = AchievementsStatsView()
+	private lazy var statsView = AchievementsListView()
 	
 	// Init
 	override func awakeFromNib() {

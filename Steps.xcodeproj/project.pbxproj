@@ -14,7 +14,7 @@
 		60664F9922CF25DC004506FB /* StepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9822CF25DC004506FB /* StepsCell.swift */; };
 		60664F9B22CF260C004506FB /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9A22CF260C004506FB /* ChartCell.swift */; };
 		60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9C22CF2644004506FB /* AchievementsCell.swift */; };
-		60664F9F22CF273F004506FB /* AchievementsStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9E22CF273F004506FB /* AchievementsStatsView.swift */; };
+		60664F9F22CF273F004506FB /* AchievementsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9E22CF273F004506FB /* AchievementsListView.swift */; };
 		60664FA122CF2773004506FB /* AchievementsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA022CF2773004506FB /* AchievementsEmptyView.swift */; };
 		60664FA322CF2AF3004506FB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA222CF2AF3004506FB /* UIView.swift */; };
 		60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA422CF2C04004506FB /* ReusableCell.swift */; };
@@ -58,7 +58,7 @@
 		60664F9822CF25DC004506FB /* StepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCell.swift; sourceTree = "<group>"; };
 		60664F9A22CF260C004506FB /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		60664F9C22CF2644004506FB /* AchievementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCell.swift; sourceTree = "<group>"; };
-		60664F9E22CF273F004506FB /* AchievementsStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsStatsView.swift; sourceTree = "<group>"; };
+		60664F9E22CF273F004506FB /* AchievementsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListView.swift; sourceTree = "<group>"; };
 		60664FA022CF2773004506FB /* AchievementsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsEmptyView.swift; sourceTree = "<group>"; };
 		60664FA222CF2AF3004506FB /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		60664FA422CF2C04004506FB /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
@@ -257,7 +257,7 @@
 			children = (
 				60664F9C22CF2644004506FB /* AchievementsCell.swift */,
 				60664FA022CF2773004506FB /* AchievementsEmptyView.swift */,
-				60664F9E22CF273F004506FB /* AchievementsStatsView.swift */,
+				60664F9E22CF273F004506FB /* AchievementsListView.swift */,
 				60590DF922CF86E600F848B1 /* AchievementsItemView.swift */,
 			);
 			path = AchievementsCell;
@@ -365,7 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60664FA322CF2AF3004506FB /* UIView.swift in Sources */,
-				60664F9F22CF273F004506FB /* AchievementsStatsView.swift in Sources */,
+				60664F9F22CF273F004506FB /* AchievementsListView.swift in Sources */,
 				60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */,
 				60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */,
 				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
