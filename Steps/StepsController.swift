@@ -50,7 +50,7 @@ class StepsController: UITableViewController {
 											   object: nil)
 		// Load steps
 		viewModel.loadSteps {
-			self.updateView()
+		//	self.updateView()
 		}
 	}
 	
@@ -64,7 +64,6 @@ class StepsController: UITableViewController {
 extension  StepsController {
 	@objc private func updateView() {
 		self.tableView.reloadData()
-		self.tableView.alpha = 1
 	}
 	
 	private func setupView() {
@@ -77,6 +76,7 @@ extension  StepsController {
 		// TableView
 		tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.identifier)
 		tableView.register(StepsCell.self, forCellReuseIdentifier: StepsCell.identifier)
+		tableView.register(NoStepsCell.self, forCellReuseIdentifier: NoStepsCell.identifier)
 		tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
 		tableView.register(AchievementsCell.self, forCellReuseIdentifier: AchievementsCell.identifier)
 		tableView.separatorStyle = .none
@@ -84,14 +84,13 @@ extension  StepsController {
 		tableView.contentInsetAdjustmentBehavior = .automatic
 		tableView.rowHeight = UITableView.automaticDimension
 		tableView.estimatedRowHeight = 280
-		tableView.alpha = 0
 	}
 }
 
 // MARK: UITableViewDataSource
 extension StepsController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return viewModel.isDataAvailable ? Sections.allValues.count : Sections.noStepsValues.count
+		return viewModel.sections.count
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -99,15 +98,16 @@ extension StepsController {
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
-		let section = viewModel.isDataAvailable ? Sections.allValues : Sections.noStepsValues
-		switch section[indexPath.section] {
+		switch viewModel.sections[indexPath.section] {
 		case .profile: let cell: ProfileCell = tableView.dequeueReusableCell(for: indexPath)
 			cell.configure(viewModel)
 			return cell
 		
 		case .steps: let cell: StepsCell = tableView.dequeueReusableCell(for: indexPath)
 			cell.configure(viewModel)
+			return cell
+
+		case .noSteps: let cell: NoStepsCell = tableView.dequeueReusableCell(for: indexPath)
 			return cell
 		
 		case .chart: let cell: ChartCell = tableView.dequeueReusableCell(for: indexPath)
@@ -117,32 +117,6 @@ extension StepsController {
 		case .achievements: let cell: AchievementsCell = tableView.dequeueReusableCell(for: indexPath)
 			cell.configure(viewModel)
 			return cell
-		}
-	}
-}
-
-// MARK: - TableView Structure
-#warning("Move to ViewModel?")
-extension StepsController {
-	enum Sections: Int {
-		#warning("Add no steps case - No data available or generate data button.")
-		case profile, steps, chart, achievements
-
-		static var allValues: [Sections] {
-			return [.profile, .steps, .chart, .achievements]
-		}
-		
-		static var noStepsValues: [Sections] {
-			return [.profile, .achievements]
-		}
-		
-		var identifier: String {
-			switch self {
-			case .profile: return ProfileCell.identifier
-			case .steps: return StepsCell.identifier
-			case .chart: return ChartCell.identifier
-			case .achievements: return AchievementsCell.identifier
-			}
 		}
 	}
 }

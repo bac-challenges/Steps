@@ -49,7 +49,7 @@ class AchievementsListView: UIView {
 		label.font = .systemFont(ofSize: 24, weight: .bold)
 		return label
 	}()
-	#warning("Fix scrolling on a small screen.")
+	
 	private lazy var scrollView = UIScrollView()
 	
 	private lazy var stackView: UIStackView = {

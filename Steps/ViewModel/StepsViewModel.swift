@@ -30,7 +30,7 @@
 //	MacOS: 10.15
 //
 
-import Foundation
+import UIKit
 
 class StepsViewModel {
 	var chartPoints: [PointEntry]?
@@ -92,7 +92,10 @@ extension StepsViewModel {
 	}
 	
 	var isDataAvailable: Bool {
-		return chartPoints?.count != 0 ? true : false
+		guard let chartPoints = chartPoints  else {
+			return false
+		}
+		return chartPoints.count == 0 ? false:true
 	}
 
 	var achievedGoals: [AchievementViewModel] {
@@ -100,5 +103,34 @@ extension StepsViewModel {
 			AchievementViewModel(Achievement(steps: $0))
 		}
 		return result
+	}
+}
+
+// MARK: - TableView Structure
+extension StepsViewModel {
+	enum Sections: Int {
+		case profile, steps, noSteps, chart, achievements
+		
+		static var allValues: [Sections] {
+			return [.profile, .steps, .chart, .achievements]
+		}
+		
+		static var noStepsValues: [Sections] {
+			return [.profile, .noSteps, .achievements]
+		}
+		
+		var identifier: String {
+			switch self {
+			case .profile: return ProfileCell.identifier
+			case .steps: return StepsCell.identifier
+			case .noSteps: return UITableViewCell.identifier
+			case .chart: return ChartCell.identifier
+			case .achievements: return AchievementsCell.identifier
+			}
+		}
+	}
+	
+	var sections: [Sections] {
+		return isDataAvailable ? Sections.allValues : Sections.noStepsValues
 	}
 }
