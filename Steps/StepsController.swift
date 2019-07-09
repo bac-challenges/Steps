@@ -83,7 +83,7 @@ extension  StepsController {
 		tableView.backgroundColor = .black
 		tableView.contentInsetAdjustmentBehavior = .automatic
 		tableView.rowHeight = UITableView.automaticDimension
-		tableView.estimatedRowHeight = 70
+		tableView.estimatedRowHeight = 280
 		tableView.alpha = 0
 	}
 }
@@ -96,10 +96,6 @@ extension StepsController {
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 1
-	}
-	
-	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return Sections.allValues[indexPath.section].rowHeight
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -146,16 +142,6 @@ extension StepsController {
 			case .steps: return StepsCell.identifier
 			case .chart: return ChartCell.identifier
 			case .achievements: return AchievementsCell.identifier
-			}
-		}
-		
-		#warning("Convert to dynamic height for cells")
-		var rowHeight: CGFloat {
-			switch self {
-			case .profile: return 220
-			case .steps: return 60
-			case .chart: return 170
-			case .achievements: return 280
 			}
 		}
 	}

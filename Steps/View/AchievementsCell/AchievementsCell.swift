@@ -35,7 +35,7 @@ class AchievementsCell: UITableViewCell {
 	
 	// UI
 	private lazy var emptyView = AchievementsEmptyView()
-	private lazy var statsView = AchievementsListView()
+	private lazy var listView = AchievementsListView()
 	
 	// Init
 	override func awakeFromNib() {
@@ -57,7 +57,7 @@ class AchievementsCell: UITableViewCell {
 extension AchievementsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
 		emptyView.configure(model)
-		statsView.configure(model)
+		listView.configure(model)
 	}
 }
 
@@ -68,7 +68,7 @@ extension AchievementsCell {
 		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
 		addSubview(emptyView)
-		addSubview(statsView)
+		addSubview(listView)
 		setupLayout()
 	}
 	
@@ -83,9 +83,10 @@ extension AchievementsCell {
 						 left: layoutMarginsGuide.leftAnchor,
 						 right: layoutMarginsGuide.rightAnchor)
 		
-		statsView.anchor(top: layoutMarginsGuide.topAnchor,
+		listView.anchor(top: layoutMarginsGuide.topAnchor,
 						 bottom: layoutMarginsGuide.bottomAnchor,
 						 left: leftAnchor,
-						 right: rightAnchor)
+						 right: rightAnchor,
+						 height: 280)
 	}
 }
