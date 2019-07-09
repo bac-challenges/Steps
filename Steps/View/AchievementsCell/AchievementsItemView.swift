@@ -71,6 +71,10 @@ extension AchievementsItemView: Configurable {
 	func configure(_ model: AchievementViewModel) {
 		titleLabel.text = model.achievementsGoalText
 		detailLabel.text = model.stepsString
+		
+		titleLabel.alpha = model.model.isUnlocked ? 1:0
+		detailLabel.alpha = model.model.isUnlocked ? 1:0
+		
 		image.image = model.image
 		
 		// Animate

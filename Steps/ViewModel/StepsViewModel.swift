@@ -68,10 +68,17 @@ extension StepsViewModel {
 	}
 	
 	var stepsCountText: String {
-		return "12.350"
+		guard let chartPoints = chartPoints else {
+			return "0"
+		}
+		
+		return chartPoints.compactMap { $0.value }
+						  .reduce(0) { $0 + $1 }
+						  .formattedWithSeparator
 	}
 	
 	var stepsDateRangeText: String {
+		#warning("Show live data")
 		return "Nov 12 - Dec 12 2018"
 	}
 	
@@ -97,10 +104,10 @@ extension StepsViewModel {
 		}
 		return chartPoints.count == 0 ? false:true
 	}
-
+	#warning("Duplicated values in the model")
 	var achievedGoals: [AchievementViewModel] {
-		let result = [10,15,20,25,30,35,40].map {
-			AchievementViewModel(Achievement(steps: $0))
+		let result = [(10, true),(15, true),(20, false),(25, false),(30, false),(35, false),(40, false)].map {
+			AchievementViewModel(Achievement(steps: $0, isUnlocked: $1))
 		}
 		return result
 	}

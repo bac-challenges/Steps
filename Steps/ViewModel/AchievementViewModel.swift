@@ -47,7 +47,8 @@ extension AchievementViewModel {
 	}
 	
 	var image: UIImage? {
-		return UIImage(named: imageString)?.noir
+		let image = UIImage(named: imageString)
+		return model.isUnlocked ? image:image?.noir
 	}
 	
 	var imageString: String {

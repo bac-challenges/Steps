@@ -33,4 +33,5 @@ import Foundation
 
 struct Achievement {
 	let steps: Int
+	let isUnlocked: Bool
 }
