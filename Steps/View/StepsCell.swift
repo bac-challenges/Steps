@@ -37,7 +37,7 @@ class StepsCell: UITableViewCell {
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .left
-		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+		label.textColor = .white
 		label.font = .systemFont(ofSize: 32, weight: .heavy)
 		return label
 	}()
@@ -53,7 +53,7 @@ class StepsCell: UITableViewCell {
 	private lazy var subtitleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .left
-		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+		label.textColor = .white
 		label.alpha = 0.5
 		label.font = .systemFont(ofSize: 18, weight: .regular)
 		return label

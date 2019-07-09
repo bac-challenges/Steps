@@ -108,6 +108,7 @@ extension StepsController {
 			return cell
 
 		case .noSteps: let cell: NoStepsCell = tableView.dequeueReusableCell(for: indexPath)
+			cell.configure(viewModel)
 			return cell
 		
 		case .chart: let cell: ChartCell = tableView.dequeueReusableCell(for: indexPath)

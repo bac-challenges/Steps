@@ -24,7 +24,7 @@
 //
 //	Pkg: Steps
 //
-//	Swift: 5.0 
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
@@ -33,6 +33,15 @@ import UIKit
 
 class NoStepsCell: UITableViewCell {
 
+	// UI
+	private lazy var titleLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .center
+		label.textColor = .white
+		label.font = .systemFont(ofSize: 18, weight: .heavy)
+		return label
+	}()
+	
 	// Init
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -57,6 +66,7 @@ class NoStepsCell: UITableViewCell {
 // MARK: - Configurable
 extension NoStepsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
+		titleLabel.text = "Steps Data Unavaliable"
 	}
 }
 
@@ -69,9 +79,14 @@ extension NoStepsCell {
 		selectionStyle = .none
 		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
+		addSubview(titleLabel)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
+		titleLabel.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 60,
+						  bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 120,
+						  left: layoutMarginsGuide.leftAnchor,
+						  right: layoutMarginsGuide.rightAnchor)
 	}
 }

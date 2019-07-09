@@ -57,6 +57,7 @@ class AchievementsCell: UITableViewCell {
 extension AchievementsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
 		emptyView.configure(model)
+		#warning("Animate on set achivements")
 		listView.configure(model)
 	}
 }
