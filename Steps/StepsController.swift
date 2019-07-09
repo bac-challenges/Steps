@@ -63,7 +63,11 @@ class StepsController: UITableViewController {
 // MARK: - UI
 extension  StepsController {
 	@objc private func updateView() {
-		self.tableView.reloadData()
+//		self.tableView.reloadData()
+		UIView.transition(with: tableView,
+						  duration: 0.3, options: .transitionCrossDissolve,
+						  animations: { self.tableView.reloadData() },
+						  completion: nil)
 	}
 	
 	private func setupView() {
