@@ -49,6 +49,7 @@
 		60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125222D3F7D70082745A /* BootstrapManager.swift */; };
 		60F2125922D3FCE50082745A /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125822D3FCE50082745A /* Achievement.swift */; };
 		60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125A22D41B420082745A /* NoStepsCell.swift */; };
+		60F2125D22D424780082745A /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125C22D424780082745A /* SplashScreenController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		60F2125222D3F7D70082745A /* BootstrapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapManager.swift; sourceTree = "<group>"; };
 		60F2125822D3FCE50082745A /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		60F2125A22D41B420082745A /* NoStepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoStepsCell.swift; sourceTree = "<group>"; };
+		60F2125C22D424780082745A /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				606ABF6A22CE432000EE7BAB /* AppDelegate.swift */,
 				606ABF8B22CE86C500EE7BAB /* StepsController.swift */,
 				609DBBD922D379BD00A353C8 /* AuthFailedController.swift */,
+				60F2125C22D424780082745A /* SplashScreenController.swift */,
 				606ABF8A22CE869B00EE7BAB /* View */,
 				606ABF8E22CE874200EE7BAB /* ViewModel */,
 				606ABF8422CE489C00EE7BAB /* Model */,
@@ -371,6 +374,7 @@
 				60664F9F22CF273F004506FB /* AchievementsListView.swift in Sources */,
 				60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */,
 				60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */,
+				60F2125D22D424780082745A /* SplashScreenController.swift in Sources */,
 				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
 				60F2125922D3FCE50082745A /* Achievement.swift in Sources */,
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,

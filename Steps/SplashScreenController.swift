@@ -20,45 +20,42 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: F18C0B31-3853-4CFD-BBAF-94B079427762
+//	ID: 96A8521A-0D85-4DA0-B586-D6B4B31688E9
 //
 //	Pkg: Steps
 //
-//	Swift: 4.2 
+//	Swift: 4.2
 //
 //	MacOS: 10.15
 //
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class SplashScreenController: UIViewController {
 
-	var window: UIWindow?
-
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-		// Create window
-		self.window = UIWindow(frame: UIScreen.main.bounds)
-		self.window?.makeKeyAndVisible()
-		self.window?.rootViewController = SplashScreenController()
+	// UI
+	private lazy var titleLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .center
+		label.text = "Steps"
+		label.textColor = UIColor(named: "blueLabel")
+		label.numberOfLines = 0
+		label.font = .systemFont(ofSize: 48, weight: .black)
+		return label
+	}()
+	
+	private lazy var spinner = UIActivityIndicatorView(style: .whiteLarge)
+	
+    override func viewDidLoad() {
+        super.viewDidLoad()
+		view.addSubview(titleLabel)
+		view.addSubview(spinner)
+		spinner.startAnimating()
+		titleLabel.anchor(centerX: view.centerXAnchor,
+						  centerY: view.centerYAnchor,
+						  paddingCenterY: -60)
 		
-		// Check if HealthKit is avaliable
-		HealthKitManager.shared.isHealthDataAvailable { success, error in
-			DispatchQueue.main.sync {
-				let rootViewController = success ? StepsController() : AuthFailedController()
-				self.window?.rootViewController = UINavigationController(rootViewController: rootViewController)
-			}
-		}
-		
-		// Appearance
-		Appearance.apply()
-		
-		return true
-	}
-
-	func applicationWillTerminate(_ application: UIApplication) {
-		CoreDataManager.shared.saveContext()
-	}
+		spinner.anchor(bottom: view.bottomAnchor, paddingBottom: 40,
+					   centerX: view.centerXAnchor)
+    }
 }
-
