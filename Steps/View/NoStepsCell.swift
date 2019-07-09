@@ -38,8 +38,28 @@ class NoStepsCell: UITableViewCell {
 		let label = UILabel()
 		label.textAlignment = .center
 		label.textColor = .white
-		label.font = .systemFont(ofSize: 18, weight: .heavy)
+		label.font = .systemFont(ofSize: 24, weight: .heavy)
 		return label
+	}()
+	
+	private lazy var detailLabel: UILabel = {
+		let label = UILabel()
+		label.textAlignment = .center
+		label.textColor = .white
+		label.alpha = 0.5
+		label.font = .systemFont(ofSize: 16, weight: .medium)
+		return label
+	}()
+	
+	private lazy var button: UIButton = {
+		let button = UIButton()
+		button.layer.borderWidth = 1
+		button.layer.borderColor = UIColor.white.cgColor
+		button.setTitle("Generate Sample Data", for: .normal)
+		button.setTitleColor(.white, for: .normal)
+		button.alpha = 0.5
+		button.addTarget(self, action: #selector(generateSampleData), for: .touchUpInside)
+		return button
 	}()
 	
 	// Init
@@ -56,10 +76,11 @@ class NoStepsCell: UITableViewCell {
 		super.init(coder: coder)
 		setupView()
 	}
-	
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		resetView()
+}
+
+// MARK: - Actions
+extension NoStepsCell {
+	@objc func generateSampleData() {
 	}
 }
 
@@ -67,26 +88,34 @@ class NoStepsCell: UITableViewCell {
 extension NoStepsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
 		titleLabel.text = "Steps Data Unavaliable"
+		detailLabel.text = "Check your premission settings"
 	}
 }
 
 // MARK: - UI
 extension NoStepsCell {
-	private func resetView() {
-	}
-	
 	private func setupView() {
 		selectionStyle = .none
-		backgroundColor = .black
+		backgroundColor = #colorLiteral(red: 0.03935233504, green: 0.03935233504, blue: 0.03935233504, alpha: 1)
 		preservesSuperviewLayoutMargins = true
 		addSubview(titleLabel)
+		addSubview(detailLabel)
+		addSubview(button)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
-		titleLabel.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 60,
-						  bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 120,
+		titleLabel.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 30,
 						  left: layoutMarginsGuide.leftAnchor,
 						  right: layoutMarginsGuide.rightAnchor)
+		
+		detailLabel.anchor(top: titleLabel.bottomAnchor, paddingTop: 10,
+						   centerX: centerXAnchor)
+		
+		button.anchor(top: detailLabel.bottomAnchor, paddingTop: 60,
+					  bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 30,
+					  left: detailLabel.leftAnchor,
+					  right: detailLabel.rightAnchor,
+					  centerX: centerXAnchor)
 	}
 }

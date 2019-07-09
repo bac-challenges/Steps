@@ -38,24 +38,30 @@ class SplashScreenController: UIViewController {
 		let label = UILabel()
 		label.textAlignment = .center
 		label.text = "Steps"
-		label.textColor = UIColor(named: "blueLabel")
-		label.numberOfLines = 0
 		label.font = .systemFont(ofSize: 48, weight: .black)
+		label.textColor = UIColor(named: "blueLabel")
+		label.alpha = 0
 		return label
 	}()
 	
-	private lazy var spinner = UIActivityIndicatorView(style: .whiteLarge)
+	private lazy var spinner: UIActivityIndicatorView = {
+		let view = UIActivityIndicatorView(style: .whiteLarge)
+		view.startAnimating()
+		return view
+	}()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		view.addSubview(titleLabel)
 		view.addSubview(spinner)
-		spinner.startAnimating()
 		titleLabel.anchor(centerX: view.centerXAnchor,
-						  centerY: view.centerYAnchor,
-						  paddingCenterY: -60)
+						  centerY: view.centerYAnchor, paddingCenterY: -60)
 		
 		spinner.anchor(bottom: view.bottomAnchor, paddingBottom: 40,
 					   centerX: view.centerXAnchor)
+		
+		UIView.animate(withDuration: 0.5) {
+			self.titleLabel.alpha = 1
+		}
     }
 }

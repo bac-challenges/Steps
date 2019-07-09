@@ -50,7 +50,7 @@ class StepsController: UITableViewController {
 											   object: nil)
 		// Load steps
 		viewModel.loadSteps {
-		//	self.updateView()
+			self.updateView()
 		}
 	}
 	
