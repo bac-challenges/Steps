@@ -24,7 +24,7 @@
 //
 //	Pkg: Steps
 //
-//	Swift: 4.2 
+//	Swift: 5.0 
 //
 //	MacOS: 10.15
 //
