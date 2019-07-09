@@ -87,6 +87,7 @@ extension NoStepsCell {
 // MARK: - Configurable
 extension NoStepsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
+		#warning("Localize")
 		titleLabel.text = "Steps Data Unavaliable"
 		detailLabel.text = "Check your premission settings"
 	}
