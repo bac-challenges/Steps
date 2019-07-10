@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.window?.makeKeyAndVisible()
 		self.window?.rootViewController = SplashScreenController()
 		
+		#warning("Move to a view controller")
 		// Check if HealthKit is avaliable
 		HealthKitManager.shared.isHealthDataAvailable { success, error in
 			DispatchQueue.main.sync {

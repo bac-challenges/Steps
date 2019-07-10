@@ -53,6 +53,7 @@ class SplashScreenController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		#warning("Move to setupView, setupLayout")
 		view.addSubview(titleLabel)
 		view.addSubview(spinner)
 		titleLabel.anchor(centerX: view.centerXAnchor,

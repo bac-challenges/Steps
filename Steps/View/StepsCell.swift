@@ -31,6 +31,7 @@
 
 import UIKit
 
+#warning("Move UI to ChartCell and use as Container cell")
 class StepsCell: UITableViewCell {
 	
 	// UI

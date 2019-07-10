@@ -8,6 +8,7 @@
 
 import UIKit
 
+#warning("Review and optimize")
 class LineChart: UIView {
     
     /// Gap between each point

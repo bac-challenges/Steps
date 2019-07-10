@@ -39,7 +39,6 @@ class ProfileCell: UITableViewCell {
 	// Init
     override func awakeFromNib() {
         super.awakeFromNib()
-		setupView()
     }
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -75,18 +74,14 @@ extension  ProfileCell {
 		selectionStyle = .none
 		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
-		profileImage.tintColor = .darkGray
 		addSubview(profileImage)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
-		profileImage.anchor(top: layoutMarginsGuide.topAnchor,
-							paddingTop: 20,
-							bottom: layoutMarginsGuide.bottomAnchor,
-							paddingBottom: 20,
-							width: 180,
-							height:180,
+		profileImage.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 20,
+							bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 20,
+							width: 180, height:180,
 							centerX: centerXAnchor)
 	}
 }

@@ -31,6 +31,7 @@
 
 import UIKit
 
+#warning("Convert to view and include in StepsView")
 class NoStepsCell: UITableViewCell {
 
 	// UI

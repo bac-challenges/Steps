@@ -1,24 +1,81 @@
-# Reading and writing steps from HealthKit in Swift 5.0
+# Reading and Writing Steps from HealthKit in Swift 5.0
 
 ## Overview
 
 ### General
 
-- Swift version **5.0** - No changes to the **4.2** source.
+- Swift version 5.0
+- iOS 12.2
+- iPhone (portrait orientation) only
+- XCode 10.2.1
+- macOS 10.15 Beta 2
+- Code based UI
 - No external libraries
 
-### First run
+### Initial run
 
-- Request to access `HealthKit` data
-- Initial data for `Achievements` populated in `CoreData`
+Request `HealthKit` data access
 
-### States
+Initial data for `Achievements` inserted in `CoreData` from plist
 
+```json
+{
+  "steps": 1000,
+  "isUnlocked": true
+}
+```
+
+### UI Flow
+
+```swift
+enum State {
+    case content
+    case error
+    case empty
+}
+```
+#### Launch Screen
+
+#### SplashController  ————>  AuthFailed  ————>  HealthKit
+
+#### StepsController
+
+##### User Profile Cell
+
+`Content`
+
+- `Error`
+- `Empty`
+
+##### Steps Cell
+
+- `Content`
+
+#####  Chart Cell
+	- `Content`
+
+##### No Steps
+```swift
+- `Error`
+- `Empty`
+```
+
+##### Achievements
+
+	- `Content`
+	- `Error`
+	- `Empty`
+
+## States
+
+- Authenticating
 - Authenticated
   - Steps available
-  - No steps
-  - Achievments
-  - No achievments 
+  - Steps unavailable
+    - Loading
+    - Empty
+  - Achievments available
+  - Achievments unavailable 
 - Authentication failed
 
 ### Managers
@@ -31,3 +88,9 @@
 
 - Main.storyboard - Not used in project
 - Localizable.strings
+
+> Sample note
+
+```
+
+```

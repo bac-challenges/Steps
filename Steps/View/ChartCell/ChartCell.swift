@@ -31,6 +31,7 @@
 
 import UIKit
 
+#warning("Convert to UIView and use in StepsCell as child")
 class ChartCell: UITableViewCell {
 	
 	// UI

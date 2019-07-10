@@ -127,15 +127,12 @@ extension AuthFailedController {
 	
 	private func setupLayout() {
 		titleLabel.anchor(centerX: view.centerXAnchor,
-						  centerY: view.centerYAnchor,
-						  paddingCenterY: -80)
+						  centerY: view.centerYAnchor, paddingCenterY: -80)
 		
-		detailLabel.anchor(top: titleLabel.bottomAnchor,
-						   paddingTop: 5,
+		detailLabel.anchor(top: titleLabel.bottomAnchor, paddingTop: 5,
 						   centerX: view.centerXAnchor)
 		
-		button.anchor(bottom: view.bottomAnchor,
-					  paddingBottom: 40,
+		button.anchor(bottom: view.bottomAnchor, paddingBottom: 40,
 					  left: detailLabel.leftAnchor,
 					  right: detailLabel.rightAnchor)
 	}

@@ -50,7 +50,7 @@ class StepsController: UITableViewController {
 											   object: nil)
 		// Load steps
 		viewModel.loadSteps {
-			self.updateView()
+		//	self.updateView()
 		}
 	}
 	
@@ -63,7 +63,6 @@ class StepsController: UITableViewController {
 // MARK: - UI
 extension  StepsController {
 	@objc private func updateView() {
-//		self.tableView.reloadData()
 		UIView.transition(with: tableView,
 						  duration: 0.3, options: .transitionCrossDissolve,
 						  animations: { self.tableView.reloadData() },
@@ -85,9 +84,9 @@ extension  StepsController {
 		tableView.register(AchievementsCell.self, forCellReuseIdentifier: AchievementsCell.identifier)
 		tableView.separatorStyle = .none
 		tableView.backgroundColor = .black
-		tableView.contentInsetAdjustmentBehavior = .automatic
-		tableView.rowHeight = UITableView.automaticDimension
 		tableView.estimatedRowHeight = 280
+		tableView.rowHeight = UITableView.automaticDimension
+		tableView.contentInsetAdjustmentBehavior = .automatic
 	}
 }
 
