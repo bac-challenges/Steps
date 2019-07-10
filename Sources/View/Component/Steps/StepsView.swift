@@ -32,7 +32,7 @@
 import UIKit
 
 #warning("Convert to UIView and use in StepsCell as parent")
-class ChartCell: UITableViewCell {
+class StepsView: UITableViewCell {
 	
 	// UI
 	private lazy var chart = LineChart()
@@ -50,14 +50,14 @@ class ChartCell: UITableViewCell {
 }
 
 // MARK: - Configurable
-extension ChartCell: Configurable {
+extension StepsView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		chart.dataEntries = model.chartPoints
 	}
 }
 
 // MARK: - UI
-extension ChartCell {
+extension StepsView {
 	private func setupView() {
 		selectionStyle = .none
 		backgroundColor = .black

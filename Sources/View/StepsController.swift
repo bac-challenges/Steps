@@ -79,7 +79,6 @@ extension  StepsController {
 		// TableView
 		tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.identifier)
 		tableView.register(StepsCell.self, forCellReuseIdentifier: StepsCell.identifier)
-		tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
 		tableView.register(BadgeCell.self, forCellReuseIdentifier: BadgeCell.identifier)
 		tableView.separatorStyle = .none
 		tableView.backgroundColor = .black

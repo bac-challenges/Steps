@@ -12,7 +12,6 @@
 		60664F8F22CF1CA0004506FB /* SF-Compact-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */; };
 		60664F9622CF2432004506FB /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9422CF2432004506FB /* ProfileCell.swift */; };
 		60664F9922CF25DC004506FB /* StepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9822CF25DC004506FB /* StepsCell.swift */; };
-		60664F9B22CF260C004506FB /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9A22CF260C004506FB /* ChartCell.swift */; };
 		60664F9D22CF2644004506FB /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9C22CF2644004506FB /* BadgeCell.swift */; };
 		60664F9F22CF273F004506FB /* BadgeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9E22CF273F004506FB /* BadgeListView.swift */; };
 		60664FA122CF2773004506FB /* BadgeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA022CF2773004506FB /* BadgeEmptyView.swift */; };
@@ -37,19 +36,20 @@
 		60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */; };
 		60BEFA8C22D01D0A0081A9EC /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */; };
 		60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8D22D03B5E0081A9EC /* UIImage.swift */; };
-		60BEFA9322D0441E0081A9EC /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9022D0441E0081A9EC /* CurveAlgorithm.swift */; };
-		60BEFA9522D0441E0081A9EC /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9222D0441E0081A9EC /* LineChart.swift */; };
 		60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9622D08B3D0081A9EC /* Formatter.swift */; };
 		60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9822D08B710081A9EC /* Numeric.swift */; };
-		60BEFA9B22D0A1C70081A9EC /* PointEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */; };
 		60CF6EEB22D2914400808A9D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF6EE922D2914400808A9D /* Date.swift */; };
 		60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2124E22D3D64D0082745A /* CoreDataManager.swift */; };
 		60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125222D3F7D70082745A /* BootstrapManager.swift */; };
-		60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125A22D41B420082745A /* NoStepsCell.swift */; };
 		60F2125D22D424780082745A /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125C22D424780082745A /* SplashScreenController.swift */; };
 		60F2127222D5C06F0082745A /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2127122D5C06F0082745A /* UIStackView.swift */; };
 		60F2127422D5C9580082745A /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2127322D5C9580082745A /* FileManager.swift */; };
 		60F2131722D605F50082745A /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2131622D605F50082745A /* UILabel.swift */; };
+		60F78A5E22D639C100570995 /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5922D639C100570995 /* CurveAlgorithm.swift */; };
+		60F78A5F22D639C100570995 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5A22D639C100570995 /* LineChart.swift */; };
+		60F78A6022D639C100570995 /* PointEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5B22D639C100570995 /* PointEntry.swift */; };
+		60F78A6122D639C100570995 /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5C22D639C100570995 /* StepsView.swift */; };
+		60F78A6222D639C100570995 /* NoStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5D22D639C100570995 /* NoStepsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +58,6 @@
 		60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Semibold.otf"; sourceTree = "<group>"; };
 		60664F9422CF2432004506FB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		60664F9822CF25DC004506FB /* StepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCell.swift; sourceTree = "<group>"; };
-		60664F9A22CF260C004506FB /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		60664F9C22CF2644004506FB /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
 		60664F9E22CF273F004506FB /* BadgeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeListView.swift; sourceTree = "<group>"; };
 		60664FA022CF2773004506FB /* BadgeEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeEmptyView.swift; sourceTree = "<group>"; };
@@ -85,16 +84,12 @@
 		60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		60BEFA8D22D03B5E0081A9EC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		60BEFA9022D0441E0081A9EC /* CurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
-		60BEFA9222D0441E0081A9EC /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		60BEFA9622D08B3D0081A9EC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		60BEFA9822D08B710081A9EC /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
-		60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointEntry.swift; sourceTree = "<group>"; };
 		60CF6EE522D24F4600808A9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60CF6EE922D2914400808A9D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		60F2124E22D3D64D0082745A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		60F2125222D3F7D70082745A /* BootstrapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapManager.swift; sourceTree = "<group>"; };
-		60F2125A22D41B420082745A /* NoStepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoStepsCell.swift; sourceTree = "<group>"; };
 		60F2125C22D424780082745A /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		60F2126422D452E00082745A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60F2127122D5C06F0082745A /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
@@ -113,6 +108,11 @@
 		60F2130D22D5F3450082745A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		60F2130E22D5F3480082745A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		60F2131622D605F50082745A /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		60F78A5922D639C100570995 /* CurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
+		60F78A5A22D639C100570995 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		60F78A5B22D639C100570995 /* PointEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointEntry.swift; sourceTree = "<group>"; };
+		60F78A5C22D639C100570995 /* StepsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
+		60F78A5D22D639C100570995 /* NoStepsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoStepsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,20 +285,10 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		60BEFA8F22D042EC0081A9EC /* Chart */ = {
-			isa = PBXGroup;
-			children = (
-				60BEFA9222D0441E0081A9EC /* LineChart.swift */,
-				60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */,
-				60BEFA9022D0441E0081A9EC /* CurveAlgorithm.swift */,
-			);
-			path = Chart;
-			sourceTree = "<group>";
-		};
 		60F2127522D5CBE80082745A /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				60BEFA8F22D042EC0081A9EC /* Chart */,
+				60F78A5822D639C100570995 /* Steps */,
 				60BEFA8222CFAABD0081A9EC /* Badge */,
 			);
 			path = Component;
@@ -309,8 +299,6 @@
 			children = (
 				60664F9422CF2432004506FB /* ProfileCell.swift */,
 				60664F9822CF25DC004506FB /* StepsCell.swift */,
-				60F2125A22D41B420082745A /* NoStepsCell.swift */,
-				60664F9A22CF260C004506FB /* ChartCell.swift */,
 				60664F9C22CF2644004506FB /* BadgeCell.swift */,
 			);
 			path = Cell;
@@ -322,6 +310,26 @@
 				609DBBDF22D3AFFB00A353C8 /* Config.plist */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		60F78A5822D639C100570995 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				60F78A5D22D639C100570995 /* NoStepsView.swift */,
+				60F78A5C22D639C100570995 /* StepsView.swift */,
+				60F78A6322D63A0000570995 /* Chart */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
+		60F78A6322D63A0000570995 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				60F78A5922D639C100570995 /* CurveAlgorithm.swift */,
+				60F78A5A22D639C100570995 /* LineChart.swift */,
+				60F78A5B22D639C100570995 /* PointEntry.swift */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,21 +419,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F78A6122D639C100570995 /* StepsView.swift in Sources */,
 				60664FA322CF2AF3004506FB /* UIView.swift in Sources */,
+				60F78A6222D639C100570995 /* NoStepsView.swift in Sources */,
 				60664F9F22CF273F004506FB /* BadgeListView.swift in Sources */,
+				60F78A5E22D639C100570995 /* CurveAlgorithm.swift in Sources */,
 				60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */,
+				60F78A5F22D639C100570995 /* LineChart.swift in Sources */,
 				60F2125D22D424780082745A /* SplashScreenController.swift in Sources */,
-				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
 				60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */,
 				60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */,
 				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
-				60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */,
 				60F2131722D605F50082745A /* UILabel.swift in Sources */,
 				609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */,
 				60664FA122CF2773004506FB /* BadgeEmptyView.swift in Sources */,
 				60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */,
-				60BEFA9B22D0A1C70081A9EC /* PointEntry.swift in Sources */,
 				609DBBDA22D379BD00A353C8 /* AuthFailedController.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
 				60664F9D22CF2644004506FB /* BadgeCell.swift in Sources */,
@@ -433,15 +442,14 @@
 				60F2127222D5C06F0082745A /* UIStackView.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,
 				609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */,
+				60F78A6022D639C100570995 /* PointEntry.swift in Sources */,
 				606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */,
 				60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */,
 				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
 				60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */,
 				60590DFA22CF86E600F848B1 /* BadgeItemView.swift in Sources */,
 				60664F9922CF25DC004506FB /* StepsCell.swift in Sources */,
-				60BEFA9322D0441E0081A9EC /* CurveAlgorithm.swift in Sources */,
 				60664FD022CF7920004506FB /* String.swift in Sources */,
-				60BEFA9522D0441E0081A9EC /* LineChart.swift in Sources */,
 				606ABF7322CE432000EE7BAB /* Steps.xcdatamodeld in Sources */,
 				60BEFA8C22D01D0A0081A9EC /* HealthKitManager.swift in Sources */,
 				60CF6EEB22D2914400808A9D /* Date.swift in Sources */,

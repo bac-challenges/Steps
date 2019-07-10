@@ -32,7 +32,7 @@
 import UIKit
 
 #warning("Convert to view and include in StepsView")
-class NoStepsCell: UIView {
+class NoStepsView: UIView {
 
 	// UI
 	private lazy var titleLabel = UILabel("24A4F1D5".localized("Steps Data Unavailable"), weight: .heavy)
@@ -61,13 +61,13 @@ class NoStepsCell: UIView {
 }
 
 // MARK: - Actions
-extension NoStepsCell {
+extension NoStepsView {
 	@objc func generateSampleData() {
 	}
 }
 
 // MARK: - UI
-extension NoStepsCell {
+extension NoStepsView {
 	private func setupView() {
 		backgroundColor = #colorLiteral(red: 0.03935233504, green: 0.03935233504, blue: 0.03935233504, alpha: 1)
 		preservesSuperviewLayoutMargins = true
