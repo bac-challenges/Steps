@@ -1,0 +1,35 @@
+/* MIT License
+Copyright © 2019 Emile, Blue Ant Corp
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+ID: F18C0B31-3853-4CFD-BBAF-94B947257762
+Pkg: Steps
+MacOS: 10.15 */
+"F7A68F39" = "אישורי הבריאות לא נכשלו";
+"84583374" = "הפעל גישה ביישום בריאות";
+"1865C359" = "פתח בריאות App";
+"58033C81" = "צעדים";
+"24A4F1D5" = "שלבים נתונים לא זמין";
+"7375E553" = "בדוק את הגדרות ההרשאה שלך";
+"E8870A43" = "יצירת נתונים לדוגמה";
+"89DCAC96" = "עדיין אין הישגים";
+"11427B1F" = "תמשיך ללכת!";
+"A1239E36" = "הישגים";
+"730BDAB5" = "הישג מטרות";
+"main.cool" = "";
+/* This parameter is used across all platforms.
+Comments to keys are pretty useful too. There is more &ndash; Lokalise has built-in chat (see chat icon on the right side of the screen). Chat feed also aggregates comments to keys. */
+"main.country" = "בחר מדינה";
