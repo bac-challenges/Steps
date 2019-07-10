@@ -54,7 +54,6 @@ class BadgeEmptyView: UIView {
 extension BadgeEmptyView {
 	private func setupView() {
 		preservesSuperviewLayoutMargins = true
-		alpha = 0
 		addSubview(image)
 		addSubview(titleLabel)
 		addSubview(detailLabel)
