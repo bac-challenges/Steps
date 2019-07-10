@@ -34,7 +34,7 @@ import Foundation
 #warning("Document")
 // MARK: - Localized
 extension String {
-	func localized(withComment comment: String? = nil) -> String {
+	func localized(_ comment: String? = nil) -> String {
 		return NSLocalizedString(self, comment: comment ?? "")
 	}
 }

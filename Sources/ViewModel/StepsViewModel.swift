@@ -63,10 +63,6 @@ extension StepsViewModel {
 		return "profile-photo"
 	}
 	
-	var stepsLabelText: String {
-		return "58033C81".localized(withComment: "Steps")
-	}
-	
 	var stepsCountText: String {
 		guard let chartPoints = chartPoints else {
 			return "0"
@@ -80,18 +76,6 @@ extension StepsViewModel {
 	#warning("Show live data")
 	var stepsDateRangeText: String {
 		return "Nov 12 - Dec 12 2018"
-	}
-	
-	var noAchievementsTitleText: String {
-		return "89DCAC96".localized(withComment: "No achievements yet")
-	}
-	
-	var noAchievementsSubtitleText: String {
-		return "11427B1F".localized(withComment: "Keep walking!")
-	}
-	
-	var achievementsTitleText: String {
-		return "A1239E36".localized(withComment: "Achievements")
 	}
 	
 	var achievementsCountText: String {

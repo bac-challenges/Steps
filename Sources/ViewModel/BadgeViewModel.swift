@@ -43,7 +43,7 @@ struct BadgeViewModel: GenericViewModel {
 // MARK: - String
 extension BadgeViewModel {
 	var achievementsGoalText: String {
-		return "730BDAB5".localized(withComment: "Goal achievement")
+		return "730BDAB5".localized("Goal achievement")
 	}
 	
 	var image: UIImage? {

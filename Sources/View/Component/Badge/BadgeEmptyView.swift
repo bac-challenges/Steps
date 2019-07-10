@@ -40,6 +40,7 @@ class BadgeEmptyView: UIView {
 		let label = UILabel()
 		label.textAlignment = .center
 		label.textColor = .white
+		label.text = "89DCAC96".localized("No achievements yet")
 		label.numberOfLines = 0
 		label.font = .systemFont(ofSize: 24, weight: .heavy)
 		return label
@@ -50,6 +51,7 @@ class BadgeEmptyView: UIView {
 		let label = UILabel()
 		label.textAlignment = .center
 		label.textColor = .white
+		label.text = "11427B1F".localized("Keep walking!")
 		label.alpha = 0.5
 		label.font = .systemFont(ofSize: 24, weight: .medium)
 		return label
@@ -64,14 +66,6 @@ class BadgeEmptyView: UIView {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 		setupView()
-	}
-}
-
-// MARK: - Configurable
-extension BadgeEmptyView: Configurable {
-	func configure(_ model: StepsViewModel) {
-		titleLabel.text = model.noAchievementsTitleText
-		detailLabel.text = model.noAchievementsSubtitleText
 	}
 }
 

@@ -37,8 +37,7 @@ class SplashScreenController: UIViewController {
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
-		#warning("Localize")
-		label.text = "Steps"
+		label.text = "58033C81".localized("Steps")
 		label.font = .systemFont(ofSize: 48, weight: .black)
 		label.textColor = UIColor(named: "blueLabel")
 		label.alpha = 0

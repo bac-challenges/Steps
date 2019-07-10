@@ -33,15 +33,12 @@ import UIKit
 
 class AuthFailedController: UIViewController {
 
-	// Model
-	private lazy var model = AuthFailedViewModel()
-	
 	// UI
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
 		label.textColor = .white
-		label.text = model.authFailedTitleText
+		label.text = "F7A68F39".localized("HealthKit Authorization Failed")
 		label.numberOfLines = 0
 		label.font = .systemFont(ofSize: 18, weight: .heavy)
 		return label
@@ -51,7 +48,7 @@ class AuthFailedController: UIViewController {
 		let label = UILabel()
 		label.textAlignment = .center
 		label.textColor = .white
-		label.text = model.authFailedDetailText
+		label.text = "84583374".localized("Enable Access in Health App")
 		label.alpha = 0.5
 		label.font = .systemFont(ofSize: 14, weight: .medium)
 		return label
@@ -61,7 +58,7 @@ class AuthFailedController: UIViewController {
 		let button = UIButton()
 		button.layer.borderWidth = 1
 		button.layer.borderColor = UIColor.white.cgColor
-		button.setTitle(model.authFailedButtonTitleText, for: .normal)
+		button.setTitle("1865C359".localized("Open Health App"), for: .normal)
 		button.setTitleColor(.white, for: .normal)
 		button.addTarget(self, action: #selector(openHealthApp), for: .touchUpInside)
 		return button

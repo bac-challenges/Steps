@@ -39,6 +39,7 @@ class StepsCell: UITableViewCell {
 		let label = UILabel()
 		label.textAlignment = .left
 		label.textColor = .white
+		label.text = "58033C81".localized("Steps")
 		label.font = .systemFont(ofSize: 32, weight: .heavy)
 		return label
 	}()
@@ -84,7 +85,6 @@ class StepsCell: UITableViewCell {
 // MARK: - Configurable
 extension StepsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		titleLabel.text = model.stepsLabelText
 		detailLabel.text = model.stepsCountText
 		subtitleLabel.text = model.stepsDateRangeText
 	}

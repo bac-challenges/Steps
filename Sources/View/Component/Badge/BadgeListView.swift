@@ -36,6 +36,7 @@ class BadgeListView: UIView {
 	// UI
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
+		label.text = "A1239E36".localized("Achievements")
 		label.textAlignment = .left
 		label.textColor = .white
 		label.font = .systemFont(ofSize: 24, weight: .bold)
@@ -76,7 +77,6 @@ class BadgeListView: UIView {
 #warning("Remove all children before adding")
 extension BadgeListView: Configurable {
 	func configure(_ model: StepsViewModel) {
-		titleLabel.text = model.achievementsTitleText
 		detailLabel.text = model.achievementsCountText
 		model.achievedGoals.forEach { item in
 			let itemView = BadgeItemView()

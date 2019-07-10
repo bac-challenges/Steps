@@ -45,7 +45,6 @@
 		60BEFA9B22D0A1C70081A9EC /* PointEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */; };
 		60CF6EEB22D2914400808A9D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF6EE922D2914400808A9D /* Date.swift */; };
 		60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2124E22D3D64D0082745A /* CoreDataManager.swift */; };
-		60F2125122D3E8F80082745A /* AuthFailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */; };
 		60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125222D3F7D70082745A /* BootstrapManager.swift */; };
 		60F2125922D3FCE50082745A /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125822D3FCE50082745A /* Badge.swift */; };
 		60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125A22D41B420082745A /* NoStepsCell.swift */; };
@@ -70,9 +69,7 @@
 		60664FA822CF4B80004506FB /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		60664FAC22CF6394004506FB /* StepsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewModel.swift; sourceTree = "<group>"; };
 		60664FCF22CF7920004506FB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		60664FD422CF798F004506FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Prototype.storyboard; sourceTree = "<group>"; };
 		60664FD622CF799E004506FB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		60664FD922CF79B1004506FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Prototype.strings; sourceTree = "<group>"; };
 		60664FDB22CF79FA004506FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		60664FDD22CF7B14004506FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		606ABF6722CE432000EE7BAB /* Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steps.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +95,6 @@
 		60CF6EE522D24F4600808A9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60CF6EE922D2914400808A9D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		60F2124E22D3D64D0082745A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFailedViewModel.swift; sourceTree = "<group>"; };
 		60F2125222D3F7D70082745A /* BootstrapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapManager.swift; sourceTree = "<group>"; };
 		60F2125822D3FCE50082745A /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		60F2125A22D41B420082745A /* NoStepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoStepsCell.swift; sourceTree = "<group>"; };
@@ -107,6 +103,7 @@
 		60F2127122D5C06F0082745A /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		60F2127322D5C9580082745A /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		60F2127722D5CE650082745A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		60F2128022D5D0A70082745A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Prototype.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +121,7 @@
 		60590DF422CF7CC800F848B1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				60664FD522CF798F004506FB /* Prototype.storyboard */,
 				606ABF7422CE432200EE7BAB /* Assets.xcassets */,
 				60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */,
 			);
@@ -171,7 +169,6 @@
 			children = (
 				60590DF622CF818900F848B1 /* Localizable.strings */,
 				60664FDA22CF79FA004506FB /* InfoPlist.strings */,
-				60664FD522CF798F004506FB /* Prototype.storyboard */,
 				60664FC222CF754C004506FB /* LaunchScreen.storyboard */,
 			);
 			path = Locale;
@@ -253,7 +250,6 @@
 		606ABF8E22CE874200EE7BAB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */,
 				60664FAC22CF6394004506FB /* StepsViewModel.swift */,
 				60BEFA8622CFB4F00081A9EC /* BadgeViewModel.swift */,
 			);
@@ -429,7 +425,6 @@
 				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
 				60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */,
 				60590DFA22CF86E600F848B1 /* BadgeItemView.swift in Sources */,
-				60F2125122D3E8F80082745A /* AuthFailedViewModel.swift in Sources */,
 				60664F9922CF25DC004506FB /* StepsCell.swift in Sources */,
 				60BEFA9322D0441E0081A9EC /* CurveAlgorithm.swift in Sources */,
 				60664FD022CF7920004506FB /* String.swift in Sources */,
@@ -464,8 +459,7 @@
 		60664FD522CF798F004506FB /* Prototype.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				60664FD422CF798F004506FB /* Base */,
-				60664FD922CF79B1004506FB /* en */,
+				60F2128022D5D0A70082745A /* en */,
 			);
 			name = Prototype.storyboard;
 			sourceTree = "<group>";

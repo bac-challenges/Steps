@@ -56,7 +56,7 @@ class NoStepsCell: UITableViewCell {
 		let button = UIButton()
 		button.layer.borderWidth = 1
 		button.layer.borderColor = UIColor.white.cgColor
-		button.setTitle("Generate Sample Data", for: .normal)
+		button.setTitle("E8870A43".localized("Generate Sample Data"), for: .normal)
 		button.setTitleColor(.white, for: .normal)
 		button.alpha = 0.5
 		button.addTarget(self, action: #selector(generateSampleData), for: .touchUpInside)
@@ -88,9 +88,8 @@ extension NoStepsCell {
 // MARK: - Configurable
 extension NoStepsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		#warning("Localize")
-		titleLabel.text = "Steps Data Unavaliable"
-		detailLabel.text = "Check your premission settings"
+		titleLabel.text = "24A4F1D5".localized("Steps Data Unavailable")
+		detailLabel.text = "7375E553".localized("Check your premission settings")
 	}
 }
 
