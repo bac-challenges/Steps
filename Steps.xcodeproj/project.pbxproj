@@ -178,7 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				60CF6EE522D24F4600808A9D /* README.md */,
-				606ABF6922CE432000EE7BAB /* Steps */,
+				606ABF6922CE432000EE7BAB /* Sources */,
+				606ABF8322CE472700EE7BAB /* Resources */,
 				606ABF6822CE432000EE7BAB /* Products */,
 				606ABF8022CE436700EE7BAB /* Frameworks */,
 			);
@@ -192,7 +193,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		606ABF6922CE432000EE7BAB /* Steps */ = {
+		606ABF6922CE432000EE7BAB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				606ABF6A22CE432000EE7BAB /* AppDelegate.swift */,
@@ -204,9 +205,8 @@
 				606ABF8422CE489C00EE7BAB /* Model */,
 				60BEFA8A22D01CD80081A9EC /* Service */,
 				60664F8922CEE3AA004506FB /* Utils */,
-				606ABF8322CE472700EE7BAB /* Resources */,
 			);
-			path = Steps;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		606ABF8022CE436700EE7BAB /* Frameworks */ = {
@@ -576,10 +576,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Steps/Resources/Steps.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/Steps.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R2H7J9PW2;
-				INFOPLIST_FILE = "$(SRCROOT)/Steps/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,10 +595,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Steps/Resources/Steps.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/Steps.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R2H7J9PW2;
-				INFOPLIST_FILE = "$(SRCROOT)/Steps/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
