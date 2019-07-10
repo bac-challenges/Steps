@@ -33,7 +33,7 @@ import Foundation
 
 extension Int {
 	
-	// Formatted string eg. 1000 = 1.000
+	/// Formatted string eg. 1000 = 1.000
 	var formattedWithSeparator: String {
 		return Formatter.withSeparator.string(for: self) ?? ""
 	}

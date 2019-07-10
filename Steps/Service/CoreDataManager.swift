@@ -32,6 +32,7 @@
 import Foundation
 import CoreData
 
+#warning("Implement")
 class CoreDataManager {
 	
 	public static let shared = CoreDataManager()

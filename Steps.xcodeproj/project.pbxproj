@@ -50,6 +50,7 @@
 		60F2125922D3FCE50082745A /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125822D3FCE50082745A /* Achievement.swift */; };
 		60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125A22D41B420082745A /* NoStepsCell.swift */; };
 		60F2125D22D424780082745A /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125C22D424780082745A /* SplashScreenController.swift */; };
+		60F2127222D5C06F0082745A /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2127122D5C06F0082745A /* UIStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		60F2125A22D41B420082745A /* NoStepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoStepsCell.swift; sourceTree = "<group>"; };
 		60F2125C22D424780082745A /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		60F2126422D452E00082745A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		60F2127122D5C06F0082745A /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				60BEFA8D22D03B5E0081A9EC /* UIImage.swift */,
 				60664FA822CF4B80004506FB /* UIImageView.swift */,
 				609DBBDD22D3942500A353C8 /* UITableView.swift */,
+				60F2127122D5C06F0082745A /* UIStackView.swift */,
 				60BEFA9822D08B710081A9EC /* Int.swift */,
 				60664FCF22CF7920004506FB /* String.swift */,
 				60CF6EE922D2914400808A9D /* Date.swift */,
@@ -229,8 +232,8 @@
 		606ABF8422CE489C00EE7BAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */,
 				60F2125822D3FCE50082745A /* Achievement.swift */,
+				606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				609DBBDA22D379BD00A353C8 /* AuthFailedController.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
 				60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */,
+				60F2127222D5C06F0082745A /* UIStackView.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,
 				609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */,
 				606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */,

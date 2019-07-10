@@ -31,6 +31,7 @@
 
 import UIKit
 
+#warning("Document")
 extension UITableView {
 	func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
 		guard let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {

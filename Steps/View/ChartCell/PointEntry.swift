@@ -36,6 +36,7 @@ struct PointEntry {
 	let label: String
 }
 
+#warning("Fix syntax")
 extension PointEntry: Comparable {
 	static func <(lhs: PointEntry, rhs: PointEntry) -> Bool {
 		return lhs.value < rhs.value

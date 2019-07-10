@@ -31,6 +31,7 @@
 
 import Foundation
 
+#warning("Document")
 extension Date {
 	func toString(withFormat format: String = "yyyy-MM-dd") -> String {
 		let dateFormatter = DateFormatter()

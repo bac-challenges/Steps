@@ -31,6 +31,7 @@
 
 import Foundation
 
+#warning("Document")
 public protocol GenericViewModel {
 	associatedtype T
 	var model: T { get }

@@ -31,8 +31,8 @@
 
 import UIKit
 
+#warning("Document")
 extension UIImageView {
-	
 	convenience init(_ image: String, rounded: Bool = false) {
 		let image = UIImage(named: image)
 		self.init(image: image)

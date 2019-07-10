@@ -31,6 +31,7 @@
 
 import UIKit
 
+#warning("Rename to BadgeViewModel")
 struct AchievementViewModel: GenericViewModel {
 	
 	var model: Achievement

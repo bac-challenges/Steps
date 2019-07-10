@@ -20,19 +20,24 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 7C4C55E0-B672-455C-B5A9-D9BC373FDFFC
+//	ID: 1A655C82-1B53-413C-B310-67CC3D8345D1
 //
-//	Pkg: Steps
+//	Pkg: GenericUtils
 //
 //	Swift: 5.0 
 //
 //	MacOS: 10.15
 //
 
-import Foundation
-
-#warning("Rename to Badge")
-struct Achievement {
-	let steps: Int
-	let isUnlocked: Bool
+import UIKit
+#warning("Document")
+public extension UIStackView {
+	func removeAllArrangedSubviews() {
+		let removedSubviews = arrangedSubviews.reduce([]) { (allSubviews, subview) -> [UIView] in
+			self.removeArrangedSubview(subview)
+			return allSubviews + [subview]
+		}
+		NSLayoutConstraint.deactivate(removedSubviews.flatMap({ $0.constraints }))
+		removedSubviews.forEach({ $0.removeFromSuperview() })
+	}
 }

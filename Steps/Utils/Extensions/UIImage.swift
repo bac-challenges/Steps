@@ -31,7 +31,10 @@
 
 import UIKit
 
+#warning("Document")
 extension UIImage {
+	
+	/// Image with color
 	class func image(_ color: UIColor = .clear) -> UIImage {
 		let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 0.5)
 		UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
@@ -42,7 +45,7 @@ extension UIImage {
 		return image
 	}
 	
-	// Black and white image filter
+	/// Black and white image filter
 	var noir: UIImage? {
 		let context = CIContext(options: nil)
 		guard let currentFilter = CIFilter(name: "CIPhotoEffectNoir") else { return nil }

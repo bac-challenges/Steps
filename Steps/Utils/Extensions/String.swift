@@ -31,6 +31,7 @@
 
 import Foundation
 
+#warning("Document")
 // MARK: - Localized
 extension String {
 	func localized(withComment comment: String? = nil) -> String {
@@ -38,6 +39,7 @@ extension String {
 	}
 }
 
+#warning("Document")
 // MARK: - Sring to Date
 extension String {
 	func toDate(withFormat format: String = "yyyy-MM-dd") -> Date? {

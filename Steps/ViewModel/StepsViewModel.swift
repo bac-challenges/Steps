@@ -77,8 +77,8 @@ extension StepsViewModel {
 						  .formattedWithSeparator
 	}
 	
+	#warning("Show live data")
 	var stepsDateRangeText: String {
-		#warning("Show live data")
 		return "Nov 12 - Dec 12 2018"
 	}
 	
@@ -122,6 +122,7 @@ extension StepsViewModel {
 			return [.profile, .steps, .chart, .achievements]
 		}
 		
+		#warning("Remove after StepsCell refactoring")
 		static var noStepsValues: [Sections] {
 			return [.profile, .noSteps, .achievements]
 		}

@@ -31,6 +31,7 @@
 
 import UIKit
 
+#warning("Add default label style")
 struct Appearance {
 	
 	/// Apply appearance properties

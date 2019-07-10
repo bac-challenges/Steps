@@ -9,6 +9,9 @@
 import UIKit
 
 #warning("Review and optimize")
+#warning("Add ScrollView if needed")
+#warning("Dynamic labels")
+#warning("Document")
 class LineChart: UIView {
     
     /// Gap between each point
