@@ -31,8 +31,7 @@
 
 import UIKit
 
-#warning("Convert to UIView and use in StepsCell as child")
-#warning("Add ScrollView and make plotting dynamic")
+#warning("Convert to UIView and use in StepsCell as parent")
 class ChartCell: UITableViewCell {
 	
 	// UI
@@ -52,11 +51,6 @@ class ChartCell: UITableViewCell {
 		super.init(coder: coder)
 		setupView()
 	}
-	
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		resetView()
-	}
 }
 
 // MARK: - Configurable
@@ -68,9 +62,6 @@ extension ChartCell: Configurable {
 
 // MARK: - UI
 extension ChartCell {
-	private func resetView() {
-	}
-	
 	private func setupView() {
 		selectionStyle = .none
 		backgroundColor = .black

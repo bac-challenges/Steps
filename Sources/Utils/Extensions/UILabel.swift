@@ -20,55 +20,38 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 96A8521A-0D85-4DA0-B586-D6B4B31688E9
+//	ID: F7EAA21B-8AC3-4F02-990B-16A9F7313E39
 //
 //	Pkg: Steps
 //
-//	Swift: 5.0
+//	Swift: 5.0 
 //
 //	MacOS: 10.15
 //
 
 import UIKit
 
-class SplashScreenController: UIViewController {
-
-	// UI
-	private lazy var titleLabel = UILabel("58033C81".localized("Steps"),
-										  color: UIColor(named: "blueLabel"),
-										  size: 48,
-										  weight: .black,
-										  alpha: 0)
+extension UILabel {
 	
-	private lazy var spinner = UIActivityIndicatorView(style: .whiteLarge)
-	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		setupView()
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		UIView.animate(withDuration: 0.5) {
-			self.titleLabel.alpha = 1
-		}
-		spinner.startAnimating()
-	}
-}
-
-// MARK: - UI
-extension  SplashScreenController {
-	private func setupView() {
-		view.addSubview(titleLabel)
-		view.addSubview(spinner)
-		setuoLayout()
-	}
-	
-	private func setuoLayout() {
-		titleLabel.anchor(centerX: view.centerXAnchor,
-						  centerY: view.centerYAnchor, paddingCenterY: -60)
+	#warning("Document")
+	///
+	public convenience init(_ text: String = "",
+							color textColor: UIColor? = .white,
+							alignment textAlignment: NSTextAlignment = .center,
+							font: UIFont? = nil,
+							size fontSize: CGFloat = 24,
+							weight fontWeight: UIFont.Weight = .bold,
+							lines numberOfLines: Int = 0,
+							alpha: CGFloat = 1) {
+		self.init()
+		self.text = text
+		self.textColor = textColor
+		self.textAlignment = textAlignment
+		self.font = font ?? .systemFont(ofSize: fontSize, weight: fontWeight)
+		self.numberOfLines = numberOfLines
 		
-		spinner.anchor(bottom: view.bottomAnchor, paddingBottom: 40,
-					   centerX: view.centerXAnchor)
+		#warning("Properties not working...")
+		self.alpha = alpha
+		self.sizeToFit()
 	}
 }

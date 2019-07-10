@@ -56,7 +56,6 @@ class BadgeCell: UITableViewCell {
 // MARK: - Configurable
 extension BadgeCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		#warning("Animate on set achivements")
 		listView.configure(model)
 	}
 }

@@ -35,30 +35,15 @@ import UIKit
 class NoStepsCell: UITableViewCell {
 
 	// UI
-	private lazy var titleLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .center
-		label.textColor = .white
-		label.font = .systemFont(ofSize: 24, weight: .heavy)
-		return label
-	}()
-	
-	private lazy var detailLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .center
-		label.textColor = .white
-		label.alpha = 0.5
-		label.font = .systemFont(ofSize: 16, weight: .medium)
-		return label
-	}()
+	private lazy var titleLabel = UILabel("24A4F1D5".localized("Steps Data Unavailable"), weight: .heavy)
+	private lazy var detailLabel = UILabel("7375E553".localized("Check your permission settings"),
+										   size: 16,
+										   weight: .medium,
+										   alpha: 0.5)
 	
 	private lazy var button: UIButton = {
 		let button = UIButton()
-		button.layer.borderWidth = 1
-		button.layer.borderColor = UIColor.white.cgColor
 		button.setTitle("E8870A43".localized("Generate Sample Data"), for: .normal)
-		button.setTitleColor(.white, for: .normal)
-		button.alpha = 0.5
 		button.addTarget(self, action: #selector(generateSampleData), for: .touchUpInside)
 		return button
 	}()
@@ -82,14 +67,6 @@ class NoStepsCell: UITableViewCell {
 // MARK: - Actions
 extension NoStepsCell {
 	@objc func generateSampleData() {
-	}
-}
-
-// MARK: - Configurable
-extension NoStepsCell: Configurable {
-	func configure(_ model: StepsViewModel) {
-		titleLabel.text = "24A4F1D5".localized("Steps Data Unavailable")
-		detailLabel.text = "7375E553".localized("Check your premission settings")
 	}
 }
 

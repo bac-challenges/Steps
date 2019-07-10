@@ -34,28 +34,11 @@ import UIKit
 class BadgeItemView: UIView {
 
 	// UI
-	private lazy var container = UIView(frame: CGRect(x: 0, y: 0, width: 116, height: 180))
-	
+	private lazy var container = UIView()
 	private lazy var image = UIImageView("10k", rounded: true)
-	
-	private lazy var titleLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .center
-		label.textColor = .white
-		label.numberOfLines = 0
-		label.font = .systemFont(ofSize: 16, weight: .heavy)
-		return label
-	}()
-	
-	private lazy var detailLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .center
-		label.textColor = .white
-		label.alpha = 0.5
-		label.font = UIFont(name: "SFCompactText-Semibold", size: 13)
-		return label
-	}()
-	
+	private lazy var titleLabel = UILabel(size: 16, weight: .heavy)
+	private lazy var detailLabel = UILabel(font: UIFont(name: "SFCompactText-Semibold", size: 13), alpha: 0.5)
+
 	// Init
 	override init(frame: CGRect) {
 		super.init(frame: frame)

@@ -86,8 +86,9 @@ enum State {
 
 ### Localization
 
-- Main.storyboard - Not used in project
-- Localizable.strings
+- English
+- Arabic
+- 
 
 > Sample note
 

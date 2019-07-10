@@ -51,6 +51,7 @@
 		60F2125D22D424780082745A /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125C22D424780082745A /* SplashScreenController.swift */; };
 		60F2127222D5C06F0082745A /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2127122D5C06F0082745A /* UIStackView.swift */; };
 		60F2127422D5C9580082745A /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2127322D5C9580082745A /* FileManager.swift */; };
+		60F2131722D605F50082745A /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2131622D605F50082745A /* UILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		60F2130C22D5F3430082745A /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		60F2130D22D5F3450082745A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		60F2130E22D5F3480082745A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		60F2131622D605F50082745A /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				60664FA222CF2AF3004506FB /* UIView.swift */,
+				60F2131622D605F50082745A /* UILabel.swift */,
 				60BEFA8D22D03B5E0081A9EC /* UIImage.swift */,
 				60664FA822CF4B80004506FB /* UIImageView.swift */,
 				609DBBDD22D3942500A353C8 /* UITableView.swift */,
@@ -426,6 +429,7 @@
 				60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */,
 				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
 				60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */,
+				60F2131722D605F50082745A /* UILabel.swift in Sources */,
 				609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */,
 				60664FA122CF2773004506FB /* BadgeEmptyView.swift in Sources */,
 				60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */,

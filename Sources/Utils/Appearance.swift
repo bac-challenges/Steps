@@ -53,5 +53,12 @@ struct Appearance {
 		
 		navigationBarAppearace.titleTextAttributes = [Key.foregroundColor: UIColor.white,
 													  Key.font: UIFont.systemFont(ofSize: 14, weight: .black)]
+		
+		// Button
+		let buttonAppearace = UIButton.appearance()
+		buttonAppearace.layer.borderWidth = 1
+		buttonAppearace.layer.borderColor = UIColor.white.cgColor
+		buttonAppearace.setTitleColor(.white, for: .normal)
+		buttonAppearace.alpha = 0.5
 	}
 }
