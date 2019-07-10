@@ -29,7 +29,3 @@ MacOS: 10.15 */
 "11427B1F" = "Keep walking!";
 "A1239E36" = "Achievements";
 "730BDAB5" = "Goal achievement";
-"main.cool" = "This string belongs to iOS, however you can link other platforms with a single click!";
-/* This parameter is used across all platforms.
-Comments to keys are pretty useful too. There is more &ndash; Lokalise has built-in chat (see chat icon on the right side of the screen). Chat feed also aggregates comments to keys. */
-"main.country" = "Select country";
