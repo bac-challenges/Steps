@@ -31,8 +31,9 @@
 
 import UIKit
 
-#warning("Document")
 extension UITableView {
+	
+	/// Generic method for dequeueing UITableViewCells
 	func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
 		guard let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {
 			fatalError("Unable to Dequeue Reusable Table View Cell")

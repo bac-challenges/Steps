@@ -52,14 +52,10 @@ class BadgeItemView: UIView {
 }
 
 // MARK: - Configurable
-#warning("Refactor method")
 extension BadgeItemView: Configurable {
 	func configure(_ item: Int) {
-		let str = "\(item)k"
-		detailLabel.text = str
-		image.image = UIImage(named: str)
-		
-		// Animate
+		detailLabel.text = "\(item)k"
+		image.image = UIImage(named: "\(item)k")
 		UIView.animate(withDuration: 2,
 					   delay: TimeInterval(item)/50,
 					   usingSpringWithDamping: 1,

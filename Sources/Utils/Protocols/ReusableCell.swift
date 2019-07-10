@@ -31,7 +31,6 @@
 
 import UIKit
 
-#warning("Document")
 public protocol ReusableCell {
 	static var identifier: String { get }
 }

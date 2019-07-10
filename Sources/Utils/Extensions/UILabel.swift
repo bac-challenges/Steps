@@ -32,10 +32,8 @@
 import UIKit
 
 extension UILabel {
-	
-	#warning("Document")
-	///
-	public convenience init(_ text: String = "",
+	/// Creates styled UILabel.
+	public convenience init(_ text: String = "", //
 							color textColor: UIColor? = .white,
 							alignment textAlignment: NSTextAlignment = .center,
 							font: UIFont? = nil,

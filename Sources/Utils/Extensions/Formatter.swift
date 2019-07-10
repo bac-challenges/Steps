@@ -31,7 +31,6 @@
 
 import Foundation
 
-#warning("Document")
 extension Formatter {
 	static let withSeparator: NumberFormatter = {
 		let formatter = NumberFormatter()

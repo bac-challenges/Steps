@@ -60,7 +60,7 @@ extension StepsViewModel {
 		}
 		return chartPoints.compactMap { $0.value }
 						  .reduce(0) { $0 + $1 }
-						  .formattedWithSeparator
+						  .format()
 	}
 	
 	var stepsDateRangeText: String {
@@ -85,7 +85,7 @@ extension StepsViewModel {
 		return chartPoints.count == 0 ? false:true
 	}
 	
-	#warning("Show static from CoreData model")
+	#warning("Show achievedGoals from CoreData model")
 	var achievedGoals: [Int] {
 		return [10,15,20,25,30,35,40]
 	}

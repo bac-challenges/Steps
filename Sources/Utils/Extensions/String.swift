@@ -31,17 +31,19 @@
 
 import Foundation
 
-#warning("Document")
 // MARK: - Localized
 extension String {
+	
+	/// Returns a localized string using the main bundle.
 	func localized(_ comment: String? = nil) -> String {
 		return NSLocalizedString(self, comment: comment ?? "")
 	}
 }
 
-#warning("Document")
 // MARK: - Sring to Date
 extension String {
+	
+	/// Returns date from string
 	func toDate(withFormat format: String = "yyyy-MM-dd") -> Date? {
 		let dateFormatter = DateFormatter()
 		dateFormatter.timeZone = TimeZone(abbreviation: "GMT")

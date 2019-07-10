@@ -31,7 +31,6 @@
 
 import UIKit
 
-#warning("Document")
 extension UIImage {
 	
 	/// Image with color

@@ -8,8 +8,6 @@
 
 import UIKit
 
-#warning("Add ScrollView and make plotting dynamic")
-#warning("Document")
 class LineChart: UIView {
     
     /// Gap between each point

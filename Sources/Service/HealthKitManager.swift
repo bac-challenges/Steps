@@ -183,8 +183,7 @@ extension HealthKitManager {
 		let startDate: Date
 		let endDate: Date
 	}
-
-	#warning("Create StepsModel")
+	
 	/// Read sample steps data
 	func readSampleSteps(completion: @escaping ([DailySteps]) -> Void) {
 		readStepsCollection(startDate: Date.startOfMonth, endDate: Date(), completion: completion)
