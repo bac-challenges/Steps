@@ -34,7 +34,6 @@
 		609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBDB22D37C4400A353C8 /* Appearance.swift */; };
 		609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBDD22D3942500A353C8 /* UITableView.swift */; };
 		609DBBE022D3AFFB00A353C8 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609DBBDF22D3AFFB00A353C8 /* Config.plist */; };
-		60BEFA8722CFB4F00081A9EC /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8622CFB4F00081A9EC /* BadgeViewModel.swift */; };
 		60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */; };
 		60BEFA8C22D01D0A0081A9EC /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */; };
 		60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8D22D03B5E0081A9EC /* UIImage.swift */; };
@@ -46,7 +45,6 @@
 		60CF6EEB22D2914400808A9D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF6EE922D2914400808A9D /* Date.swift */; };
 		60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2124E22D3D64D0082745A /* CoreDataManager.swift */; };
 		60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125222D3F7D70082745A /* BootstrapManager.swift */; };
-		60F2125922D3FCE50082745A /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125822D3FCE50082745A /* Badge.swift */; };
 		60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125A22D41B420082745A /* NoStepsCell.swift */; };
 		60F2125D22D424780082745A /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125C22D424780082745A /* SplashScreenController.swift */; };
 		60F2127222D5C06F0082745A /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2127122D5C06F0082745A /* UIStackView.swift */; };
@@ -84,7 +82,6 @@
 		609DBBDB22D37C4400A353C8 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		609DBBDD22D3942500A353C8 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		609DBBDF22D3AFFB00A353C8 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
-		60BEFA8622CFB4F00081A9EC /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		60BEFA8D22D03B5E0081A9EC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -97,7 +94,6 @@
 		60CF6EE922D2914400808A9D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		60F2124E22D3D64D0082745A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		60F2125222D3F7D70082745A /* BootstrapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapManager.swift; sourceTree = "<group>"; };
-		60F2125822D3FCE50082745A /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		60F2125A22D41B420082745A /* NoStepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoStepsCell.swift; sourceTree = "<group>"; };
 		60F2125C22D424780082745A /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		60F2126422D452E00082745A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -243,7 +239,6 @@
 		606ABF8422CE489C00EE7BAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				60F2125822D3FCE50082745A /* Badge.swift */,
 				606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */,
 			);
 			path = Model;
@@ -265,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				60664FAC22CF6394004506FB /* StepsViewModel.swift */,
-				60BEFA8622CFB4F00081A9EC /* BadgeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -420,10 +414,8 @@
 				60664FA322CF2AF3004506FB /* UIView.swift in Sources */,
 				60664F9F22CF273F004506FB /* BadgeListView.swift in Sources */,
 				60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */,
-				60BEFA8722CFB4F00081A9EC /* BadgeViewModel.swift in Sources */,
 				60F2125D22D424780082745A /* SplashScreenController.swift in Sources */,
 				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
-				60F2125922D3FCE50082745A /* Badge.swift in Sources */,
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
 				60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */,
 				60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */,

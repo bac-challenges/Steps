@@ -88,34 +88,26 @@ extension StepsViewModel {
 		}
 		return chartPoints.count == 0 ? false:true
 	}
-	#warning("Duplicated values in the model")
-	var achievedGoals: [BadgeViewModel] {
-		let result = [(10, true),(15, true),(20, false),(25, false),(30, false),(35, false),(40, false)].map {
-			BadgeViewModel(Badge(steps: $0, isUnlocked: $1))
-		}
-		return result
+	
+	#warning("Show static from CoreData model")
+	var achievedGoals: [Int] {
+		return [10,15,20,25,30,35,40]
 	}
 }
 
 // MARK: - TableView Structure
 extension StepsViewModel {
 	enum Sections: Int {
-		case profile, steps, noSteps, chart, achievements
+		case profile, steps, chart, achievements
 		
 		static var allValues: [Sections] {
 			return [.profile, .steps, .chart, .achievements]
 		}
-		
-		#warning("Remove after StepsCell refactoring")
-		static var noStepsValues: [Sections] {
-			return [.profile, .noSteps, .achievements]
-		}
-		
+
 		var identifier: String {
 			switch self {
 			case .profile: return ProfileCell.identifier
 			case .steps: return StepsCell.identifier
-			case .noSteps: return UITableViewCell.identifier
 			case .chart: return ChartCell.identifier
 			case .achievements: return BadgeCell.identifier
 			}
@@ -123,6 +115,6 @@ extension StepsViewModel {
 	}
 	
 	var sections: [Sections] {
-		return isDataAvailable ? Sections.allValues : Sections.noStepsValues
+		return Sections.allValues
 	}
 }
