@@ -31,8 +31,11 @@
 
 import Foundation
 
-#warning("Document")
 extension Date {
+	
+	/// Convert Date to string
+	/// - parameter format: String format e.g. "yyyy-MM-dd"
+	/// - returns: Formatted Date string
 	func toString(withFormat format: String = "yyyy-MM-dd") -> String {
 		let dateFormatter = DateFormatter()
 		dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
@@ -41,17 +44,15 @@ extension Date {
 	}
 }
 
-#warning("Document")
 extension Date {
-	
+
+	/// First day of the month
 	var startOfMonth: Date {
-		let date = Calendar.current.startOfDay(for: self)
-		let calendar = Calendar.current.dateComponents([.year, .month], from: date)
-		return Calendar.current.date(from: calendar)!
-	}
-	
-	var endOfMonth: Date {
-		let components = DateComponents(month: 1, day: -1)
-		return Calendar.current.date(byAdding: components, to: self.startOfMonth)!
+		var calendar = Calendar.current
+		calendar.timeZone = TimeZone(abbreviation: "UTC")!
+		guard let interval  = calendar.dateInterval(of: .month, for: Date()) else {
+			fatalError()
+		}
+		return interval.start
 	}
 }
