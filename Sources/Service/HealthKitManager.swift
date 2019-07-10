@@ -76,7 +76,7 @@ extension HealthKitManager {
 	///		- startDate: Count start date
 	/// 	- endDate: Count end date
 	///		- completion: A block that this method calls as soon as the read operation is complete.
-	public func readStepsCollection(startDate start: Date, endDate end: Date, completion: @escaping ([PointEntry]) -> Void) {
+	public func readStepsCollection(startDate start: Date, endDate end: Date, completion: @escaping ([DailySteps]) -> Void) {
 		
 		var interval = DateComponents()
 		interval.day = 1
@@ -93,7 +93,7 @@ extension HealthKitManager {
 				fatalError("*** An error occurred while calculating the statistics: \(error.debugDescription) ***")
 			}
 			
-			var pointEntryCollection = [PointEntry]()
+			var dailyStepsCollection = [DailySteps]()
 
 			statsCollection.enumerateStatistics(from: start, to: end)  { statistics, stop  in
 				
@@ -101,10 +101,10 @@ extension HealthKitManager {
 					let date = statistics.startDate
 					let value = quantity.doubleValue(for: HKUnit.count())
 					
-					pointEntryCollection.append(PointEntry(value: Int(value), label: date.description))
+					dailyStepsCollection.append(DailySteps(value: Int(value), date: date))
 				}
 			}
-			completion(pointEntryCollection)
+			completion(dailyStepsCollection)
 		}
 		healthStore.execute(query)
 	}
@@ -186,7 +186,7 @@ extension HealthKitManager {
 
 	#warning("Create StepsModel")
 	/// Read sample steps data
-	func readSampleSteps(completion: @escaping ([PointEntry]) -> Void) {
+	func readSampleSteps(completion: @escaping ([DailySteps]) -> Void) {
 		readStepsCollection(startDate: Date.startOfMonth, endDate: Date(), completion: completion)
 	}
 	

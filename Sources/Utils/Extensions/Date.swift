@@ -36,7 +36,7 @@ extension Date {
 	/// Convert Date to string
 	/// - parameter format: String format e.g. "yyyy-MM-dd"
 	/// - returns: Formatted Date string
-	func toString(withFormat format: String = "yyyy-MM-dd") -> String {
+	func toString(_ format: String = "yyyy-MM-dd") -> String {
 		let dateFormatter = DateFormatter()
 		dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
 		dateFormatter.dateFormat = format

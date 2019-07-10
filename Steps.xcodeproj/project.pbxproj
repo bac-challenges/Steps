@@ -38,6 +38,7 @@
 		60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8D22D03B5E0081A9EC /* UIImage.swift */; };
 		60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9622D08B3D0081A9EC /* Formatter.swift */; };
 		60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9822D08B710081A9EC /* Numeric.swift */; };
+		60C5DABF22D6A57F0062499B /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DABE22D6A57F0062499B /* DailySteps.swift */; };
 		60CF6EEB22D2914400808A9D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF6EE922D2914400808A9D /* Date.swift */; };
 		60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2124E22D3D64D0082745A /* CoreDataManager.swift */; };
 		60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125222D3F7D70082745A /* BootstrapManager.swift */; };
@@ -47,7 +48,6 @@
 		60F2131722D605F50082745A /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2131622D605F50082745A /* UILabel.swift */; };
 		60F78A5E22D639C100570995 /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5922D639C100570995 /* CurveAlgorithm.swift */; };
 		60F78A5F22D639C100570995 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5A22D639C100570995 /* LineChart.swift */; };
-		60F78A6022D639C100570995 /* PointEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5B22D639C100570995 /* PointEntry.swift */; };
 		60F78A6122D639C100570995 /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5C22D639C100570995 /* StepsView.swift */; };
 		60F78A6222D639C100570995 /* NoStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F78A5D22D639C100570995 /* NoStepsView.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +86,7 @@
 		60BEFA8D22D03B5E0081A9EC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		60BEFA9622D08B3D0081A9EC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		60BEFA9822D08B710081A9EC /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
+		60C5DABE22D6A57F0062499B /* DailySteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySteps.swift; sourceTree = "<group>"; };
 		60CF6EE522D24F4600808A9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60CF6EE922D2914400808A9D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		60F2124E22D3D64D0082745A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -110,7 +111,6 @@
 		60F2131622D605F50082745A /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		60F78A5922D639C100570995 /* CurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
 		60F78A5A22D639C100570995 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
-		60F78A5B22D639C100570995 /* PointEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointEntry.swift; sourceTree = "<group>"; };
 		60F78A5C22D639C100570995 /* StepsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
 		60F78A5D22D639C100570995 /* NoStepsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoStepsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +239,7 @@
 		606ABF8422CE489C00EE7BAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				60C5DABE22D6A57F0062499B /* DailySteps.swift */,
 				606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */,
 			);
 			path = Model;
@@ -327,7 +328,6 @@
 			children = (
 				60F78A5A22D639C100570995 /* LineChart.swift */,
 				60F78A5922D639C100570995 /* CurveAlgorithm.swift */,
-				60F78A5B22D639C100570995 /* PointEntry.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -442,11 +442,11 @@
 				60F2127222D5C06F0082745A /* UIStackView.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,
 				609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */,
-				60F78A6022D639C100570995 /* PointEntry.swift in Sources */,
 				606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */,
 				60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */,
 				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
 				60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */,
+				60C5DABF22D6A57F0062499B /* DailySteps.swift in Sources */,
 				60590DFA22CF86E600F848B1 /* BadgeItemView.swift in Sources */,
 				60664F9922CF25DC004506FB /* StepsCell.swift in Sources */,
 				60664FD022CF7920004506FB /* String.swift in Sources */,

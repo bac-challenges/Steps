@@ -24,7 +24,7 @@ class LineChart: UIView {
     /// The top most horizontal line in the chart will be 10% higher than the highest value in the chart
     let topHorizontalLine: CGFloat = 100.0 / 100.0
     
-    var dataEntries: [PointEntry]? {
+    var dataEntries: [DailySteps]? {
         didSet {
             self.setNeedsLayout()
         }
@@ -104,7 +104,7 @@ class LineChart: UIView {
     }
     
     // Convert an array of PointEntry to an array of CGPoint on dataLayer coordinate system
-    private func convertDataEntriesToPoints(entries: [PointEntry]) -> [CGPoint] {
+    private func convertDataEntriesToPoints(entries: [DailySteps]) -> [CGPoint] {
 		
         if let max = entries.max()?.value, let min = entries.min()?.value {
             
