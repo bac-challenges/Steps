@@ -32,6 +32,7 @@
 import UIKit
 
 #warning("Convert to UIView and use in StepsCell as child")
+#warning("Add ScrollView and make plotting dynamic")
 class ChartCell: UITableViewCell {
 	
 	// UI

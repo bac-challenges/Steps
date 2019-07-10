@@ -31,6 +31,7 @@
 
 import UIKit
 
+#warning("Rename to BadgeEmptyView")
 class AchievementsEmptyView: UIView {
 	
 	// UI
@@ -45,6 +46,7 @@ class AchievementsEmptyView: UIView {
 		return label
 	}()
 	
+	#warning("Create generic UILabel style")
 	private lazy var detailLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
@@ -92,8 +94,7 @@ extension AchievementsEmptyView {
 					 centerY: centerYAnchor,
 					 paddingCenterY: -63)
 		
-		titleLabel.anchor(top: image.bottomAnchor,
-						  paddingTop: 5,
+		titleLabel.anchor(top: image.bottomAnchor, paddingTop: 5,
 						  centerX: image.centerXAnchor)
 		
 		detailLabel.anchor(top: titleLabel.bottomAnchor,

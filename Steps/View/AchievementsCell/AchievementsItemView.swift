@@ -31,8 +31,10 @@
 
 import UIKit
 
+#warning("Rename to BadgeItemCell")
 class AchievementsItemView: UIView {
 
+	// UI
 	private lazy var container = UIView(frame: CGRect(x: 0, y: 0, width: 116, height: 180))
 	
 	private lazy var image = UIImageView("10k", rounded: true)
@@ -40,7 +42,7 @@ class AchievementsItemView: UIView {
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
-		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+		label.textColor = .white
 		label.numberOfLines = 0
 		label.font = .systemFont(ofSize: 16, weight: .heavy)
 		return label
@@ -49,12 +51,13 @@ class AchievementsItemView: UIView {
 	private lazy var detailLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
-		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+		label.textColor = .white
 		label.alpha = 0.5
 		label.font = UIFont(name: "SFCompactText-Semibold", size: 13)
 		return label
 	}()
 	
+	// Init
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupView()
@@ -78,9 +81,8 @@ extension AchievementsItemView: Configurable {
 		image.image = model.image
 		
 		// Animate
-		let delay = TimeInterval(model.steps)/50
 		UIView.animate(withDuration: 2,
-					   delay: delay,
+					   delay: TimeInterval(model.steps)/50,
 					   usingSpringWithDamping: 1,
 					   initialSpringVelocity: 4,
 					   options: [.curveEaseOut],

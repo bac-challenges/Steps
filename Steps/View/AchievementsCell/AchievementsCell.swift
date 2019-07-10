@@ -31,6 +31,7 @@
 
 import UIKit
 
+#warning("Rename to BadgeCell")
 class AchievementsCell: UITableViewCell {
 	
 	// UI
@@ -68,6 +69,7 @@ extension AchievementsCell {
 		selectionStyle = .none
 		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
+		#warning("Move children to BadgeComponents group")
 		addSubview(emptyView)
 		addSubview(listView)
 		setupLayout()
@@ -85,9 +87,9 @@ extension AchievementsCell {
 						 right: layoutMarginsGuide.rightAnchor)
 		
 		listView.anchor(top: layoutMarginsGuide.topAnchor,
-						 bottom: layoutMarginsGuide.bottomAnchor,
-						 left: leftAnchor,
-						 right: rightAnchor,
-						 height: 280)
+						bottom: layoutMarginsGuide.bottomAnchor,
+						left: leftAnchor,
+						right: rightAnchor,
+						height: 280)
 	}
 }

@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Create window
 		self.window = UIWindow(frame: UIScreen.main.bounds)
 		self.window?.makeKeyAndVisible()
+		
+		#warning("Use State Machine")
 		self.window?.rootViewController = SplashScreenController()
 		
 		#warning("Move to a view controller")

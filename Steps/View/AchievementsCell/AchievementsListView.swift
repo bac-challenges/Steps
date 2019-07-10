@@ -31,13 +31,14 @@
 
 import UIKit
 
+#warning("Rename to BadgeListView")
 class AchievementsListView: UIView {
 	
 	// UI
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .left
-		label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+		label.textColor = .white
 		label.font = .systemFont(ofSize: 24, weight: .bold)
 		return label
 	}()
@@ -45,7 +46,7 @@ class AchievementsListView: UIView {
 	private lazy var detailLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .right
-		label.textColor = #colorLiteral(red: 0, green: 0.6566036344, blue: 1, alpha: 1)
+		label.textColor = UIColor(named: "blueLabel")
 		label.font = .systemFont(ofSize: 24, weight: .bold)
 		return label
 	}()
@@ -73,6 +74,7 @@ class AchievementsListView: UIView {
 }
 
 // MARK: - Configurable
+#warning("Remove all children before adding")
 extension AchievementsListView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		titleLabel.text = model.achievementsTitleText
@@ -103,16 +105,14 @@ extension AchievementsListView {
 		detailLabel.anchor(top: topAnchor,
 						   right: layoutMarginsGuide.rightAnchor)
 		
-		scrollView.anchor(top: titleLabel.bottomAnchor,
-						  paddingTop: 10,
+		scrollView.anchor(top: titleLabel.bottomAnchor, paddingTop: 10,
 						  left: leftAnchor,
 						  right: rightAnchor,
 						  height: 180)
 		
 		stackView.anchor(top: scrollView.topAnchor,
 						 bottom: scrollView.bottomAnchor,
-						 left: scrollView.leftAnchor,
-						 paddingLeft: 25,
+						 left: scrollView.leftAnchor, paddingLeft: 25,
 						 right: scrollView.rightAnchor)
 	}
 }
