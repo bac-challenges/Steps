@@ -37,11 +37,7 @@ class ProfileCell: UITableViewCell {
 	var profileImage = UIImageView("profile-photo-placeholder", rounded: true)
 	
 	// Init
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-	
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setupView()
 	}
@@ -61,7 +57,6 @@ extension ProfileCell: Configurable {
 
 // MARK: - UI
 extension  ProfileCell {
-
 	private func setupView() {
 		selectionStyle = .none
 		backgroundColor = .black

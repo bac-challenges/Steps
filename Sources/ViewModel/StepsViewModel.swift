@@ -98,17 +98,16 @@ extension StepsViewModel {
 // MARK: - TableView Structure
 extension StepsViewModel {
 	enum Sections: Int {
-		case profile, steps, chart, achievements
+		case profile, steps, achievements
 		
 		static var allValues: [Sections] {
-			return [.profile, .steps, .chart, .achievements]
+			return [.profile, .steps, .achievements]
 		}
 
 		var identifier: String {
 			switch self {
 			case .profile: return ProfileCell.identifier
 			case .steps: return StepsCell.identifier
-			case .chart: return ChartCell.identifier
 			case .achievements: return BadgeCell.identifier
 			}
 		}

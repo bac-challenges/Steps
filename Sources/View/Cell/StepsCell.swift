@@ -40,10 +40,6 @@ class StepsCell: UITableViewCell {
 	private lazy var subtitleLabel = UILabel(alignment: .left, size: 18, weight: .regular, alpha: 0.5)
 	
 	// Init
-	override func awakeFromNib() {
-		super.awakeFromNib()
-	}
-	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setupView()
@@ -52,11 +48,6 @@ class StepsCell: UITableViewCell {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 		setupView()
-	}
-	
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		resetView()
 	}
 }
 
@@ -70,11 +61,6 @@ extension StepsCell: Configurable {
 
 // MARK: - UI
 extension StepsCell {
-	private func resetView() {
-		detailLabel.text = nil
-		subtitleLabel.text = nil
-	}
-	
 	private func setupView() {
 		selectionStyle = .none
 		backgroundColor = .black

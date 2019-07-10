@@ -32,7 +32,7 @@
 import UIKit
 
 #warning("Convert to view and include in StepsView")
-class NoStepsCell: UITableViewCell {
+class NoStepsCell: UIView {
 
 	// UI
 	private lazy var titleLabel = UILabel("24A4F1D5".localized("Steps Data Unavailable"), weight: .heavy)
@@ -49,12 +49,8 @@ class NoStepsCell: UITableViewCell {
 	}()
 	
 	// Init
-	override func awakeFromNib() {
-		super.awakeFromNib()
-	}
-	
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+	override init(frame: CGRect) {
+		super.init(frame: frame)
 		setupView()
 	}
 	
@@ -73,7 +69,6 @@ extension NoStepsCell {
 // MARK: - UI
 extension NoStepsCell {
 	private func setupView() {
-		selectionStyle = .none
 		backgroundColor = #colorLiteral(red: 0.03935233504, green: 0.03935233504, blue: 0.03935233504, alpha: 1)
 		preservesSuperviewLayoutMargins = true
 		addSubview(titleLabel)

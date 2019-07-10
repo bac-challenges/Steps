@@ -109,10 +109,6 @@ extension StepsController {
 			cell.configure(viewModel)
 			return cell
 		
-		case .chart: let cell: ChartCell = tableView.dequeueReusableCell(for: indexPath)
-			cell.configure(viewModel)
-			return cell
-		
 		case .achievements: let cell: BadgeCell = tableView.dequeueReusableCell(for: indexPath)
 			cell.configure(viewModel)
 			return cell
