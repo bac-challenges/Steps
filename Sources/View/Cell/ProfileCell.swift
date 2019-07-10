@@ -50,11 +50,6 @@ class ProfileCell: UITableViewCell {
 		super.init(coder: coder)
 		setupView()
 	}
-	
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		resetView()
-	}
 }
 
 // MARK: - Configurable
@@ -66,10 +61,7 @@ extension ProfileCell: Configurable {
 
 // MARK: - UI
 extension  ProfileCell {
-	private func resetView() {
-		profileImage.image = nil
-	}
-	
+
 	private func setupView() {
 		selectionStyle = .none
 		backgroundColor = .black

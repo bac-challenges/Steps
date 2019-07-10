@@ -8,9 +8,7 @@
 
 import UIKit
 
-#warning("Review and optimize")
-#warning("Add ScrollView if needed")
-#warning("Dynamic labels")
+#warning("Add ScrollView and make plotting dynamic")
 #warning("Document")
 class LineChart: UIView {
     

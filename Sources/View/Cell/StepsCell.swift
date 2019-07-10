@@ -35,31 +35,9 @@ import UIKit
 class StepsCell: UITableViewCell {
 	
 	// UI
-	private lazy var titleLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .left
-		label.textColor = .white
-		label.text = "58033C81".localized("Steps")
-		label.font = .systemFont(ofSize: 32, weight: .heavy)
-		return label
-	}()
-	
-	private lazy var detailLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .right
-		label.textColor = #colorLiteral(red: 0.5176470588, green: 0.7803921569, blue: 0.6509803922, alpha: 1)
-		label.font = .systemFont(ofSize: 32, weight: .regular)
-		return label
-	}()
-	
-	private lazy var subtitleLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .left
-		label.textColor = .white
-		label.alpha = 0.5
-		label.font = .systemFont(ofSize: 18, weight: .regular)
-		return label
-	}()
+	private lazy var titleLabel = UILabel("58033C81".localized("Steps"), alignment: .left, size: 32, weight: .heavy)
+	private lazy var detailLabel = UILabel(color: UIColor(named: "greenLabel"),alignment: .right, size: 32, weight: .regular)
+	private lazy var subtitleLabel = UILabel(alignment: .left, size: 18, weight: .regular, alpha: 0.5)
 	
 	// Init
 	override func awakeFromNib() {
@@ -108,18 +86,9 @@ extension StepsCell {
 	}
 	
 	private func setupLayout() {
-		layoutMargins = UIEdgeInsets(top: layoutMargins.top,
-									 left: 25,
-									 bottom: layoutMargins.bottom,
-									 right: 25)
-		
-		titleLabel.anchor(top: topAnchor,
-						  left: layoutMarginsGuide.leftAnchor)
-		
-		detailLabel.anchor(top: titleLabel.topAnchor,
-						   right: layoutMarginsGuide.rightAnchor)
-		
-		subtitleLabel.anchor(top: titleLabel.bottomAnchor,
-							 left: titleLabel.leftAnchor)
+		layoutMargins = UIEdgeInsets(top: layoutMargins.top, left: 25, bottom: layoutMargins.bottom, right: 25)
+		titleLabel.anchor(top: topAnchor, left: layoutMarginsGuide.leftAnchor)
+		detailLabel.anchor(top: titleLabel.topAnchor, right: layoutMarginsGuide.rightAnchor)
+		subtitleLabel.anchor(top: titleLabel.bottomAnchor, left: titleLabel.leftAnchor)
 	}
 }

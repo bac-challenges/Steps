@@ -34,35 +34,41 @@ import UIKit
 class SplashScreenController: UIViewController {
 
 	// UI
-	private lazy var titleLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .center
-		label.text = "58033C81".localized("Steps")
-		label.font = .systemFont(ofSize: 48, weight: .black)
-		label.textColor = UIColor(named: "blueLabel")
-		label.alpha = 0
-		return label
-	}()
+	private lazy var titleLabel = UILabel("58033C81".localized("Steps"),
+										  color: UIColor(named: "blueLabel"),
+										  size: 48,
+										  weight: .black,
+										  alpha: 0)
 	
-	private lazy var spinner: UIActivityIndicatorView = {
-		let view = UIActivityIndicatorView(style: .whiteLarge)
-		view.startAnimating()
-		return view
-	}()
+	private lazy var spinner = UIActivityIndicatorView(style: .whiteLarge)
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		#warning("Move to setupView, setupLayout")
+		setupView()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		UIView.animate(withDuration: 0.5) {
+			self.titleLabel.alpha = 1
+		}
+		spinner.startAnimating()
+	}
+}
+
+// MARK: - UI
+extension  SplashScreenController {
+	private func setupView() {
 		view.addSubview(titleLabel)
 		view.addSubview(spinner)
+		setuoLayout()
+	}
+	
+	private func setuoLayout() {
 		titleLabel.anchor(centerX: view.centerXAnchor,
 						  centerY: view.centerYAnchor, paddingCenterY: -60)
 		
 		spinner.anchor(bottom: view.bottomAnchor, paddingBottom: 40,
 					   centerX: view.centerXAnchor)
-		
-		UIView.animate(withDuration: 0.5) {
-			self.titleLabel.alpha = 1
-		}
-    }
+	}
 }
