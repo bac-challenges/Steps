@@ -31,7 +31,6 @@
 
 import UIKit
 
-#warning("Document")
 public protocol Configurable {
 	associatedtype T
 	func configure(_ item: T)

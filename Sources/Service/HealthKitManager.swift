@@ -76,7 +76,7 @@ extension HealthKitManager {
 	///		- startDate: Count start date
 	/// 	- endDate: Count end date
 	///		- completion: A block that this method calls as soon as the read operation is complete.
-	public func readStepsCollection(startDate start: Date, endDate end: Date, completion: @escaping ([PointEntry]) -> Void) {
+	public func readStepsCollection(startDate start: Date, endDate end: Date, completion: @escaping ([DailySteps]) -> Void) {
 		
 		var interval = DateComponents()
 		interval.day = 1
@@ -84,7 +84,7 @@ extension HealthKitManager {
 		let query = HKStatisticsCollectionQuery(quantityType: stepsQuantityType,
 												quantitySamplePredicate: nil,
 												options: .cumulativeSum,
-												anchorDate: startDate,
+												anchorDate: start,
 												intervalComponents: interval)
 		
 		query.initialResultsHandler = { query, results, error in
@@ -93,20 +93,18 @@ extension HealthKitManager {
 				fatalError("*** An error occurred while calculating the statistics: \(error.debugDescription) ***")
 			}
 			
-			var pointEntryCollection = [PointEntry]()
-			
-			statsCollection.enumerateStatistics(from: self.startDate, to: self.endDate)  { statistics, stop  in
+			var dailyStepsCollection = [DailySteps]()
+
+			statsCollection.enumerateStatistics(from: start, to: end)  { statistics, stop  in
 				
 				if let quantity = statistics.sumQuantity() {
 					let date = statistics.startDate
 					let value = quantity.doubleValue(for: HKUnit.count())
 					
-					pointEntryCollection.append(PointEntry(value: Int(value), label: date.description))
-
+					dailyStepsCollection.append(DailySteps(value: Int(value), date: date))
 				}
 			}
-			
-			completion(pointEntryCollection)
+			completion(dailyStepsCollection)
 		}
 		healthStore.execute(query)
 	}
@@ -122,7 +120,7 @@ extension HealthKitManager {
 	/// 	- endDate: Count end date
 	///		- completion: A block that this method calls as soon as the save operation is complete.
 	public func saveSteps(count: Double, startDate start: Date, endDate end: Date, completion: @escaping (Error?) -> Void) {
-		let sample = quantitySample(count: count, startDate: startDate, endDate: endDate)
+		let sample = quantitySample(count: count, startDate: start, endDate: end)
 		saveQuantitySample(sample, completion: completion)
 	}
 	
@@ -177,7 +175,6 @@ extension HealthKitManager {
 }
 
 // MARK: - Sample Data Generator
-#warning("Convert to dynamic data")
 extension HealthKitManager {
 	
 	// Sample data
@@ -187,30 +184,9 @@ extension HealthKitManager {
 		let endDate: Date
 	}
 	
-	#warning("Change to first of the month")
-	private var startDate: Date { return "2019-06-01".toDate()! }
-	private var endDate: Date { return "2019-06-30".toDate()! }
-	
-	#warning("Use calendar to generate days of the month")
-	private var stepsRange: [SampleData] {
-		var result = [SampleData]()
-		for i in 1...30 {
-			let startDate = "2019-06-\(i) 00:00".toDate(withFormat: "yyyy-MM-dd HH:mm")!
-			let endDate = "2019-06-\(i) 11:59".toDate(withFormat: "yyyy-MM-dd HH:mm")!
-			
-			#warning("Reduce amount of steps per day")
-			let steps = Double(Int.random(in: 5000...20000))
-			result.append(SampleData(steps: steps,
-									 startDate: startDate,
-									 endDate: endDate))
-		}
-		return result
-	}
-
-	#warning("Create StepsModel")
 	/// Read sample steps data
-	func readSampleSteps(completion: @escaping ([PointEntry]) -> Void) {
-		readStepsCollection(startDate: startDate, endDate: endDate, completion: completion)
+	func readSampleSteps(completion: @escaping ([DailySteps]) -> Void) {
+		readStepsCollection(startDate: Date.startOfMonth, endDate: Date(), completion: completion)
 	}
 	
 	/// Generate sample data for test purposes
@@ -221,5 +197,25 @@ extension HealthKitManager {
 						   endDate: sampleData.endDate)
 		}
 		saveQuantitySampleCollection(sampleData, completion: completion)
+	}
+	
+	 private var stepsRange: [SampleData] {
+		
+		var date = Date.startOfMonth
+		let endDate = Date()
+		var result = [SampleData]()
+		
+		while date <= endDate {
+			let steps = Double(Int.random(in: 100...3000))
+			result.append(SampleData(steps: steps,
+									 startDate: date,
+									 endDate: endDate))
+			
+			date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+		}
+		
+		print(result)
+		
+		return result
 	}
 }

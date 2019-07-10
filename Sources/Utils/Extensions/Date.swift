@@ -31,12 +31,28 @@
 
 import Foundation
 
-#warning("Document")
 extension Date {
-	func toString(withFormat format: String = "yyyy-MM-dd") -> String {
+	
+	/// Convert Date to string
+	/// - parameter format: String format e.g. "yyyy-MM-dd"
+	/// - returns: Formatted Date string
+	func toString(_ format: String = "yyyy-MM-dd") -> String {
 		let dateFormatter = DateFormatter()
 		dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
 		dateFormatter.dateFormat = format
 		return dateFormatter.string(from: self)
+	}
+}
+
+extension Date {
+
+	/// First day of the month
+	static var startOfMonth: Date {
+		var calendar = Calendar.current
+		calendar.timeZone = TimeZone(abbreviation: "UTC")!
+		guard let interval  = calendar.dateInterval(of: .month, for: Date()) else {
+			fatalError()
+		}
+		return interval.start
 	}
 }

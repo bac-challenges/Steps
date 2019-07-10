@@ -31,7 +31,6 @@
 
 import Foundation
 
-#warning("Document")
 public struct FileManager {
 	
 	// Singleton

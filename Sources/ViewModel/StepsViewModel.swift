@@ -33,7 +33,7 @@
 import UIKit
 
 class StepsViewModel {
-	var chartPoints: [PointEntry]?
+	var chartPoints: [DailySteps]?
 }
 
 // MARK: - Data Management
@@ -52,32 +52,28 @@ extension StepsViewModel {
 	}
 }
 
-// MARK: - View Properties
+// MARK: - StepsCell
 extension StepsViewModel {
-	
-	var profileName: String {
-		return "Neil Armstrong"
-	}
-	
-	var profileImage: String {
-		return "profile-photo"
-	}
-	
 	var stepsCountText: String {
 		guard let chartPoints = chartPoints else {
 			return "0"
 		}
-		
 		return chartPoints.compactMap { $0.value }
 						  .reduce(0) { $0 + $1 }
-						  .formattedWithSeparator
+						  .format()
 	}
 	
-	#warning("Show live data")
 	var stepsDateRangeText: String {
-		return "Nov 12 - Dec 12 2018"
+		if let start = chartPoints?.first?.date.toString("MMM dd"),
+			let end = chartPoints?.last?.date.toString("MMM dd YYYY") {
+			return "\(start) - \(end)"
+		}
+		return "N/A"
 	}
-	
+}
+
+// MARK: - Achievements
+extension StepsViewModel {
 	var achievementsCountText: String {
 		return "\(achievedGoals.count)"
 	}
@@ -89,7 +85,7 @@ extension StepsViewModel {
 		return chartPoints.count == 0 ? false:true
 	}
 	
-	#warning("Show static from CoreData model")
+	#warning("Show achievedGoals from CoreData model")
 	var achievedGoals: [Int] {
 		return [10,15,20,25,30,35,40]
 	}

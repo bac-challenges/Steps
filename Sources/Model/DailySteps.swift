@@ -31,17 +31,16 @@
 
 import Foundation
 
-struct PointEntry {
+struct DailySteps {
 	let value: Int
-	let label: String
+	let date: Date
 }
 
-#warning("Fix syntax")
-extension PointEntry: Comparable {
-	static func <(lhs: PointEntry, rhs: PointEntry) -> Bool {
+extension DailySteps: Comparable {
+	static func <(lhs: DailySteps, rhs: DailySteps) -> Bool {
 		return lhs.value < rhs.value
 	}
-	static func ==(lhs: PointEntry, rhs: PointEntry) -> Bool {
+	static func ==(lhs: DailySteps, rhs: DailySteps) -> Bool {
 		return lhs.value == rhs.value
 	}
 }

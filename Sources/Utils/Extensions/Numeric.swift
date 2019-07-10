@@ -32,10 +32,9 @@
 import Foundation
 
 extension Numeric {
-	
-	#warning("Convert to function")
+
 	/// Formatted string eg. 1000 = 1.000
-	var formattedWithSeparator: String {
+	func format(_ separator: String = "") -> String {
 		return Formatter.withSeparator.string(for: self) ?? ""
 	}
 }

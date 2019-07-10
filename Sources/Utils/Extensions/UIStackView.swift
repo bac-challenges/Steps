@@ -30,8 +30,9 @@
 //
 
 import UIKit
-#warning("Document")
+
 public extension UIStackView {
+	/// Removes all arranged subviews.
 	func removeAllArrangedSubviews() {
 		let removedSubviews = arrangedSubviews.reduce([]) { (allSubviews, subview) -> [UIView] in
 			self.removeArrangedSubview(subview)

@@ -31,10 +31,14 @@
 
 import UIKit
 
-#warning("Document")
 extension UIImageView {
-	convenience init(_ image: String, rounded: Bool = false) {
-		let image = UIImage(named: image)
+	
+	/// Creates round UIImageView
+	/// - Parameters:
+	///		- named:
+	///		- rounded:
+	convenience init(_ named: String, rounded: Bool = false) {
+		let image = UIImage(named: named)
 		self.init(image: image)
 		self.contentMode = .scaleAspectFit
 		if rounded {
