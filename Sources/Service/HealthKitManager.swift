@@ -183,28 +183,11 @@ extension HealthKitManager {
 		let startDate: Date
 		let endDate: Date
 	}
-	
-	#warning("Use calendar to generate days of the month")
-	private var stepsRange: [SampleData] {
-		var result = [SampleData]()
-		for i in 1...30 {
-			let startDate = "2019-06-\(i) 00:00".toDate(withFormat: "yyyy-MM-dd HH:mm")!
-			let endDate = "2019-06-\(i) 11:59".toDate(withFormat: "yyyy-MM-dd HH:mm")!
-			
-			let steps = Double(Int.random(in: 100...3000))
-			result.append(SampleData(steps: steps,
-									 startDate: startDate,
-									 endDate: endDate))
-		}
-		return result
-	}
 
 	#warning("Create StepsModel")
 	/// Read sample steps data
 	func readSampleSteps(completion: @escaping ([PointEntry]) -> Void) {
-		readStepsCollection(startDate: Date().startOfMonth,
-							endDate: Date().endOfMonth,
-							completion: completion)
+		readStepsCollection(startDate: Date.startOfMonth, endDate: Date(), completion: completion)
 	}
 	
 	/// Generate sample data for test purposes
@@ -215,5 +198,25 @@ extension HealthKitManager {
 						   endDate: sampleData.endDate)
 		}
 		saveQuantitySampleCollection(sampleData, completion: completion)
+	}
+	
+	 private var stepsRange: [SampleData] {
+		
+		var date = Date.startOfMonth
+		let endDate = Date()
+		var result = [SampleData]()
+		
+		while date <= endDate {
+			let steps = Double(Int.random(in: 100...3000))
+			result.append(SampleData(steps: steps,
+									 startDate: date,
+									 endDate: endDate))
+			
+			date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+		}
+		
+		print(result)
+		
+		return result
 	}
 }

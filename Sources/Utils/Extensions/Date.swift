@@ -47,7 +47,7 @@ extension Date {
 extension Date {
 
 	/// First day of the month
-	var startOfMonth: Date {
+	static var startOfMonth: Date {
 		var calendar = Calendar.current
 		calendar.timeZone = TimeZone(abbreviation: "UTC")!
 		guard let interval  = calendar.dateInterval(of: .month, for: Date()) else {
