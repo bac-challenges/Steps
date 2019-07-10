@@ -32,6 +32,7 @@
 import Foundation
 
 struct PointEntry {
+	#warning("CGFloat")
 	let value: Int
 	let label: String
 }

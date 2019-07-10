@@ -40,3 +40,18 @@ extension Date {
 		return dateFormatter.string(from: self)
 	}
 }
+
+#warning("Document")
+extension Date {
+	
+	var startOfMonth: Date {
+		let date = Calendar.current.startOfDay(for: self)
+		let calendar = Calendar.current.dateComponents([.year, .month], from: date)
+		return Calendar.current.date(from: calendar)!
+	}
+	
+	var endOfMonth: Date {
+		let components = DateComponents(month: 1, day: -1)
+		return Calendar.current.date(byAdding: components, to: self.startOfMonth)!
+	}
+}
