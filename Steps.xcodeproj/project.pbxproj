@@ -51,6 +51,7 @@
 		60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125A22D41B420082745A /* NoStepsCell.swift */; };
 		60F2125D22D424780082745A /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125C22D424780082745A /* SplashScreenController.swift */; };
 		60F2127222D5C06F0082745A /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2127122D5C06F0082745A /* UIStackView.swift */; };
+		60F2127422D5C9580082745A /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2127322D5C9580082745A /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		60F2125C22D424780082745A /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		60F2126422D452E00082745A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60F2127122D5C06F0082745A /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		60F2127322D5C9580082745A /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,9 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				606ABF6A22CE432000EE7BAB /* AppDelegate.swift */,
-				60F2125C22D424780082745A /* SplashScreenController.swift */,
-				609DBBD922D379BD00A353C8 /* AuthFailedController.swift */,
-				606ABF8B22CE86C500EE7BAB /* StepsController.swift */,
 				606ABF8A22CE869B00EE7BAB /* View */,
 				606ABF8E22CE874200EE7BAB /* ViewModel */,
 				606ABF8422CE489C00EE7BAB /* Model */,
@@ -241,11 +240,11 @@
 		606ABF8A22CE869B00EE7BAB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				60664F9422CF2432004506FB /* ProfileCell.swift */,
-				60664F9822CF25DC004506FB /* StepsCell.swift */,
-				60F2125A22D41B420082745A /* NoStepsCell.swift */,
-				60BEFA8F22D042EC0081A9EC /* ChartCell */,
-				60BEFA8222CFAABD0081A9EC /* BadgeCell */,
+				60F2125C22D424780082745A /* SplashScreenController.swift */,
+				609DBBD922D379BD00A353C8 /* AuthFailedController.swift */,
+				606ABF8B22CE86C500EE7BAB /* StepsController.swift */,
+				60F2127622D5CBF50082745A /* Cell */,
+				60F2127522D5CBE80082745A /* Component */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,20 +259,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		60BEFA8222CFAABD0081A9EC /* BadgeCell */ = {
+		60BEFA8222CFAABD0081A9EC /* Badge */ = {
 			isa = PBXGroup;
 			children = (
-				60664F9C22CF2644004506FB /* BadgeCell.swift */,
 				60664FA022CF2773004506FB /* BadgeEmptyView.swift */,
 				60664F9E22CF273F004506FB /* BadgeListView.swift */,
 				60590DF922CF86E600F848B1 /* BadgeItemView.swift */,
 			);
-			path = BadgeCell;
+			path = Badge;
 			sourceTree = "<group>";
 		};
 		60BEFA8A22D01CD80081A9EC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				60F2127322D5C9580082745A /* FileManager.swift */,
 				60F2125222D3F7D70082745A /* BootstrapManager.swift */,
 				60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */,
 				60F2124E22D3D64D0082745A /* CoreDataManager.swift */,
@@ -281,15 +280,35 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		60BEFA8F22D042EC0081A9EC /* ChartCell */ = {
+		60BEFA8F22D042EC0081A9EC /* Chart */ = {
 			isa = PBXGroup;
 			children = (
-				60664F9A22CF260C004506FB /* ChartCell.swift */,
 				60BEFA9222D0441E0081A9EC /* LineChart.swift */,
 				60BEFA9A22D0A1C70081A9EC /* PointEntry.swift */,
 				60BEFA9022D0441E0081A9EC /* CurveAlgorithm.swift */,
 			);
-			path = ChartCell;
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		60F2127522D5CBE80082745A /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				60BEFA8F22D042EC0081A9EC /* Chart */,
+				60BEFA8222CFAABD0081A9EC /* Badge */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		60F2127622D5CBF50082745A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				60664F9422CF2432004506FB /* ProfileCell.swift */,
+				60664F9822CF25DC004506FB /* StepsCell.swift */,
+				60F2125A22D41B420082745A /* NoStepsCell.swift */,
+				60664F9A22CF260C004506FB /* ChartCell.swift */,
+				60664F9C22CF2644004506FB /* BadgeCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +411,7 @@
 				609DBBDA22D379BD00A353C8 /* AuthFailedController.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
 				60664F9D22CF2644004506FB /* BadgeCell.swift in Sources */,
+				60F2127422D5C9580082745A /* FileManager.swift in Sources */,
 				60F2127222D5C06F0082745A /* UIStackView.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,
 				609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */,

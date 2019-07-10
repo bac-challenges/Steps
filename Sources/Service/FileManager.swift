@@ -22,7 +22,7 @@
 //
 //	ID: D9E38171-94B3-48ED-A5DF-314FCF160022
 //
-//	Pkg: ShoppingBasket
+//	Pkg: Steps
 //
 //	Swift: 5.0 
 //
@@ -31,26 +31,20 @@
 
 import Foundation
 
+#warning("Document")
 public struct FileManager {
-	
-	// Response object
-	public struct Response: Codable {
-		let states: [State]
-		let products: [Product]
-		let discounts: [Discount]
-	}
 	
 	// Singleton
 	public static let shared = FileManager()
 	
 	// Get sample data
 	@discardableResult
-	public func loadJson() -> Response? {
+	public func loadJson<T: Codable>(name: String = "data-source") -> T? {
 		if let url = Bundle.main.url(forResource: "data-source", withExtension: "json") {
 			do {
 				let data = try Data(contentsOf: url)
 				let decoder = JSONDecoder()
-				let response = try decoder.decode(Response.self, from: data)
+				let response = try decoder.decode(T.self, from: data)
 				return response
 			} catch {
 				print("error:\(error)")
