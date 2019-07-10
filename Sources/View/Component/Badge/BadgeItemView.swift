@@ -34,7 +34,7 @@ import UIKit
 class BadgeItemView: UIView {
 
 	// UI
-	private lazy var container = UIView(frame: CGRect(x: 0, y: 0, width: 116, height: 180))
+	private lazy var container = UIView()
 	
 	private lazy var image = UIImageView("10k", rounded: true)
 	
