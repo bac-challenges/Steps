@@ -52,9 +52,12 @@ class StepsCell: UITableViewCell {
 // MARK: - Configurable
 extension StepsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		#warning("FixMe:")
-//		detailLabel.text = model.stepsCountText
-//		subtitleLabel.text = model.stepsDateRangeText
+		if model.achievedGoals.count == 0 {
+			noStepsView.isHidden = false
+		} else {
+			noStepsView.isHidden = true
+			stepsView.configure(model)
+		}
 	}
 }
 
@@ -63,27 +66,24 @@ extension StepsCell {
 	private func setupView() {
 		selectionStyle = .none
 		backgroundColor = .black
+		addSubview(stepsView)
 		addSubview(noStepsView)
-//		addSubview(stepsView)
 		layoutView()
-		
-		// Debug
-//		noStepsView.debugMode()
-		noStepsView.isOpaque = true
-		stepsView.debugMode()
 	}
 	
 	private func layoutView() {
-		layoutMargins = UIEdgeInsets(top: 10,
-									 left: 25,
-									 bottom: 10,
-									 right: 25)
+		layoutMargins = UIEdgeInsets(top: 0, left: 25, bottom: 10, right: 25)
 		
 		noStepsView.anchor(top: topAnchor,
 						   bottom: bottomAnchor,
 						   left: leftAnchor,
 						   right: rightAnchor,
 						   height: 230)
-//		stepsView.anchor(top: topAnchor, bottom: bottomAnchor, left: leftAnchor, right: rightAnchor)
+		
+		stepsView.anchor(top: topAnchor,
+						 bottom: bottomAnchor,
+						 left: leftAnchor,
+						 right: rightAnchor,
+						 height: 230)
 	}
 }

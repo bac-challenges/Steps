@@ -31,7 +31,6 @@
 
 import UIKit
 
-#warning("Convert to UIView and use in StepsCell as parent")
 class StepsView: UIView {
 	
 	// UI
@@ -55,6 +54,8 @@ class StepsView: UIView {
 // MARK: - Configurable
 extension StepsView: Configurable {
 	func configure(_ model: StepsViewModel) {
+		detailLabel.text = model.stepsCountText
+		subtitleLabel.text = model.stepsDateRangeText
 		chart.dataEntries = model.chartPoints
 	}
 }
@@ -72,16 +73,9 @@ extension StepsView {
 	}
 	
 	private func setupLayout() {
-		
-		// NEW
-		titleLabel.anchor(top: topAnchor, left: layoutMarginsGuide.leftAnchor)
+		titleLabel.anchor(top: layoutMarginsGuide.topAnchor, left: layoutMarginsGuide.leftAnchor)
 		detailLabel.anchor(top: titleLabel.topAnchor, right: layoutMarginsGuide.rightAnchor)
 		subtitleLabel.anchor(top: titleLabel.bottomAnchor, left: titleLabel.leftAnchor)
-		
-		// OLD
-		chart.anchor(top: layoutMarginsGuide.topAnchor,
-					 bottom: layoutMarginsGuide.bottomAnchor,
-					 left: leftAnchor,
-					 right: rightAnchor)
+		chart.anchor(bottom: bottomAnchor, left: leftAnchor, right: rightAnchor, height: 160)
 	}
 }

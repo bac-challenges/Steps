@@ -68,7 +68,7 @@ extension NoStepsView {
 // MARK: - UI
 extension NoStepsView {
 	private func setupView() {
-//		backgroundColor = #colorLiteral(red: 0.03935233504, green: 0.03935233504, blue: 0.03935233504, alpha: 1)
+		backgroundColor = #colorLiteral(red: 0.03935233504, green: 0.03935233504, blue: 0.03935233504, alpha: 1)
 		preservesSuperviewLayoutMargins = true
 		addSubview(titleLabel)
 		addSubview(detailLabel)
