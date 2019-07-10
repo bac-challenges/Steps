@@ -59,13 +59,10 @@ class BadgeListView: UIView {
 extension BadgeListView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		detailLabel.text = model.achievementsCountText
-		
-		#warning("Remove all children before adding")
+		stackView.removeAllArrangedSubviews()
 		model.achievedGoals.forEach { item in
 			let itemView = BadgeItemView()
 			itemView.configure(item)
-			
-			#warning("Animate on set achivements")
 			stackView.addArrangedSubview(itemView)
 		}
 	}

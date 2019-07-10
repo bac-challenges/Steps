@@ -56,7 +56,12 @@ class BadgeCell: UITableViewCell {
 // MARK: - Configurable
 extension BadgeCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		listView.configure(model)
+		if model.achievedGoals.count == 0 {
+			emptyView.isHidden = false
+		} else {
+			emptyView.isHidden = true
+			listView.configure(model)
+		}
 	}
 }
 
@@ -66,9 +71,8 @@ extension BadgeCell {
 		selectionStyle = .none
 		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
-		#warning("Move children to BadgeComponents group")
-		addSubview(emptyView)
 		addSubview(listView)
+		addSubview(emptyView)
 		setupLayout()
 	}
 	

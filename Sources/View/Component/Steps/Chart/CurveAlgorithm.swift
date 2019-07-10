@@ -13,7 +13,7 @@ struct CurvedSegment {
     var controlPoint2: CGPoint
 }
 
-#warning("Add comments")
+#warning("Document")
 struct CurveAlgorithm {
 	
     static let shared = CurveAlgorithm()
