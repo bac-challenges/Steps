@@ -49,9 +49,6 @@ extension UILabel {
 		self.textAlignment = textAlignment
 		self.font = font ?? .systemFont(ofSize: fontSize, weight: fontWeight)
 		self.numberOfLines = numberOfLines
-		
-		#warning("Properties not working...")
 		self.alpha = alpha
-		self.sizeToFit()
 	}
 }

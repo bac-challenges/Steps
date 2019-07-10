@@ -31,19 +31,13 @@
 
 import UIKit
 
-#warning("Move UI to ChartCell and use as Container cell")
 class StepsCell: UITableViewCell {
 	
 	// UI
-	private lazy var titleLabel = UILabel("58033C81".localized("Steps"), alignment: .left, size: 32, weight: .heavy)
-	private lazy var detailLabel = UILabel(color: UIColor(named: "greenLabel"),alignment: .right, size: 32, weight: .regular)
-	private lazy var subtitleLabel = UILabel(alignment: .left, size: 18, weight: .regular, alpha: 0.5)
+	private lazy var noStepsView = NoStepsView()
+	private lazy var stepsView = StepsView()
 	
 	// Init
-	override func awakeFromNib() {
-		super.awakeFromNib()
-	}
-	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setupView()
@@ -53,42 +47,43 @@ class StepsCell: UITableViewCell {
 		super.init(coder: coder)
 		setupView()
 	}
-	
-	override func prepareForReuse() {
-		super.prepareForReuse()
-		resetView()
-	}
 }
 
 // MARK: - Configurable
 extension StepsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		detailLabel.text = model.stepsCountText
-		subtitleLabel.text = model.stepsDateRangeText
+		if model.achievedGoals.count == 0 {
+			noStepsView.isHidden = false
+		} else {
+			noStepsView.isHidden = true
+			stepsView.configure(model)
+		}
 	}
 }
 
 // MARK: - UI
 extension StepsCell {
-	private func resetView() {
-		detailLabel.text = nil
-		subtitleLabel.text = nil
-	}
-	
 	private func setupView() {
 		selectionStyle = .none
 		backgroundColor = .black
-		preservesSuperviewLayoutMargins = true
-		addSubview(titleLabel)
-		addSubview(detailLabel)
-		addSubview(subtitleLabel)
-		setupLayout()
+		addSubview(stepsView)
+		addSubview(noStepsView)
+		layoutView()
 	}
 	
-	private func setupLayout() {
-		layoutMargins = UIEdgeInsets(top: layoutMargins.top, left: 25, bottom: layoutMargins.bottom, right: 25)
-		titleLabel.anchor(top: topAnchor, left: layoutMarginsGuide.leftAnchor)
-		detailLabel.anchor(top: titleLabel.topAnchor, right: layoutMarginsGuide.rightAnchor)
-		subtitleLabel.anchor(top: titleLabel.bottomAnchor, left: titleLabel.leftAnchor)
+	private func layoutView() {
+		layoutMargins = UIEdgeInsets(top: 0, left: 25, bottom: 10, right: 25)
+		
+		noStepsView.anchor(top: topAnchor,
+						   bottom: bottomAnchor,
+						   left: leftAnchor,
+						   right: rightAnchor,
+						   height: 230)
+		
+		stepsView.anchor(top: topAnchor,
+						 bottom: bottomAnchor,
+						 left: leftAnchor,
+						 right: rightAnchor,
+						 height: 230)
 	}
 }

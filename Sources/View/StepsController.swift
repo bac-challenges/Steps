@@ -79,8 +79,6 @@ extension  StepsController {
 		// TableView
 		tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.identifier)
 		tableView.register(StepsCell.self, forCellReuseIdentifier: StepsCell.identifier)
-		tableView.register(NoStepsCell.self, forCellReuseIdentifier: NoStepsCell.identifier)
-		tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
 		tableView.register(BadgeCell.self, forCellReuseIdentifier: BadgeCell.identifier)
 		tableView.separatorStyle = .none
 		tableView.backgroundColor = .black
@@ -107,13 +105,6 @@ extension StepsController {
 			return cell
 		
 		case .steps: let cell: StepsCell = tableView.dequeueReusableCell(for: indexPath)
-			cell.configure(viewModel)
-			return cell
-
-		case .noSteps: let cell: NoStepsCell = tableView.dequeueReusableCell(for: indexPath)
-			return cell
-		
-		case .chart: let cell: ChartCell = tableView.dequeueReusableCell(for: indexPath)
 			cell.configure(viewModel)
 			return cell
 		

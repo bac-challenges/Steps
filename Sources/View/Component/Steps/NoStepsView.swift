@@ -31,8 +31,7 @@
 
 import UIKit
 
-#warning("Convert to view and include in StepsView")
-class NoStepsCell: UITableViewCell {
+class NoStepsView: UIView {
 
 	// UI
 	private lazy var titleLabel = UILabel("24A4F1D5".localized("Steps Data Unavailable"), weight: .heavy)
@@ -42,19 +41,15 @@ class NoStepsCell: UITableViewCell {
 										   alpha: 0.5)
 	
 	private lazy var button: UIButton = {
-		let button = UIButton()
+		let button = UIButton(type: .system)
 		button.setTitle("E8870A43".localized("Generate Sample Data"), for: .normal)
 		button.addTarget(self, action: #selector(generateSampleData), for: .touchUpInside)
 		return button
 	}()
 	
 	// Init
-	override func awakeFromNib() {
-		super.awakeFromNib()
-	}
-	
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+	override init(frame: CGRect) {
+		super.init(frame: frame)
 		setupView()
 	}
 	
@@ -65,15 +60,14 @@ class NoStepsCell: UITableViewCell {
 }
 
 // MARK: - Actions
-extension NoStepsCell {
+extension NoStepsView {
 	@objc func generateSampleData() {
 	}
 }
 
 // MARK: - UI
-extension NoStepsCell {
+extension NoStepsView {
 	private func setupView() {
-		selectionStyle = .none
 		backgroundColor = #colorLiteral(red: 0.03935233504, green: 0.03935233504, blue: 0.03935233504, alpha: 1)
 		preservesSuperviewLayoutMargins = true
 		addSubview(titleLabel)
@@ -83,17 +77,14 @@ extension NoStepsCell {
 	}
 	
 	private func setupLayout() {
-		titleLabel.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 30,
+		titleLabel.anchor(bottom: detailLabel.topAnchor, paddingBottom: 10,
 						  left: layoutMarginsGuide.leftAnchor,
 						  right: layoutMarginsGuide.rightAnchor)
 		
-		detailLabel.anchor(top: titleLabel.bottomAnchor, paddingTop: 10,
-						   centerX: centerXAnchor)
+		detailLabel.anchor(left: layoutMarginsGuide.leftAnchor,
+						   right: layoutMarginsGuide.rightAnchor,
+						   centerY: layoutMarginsGuide.centerYAnchor)
 		
-		button.anchor(top: detailLabel.bottomAnchor, paddingTop: 60,
-					  bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 30,
-					  left: detailLabel.leftAnchor,
-					  right: detailLabel.rightAnchor,
-					  centerX: centerXAnchor)
+		button.anchor(top: detailLabel.bottomAnchor, paddingTop: 20, centerX: centerXAnchor)
 	}
 }

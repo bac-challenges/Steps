@@ -31,19 +31,17 @@
 
 import UIKit
 
-#warning("Convert to UIView and use in StepsCell as parent")
-class ChartCell: UITableViewCell {
+class StepsView: UIView {
 	
 	// UI
+	private lazy var titleLabel = UILabel("58033C81".localized("Steps"), alignment: .left, size: 32, weight: .heavy)
+	private lazy var detailLabel = UILabel(color: UIColor(named: "greenLabel"),alignment: .right, size: 32, weight: .regular)
+	private lazy var subtitleLabel = UILabel(alignment: .left, size: 18, weight: .regular, alpha: 0.5)
 	private lazy var chart = LineChart()
 	
 	// Init
-	override func awakeFromNib() {
-		super.awakeFromNib()
-	}
-	
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+	override init(frame: CGRect) {
+		super.init(frame: frame)
 		setupView()
 	}
 	
@@ -54,27 +52,30 @@ class ChartCell: UITableViewCell {
 }
 
 // MARK: - Configurable
-extension ChartCell: Configurable {
+extension StepsView: Configurable {
 	func configure(_ model: StepsViewModel) {
+		detailLabel.text = model.stepsCountText
+		subtitleLabel.text = model.stepsDateRangeText
 		chart.dataEntries = model.chartPoints
 	}
 }
 
 // MARK: - UI
-extension ChartCell {
+extension StepsView {
 	private func setupView() {
-		selectionStyle = .none
 		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
+		addSubview(titleLabel)
+		addSubview(detailLabel)
+		addSubview(subtitleLabel)
 		addSubview(chart)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
-		chart.anchor(top: layoutMarginsGuide.topAnchor,
-					 bottom: layoutMarginsGuide.bottomAnchor,
-					 left: leftAnchor,
-					 right: rightAnchor,
-					 height: 170)
+		titleLabel.anchor(top: layoutMarginsGuide.topAnchor, left: layoutMarginsGuide.leftAnchor)
+		detailLabel.anchor(top: titleLabel.topAnchor, right: layoutMarginsGuide.rightAnchor)
+		subtitleLabel.anchor(top: titleLabel.bottomAnchor, left: titleLabel.leftAnchor)
+		chart.anchor(bottom: bottomAnchor, left: leftAnchor, right: rightAnchor, height: 160)
 	}
 }

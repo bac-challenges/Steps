@@ -36,7 +36,7 @@ class BadgeItemView: UIView {
 	// UI
 	private lazy var container = UIView()
 	private lazy var image = UIImageView("10k", rounded: true)
-	private lazy var titleLabel = UILabel(size: 16, weight: .heavy)
+	private lazy var titleLabel = UILabel("730BDAB5".localized("Goal achievement"), size: 16, weight: .heavy)
 	private lazy var detailLabel = UILabel(font: UIFont(name: "SFCompactText-Semibold", size: 13), alpha: 0.5)
 
 	// Init
@@ -52,19 +52,16 @@ class BadgeItemView: UIView {
 }
 
 // MARK: - Configurable
+#warning("Refactor method")
 extension BadgeItemView: Configurable {
-	func configure(_ model: BadgeViewModel) {
-		titleLabel.text = model.achievementsGoalText
-		detailLabel.text = model.stepsString
-		
-		titleLabel.alpha = model.model.isUnlocked ? 1:0
-		detailLabel.alpha = model.model.isUnlocked ? 1:0
-		
-		image.image = model.image
+	func configure(_ item: Int) {
+		let str = "\(item)k"
+		detailLabel.text = str
+		image.image = UIImage(named: str)
 		
 		// Animate
 		UIView.animate(withDuration: 2,
-					   delay: TimeInterval(model.steps)/50,
+					   delay: TimeInterval(item)/50,
 					   usingSpringWithDamping: 1,
 					   initialSpringVelocity: 4,
 					   options: [.curveEaseOut],

@@ -31,8 +31,9 @@
 
 import Foundation
 
-extension Int {
+extension Numeric {
 	
+	#warning("Convert to function")
 	/// Formatted string eg. 1000 = 1.000
 	var formattedWithSeparator: String {
 		return Formatter.withSeparator.string(for: self) ?? ""

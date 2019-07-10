@@ -31,7 +31,6 @@
 
 import UIKit
 
-#warning("Add default label style")
 struct Appearance {
 	
 	/// Apply appearance properties
@@ -56,9 +55,6 @@ struct Appearance {
 		
 		// Button
 		let buttonAppearace = UIButton.appearance()
-		buttonAppearace.layer.borderWidth = 1
-		buttonAppearace.layer.borderColor = UIColor.white.cgColor
-		buttonAppearace.setTitleColor(.white, for: .normal)
-		buttonAppearace.alpha = 0.5
+		buttonAppearace.setTitleColor(UIColor(named: "blueLabel"), for: .normal)
 	}
 }
