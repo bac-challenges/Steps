@@ -71,7 +71,7 @@ extension  StepsController {
 	
 	private func setupView() {
 		// View properties
-		title = viewModel.profileName
+		title = "Neil Armstrong"
 		
 		// Change navigationBar shadow color
 		navigationController?.navigationBar.shadowImage = UIImage.image(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5))
@@ -101,7 +101,6 @@ extension StepsController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		switch viewModel.sections[indexPath.section] {
 		case .profile: let cell: ProfileCell = tableView.dequeueReusableCell(for: indexPath)
-			cell.configure(viewModel)
 			return cell
 		
 		case .steps: let cell: StepsCell = tableView.dequeueReusableCell(for: indexPath)

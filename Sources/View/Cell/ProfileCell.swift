@@ -34,7 +34,7 @@ import UIKit
 class ProfileCell: UITableViewCell {
 	
 	// UI
-	var profileImage = UIImageView("profile-photo-placeholder", rounded: true)
+	var profileImage = UIImageView("profile-photo", rounded: true)
 	
 	// Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -45,13 +45,6 @@ class ProfileCell: UITableViewCell {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 		setupView()
-	}
-}
-
-// MARK: - Configurable
-extension ProfileCell: Configurable {
-	func configure(_ model: StepsViewModel) {
-		profileImage.image = UIImage(named: model.profileImage)
 	}
 }
 

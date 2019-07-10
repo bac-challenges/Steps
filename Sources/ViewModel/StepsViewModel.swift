@@ -55,14 +55,6 @@ extension StepsViewModel {
 // MARK: - View Properties
 extension StepsViewModel {
 	
-	var profileName: String {
-		return "Neil Armstrong"
-	}
-	
-	var profileImage: String {
-		return "profile-photo"
-	}
-	
 	var stepsCountText: String {
 		guard let chartPoints = chartPoints else {
 			return "0"
