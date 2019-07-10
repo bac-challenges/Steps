@@ -34,11 +34,6 @@ import UIKit
 #warning("Move UI to ChartCell and use as Container cell")
 class StepsCell: UITableViewCell {
 	
-	// UI
-	private lazy var titleLabel = UILabel("58033C81".localized("Steps"), alignment: .left, size: 32, weight: .heavy)
-	private lazy var detailLabel = UILabel(color: UIColor(named: "greenLabel"),alignment: .right, size: 32, weight: .regular)
-	private lazy var subtitleLabel = UILabel(alignment: .left, size: 18, weight: .regular, alpha: 0.5)
-	
 	// Init
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)

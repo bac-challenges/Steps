@@ -325,8 +325,8 @@
 		60F78A6322D63A0000570995 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
-				60F78A5922D639C100570995 /* CurveAlgorithm.swift */,
 				60F78A5A22D639C100570995 /* LineChart.swift */,
+				60F78A5922D639C100570995 /* CurveAlgorithm.swift */,
 				60F78A5B22D639C100570995 /* PointEntry.swift */,
 			);
 			path = Chart;

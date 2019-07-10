@@ -31,7 +31,6 @@
 
 import UIKit
 
-#warning("Convert to view and include in StepsView")
 class NoStepsView: UIView {
 
 	// UI
