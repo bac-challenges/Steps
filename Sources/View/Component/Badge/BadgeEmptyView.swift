@@ -35,27 +35,8 @@ class BadgeEmptyView: UIView {
 	
 	// UI
 	private lazy var image = UIImageView("no-steps")
-	
-	private lazy var titleLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .center
-		label.textColor = .white
-		label.text = "89DCAC96".localized("No achievements yet")
-		label.numberOfLines = 0
-		label.font = .systemFont(ofSize: 24, weight: .heavy)
-		return label
-	}()
-	
-	#warning("Create generic UILabel style")
-	private lazy var detailLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .center
-		label.textColor = .white
-		label.text = "11427B1F".localized("Keep walking!")
-		label.alpha = 0.5
-		label.font = .systemFont(ofSize: 24, weight: .medium)
-		return label
-	}()
+	private lazy var titleLabel = UILabel("89DCAC96".localized("No achievements yet"), weight: .heavy)
+	private lazy var detailLabel = UILabel("11427B1F".localized("Keep walking!"), weight: .medium, alpha: 0.5)
 	
 	// Init
 	override init(frame: CGRect) {

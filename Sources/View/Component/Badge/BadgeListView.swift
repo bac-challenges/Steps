@@ -32,31 +32,13 @@
 import UIKit
 
 class BadgeListView: UIView {
-	
+
 	// UI
-	private lazy var titleLabel: UILabel = {
-		let label = UILabel()
-		label.text = "A1239E36".localized("Achievements")
-		label.textAlignment = .left
-		label.textColor = .white
-		label.font = .systemFont(ofSize: 24, weight: .bold)
-		return label
-	}()
-	
-	private lazy var detailLabel: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .right
-		label.textColor = UIColor(named: "blueLabel")
-		label.font = .systemFont(ofSize: 24, weight: .bold)
-		return label
-	}()
-	
+	private lazy var titleLabel = UILabel("A1239E36".localized("Achievements"), alignment: .left)
+	private lazy var detailLabel = UILabel(color: UIColor(named: "blueLabel"), alignment: .right)
 	private lazy var scrollView = UIScrollView()
-	
 	private lazy var stackView: UIStackView = {
 		let view = UIStackView()
-		view.distribution = .fill
-		view.alignment = .fill
 		view.spacing = 30
 		return view
 	}()

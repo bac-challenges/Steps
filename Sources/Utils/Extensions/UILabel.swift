@@ -36,12 +36,12 @@ extension UILabel {
 	#warning("Document")
 	///
 	public convenience init(_ text: String = "",
-							textColor: UIColor = .white,
-							textAlignment: NSTextAlignment = .center,
+							color textColor: UIColor? = .white,
+							alignment textAlignment: NSTextAlignment = .center,
 							font: UIFont? = nil,
-							fontSize: CGFloat = 24,
-							fontWeight: UIFont.Weight = .bold,
-							numberOfLines: Int = 0,
+							size fontSize: CGFloat = 24,
+							weight fontWeight: UIFont.Weight = .bold,
+							lines numberOfLines: Int = 0,
 							alpha: CGFloat = 1) {
 		self.init()
 		self.text = text
@@ -49,6 +49,9 @@ extension UILabel {
 		self.textAlignment = textAlignment
 		self.font = font ?? .systemFont(ofSize: fontSize, weight: fontWeight)
 		self.numberOfLines = numberOfLines
+		
+		#warning("Properties not working...")
 		self.alpha = alpha
+		self.sizeToFit()
 	}
 }
