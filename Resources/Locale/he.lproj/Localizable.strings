@@ -29,7 +29,3 @@ MacOS: 10.15 */
 "11427B1F" = "תמשיך ללכת!";
 "A1239E36" = "הישגים";
 "730BDAB5" = "הישג מטרות";
-"main.cool" = "";
-/* This parameter is used across all platforms.
-Comments to keys are pretty useful too. There is more &ndash; Lokalise has built-in chat (see chat icon on the right side of the screen). Chat feed also aggregates comments to keys. */
-"main.country" = "בחר מדינה";
