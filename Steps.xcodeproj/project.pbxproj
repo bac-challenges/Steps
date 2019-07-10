@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		60590DF822CF818900F848B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60590DF622CF818900F848B1 /* Localizable.strings */; };
-		60590DFA22CF86E600F848B1 /* AchievementsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60590DF922CF86E600F848B1 /* AchievementsItemView.swift */; };
+		60590DFA22CF86E600F848B1 /* BadgeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60590DF922CF86E600F848B1 /* BadgeItemView.swift */; };
 		60664F8F22CF1CA0004506FB /* SF-Compact-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */; };
 		60664F9622CF2432004506FB /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9422CF2432004506FB /* ProfileCell.swift */; };
 		60664F9922CF25DC004506FB /* StepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9822CF25DC004506FB /* StepsCell.swift */; };
 		60664F9B22CF260C004506FB /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9A22CF260C004506FB /* ChartCell.swift */; };
-		60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9C22CF2644004506FB /* AchievementsCell.swift */; };
-		60664F9F22CF273F004506FB /* AchievementsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9E22CF273F004506FB /* AchievementsListView.swift */; };
-		60664FA122CF2773004506FB /* AchievementsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA022CF2773004506FB /* AchievementsEmptyView.swift */; };
+		60664F9D22CF2644004506FB /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9C22CF2644004506FB /* BadgeCell.swift */; };
+		60664F9F22CF273F004506FB /* BadgeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664F9E22CF273F004506FB /* BadgeListView.swift */; };
+		60664FA122CF2773004506FB /* BadgeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA022CF2773004506FB /* BadgeEmptyView.swift */; };
 		60664FA322CF2AF3004506FB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA222CF2AF3004506FB /* UIView.swift */; };
 		60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA422CF2C04004506FB /* ReusableCell.swift */; };
 		60664FA722CF2C04004506FB /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FA522CF2C04004506FB /* Configurable.swift */; };
@@ -34,7 +34,7 @@
 		609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBDB22D37C4400A353C8 /* Appearance.swift */; };
 		609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBDD22D3942500A353C8 /* UITableView.swift */; };
 		609DBBE022D3AFFB00A353C8 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609DBBDF22D3AFFB00A353C8 /* Config.plist */; };
-		60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */; };
+		60BEFA8722CFB4F00081A9EC /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8622CFB4F00081A9EC /* BadgeViewModel.swift */; };
 		60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */; };
 		60BEFA8C22D01D0A0081A9EC /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */; };
 		60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8D22D03B5E0081A9EC /* UIImage.swift */; };
@@ -47,7 +47,7 @@
 		60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2124E22D3D64D0082745A /* CoreDataManager.swift */; };
 		60F2125122D3E8F80082745A /* AuthFailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */; };
 		60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125222D3F7D70082745A /* BootstrapManager.swift */; };
-		60F2125922D3FCE50082745A /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125822D3FCE50082745A /* Achievement.swift */; };
+		60F2125922D3FCE50082745A /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125822D3FCE50082745A /* Badge.swift */; };
 		60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125A22D41B420082745A /* NoStepsCell.swift */; };
 		60F2125D22D424780082745A /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125C22D424780082745A /* SplashScreenController.swift */; };
 		60F2127222D5C06F0082745A /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2127122D5C06F0082745A /* UIStackView.swift */; };
@@ -55,14 +55,14 @@
 
 /* Begin PBXFileReference section */
 		60590DF722CF818900F848B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		60590DF922CF86E600F848B1 /* AchievementsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsItemView.swift; sourceTree = "<group>"; };
+		60590DF922CF86E600F848B1 /* BadgeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeItemView.swift; sourceTree = "<group>"; };
 		60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Semibold.otf"; sourceTree = "<group>"; };
 		60664F9422CF2432004506FB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		60664F9822CF25DC004506FB /* StepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCell.swift; sourceTree = "<group>"; };
 		60664F9A22CF260C004506FB /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
-		60664F9C22CF2644004506FB /* AchievementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCell.swift; sourceTree = "<group>"; };
-		60664F9E22CF273F004506FB /* AchievementsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListView.swift; sourceTree = "<group>"; };
-		60664FA022CF2773004506FB /* AchievementsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsEmptyView.swift; sourceTree = "<group>"; };
+		60664F9C22CF2644004506FB /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
+		60664F9E22CF273F004506FB /* BadgeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeListView.swift; sourceTree = "<group>"; };
+		60664FA022CF2773004506FB /* BadgeEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeEmptyView.swift; sourceTree = "<group>"; };
 		60664FA222CF2AF3004506FB /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		60664FA422CF2C04004506FB /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		60664FA522CF2C04004506FB /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		609DBBDB22D37C4400A353C8 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		609DBBDD22D3942500A353C8 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		609DBBDF22D3AFFB00A353C8 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
-		60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
+		60BEFA8622CFB4F00081A9EC /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8822CFB5FA0081A9EC /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
 		60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		60BEFA8D22D03B5E0081A9EC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		60F2124E22D3D64D0082745A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFailedViewModel.swift; sourceTree = "<group>"; };
 		60F2125222D3F7D70082745A /* BootstrapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapManager.swift; sourceTree = "<group>"; };
-		60F2125822D3FCE50082745A /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		60F2125822D3FCE50082745A /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		60F2125A22D41B420082745A /* NoStepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoStepsCell.swift; sourceTree = "<group>"; };
 		60F2125C22D424780082745A /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		60F2126422D452E00082745A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 		606ABF8422CE489C00EE7BAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				60F2125822D3FCE50082745A /* Achievement.swift */,
+				60F2125822D3FCE50082745A /* Badge.swift */,
 				606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */,
 			);
 			path = Model;
@@ -245,7 +245,7 @@
 				60664F9822CF25DC004506FB /* StepsCell.swift */,
 				60F2125A22D41B420082745A /* NoStepsCell.swift */,
 				60BEFA8F22D042EC0081A9EC /* ChartCell */,
-				60BEFA8222CFAABD0081A9EC /* AchievementsCell */,
+				60BEFA8222CFAABD0081A9EC /* BadgeCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,20 +255,20 @@
 			children = (
 				60F2125022D3E8F80082745A /* AuthFailedViewModel.swift */,
 				60664FAC22CF6394004506FB /* StepsViewModel.swift */,
-				60BEFA8622CFB4F00081A9EC /* AchievementViewModel.swift */,
+				60BEFA8622CFB4F00081A9EC /* BadgeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		60BEFA8222CFAABD0081A9EC /* AchievementsCell */ = {
+		60BEFA8222CFAABD0081A9EC /* BadgeCell */ = {
 			isa = PBXGroup;
 			children = (
-				60664F9C22CF2644004506FB /* AchievementsCell.swift */,
-				60664FA022CF2773004506FB /* AchievementsEmptyView.swift */,
-				60664F9E22CF273F004506FB /* AchievementsListView.swift */,
-				60590DF922CF86E600F848B1 /* AchievementsItemView.swift */,
+				60664F9C22CF2644004506FB /* BadgeCell.swift */,
+				60664FA022CF2773004506FB /* BadgeEmptyView.swift */,
+				60664F9E22CF273F004506FB /* BadgeListView.swift */,
+				60590DF922CF86E600F848B1 /* BadgeItemView.swift */,
 			);
-			path = AchievementsCell;
+			path = BadgeCell;
 			sourceTree = "<group>";
 		};
 		60BEFA8A22D01CD80081A9EC /* Service */ = {
@@ -374,24 +374,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				60664FA322CF2AF3004506FB /* UIView.swift in Sources */,
-				60664F9F22CF273F004506FB /* AchievementsListView.swift in Sources */,
+				60664F9F22CF273F004506FB /* BadgeListView.swift in Sources */,
 				60BEFA8922CFB5FA0081A9EC /* GenericViewModel.swift in Sources */,
-				60BEFA8722CFB4F00081A9EC /* AchievementViewModel.swift in Sources */,
+				60BEFA8722CFB4F00081A9EC /* BadgeViewModel.swift in Sources */,
 				60F2125D22D424780082745A /* SplashScreenController.swift in Sources */,
 				60664F9B22CF260C004506FB /* ChartCell.swift in Sources */,
-				60F2125922D3FCE50082745A /* Achievement.swift in Sources */,
+				60F2125922D3FCE50082745A /* Badge.swift in Sources */,
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
 				60BEFA9922D08B710081A9EC /* Int.swift in Sources */,
 				60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */,
 				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
 				60F2125B22D41B430082745A /* NoStepsCell.swift in Sources */,
 				609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */,
-				60664FA122CF2773004506FB /* AchievementsEmptyView.swift in Sources */,
+				60664FA122CF2773004506FB /* BadgeEmptyView.swift in Sources */,
 				60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */,
 				60BEFA9B22D0A1C70081A9EC /* PointEntry.swift in Sources */,
 				609DBBDA22D379BD00A353C8 /* AuthFailedController.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
-				60664F9D22CF2644004506FB /* AchievementsCell.swift in Sources */,
+				60664F9D22CF2644004506FB /* BadgeCell.swift in Sources */,
 				60F2127222D5C06F0082745A /* UIStackView.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,
 				609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */,
@@ -399,7 +399,7 @@
 				60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */,
 				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
 				60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */,
-				60590DFA22CF86E600F848B1 /* AchievementsItemView.swift in Sources */,
+				60590DFA22CF86E600F848B1 /* BadgeItemView.swift in Sources */,
 				60F2125122D3E8F80082745A /* AuthFailedViewModel.swift in Sources */,
 				60664F9922CF25DC004506FB /* StepsCell.swift in Sources */,
 				60BEFA9322D0441E0081A9EC /* CurveAlgorithm.swift in Sources */,

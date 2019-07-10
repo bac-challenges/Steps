@@ -31,8 +31,7 @@
 
 import UIKit
 
-#warning("Rename to BadgeListView")
-class AchievementsListView: UIView {
+class BadgeListView: UIView {
 	
 	// UI
 	private lazy var titleLabel: UILabel = {
@@ -75,12 +74,12 @@ class AchievementsListView: UIView {
 
 // MARK: - Configurable
 #warning("Remove all children before adding")
-extension AchievementsListView: Configurable {
+extension BadgeListView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		titleLabel.text = model.achievementsTitleText
 		detailLabel.text = model.achievementsCountText
 		model.achievedGoals.forEach { item in
-			let itemView = AchievementsItemView()
+			let itemView = BadgeItemView()
 			itemView.configure(item)
 			stackView.addArrangedSubview(itemView)
 		}
@@ -88,7 +87,7 @@ extension AchievementsListView: Configurable {
 }
 
 // MARK: - UI
-extension AchievementsListView {
+extension BadgeListView {
 	private func setupView() {
 		preservesSuperviewLayoutMargins = true
 		addSubview(titleLabel)

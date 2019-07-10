@@ -81,7 +81,7 @@ extension  StepsController {
 		tableView.register(StepsCell.self, forCellReuseIdentifier: StepsCell.identifier)
 		tableView.register(NoStepsCell.self, forCellReuseIdentifier: NoStepsCell.identifier)
 		tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
-		tableView.register(AchievementsCell.self, forCellReuseIdentifier: AchievementsCell.identifier)
+		tableView.register(BadgeCell.self, forCellReuseIdentifier: BadgeCell.identifier)
 		tableView.separatorStyle = .none
 		tableView.backgroundColor = .black
 		tableView.estimatedRowHeight = 280
@@ -118,7 +118,7 @@ extension StepsController {
 			cell.configure(viewModel)
 			return cell
 		
-		case .achievements: let cell: AchievementsCell = tableView.dequeueReusableCell(for: indexPath)
+		case .achievements: let cell: BadgeCell = tableView.dequeueReusableCell(for: indexPath)
 			cell.configure(viewModel)
 			return cell
 		}

@@ -31,8 +31,7 @@
 
 import Foundation
 
-#warning("Rename to Badge")
-struct Achievement {
+struct Badge {
 	let steps: Int
 	let isUnlocked: Bool
 }

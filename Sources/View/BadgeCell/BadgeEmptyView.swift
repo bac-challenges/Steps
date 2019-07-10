@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 96FA3EFA-20C8-4F83-B1D1-4F78A605D950
+//	ID: B96B0FB4-5E56-4045-A4CB-3E4FC8F5C5CF
 //
 //	Pkg: Steps
 //
@@ -31,29 +31,27 @@
 
 import UIKit
 
-#warning("Rename to BadgeItemCell")
-class AchievementsItemView: UIView {
-
-	// UI
-	private lazy var container = UIView(frame: CGRect(x: 0, y: 0, width: 116, height: 180))
+class BadgeEmptyView: UIView {
 	
-	private lazy var image = UIImageView("10k", rounded: true)
+	// UI
+	private lazy var image = UIImageView("no-steps")
 	
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
 		label.textColor = .white
 		label.numberOfLines = 0
-		label.font = .systemFont(ofSize: 16, weight: .heavy)
+		label.font = .systemFont(ofSize: 24, weight: .heavy)
 		return label
 	}()
 	
+	#warning("Create generic UILabel style")
 	private lazy var detailLabel: UILabel = {
 		let label = UILabel()
 		label.textAlignment = .center
 		label.textColor = .white
 		label.alpha = 0.5
-		label.font = UIFont(name: "SFCompactText-Semibold", size: 13)
+		label.font = .systemFont(ofSize: 24, weight: .medium)
 		return label
 	}()
 	
@@ -70,55 +68,35 @@ class AchievementsItemView: UIView {
 }
 
 // MARK: - Configurable
-extension AchievementsItemView: Configurable {
-	func configure(_ model: AchievementViewModel) {
-		titleLabel.text = model.achievementsGoalText
-		detailLabel.text = model.stepsString
-		
-		titleLabel.alpha = model.model.isUnlocked ? 1:0
-		detailLabel.alpha = model.model.isUnlocked ? 1:0
-		
-		image.image = model.image
-		
-		// Animate
-		UIView.animate(withDuration: 2,
-					   delay: TimeInterval(model.steps)/50,
-					   usingSpringWithDamping: 1,
-					   initialSpringVelocity: 4,
-					   options: [.curveEaseOut],
-					   animations: { self.container.frame.origin.y -= 180.00 },
-					   completion: nil)
+extension BadgeEmptyView: Configurable {
+	func configure(_ model: StepsViewModel) {
+		titleLabel.text = model.noAchievementsTitleText
+		detailLabel.text = model.noAchievementsSubtitleText
 	}
 }
 
 // MARK: - UI
-extension AchievementsItemView {
+extension BadgeEmptyView {
 	private func setupView() {
 		preservesSuperviewLayoutMargins = true
-		addSubview(container)
-		container.addSubview(image)
-		container.addSubview(titleLabel)
-		container.addSubview(detailLabel)
+		alpha = 0
+		addSubview(image)
+		addSubview(titleLabel)
+		addSubview(detailLabel)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
-		anchor(width: 116, height: 180)
-		
-		image.anchor(top: topAnchor,
-					 width: 116,
+		image.anchor(width: 116,
 					 height: 116,
-					 centerX: centerXAnchor)
+					 centerX: centerXAnchor,
+					 centerY: centerYAnchor,
+					 paddingCenterY: -63)
 		
-		titleLabel.anchor(top: image.bottomAnchor,
-						  paddingTop: 6,
-						  left: image.leftAnchor,
-						  right: image.rightAnchor,
+		titleLabel.anchor(top: image.bottomAnchor, paddingTop: 5,
 						  centerX: image.centerXAnchor)
-
+		
 		detailLabel.anchor(top: titleLabel.bottomAnchor,
-						   left: image.leftAnchor,
-						   right: image.rightAnchor,
 						   centerX: image.centerXAnchor)
 	}
 }

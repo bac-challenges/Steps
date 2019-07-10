@@ -105,9 +105,9 @@ extension StepsViewModel {
 		return chartPoints.count == 0 ? false:true
 	}
 	#warning("Duplicated values in the model")
-	var achievedGoals: [AchievementViewModel] {
+	var achievedGoals: [BadgeViewModel] {
 		let result = [(10, true),(15, true),(20, false),(25, false),(30, false),(35, false),(40, false)].map {
-			AchievementViewModel(Achievement(steps: $0, isUnlocked: $1))
+			BadgeViewModel(Badge(steps: $0, isUnlocked: $1))
 		}
 		return result
 	}
@@ -133,7 +133,7 @@ extension StepsViewModel {
 			case .steps: return StepsCell.identifier
 			case .noSteps: return UITableViewCell.identifier
 			case .chart: return ChartCell.identifier
-			case .achievements: return AchievementsCell.identifier
+			case .achievements: return BadgeCell.identifier
 			}
 		}
 	}

@@ -31,18 +31,17 @@
 
 import UIKit
 
-#warning("Rename to BadgeViewModel")
-struct AchievementViewModel: GenericViewModel {
+struct BadgeViewModel: GenericViewModel {
 	
-	var model: Achievement
+	var model: Badge
 	
-	init(_ model: Achievement) {
+	init(_ model: Badge) {
 		self.model = model
 	}
 }
 
 // MARK: - String
-extension AchievementViewModel {
+extension BadgeViewModel {
 	var achievementsGoalText: String {
 		return "730BDAB5".localized(withComment: "Goal achievement")
 	}

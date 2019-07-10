@@ -31,12 +31,11 @@
 
 import UIKit
 
-#warning("Rename to BadgeCell")
-class AchievementsCell: UITableViewCell {
+class BadgeCell: UITableViewCell {
 	
 	// UI
-	private lazy var emptyView = AchievementsEmptyView()
-	private lazy var listView = AchievementsListView()
+	private lazy var emptyView = BadgeEmptyView()
+	private lazy var listView = BadgeListView()
 	
 	// Init
 	override func awakeFromNib() {
@@ -55,7 +54,7 @@ class AchievementsCell: UITableViewCell {
 }
 
 // MARK: - Configurable
-extension AchievementsCell: Configurable {
+extension BadgeCell: Configurable {
 	func configure(_ model: StepsViewModel) {
 		emptyView.configure(model)
 		#warning("Animate on set achivements")
@@ -64,7 +63,7 @@ extension AchievementsCell: Configurable {
 }
 
 // MARK: - UI
-extension AchievementsCell {
+extension BadgeCell {
 	private func setupView() {
 		selectionStyle = .none
 		backgroundColor = .black
