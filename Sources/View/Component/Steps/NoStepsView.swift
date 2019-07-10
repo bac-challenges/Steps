@@ -41,7 +41,7 @@ class NoStepsView: UIView {
 										   alpha: 0.5)
 	
 	private lazy var button: UIButton = {
-		let button = UIButton()
+		let button = UIButton(type: .system)
 		button.setTitle("E8870A43".localized("Generate Sample Data"), for: .normal)
 		button.addTarget(self, action: #selector(generateSampleData), for: .touchUpInside)
 		return button
@@ -68,7 +68,7 @@ extension NoStepsView {
 // MARK: - UI
 extension NoStepsView {
 	private func setupView() {
-		backgroundColor = #colorLiteral(red: 0.03935233504, green: 0.03935233504, blue: 0.03935233504, alpha: 1)
+//		backgroundColor = #colorLiteral(red: 0.03935233504, green: 0.03935233504, blue: 0.03935233504, alpha: 1)
 		preservesSuperviewLayoutMargins = true
 		addSubview(titleLabel)
 		addSubview(detailLabel)
@@ -77,17 +77,14 @@ extension NoStepsView {
 	}
 	
 	private func setupLayout() {
-		titleLabel.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 30,
+		titleLabel.anchor(bottom: detailLabel.topAnchor, paddingBottom: 10,
 						  left: layoutMarginsGuide.leftAnchor,
 						  right: layoutMarginsGuide.rightAnchor)
 		
-		detailLabel.anchor(top: titleLabel.bottomAnchor, paddingTop: 10,
-						   centerX: centerXAnchor)
+		detailLabel.anchor(left: layoutMarginsGuide.leftAnchor,
+						   right: layoutMarginsGuide.rightAnchor,
+						   centerY: layoutMarginsGuide.centerYAnchor)
 		
-		button.anchor(top: detailLabel.bottomAnchor, paddingTop: 60,
-					  bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 30,
-					  left: detailLabel.leftAnchor,
-					  right: detailLabel.rightAnchor,
-					  centerX: centerXAnchor)
+		button.anchor(top: detailLabel.bottomAnchor, paddingTop: 20, centerX: centerXAnchor)
 	}
 }

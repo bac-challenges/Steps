@@ -32,14 +32,17 @@
 import UIKit
 
 #warning("Convert to UIView and use in StepsCell as parent")
-class StepsView: UITableViewCell {
+class StepsView: UIView {
 	
 	// UI
+	private lazy var titleLabel = UILabel("58033C81".localized("Steps"), alignment: .left, size: 32, weight: .heavy)
+	private lazy var detailLabel = UILabel(color: UIColor(named: "greenLabel"),alignment: .right, size: 32, weight: .regular)
+	private lazy var subtitleLabel = UILabel(alignment: .left, size: 18, weight: .regular, alpha: 0.5)
 	private lazy var chart = LineChart()
 	
 	// Init
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+	override init(frame: CGRect) {
+		super.init(frame: frame)
 		setupView()
 	}
 	
@@ -59,18 +62,26 @@ extension StepsView: Configurable {
 // MARK: - UI
 extension StepsView {
 	private func setupView() {
-		selectionStyle = .none
 		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
+		addSubview(titleLabel)
+		addSubview(detailLabel)
+		addSubview(subtitleLabel)
 		addSubview(chart)
 		setupLayout()
 	}
 	
 	private func setupLayout() {
+		
+		// NEW
+		titleLabel.anchor(top: topAnchor, left: layoutMarginsGuide.leftAnchor)
+		detailLabel.anchor(top: titleLabel.topAnchor, right: layoutMarginsGuide.rightAnchor)
+		subtitleLabel.anchor(top: titleLabel.bottomAnchor, left: titleLabel.leftAnchor)
+		
+		// OLD
 		chart.anchor(top: layoutMarginsGuide.topAnchor,
 					 bottom: layoutMarginsGuide.bottomAnchor,
 					 left: leftAnchor,
-					 right: rightAnchor,
-					 height: 170)
+					 right: rightAnchor)
 	}
 }

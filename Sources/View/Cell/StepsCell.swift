@@ -31,8 +31,11 @@
 
 import UIKit
 
-#warning("Move UI to ChartCell and use as Container cell")
 class StepsCell: UITableViewCell {
+	
+	// UI
+	private lazy var noStepsView = NoStepsView()
+	private lazy var stepsView = StepsView()
 	
 	// Init
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -49,8 +52,9 @@ class StepsCell: UITableViewCell {
 // MARK: - Configurable
 extension StepsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		detailLabel.text = model.stepsCountText
-		subtitleLabel.text = model.stepsDateRangeText
+		#warning("FixMe:")
+//		detailLabel.text = model.stepsCountText
+//		subtitleLabel.text = model.stepsDateRangeText
 	}
 }
 
@@ -59,17 +63,27 @@ extension StepsCell {
 	private func setupView() {
 		selectionStyle = .none
 		backgroundColor = .black
-		preservesSuperviewLayoutMargins = true
-		addSubview(titleLabel)
-		addSubview(detailLabel)
-		addSubview(subtitleLabel)
-		setupLayout()
+		addSubview(noStepsView)
+//		addSubview(stepsView)
+		layoutView()
+		
+		// Debug
+//		noStepsView.debugMode()
+		noStepsView.isOpaque = true
+		stepsView.debugMode()
 	}
 	
-	private func setupLayout() {
-		layoutMargins = UIEdgeInsets(top: layoutMargins.top, left: 25, bottom: layoutMargins.bottom, right: 25)
-		titleLabel.anchor(top: topAnchor, left: layoutMarginsGuide.leftAnchor)
-		detailLabel.anchor(top: titleLabel.topAnchor, right: layoutMarginsGuide.rightAnchor)
-		subtitleLabel.anchor(top: titleLabel.bottomAnchor, left: titleLabel.leftAnchor)
+	private func layoutView() {
+		layoutMargins = UIEdgeInsets(top: 10,
+									 left: 25,
+									 bottom: 10,
+									 right: 25)
+		
+		noStepsView.anchor(top: topAnchor,
+						   bottom: bottomAnchor,
+						   left: leftAnchor,
+						   right: rightAnchor,
+						   height: 230)
+//		stepsView.anchor(top: topAnchor, bottom: bottomAnchor, left: leftAnchor, right: rightAnchor)
 	}
 }
