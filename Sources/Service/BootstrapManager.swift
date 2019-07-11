@@ -45,7 +45,7 @@ class BootstrapManager {
 			populateBadges()
 			isPreflightComplete = false
 
-			//
+//			manager.deleteAll(Badge.self)
 			print("Start onboarding")
 		}
 		

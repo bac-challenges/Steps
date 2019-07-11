@@ -62,6 +62,12 @@ extension CoreDataManager {
 	func deteleItem(_ entity: NSManagedObject) {
 		context.delete(entity)
 	}
+	
+	func deleteAll<T>(_ entity: T) {
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entity)")
+		let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+		try! context.execute(batchDeleteRequest)
+	}
 }
 
 
