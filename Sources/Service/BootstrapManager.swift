@@ -53,7 +53,7 @@ class BootstrapManager {
 	}
 	
 	private func populateBadges() {
-		let badges: [Int16] = [10,15,20,25,30,35,40]
+		let badges: [Int32] = [10,15,20,25,30,35,40]
 		badges.forEach { item in
 			let badge: Badge = manager.createItem()
 			badge.steps = item

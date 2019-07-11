@@ -52,7 +52,7 @@ class StepsCell: UITableViewCell {
 // MARK: - Configurable
 extension StepsCell: Configurable {
 	func configure(_ model: StepsViewModel) {
-		if let _ = model.chartPoints {
+		if let _ = model.dailySteps {
 			noStepsView.isHidden = true
 			stepsView.isHidden = false
 			stepsView.configure(model)

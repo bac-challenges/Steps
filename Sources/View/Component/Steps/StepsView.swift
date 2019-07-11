@@ -56,7 +56,7 @@ extension StepsView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		detailLabel.text = model.stepsCountText
 		subtitleLabel.text = model.stepsDateRangeText
-		chart.dataEntries = model.chartPoints
+		chart.dataEntries = model.dailySteps
 	}
 }
 
