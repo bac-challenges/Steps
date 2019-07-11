@@ -32,7 +32,6 @@
 import Foundation
 import CoreData
 
-#warning("Implement")
 class CoreDataManager {
 	
 	public static let shared = CoreDataManager()
@@ -46,6 +45,32 @@ class CoreDataManager {
 		}
 		return container
 	}()
+}
+
+// MARK: -
+extension CoreDataManager {
+	
+	func createItem<T>() -> T {
+		return NSEntityDescription.insertNewObject(forEntityName: "\(T.self)", into: context) as! T
+	}
+	
+	func fetchItems<T>() -> [T] {
+		let itemsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(T.self)")
+		return try! context.fetch(itemsFetchRequest) as! [T]
+	}
+	
+	func deteleItem(_ entity: NSManagedObject) {
+		context.delete(entity)
+	}
+}
+
+
+// MARK: -
+extension CoreDataManager {
+
+	var context: NSManagedObjectContext {
+		return persistentContainer.viewContext
+	}
 	
 	// Core Data Saving support
 	func saveContext () {
@@ -58,5 +83,5 @@ class CoreDataManager {
 				fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
 			}
 		}
-	}	
+	}
 }

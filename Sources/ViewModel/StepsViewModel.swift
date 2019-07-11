@@ -85,9 +85,8 @@ extension StepsViewModel {
 		return chartPoints.count == 0 ? false:true
 	}
 	
-	#warning("Show achievedGoals from CoreData model")
-	var achievedGoals: [Int] {
-		return [10,15,20,25,30,35,40]
+	var achievedGoals: [Badge] {
+		return CoreDataManager.shared.fetchItems()
 	}
 }
 

@@ -32,34 +32,41 @@
 import Foundation
 import CoreData
 
-struct BootstrapManager {
+class BootstrapManager {
 	
 	// Shared instance
 	public static let shared = BootstrapManager()
 	
+	private let manager = CoreDataManager.shared
+	
 	// Configure app
 	func preflight(completion: @escaping (Bool) -> Void) {
-		
-		guard let settings = settings else {
-			fatalError("Loading configuration failed")
-		}
-		
-		// Beging configuration
-		if !settings.isPreflightComplete {
+		if !isPreflightComplete {
+			populateBadges()
+			isPreflightComplete = false
+
+			//
 			print("Start onboarding")
 		}
 		
+		// Finish preflight
 		completion(true)
 	}
 	
-	// App settings
-	private var settings: Settigns? {
-		return FileManager.shared.loadFile("Config", decoder: .plist)
+	private func populateBadges() {
+		let badges: [Int16] = [10,15,20,25,30,35,40]
+		badges.forEach { item in
+			let badge: Badge = manager.createItem()
+			badge.steps = item
+			badge.name = "badge_\(item)"
+			badge.image = "\(item)k"
+			badge.isUnlocked = false
+			manager.saveContext()
+		}
 	}
-}
-
-// Settings
-private struct Settigns: Codable {
-	let isPreflightComplete: Bool
-	let achievements: [Badge]
+	
+	var isPreflightComplete: Bool {
+		get { return UserDefaults.standard.bool(forKey: "isPreflightComplete") }
+		set { UserDefaults.standard.set(false, forKey: "isPreflightComplete") }
+	}
 }

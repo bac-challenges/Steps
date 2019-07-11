@@ -32,53 +32,14 @@
 import Foundation
 import CoreData
 
-// MARK: - NSManagedObject
-class Badge: NSManagedObject, Codable {
+class Badge: NSManagedObject {
 	
 	@nonobjc public class func fetchRequest() -> NSFetchRequest<Badge> {
 		return NSFetchRequest<Badge>(entityName: "Badge")
 	}
 	
-	@NSManaged public var steps: Int
+	@NSManaged public var steps: Int16
 	@NSManaged public var name: String
+	@NSManaged public var image: String
 	@NSManaged public var isUnlocked: Bool
-	
-	//
-	enum CodingKeys: String, CodingKey {
-		case steps, name, isUnlocked
-	}
-	
-	required convenience init(from decoder: Decoder) throws {
-
-		guard let contextUserInfoKey = CodingUserInfoKey.context,
-			let managedObjectContext = decoder.userInfo[contextUserInfoKey] as? NSManagedObjectContext,
-			let entity = NSEntityDescription.entity(forEntityName: "Badge", in: managedObjectContext) else {
-				fatalError("Failed to decode Person!")
-		}
-		
-//		guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
-//			fatalError("Failed to decode Badge")
-//		}
-//
-//		guard let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext else {
-//			fatalError("Failed to decode Badge")
-//		}
-//
-//		guard let entity = NSEntityDescription.entity(forEntityName: "Badge", in: managedObjectContext) else {
-//			fatalError("Failed to decode Badge")
-//		}
-		
-		self.init(entity: entity, insertInto: managedObjectContext)
-		let container = try decoder.container(keyedBy: CodingKeys.self)
-		self.steps = try container.decodeIfPresent(Int.self, forKey: .steps) ?? 0
-		self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
-		self.isUnlocked = try container.decodeIfPresent(Bool.self, forKey: .isUnlocked) ?? false
-	}
-	
-	public func encode(to encoder: Encoder) throws {
-		var container = encoder.container(keyedBy: CodingKeys.self)
-		try container.encode(steps, forKey: .steps)
-		try container.encode(name, forKey: .name)
-		try container.encode(isUnlocked, forKey: .isUnlocked)
-	}
 }
