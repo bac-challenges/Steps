@@ -30,6 +30,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct BootstrapManager {
 	
@@ -53,21 +54,12 @@ struct BootstrapManager {
 	
 	// App settings
 	private var settings: Settigns? {
-		
-		// Load settings from bundle
-		get {
-			return FileManager.shared.loadFile("Config", decoder: .plist)
-		}
-		
-		// Save settings in bundle
-		set {
-			
-		}
+		return FileManager.shared.loadFile("Config", decoder: .plist)
 	}
 }
 
 // Settings
 private struct Settigns: Codable {
 	let isPreflightComplete: Bool
-//	let achievements: [Any]
+	let achievements: [Badge]
 }

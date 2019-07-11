@@ -70,4 +70,17 @@ public struct FileManager {
 		}
 		return nil
 	}
+	
+	public func saveFile<T: Encodable>(value: T) {
+		if let encodedData = try? PropertyListEncoder().encode(value) {
+			let path = "Config.plist"
+			let pathAsURL = URL(fileURLWithPath: path)
+			do {
+				try encodedData.write(to: pathAsURL)
+			}
+			catch {
+				print("Failed to write JSON data: \(error.localizedDescription)")
+			}
+		}
+	}
 }
