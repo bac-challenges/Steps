@@ -29,7 +29,6 @@
 		606ABF7522CE432200EE7BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606ABF7422CE432200EE7BAB /* Assets.xcassets */; };
 		606ABF8222CE436700EE7BAB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606ABF8122CE436700EE7BAB /* HealthKit.framework */; };
 		606ABF8C22CE86C500EE7BAB /* StepsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF8B22CE86C500EE7BAB /* StepsController.swift */; };
-		609DBBDA22D379BD00A353C8 /* AuthFailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBD922D379BD00A353C8 /* AuthFailedController.swift */; };
 		609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBDB22D37C4400A353C8 /* Appearance.swift */; };
 		609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609DBBDD22D3942500A353C8 /* UITableView.swift */; };
 		60BEFA8C22D01D0A0081A9EC /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */; };
@@ -76,7 +75,6 @@
 		606ABF7F22CE436700EE7BAB /* Steps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Steps.entitlements; sourceTree = "<group>"; };
 		606ABF8122CE436700EE7BAB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		606ABF8B22CE86C500EE7BAB /* StepsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsController.swift; sourceTree = "<group>"; };
-		609DBBD922D379BD00A353C8 /* AuthFailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFailedController.swift; sourceTree = "<group>"; };
 		609DBBDB22D37C4400A353C8 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		609DBBDD22D3942500A353C8 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		60BEFA8B22D01D0A0081A9EC /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				60F2125C22D424780082745A /* SplashScreenController.swift */,
-				609DBBD922D379BD00A353C8 /* AuthFailedController.swift */,
 				606ABF8B22CE86C500EE7BAB /* StepsController.swift */,
 				60F2127622D5CBF50082745A /* Cell */,
 				60F2127522D5CBE80082745A /* Component */,
@@ -425,7 +422,6 @@
 				609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */,
 				60664FA122CF2773004506FB /* BadgeEmptyView.swift in Sources */,
 				60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */,
-				609DBBDA22D379BD00A353C8 /* AuthFailedController.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
 				60664F9D22CF2644004506FB /* BadgeCell.swift in Sources */,
 				60F2127222D5C06F0082745A /* UIStackView.swift in Sources */,

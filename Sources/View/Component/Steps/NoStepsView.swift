@@ -36,9 +36,7 @@ class NoStepsView: UIView {
 	// UI
 	private lazy var titleLabel = UILabel("24A4F1D5".localized("Steps Data Unavailable"), weight: .heavy)
 	private lazy var detailLabel = UILabel("7375E553".localized("Check your permission settings"),
-										   size: 16,
-										   weight: .medium,
-										   alpha: 0.5)
+										   size: 16, weight: .medium, alpha: 0.5)
 	
 	// Init
 	override init(frame: CGRect) {
