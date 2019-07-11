@@ -36,6 +36,10 @@
 		60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9622D08B3D0081A9EC /* Formatter.swift */; };
 		60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9822D08B710081A9EC /* Numeric.swift */; };
 		60C5DABF22D6A57F0062499B /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DABE22D6A57F0062499B /* DailySteps.swift */; };
+		60C5DAC222D6BE7A0062499B /* StateChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DAC122D6BE7A0062499B /* StateChanger.swift */; };
+		60C5DAC422D6BE960062499B /* StateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DAC322D6BE960062499B /* StateProvider.swift */; };
+		60C5DAC622D6BEC40062499B /* StateContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DAC522D6BEC40062499B /* StateContainerController.swift */; };
+		60C5DAC822D70FA40062499B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DAC722D70FA40062499B /* UIViewController.swift */; };
 		60CF6EEB22D2914400808A9D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF6EE922D2914400808A9D /* Date.swift */; };
 		60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2124E22D3D64D0082745A /* CoreDataManager.swift */; };
 		60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125222D3F7D70082745A /* BootstrapManager.swift */; };
@@ -82,6 +86,10 @@
 		60BEFA9622D08B3D0081A9EC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		60BEFA9822D08B710081A9EC /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		60C5DABE22D6A57F0062499B /* DailySteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySteps.swift; sourceTree = "<group>"; };
+		60C5DAC122D6BE7A0062499B /* StateChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateChanger.swift; sourceTree = "<group>"; };
+		60C5DAC322D6BE960062499B /* StateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProvider.swift; sourceTree = "<group>"; };
+		60C5DAC522D6BEC40062499B /* StateContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateContainerController.swift; sourceTree = "<group>"; };
+		60C5DAC722D70FA40062499B /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		60CF6EE522D24F4600808A9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60CF6EE922D2914400808A9D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		60F2124E22D3D64D0082745A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -142,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				609DBBDB22D37C4400A353C8 /* Appearance.swift */,
+				60C5DAC022D6BDE50062499B /* State */,
 				60664FD122CF7937004506FB /* Extensions */,
 				60664FD222CF7945004506FB /* Protocols */,
 			);
@@ -284,6 +293,17 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		60C5DAC022D6BDE50062499B /* State */ = {
+			isa = PBXGroup;
+			children = (
+				60C5DAC122D6BE7A0062499B /* StateChanger.swift */,
+				60C5DAC322D6BE960062499B /* StateProvider.swift */,
+				60C5DAC522D6BEC40062499B /* StateContainerController.swift */,
+				60C5DAC722D70FA40062499B /* UIViewController.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		60F2127522D5CBE80082745A /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,14 +437,17 @@
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
 				60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */,
 				60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */,
+				60C5DAC622D6BEC40062499B /* StateContainerController.swift in Sources */,
 				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
 				60F2131722D605F50082745A /* UILabel.swift in Sources */,
 				609DBBDC22D37C4400A353C8 /* Appearance.swift in Sources */,
 				60664FA122CF2773004506FB /* BadgeEmptyView.swift in Sources */,
+				60C5DAC422D6BE960062499B /* StateProvider.swift in Sources */,
 				60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */,
 				60664FA622CF2C04004506FB /* ReusableCell.swift in Sources */,
 				60664F9D22CF2644004506FB /* BadgeCell.swift in Sources */,
 				60F2127222D5C06F0082745A /* UIStackView.swift in Sources */,
+				60C5DAC822D70FA40062499B /* UIViewController.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,
 				609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */,
 				606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */,
@@ -433,6 +456,7 @@
 				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
 				60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */,
 				60C5DABF22D6A57F0062499B /* DailySteps.swift in Sources */,
+				60C5DAC222D6BE7A0062499B /* StateChanger.swift in Sources */,
 				60590DFA22CF86E600F848B1 /* BadgeItemView.swift in Sources */,
 				60664F9922CF25DC004506FB /* StepsCell.swift in Sources */,
 				60664FD022CF7920004506FB /* String.swift in Sources */,
