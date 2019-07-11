@@ -34,14 +34,9 @@ import UIKit
 
 class StepsViewModel {
 	
-	//
-	private lazy var store = CoreDataManager.shared
+	public var dailySteps: [DailySteps]?
 	
-	var dailySteps: [DailySteps]? {
-		didSet {
-			updateBadges()
-		}
-	}
+	private lazy var store = CoreDataManager.shared
 }
 
 // MARK: - Data Management
@@ -62,6 +57,14 @@ extension StepsViewModel {
 
 // MARK: - StepsCell
 extension StepsViewModel {
+	
+	var isDataAvailable: Bool {
+		guard let dailySteps = dailySteps  else {
+			return false
+		}
+		return dailySteps.count == 0 ? false:true
+	}
+	
 	var stepsCountText: String {
 		guard let chartPoints = dailySteps else {
 			return "0"
@@ -94,23 +97,8 @@ extension StepsViewModel {
 		return "\(achievedGoals.count)"
 	}
 	
-	var isDataAvailable: Bool {
-		guard let chartPoints = dailySteps  else {
-			return false
-		}
-		return chartPoints.count == 0 ? false:true
-	}
-	
 	var achievedGoals: [Badge] {
-		return store.fetchItems(predicate: "isUnlocked == YES")
-	}
-	
-	private func updateBadges() {
-		let badges: [Badge] = store.fetchItems(predicate: "steps < \(stepsCount/1000)")
-		badges.forEach { badge in
-			badge.setValue(true, forKey: "isUnlocked")
-		}
-		store.saveContext()
+		return store.fetchItems(predicate: "steps < \(stepsCount/1000)")
 	}
 }
 

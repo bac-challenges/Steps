@@ -59,7 +59,6 @@ class BootstrapManager {
 			badge.steps = item
 			badge.name = "badge_\(item)"
 			badge.image = "\(item)k"
-			badge.isUnlocked = false
 			manager.saveContext()
 		}
 	}
