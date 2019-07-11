@@ -42,11 +42,9 @@ class BootstrapManager {
 	// Configure app
 	func preflight(completion: @escaping (Bool) -> Void) {
 		if !isPreflightComplete {
+			manager.deleteAll(Badge.self)
 			populateBadges()
 			isPreflightComplete = false
-
-//			manager.deleteAll(Badge.self)
-			print("Start onboarding")
 		}
 		
 		// Finish preflight

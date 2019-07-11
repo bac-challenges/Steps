@@ -33,6 +33,10 @@
 import UIKit
 
 class StepsViewModel {
+	
+	//
+	private lazy var store = CoreDataManager.shared
+	
 	var chartPoints: [DailySteps]?
 }
 
@@ -86,7 +90,7 @@ extension StepsViewModel {
 	}
 	
 	var achievedGoals: [Badge] {
-		return CoreDataManager.shared.fetchItems()
+		return store.fetchItems(predicate: "isUnlocked == NO")
 	}
 }
 
