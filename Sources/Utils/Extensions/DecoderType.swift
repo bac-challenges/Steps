@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: D9E38171-94B3-48ED-A5DF-314FCF160022
+//	ID: 539924DF-64FE-43EC-9A13-EC872D83390B
 //
 //	Pkg: Steps
 //
@@ -31,43 +31,9 @@
 
 import Foundation
 
-public enum Decoder: DecoderType {
-
-	case json, list
-	
-	func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
-		switch self {
-		case .json: return try JSONDecoder().decode(type, from: data)
-		case .list: return try PropertyListDecoder().decode(type, from: data)
-		}
-	}
-	
-	var fileType: String {
-		switch self {
-		case .json: return "json"
-		case .list: return "plist"
-		}
-	}
+protocol DecoderType {
+	func decode<T: Decodable >(_ type: T.Type, from data: Data) throws -> T
 }
 
-public struct FileManager {
-
-	// Singleton
-	public static let shared = FileManager()
-	
-	// Get sample data
-	@discardableResult
-	public func loadFile<T: Codable>(_ name: String, decoder: Decoder = .json) -> T? {
-	
-		if let url = Bundle.main.url(forResource: name, withExtension: decoder.fileType) {
-			do {
-				let data = try Data(contentsOf: url)
-				let response = try decoder.decode(T.self, from: data)
-				return response
-			} catch {
-				print("error:\(error)")
-			}
-		}
-		return nil
-	}
-}
+extension JSONDecoder: DecoderType {}
+extension PropertyListDecoder: DecoderType {}
