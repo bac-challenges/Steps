@@ -32,17 +32,42 @@
 import Foundation
 
 struct BootstrapManager {
-
-	private let achievements = [10,15,20,25,30,35,40]
 	
-	static func preflight(completion: @escaping (Bool) -> Void) {
+	// Shared instance
+	public static let shared = BootstrapManager()
+	
+	// Configure app
+	func preflight(completion: @escaping (Bool) -> Void) {
 		
-		let isPreflightComplete = Bundle.main.isPreflightComplete
+		guard let settings = settings else {
+			fatalError("Loading configuration failed")
+		}
 		
-		if isPreflightComplete {
-			completion(isPreflightComplete)
-		} else {
+		// Beging configuration
+		if !settings.isPreflightComplete {
+			print("Start onboarding")
+		}
+		
+		completion(true)
+	}
+	
+	// App settings
+	private var settings: Settigns? {
+		
+		// Load settings from bundle
+		get {
+			return FileManager.shared.loadFile("Config", decoder: .plist)
+		}
+		
+		// Save settings in bundle
+		set {
 			
 		}
 	}
+}
+
+// Settings
+private struct Settigns: Codable {
+	let isPreflightComplete: Bool
+//	let achievements: [Any]
 }

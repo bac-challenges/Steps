@@ -33,19 +33,19 @@ import Foundation
 
 public enum Decoder: DecoderType {
 
-	case json, list
+	case json, plist
 	
 	func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable {
 		switch self {
 		case .json: return try JSONDecoder().decode(type, from: data)
-		case .list: return try PropertyListDecoder().decode(type, from: data)
+		case .plist: return try PropertyListDecoder().decode(type, from: data)
 		}
 	}
 	
 	var fileType: String {
 		switch self {
 		case .json: return "json"
-		case .list: return "plist"
+		case .plist: return "plist"
 		}
 	}
 }

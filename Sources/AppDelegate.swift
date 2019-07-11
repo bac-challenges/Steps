@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		#warning("Use State Machine")
 		// Configure Application
-		BootstrapManager.preflight { success in
+		BootstrapManager.shared.preflight { success in
 			HealthKitManager.shared.isHealthDataAvailable { success, error in
 				DispatchQueue.main.sync {
 					let rootViewController = success ? StepsController() : AuthFailedController()
