@@ -43,13 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// Appearance
 		Appearance.apply()
-		
-		#warning("Use State Machine")
+
 		// Configure Application
 		HealthKitManager.shared.isHealthDataAvailable { success, error in
 			BootstrapManager.shared.preflight { success in
 				DispatchQueue.main.sync {
-					let rootViewController = success ? StepsController() : AuthFailedController()
+					let rootViewController = StepsController()
 					self.window?.rootViewController = UINavigationController(rootViewController: rootViewController)
 				}
 			}

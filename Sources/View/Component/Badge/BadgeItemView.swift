@@ -55,9 +55,9 @@ class BadgeItemView: UIView {
 extension BadgeItemView: Configurable {
 	func configure(_ item: Badge) {
 		detailLabel.text = "\(item.steps)k"
-		image.image = UIImage(named: "\(item.steps)k")
+		image.image = UIImage(named: item.image)
 		UIView.animate(withDuration: 2,
-					   delay: TimeInterval(item.steps)/50,
+					   delay: TimeInterval(item.steps)/17,
 					   usingSpringWithDamping: 1,
 					   initialSpringVelocity: 4,
 					   options: [.curveEaseOut],

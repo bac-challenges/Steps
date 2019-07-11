@@ -65,6 +65,7 @@ extension BadgeListView: Configurable {
 			itemView.configure(item)
 			stackView.addArrangedSubview(itemView)
 		}
+		setNeedsDisplay()
 	}
 }
 
@@ -80,11 +81,9 @@ extension BadgeListView {
 	}
 	
 	private func setupLayout() {
-		titleLabel.anchor(top: topAnchor,
-						  left: layoutMarginsGuide.leftAnchor)
+		titleLabel.anchor(top: topAnchor, left: layoutMarginsGuide.leftAnchor)
 		
-		detailLabel.anchor(top: topAnchor,
-						   right: layoutMarginsGuide.rightAnchor)
+		detailLabel.anchor(top: topAnchor, right: layoutMarginsGuide.rightAnchor)
 		
 		scrollView.anchor(top: titleLabel.bottomAnchor, paddingTop: 10,
 						  left: leftAnchor,

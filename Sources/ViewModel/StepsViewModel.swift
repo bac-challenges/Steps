@@ -34,10 +34,9 @@ import UIKit
 
 class StepsViewModel {
 	
-	//
-	private lazy var store = CoreDataManager.shared
+	public var dailySteps: [DailySteps]?
 	
-	var chartPoints: [DailySteps]?
+	private lazy var store = CoreDataManager.shared
 }
 
 // MARK: - Data Management
@@ -48,7 +47,7 @@ extension StepsViewModel {
 		DispatchQueue.main.async {
 			HealthKitManager.shared.readSampleSteps { result in
 				DispatchQueue.main.sync {
-					self.chartPoints = result
+					self.dailySteps = result
 					completion()
 				}
 			}
@@ -58,8 +57,16 @@ extension StepsViewModel {
 
 // MARK: - StepsCell
 extension StepsViewModel {
+	
+	var isDataAvailable: Bool {
+		guard let dailySteps = dailySteps  else {
+			return false
+		}
+		return dailySteps.count == 0 ? false:true
+	}
+	
 	var stepsCountText: String {
-		guard let chartPoints = chartPoints else {
+		guard let chartPoints = dailySteps else {
 			return "0"
 		}
 		return chartPoints.compactMap { $0.value }
@@ -67,9 +74,17 @@ extension StepsViewModel {
 						  .format()
 	}
 	
+	var stepsCount: Int {
+		guard let chartPoints = dailySteps else {
+			return 0
+		}
+		return chartPoints.compactMap { $0.value }
+			.reduce(0) { $0 + $1 }
+	}
+	
 	var stepsDateRangeText: String {
-		if let start = chartPoints?.first?.date.toString("MMM dd"),
-			let end = chartPoints?.last?.date.toString("MMM dd YYYY") {
+		if let start = dailySteps?.first?.date.toString("MMM dd"),
+			let end = dailySteps?.last?.date.toString("MMM dd YYYY") {
 			return "\(start) - \(end)"
 		}
 		return "N/A"
@@ -82,15 +97,8 @@ extension StepsViewModel {
 		return "\(achievedGoals.count)"
 	}
 	
-	var isDataAvailable: Bool {
-		guard let chartPoints = chartPoints  else {
-			return false
-		}
-		return chartPoints.count == 0 ? false:true
-	}
-	
 	var achievedGoals: [Badge] {
-		return store.fetchItems(predicate: "isUnlocked == YES")
+		return store.fetchItems(predicate: "steps < \(stepsCount/1000)")
 	}
 }
 

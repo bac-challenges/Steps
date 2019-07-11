@@ -38,8 +38,7 @@ class Badge: NSManagedObject {
 		return NSFetchRequest<Badge>(entityName: "Badge")
 	}
 	
-	@NSManaged public var steps: Int16
+	@NSManaged public var steps: Int32
 	@NSManaged public var name: String
 	@NSManaged public var image: String
-	@NSManaged public var isUnlocked: Bool
 }
