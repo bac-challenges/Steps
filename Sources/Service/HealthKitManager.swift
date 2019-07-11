@@ -214,8 +214,6 @@ extension HealthKitManager {
 			date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
 		}
 		
-		print(result)
-		
 		return result
 	}
 }
