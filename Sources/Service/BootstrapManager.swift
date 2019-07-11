@@ -31,7 +31,18 @@
 
 import Foundation
 
-#warning("Implement")
 struct BootstrapManager {
+
+	private let achievements = [10,15,20,25,30,35,40]
 	
+	static func preflight(completion: @escaping (Bool) -> Void) {
+		
+		let isPreflightComplete = Bundle.main.isPreflightComplete
+		
+		if isPreflightComplete {
+			completion(isPreflightComplete)
+		} else {
+			
+		}
+	}
 }

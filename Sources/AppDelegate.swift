@@ -41,22 +41,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Create window
 		self.window = UIWindow(frame: UIScreen.main.bounds)
 		self.window?.makeKeyAndVisible()
-		
-		#warning("Use State Machine")
 		self.window?.rootViewController = SplashScreenController()
-		
-		#warning("Move to a view controller")
-		// Check if HealthKit is avaliable
-		HealthKitManager.shared.isHealthDataAvailable { success, error in
-			DispatchQueue.main.sync {
-				let rootViewController = success ? StepsController() : AuthFailedController()
-				self.window?.rootViewController = UINavigationController(rootViewController: rootViewController)
-			}
-		}
 		
 		// Appearance
 		Appearance.apply()
 		
+		#warning("Use State Machine")
+		// Configure Application
+		BootstrapManager.preflight { success in
+			HealthKitManager.shared.isHealthDataAvailable { success, error in
+				DispatchQueue.main.sync {
+					let rootViewController = success ? StepsController() : AuthFailedController()
+					self.window?.rootViewController = UINavigationController(rootViewController: rootViewController)
+				}
+			}
+		}
 		return true
 	}
 
