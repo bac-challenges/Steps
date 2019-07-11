@@ -2,49 +2,63 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>isInitialized</key>
+	<key>isPreflightComplete</key>
 	<false/>
 	<key>achievements</key>
 	<array>
 		<dict>
 			<key>steps</key>
 			<integer>10</integer>
+			<key>description</key>
+			<string></string>
 			<key>isUnlocked</key>
 			<false/>
 		</dict>
 		<dict>
 			<key>steps</key>
 			<integer>15</integer>
+			<key>description</key>
+			<string></string>
 			<key>isUnlocked</key>
 			<false/>
 		</dict>
 		<dict>
 			<key>steps</key>
 			<integer>20</integer>
+			<key>description</key>
+			<string></string>
 			<key>isUnlocked</key>
 			<false/>
 		</dict>
 		<dict>
 			<key>steps</key>
 			<integer>25</integer>
+			<key>description</key>
+			<string></string>
 			<key>isUnlocked</key>
 			<false/>
 		</dict>
 		<dict>
 			<key>steps</key>
 			<integer>30</integer>
+			<key>description</key>
+			<string></string>
 			<key>isUnlocked</key>
 			<false/>
 		</dict>
 		<dict>
 			<key>steps</key>
 			<integer>35</integer>
+			<key>description</key>
+			<string></string>
 			<key>isUnlocked</key>
 			<false/>
 		</dict>
 		<dict>
 			<key>steps</key>
 			<integer>40</integer>
+			<key>description</key>
+			<string></string>
 			<key>isUnlocked</key>
 			<false/>
 		</dict>

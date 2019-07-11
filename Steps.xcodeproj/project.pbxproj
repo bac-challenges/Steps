@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60280F3622D7247B00B9CF62 /* DecoderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60280F3522D7247B00B9CF62 /* DecoderType.swift */; };
+		60280F3922D72A2F00B9CF62 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60280F3822D72A2F00B9CF62 /* Config.plist */; };
 		60590DF822CF818900F848B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60590DF622CF818900F848B1 /* Localizable.strings */; };
 		60590DFA22CF86E600F848B1 /* BadgeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60590DF922CF86E600F848B1 /* BadgeItemView.swift */; };
 		60664F8F22CF1CA0004506FB /* SF-Compact-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */; };
@@ -38,7 +39,6 @@
 		60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9622D08B3D0081A9EC /* Formatter.swift */; };
 		60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9822D08B710081A9EC /* Numeric.swift */; };
 		60C5DABF22D6A57F0062499B /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DABE22D6A57F0062499B /* DailySteps.swift */; };
-		60C5DACD22D718D80062499B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DACC22D718D80062499B /* Bundle.swift */; };
 		60CF6EEB22D2914400808A9D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF6EE922D2914400808A9D /* Date.swift */; };
 		60F2124F22D3D64D0082745A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2124E22D3D64D0082745A /* CoreDataManager.swift */; };
 		60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2125222D3F7D70082745A /* BootstrapManager.swift */; };
@@ -54,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		60280F3522D7247B00B9CF62 /* DecoderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderType.swift; sourceTree = "<group>"; };
+		60280F3822D72A2F00B9CF62 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		60590DF722CF818900F848B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		60590DF922CF86E600F848B1 /* BadgeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeItemView.swift; sourceTree = "<group>"; };
 		60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Semibold.otf"; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		60BEFA9622D08B3D0081A9EC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		60BEFA9822D08B710081A9EC /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		60C5DABE22D6A57F0062499B /* DailySteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySteps.swift; sourceTree = "<group>"; };
-		60C5DACC22D718D80062499B /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		60CF6EE522D24F4600808A9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60CF6EE922D2914400808A9D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		60F2124E22D3D64D0082745A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -127,13 +127,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60280F3722D72A2F00B9CF62 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				60280F3822D72A2F00B9CF62 /* Config.plist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		60280F3A22D72A3F00B9CF62 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				60664FD522CF798F004506FB /* Prototype.storyboard */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		60590DF422CF7CC800F848B1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				606ABF7422CE432200EE7BAB /* Assets.xcassets */,
 				60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */,
 				60664FC222CF754C004506FB /* LaunchScreen.storyboard */,
-				60664FD522CF798F004506FB /* Prototype.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -161,7 +176,6 @@
 				60664FCF22CF7920004506FB /* String.swift */,
 				60CF6EE922D2914400808A9D /* Date.swift */,
 				60BEFA9622D08B3D0081A9EC /* Formatter.swift */,
-				60C5DACC22D718D80062499B /* Bundle.swift */,
 				60280F3522D7247B00B9CF62 /* DecoderType.swift */,
 			);
 			path = Extensions;
@@ -230,8 +244,10 @@
 			children = (
 				60664FD622CF799E004506FB /* Info.plist */,
 				606ABF7F22CE436700EE7BAB /* Steps.entitlements */,
+				60280F3722D72A2F00B9CF62 /* Data */,
 				60664FDE22CF7C02004506FB /* Locale */,
 				60590DF422CF7CC800F848B1 /* Assets */,
+				60280F3A22D72A3F00B9CF62 /* Other */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -400,6 +416,7 @@
 				606ABF7522CE432200EE7BAB /* Assets.xcassets in Resources */,
 				60664F8F22CF1CA0004506FB /* SF-Compact-Text-Semibold.otf in Resources */,
 				60664FD322CF798F004506FB /* Prototype.storyboard in Resources */,
+				60280F3922D72A2F00B9CF62 /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +435,6 @@
 				60F78A5F22D639C100570995 /* LineChart.swift in Sources */,
 				60F2125D22D424780082745A /* SplashScreenController.swift in Sources */,
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
-				60C5DACD22D718D80062499B /* Bundle.swift in Sources */,
 				60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */,
 				60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */,
 				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
