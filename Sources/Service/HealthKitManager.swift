@@ -210,7 +210,7 @@ extension HealthKitManager {
 			result.append(SampleData(steps: steps,
 									 startDate: date,
 									 endDate: endDate))
-			print(steps)
+			
 			date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
 		}
 		

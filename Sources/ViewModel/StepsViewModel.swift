@@ -106,14 +106,11 @@ extension StepsViewModel {
 	}
 	
 	private func updateBadges() {
-		let badges: [Badge] = store.fetchItems(predicate: "steps < \(stepsCount)")
+		let badges: [Badge] = store.fetchItems(predicate: "steps < \(stepsCount/1000)")
 		badges.forEach { badge in
-			print(badge.steps)
 			badge.setValue(true, forKey: "isUnlocked")
 		}
 		store.saveContext()
-		
-		print(stepsCount)
 	}
 }
 
