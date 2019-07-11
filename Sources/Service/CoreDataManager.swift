@@ -32,11 +32,11 @@
 import Foundation
 import CoreData
 
-#warning("Implement")
 class CoreDataManager {
 	
 	public static let shared = CoreDataManager()
 	
+	// Core Data stack
 	lazy var persistentContainer: NSPersistentContainer = {
 		let container = NSPersistentContainer(name: "Steps")
 		container.loadPersistentStores { (storeDescription, error) in
@@ -46,6 +46,11 @@ class CoreDataManager {
 		}
 		return container
 	}()
+	
+	// Context
+	var context: NSManagedObjectContext {
+		return persistentContainer.viewContext
+	}
 	
 	// Core Data Saving support
 	func saveContext () {
@@ -59,5 +64,31 @@ class CoreDataManager {
 			}
 		}
 	}
+}
+
+// MARK: -
+#warning("Add error handling")
+extension CoreDataManager {
 	
+	func createItem<T>() -> T {
+		return NSEntityDescription.insertNewObject(forEntityName: "\(T.self)", into: context) as! T
+	}
+	
+	func fetchItems<T>(predicate: String = "") -> [T] {
+		let itemsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(T.self)")
+		itemsFetchRequest.predicate = NSPredicate(format: predicate)
+		return try! context.fetch(itemsFetchRequest) as! [T]
+	}
+	
+	func deteleItem(_ entity: NSManagedObject) {
+		context.delete(entity)
+		try! context.save()
+	}
+	
+	func deleteAll<T>(_ entity: T) {
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entity)")
+		let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+		try! context.execute(batchDeleteRequest)
+		try! context.save()
+	}
 }

@@ -65,6 +65,7 @@ extension StepsView {
 	private func setupView() {
 		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
+		isHidden = true
 		addSubview(titleLabel)
 		addSubview(detailLabel)
 		addSubview(subtitleLabel)

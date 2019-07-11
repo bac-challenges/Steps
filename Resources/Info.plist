@@ -49,5 +49,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>isPreflightComplete</key>
+	<true/>
 </dict>
 </plist>

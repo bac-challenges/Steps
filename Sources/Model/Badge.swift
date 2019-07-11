@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: D9E38171-94B3-48ED-A5DF-314FCF160022
+//	ID: 82A820E5-E7BF-4815-B71D-BB58FD2A7C10
 //
 //	Pkg: Steps
 //
@@ -30,25 +30,16 @@
 //
 
 import Foundation
+import CoreData
 
-public struct FileManager {
+class Badge: NSManagedObject {
 	
-	// Singleton
-	public static let shared = FileManager()
-	
-	// Get sample data
-	@discardableResult
-	public func loadJson<T: Codable>(name: String = "data-source") -> T? {
-		if let url = Bundle.main.url(forResource: "data-source", withExtension: "json") {
-			do {
-				let data = try Data(contentsOf: url)
-				let decoder = JSONDecoder()
-				let response = try decoder.decode(T.self, from: data)
-				return response
-			} catch {
-				print("error:\(error)")
-			}
-		}
-		return nil
+	@nonobjc public class func fetchRequest() -> NSFetchRequest<Badge> {
+		return NSFetchRequest<Badge>(entityName: "Badge")
 	}
+	
+	@NSManaged public var steps: Int16
+	@NSManaged public var name: String
+	@NSManaged public var image: String
+	@NSManaged public var isUnlocked: Bool
 }
