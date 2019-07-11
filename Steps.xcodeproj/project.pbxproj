@@ -26,7 +26,6 @@
 		60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FAC22CF6394004506FB /* StepsViewModel.swift */; };
 		60664FC022CF754C004506FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60664FC222CF754C004506FB /* LaunchScreen.storyboard */; };
 		60664FD022CF7920004506FB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60664FCF22CF7920004506FB /* String.swift */; };
-		60664FD322CF798F004506FB /* Prototype.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60664FD522CF798F004506FB /* Prototype.storyboard */; };
 		60664FDC22CF79FA004506FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60664FDA22CF79FA004506FB /* InfoPlist.strings */; };
 		606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF6A22CE432000EE7BAB /* AppDelegate.swift */; };
 		606ABF7322CE432000EE7BAB /* Steps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */; };
@@ -57,6 +56,7 @@
 /* Begin PBXFileReference section */
 		60102F5122D74EAF00953033 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		60102F5322D75E0400953033 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
+		60102F5922D7788B00953033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Prototype.storyboard; sourceTree = "<group>"; };
 		60280F3522D7247B00B9CF62 /* DecoderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderType.swift; sourceTree = "<group>"; };
 		60280F3822D72A2F00B9CF62 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		60590DF722CF818900F848B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -99,7 +99,6 @@
 		60F2126422D452E00082745A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60F2127122D5C06F0082745A /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		60F2127322D5C9580082745A /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		60F2128022D5D0A70082745A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Prototype.storyboard; sourceTree = "<group>"; };
 		60F2130322D5F31C0082745A /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 		60F2130422D5F31F0082745A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		60F2130522D5F3220082745A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -421,7 +420,6 @@
 				60664FC022CF754C004506FB /* LaunchScreen.storyboard in Resources */,
 				606ABF7522CE432200EE7BAB /* Assets.xcassets in Resources */,
 				60664F8F22CF1CA0004506FB /* SF-Compact-Text-Semibold.otf in Resources */,
-				60664FD322CF798F004506FB /* Prototype.storyboard in Resources */,
 				60280F3922D72A2F00B9CF62 /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,7 +499,7 @@
 		60664FD522CF798F004506FB /* Prototype.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				60F2128022D5D0A70082745A /* en */,
+				60102F5922D7788B00953033 /* Base */,
 			);
 			name = Prototype.storyboard;
 			sourceTree = "<group>";

@@ -58,6 +58,5 @@ class CoreDataManager {
 				fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
 			}
 		}
-	}
-	
+	}	
 }

@@ -61,5 +61,5 @@ struct BootstrapManager {
 // Settings
 private struct Settigns: Codable {
 	let isPreflightComplete: Bool
-//	let achievements: [Badge]
+	let achievements: [Badge]
 }

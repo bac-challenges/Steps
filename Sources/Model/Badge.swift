@@ -49,11 +49,24 @@ class Badge: NSManagedObject, Codable {
 	}
 	
 	required convenience init(from decoder: Decoder) throws {
-		guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
-			let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
+
+		guard let contextUserInfoKey = CodingUserInfoKey.context,
+			let managedObjectContext = decoder.userInfo[contextUserInfoKey] as? NSManagedObjectContext,
 			let entity = NSEntityDescription.entity(forEntityName: "Badge", in: managedObjectContext) else {
-				fatalError("Failed to decode User")
+				fatalError("Failed to decode Person!")
 		}
+		
+//		guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
+//			fatalError("Failed to decode Badge")
+//		}
+//
+//		guard let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext else {
+//			fatalError("Failed to decode Badge")
+//		}
+//
+//		guard let entity = NSEntityDescription.entity(forEntityName: "Badge", in: managedObjectContext) else {
+//			fatalError("Failed to decode Badge")
+//		}
 		
 		self.init(entity: entity, insertInto: managedObjectContext)
 		let container = try decoder.container(keyedBy: CodingKeys.self)

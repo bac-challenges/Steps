@@ -9,7 +9,7 @@
 		<dict>
 			<key>steps</key>
 			<integer>10</integer>
-			<key>description</key>
+			<key>name</key>
 			<string></string>
 			<key>isUnlocked</key>
 			<false/>
@@ -17,7 +17,7 @@
 		<dict>
 			<key>steps</key>
 			<integer>15</integer>
-			<key>description</key>
+			<key>name</key>
 			<string></string>
 			<key>isUnlocked</key>
 			<false/>
@@ -25,7 +25,7 @@
 		<dict>
 			<key>steps</key>
 			<integer>20</integer>
-			<key>description</key>
+			<key>name</key>
 			<string></string>
 			<key>isUnlocked</key>
 			<false/>
@@ -33,7 +33,7 @@
 		<dict>
 			<key>steps</key>
 			<integer>25</integer>
-			<key>description</key>
+			<key>name</key>
 			<string></string>
 			<key>isUnlocked</key>
 			<false/>
@@ -41,7 +41,7 @@
 		<dict>
 			<key>steps</key>
 			<integer>30</integer>
-			<key>description</key>
+			<key>name</key>
 			<string></string>
 			<key>isUnlocked</key>
 			<false/>
@@ -49,7 +49,7 @@
 		<dict>
 			<key>steps</key>
 			<integer>35</integer>
-			<key>description</key>
+			<key>name</key>
 			<string></string>
 			<key>isUnlocked</key>
 			<false/>
@@ -57,7 +57,7 @@
 		<dict>
 			<key>steps</key>
 			<integer>40</integer>
-			<key>description</key>
+			<key>name</key>
 			<string></string>
 			<key>isUnlocked</key>
 			<false/>
