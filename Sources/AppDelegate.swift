@@ -39,17 +39,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
 		// Create window
-		self.window = UIWindow(frame: UIScreen.main.bounds)
-		self.window?.makeKeyAndVisible()
-		self.window?.rootViewController = SplashScreenController()
+		instantiateInitialViewController()
 		
 		// Appearance
 		Appearance.apply()
 		
 		#warning("Use State Machine")
 		// Configure Application
-		BootstrapManager.shared.preflight { success in
-			HealthKitManager.shared.isHealthDataAvailable { success, error in
+		HealthKitManager.shared.isHealthDataAvailable { success, error in
+			BootstrapManager.shared.preflight { success in
 				DispatchQueue.main.sync {
 					let rootViewController = success ? StepsController() : AuthFailedController()
 					self.window?.rootViewController = UINavigationController(rootViewController: rootViewController)
@@ -64,3 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 }
 
+// MARK: - Helpers
+extension AppDelegate {
+	private func instantiateInitialViewController() {
+		self.window = UIWindow(frame: UIScreen.main.bounds)
+		self.window?.rootViewController = SplashScreenController()
+		self.window?.makeKeyAndVisible()
+	}
+}
