@@ -42,9 +42,10 @@ class BootstrapManager {
 	// Configure app
 	func preflight(completion: @escaping (Bool) -> Void) {
 		if !isPreflightComplete {
-			manager.deleteAll(Badge.self)
-			populateBadges()
-			isPreflightComplete = false
+			HealthKitManager.shared.generateSampleSteps { error in
+				self.populateBadges()
+			}
+			isPreflightComplete = true
 		}
 		
 		// Finish preflight
@@ -64,7 +65,12 @@ class BootstrapManager {
 	}
 	
 	var isPreflightComplete: Bool {
-		get { return UserDefaults.standard.bool(forKey: "isPreflightComplete") }
-		set { UserDefaults.standard.set(false, forKey: "isPreflightComplete") }
+		get {
+			return UserDefaults.standard.bool(forKey: "isPreflightComplete")
+		}
+		set {
+			UserDefaults.standard.set(newValue, forKey: "isPreflightComplete")
+			UserDefaults.standard.synchronize()
+		}
 	}
 }

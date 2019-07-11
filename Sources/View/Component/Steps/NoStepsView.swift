@@ -40,13 +40,6 @@ class NoStepsView: UIView {
 										   weight: .medium,
 										   alpha: 0.5)
 	
-	private lazy var button: UIButton = {
-		let button = UIButton(type: .system)
-		button.setTitle("E8870A43".localized("Generate Sample Data"), for: .normal)
-		button.addTarget(self, action: #selector(generateSampleData), for: .touchUpInside)
-		return button
-	}()
-	
 	// Init
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -59,20 +52,14 @@ class NoStepsView: UIView {
 	}
 }
 
-// MARK: - Actions
-extension NoStepsView {
-	@objc func generateSampleData() {
-	}
-}
-
 // MARK: - UI
 extension NoStepsView {
 	private func setupView() {
-		backgroundColor = #colorLiteral(red: 0.03935233504, green: 0.03935233504, blue: 0.03935233504, alpha: 1)
+		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
+		isHidden = true
 		addSubview(titleLabel)
 		addSubview(detailLabel)
-		addSubview(button)
 		setupLayout()
 	}
 	
@@ -84,7 +71,5 @@ extension NoStepsView {
 		detailLabel.anchor(left: layoutMarginsGuide.leftAnchor,
 						   right: layoutMarginsGuide.rightAnchor,
 						   centerY: layoutMarginsGuide.centerYAnchor)
-		
-		button.anchor(top: detailLabel.bottomAnchor, paddingTop: 20, centerX: centerXAnchor)
 	}
 }

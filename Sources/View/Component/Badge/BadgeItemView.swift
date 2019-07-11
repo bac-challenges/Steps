@@ -36,7 +36,7 @@ class BadgeItemView: UIView {
 	// UI
 	private lazy var container = UIView()
 	private lazy var image = UIImageView("10k", rounded: true)
-	private lazy var titleLabel = UILabel("730BDAB5".localized("Goal achievement"), size: 16, weight: .heavy)
+	private lazy var titleLabel = UILabel("730BDAB5".localized("Goal achievement"), size: 15, weight: .heavy)
 	private lazy var detailLabel = UILabel(font: UIFont(name: "SFCompactText-Semibold", size: 13), alpha: 0.5)
 
 	// Init

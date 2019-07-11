@@ -90,7 +90,7 @@ extension StepsViewModel {
 	}
 	
 	var achievedGoals: [Badge] {
-		return store.fetchItems(predicate: "isUnlocked == NO")
+		return store.fetchItems(predicate: "isUnlocked == YES")
 	}
 }
 

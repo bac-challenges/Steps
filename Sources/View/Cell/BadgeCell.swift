@@ -58,8 +58,10 @@ extension BadgeCell: Configurable {
 	func configure(_ model: StepsViewModel) {
 		if model.achievedGoals.count == 0 {
 			emptyView.isHidden = false
+			listView.isHidden = true
 		} else {
 			emptyView.isHidden = true
+			listView.isHidden = false
 			listView.configure(model)
 		}
 	}
