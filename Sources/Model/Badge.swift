@@ -33,15 +33,14 @@ import Foundation
 import CoreData
 
 // MARK: - NSManagedObject
-@objc(Badge)
 class Badge: NSManagedObject, Codable {
 	
 	@nonobjc public class func fetchRequest() -> NSFetchRequest<Badge> {
 		return NSFetchRequest<Badge>(entityName: "Badge")
 	}
 	
-	@NSManaged public var steps: Int16
-	@NSManaged public var name: String?
+	@NSManaged public var steps: Int
+	@NSManaged public var name: String
 	@NSManaged public var isUnlocked: Bool
 	
 	//
@@ -50,18 +49,17 @@ class Badge: NSManagedObject, Codable {
 	}
 	
 	required convenience init(from decoder: Decoder) throws {
-		guard let codingBadgeInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
-			let managedObjectContext = decoder.userInfo[codingBadgeInfoKeyManagedObjectContext] as? NSManagedObjectContext,
+		guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
+			let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
 			let entity = NSEntityDescription.entity(forEntityName: "Badge", in: managedObjectContext) else {
 				fatalError("Failed to decode User")
 		}
 		
 		self.init(entity: entity, insertInto: managedObjectContext)
-		decoder.decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
 		let container = try decoder.container(keyedBy: CodingKeys.self)
-		self.steps = try container.decodeIfPresent(Int.self, forKey: .steps)
-		self.name = try container.decodeIfPresent(String.self, forKey: .name)
-		self.isUnlocked = try container.decodeIfPresent(Bool.self, forKey: .isUnlocked)
+		self.steps = try container.decodeIfPresent(Int.self, forKey: .steps) ?? 0
+		self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+		self.isUnlocked = try container.decodeIfPresent(Bool.self, forKey: .isUnlocked) ?? false
 	}
 	
 	public func encode(to encoder: Encoder) throws {

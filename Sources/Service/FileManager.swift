@@ -31,7 +31,7 @@
 
 import Foundation
 
-public enum Decoder: DecoderType {
+public enum GenericDecoder: DecoderType {
 
 	case json, plist
 	
@@ -57,7 +57,7 @@ public struct FileManager {
 	
 	// Get sample data
 	@discardableResult
-	public func loadFile<T: Codable>(_ name: String, decoder: Decoder = .json) -> T? {
+	public func loadFile<T: Codable>(_ name: String, decoder: GenericDecoder = .json) -> T? {
 	
 		if let url = Bundle.main.url(forResource: name, withExtension: decoder.fileType) {
 			do {

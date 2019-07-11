@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60102F5222D74EAF00953033 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60102F5122D74EAF00953033 /* Badge.swift */; };
+		60102F5422D75E0400953033 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60102F5322D75E0400953033 /* CodingUserInfoKey.swift */; };
 		60280F3622D7247B00B9CF62 /* DecoderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60280F3522D7247B00B9CF62 /* DecoderType.swift */; };
 		60280F3922D72A2F00B9CF62 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60280F3822D72A2F00B9CF62 /* Config.plist */; };
 		60590DF822CF818900F848B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60590DF622CF818900F848B1 /* Localizable.strings */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		60102F5122D74EAF00953033 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		60102F5322D75E0400953033 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
 		60280F3522D7247B00B9CF62 /* DecoderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderType.swift; sourceTree = "<group>"; };
 		60280F3822D72A2F00B9CF62 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		60590DF722CF818900F848B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			children = (
 				60C5DABE22D6A57F0062499B /* DailySteps.swift */,
 				60102F5122D74EAF00953033 /* Badge.swift */,
+				60102F5322D75E0400953033 /* CodingUserInfoKey.swift */,
 				606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */,
 			);
 			path = Model;
@@ -439,6 +442,7 @@
 				60F2125D22D424780082745A /* SplashScreenController.swift in Sources */,
 				60664FA922CF4B80004506FB /* UIImageView.swift in Sources */,
 				60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */,
+				60102F5422D75E0400953033 /* CodingUserInfoKey.swift in Sources */,
 				60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */,
 				60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */,
 				60280F3622D7247B00B9CF62 /* DecoderType.swift in Sources */,
