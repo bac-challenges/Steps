@@ -36,7 +36,7 @@ struct HealthKitManager {
 	
 	// Singleton
 	public static let shared = HealthKitManager()
-	private let store = CoreDataManager.shared
+	private let store = CoreDataStore.shared
 	
 	private let healthStore = HKHealthStore()
 
@@ -212,7 +212,7 @@ extension HealthKitManager {
 		var result = [SampleData]()
 		
 		while date <= endDate {
-			let steps = Double(Int.random(in: 0...2000))
+			let steps = Double(Int.random(in: 1500...3500))
 			result.append(SampleData(steps: steps,
 									 startDate: date,
 									 endDate: endDate))

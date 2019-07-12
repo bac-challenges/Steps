@@ -33,11 +33,6 @@ import Foundation
 import CoreData
 
 class Steps: NSManagedObject {
-	
-	@nonobjc public class func fetchRequest() -> NSFetchRequest<Steps> {
-		return NSFetchRequest<Steps>(entityName: "Steps")
-	}
-	
 	@NSManaged public var steps: Int32
 	@NSManaged public var date: Date
 }

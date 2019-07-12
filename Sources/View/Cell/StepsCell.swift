@@ -67,25 +67,22 @@ extension StepsCell: Configurable {
 extension StepsCell {
 	private func setupView() {
 		selectionStyle = .none
-		backgroundColor = .black
+		backgroundColor = .clear
 		addSubview(stepsView)
 		addSubview(noStepsView)
 		layoutView()
 	}
 	
 	private func layoutView() {
-		layoutMargins = UIEdgeInsets(top: 0, left: 25, bottom: 10, right: 25)
-		
 		noStepsView.anchor(top: topAnchor,
 						   bottom: bottomAnchor,
 						   left: leftAnchor,
-						   right: rightAnchor,
-						   height: 230)
+						   right: rightAnchor)
 		
 		stepsView.anchor(top: topAnchor,
 						 bottom: bottomAnchor,
 						 left: leftAnchor,
 						 right: rightAnchor,
-						 height: 230)
+						 height: 228)
 	}
 }

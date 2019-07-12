@@ -80,13 +80,10 @@ extension BadgeItemView {
 	private func setupLayout() {
 		anchor(width: 116, height: 180)
 		
-		image.anchor(top: topAnchor,
-					 width: 116,
-					 height: 116,
-					 centerX: centerXAnchor)
+		image.anchor(top: topAnchor, width: 116, height: 116, centerX: centerXAnchor)
 		
 		titleLabel.anchor(top: image.bottomAnchor,
-						  paddingTop: 6,
+						  paddingTop: 4,
 						  left: image.leftAnchor,
 						  right: image.rightAnchor,
 						  centerX: image.centerXAnchor)

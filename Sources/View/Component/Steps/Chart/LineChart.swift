@@ -28,13 +28,13 @@ class LineChart: UIView {
     var lineGap: CGFloat = 10
     
     /// preseved space at top of the chart
-    let topSpace: CGFloat = 40.0
+    let topSpace: CGFloat = 28.0
     
     /// preserved space at bottom of the chart to show labels along the Y axis
-    let bottomSpace: CGFloat = 40.0
+    let bottomSpace: CGFloat = 10.0
     
     /// The top most horizontal line in the chart will be 10% higher than the highest value in the chart
-    let topHorizontalLine: CGFloat = 100.0 / 100.0
+    let topHorizontalLine: CGFloat = 120.0 / 100.0
     
     var dataEntries: [PointEntry]? {
         didSet {
@@ -118,14 +118,14 @@ class LineChart: UIView {
     // Convert an array of PointEntry to an array of CGPoint on dataLayer coordinate system
     private func convertDataEntriesToPoints(entries: [PointEntry]) -> [CGPoint] {
 		
-        if let max = entries.max()?.value, let min = entries.min()?.value {
-            
+        if let min = entries.min()?.value {
+            let max = 18000
             var result: [CGPoint] = []
             let minMaxRange: CGFloat = CGFloat(max - min) * topHorizontalLine
             
             for i in 0..<entries.count {
                 let height = dataLayer.frame.height * (1 - ((CGFloat(entries[i].value) - CGFloat(min)) / minMaxRange))
-                let point = CGPoint(x: CGFloat(i) * lineGap + 30, y: height)
+                let point = CGPoint(x: CGFloat(i) * lineGap + 30, y: height-20)
                 result.append(point)
             }
             return result
@@ -175,7 +175,7 @@ class LineChart: UIView {
         if dataEntries.count < 4 && dataEntries.count > 0 {
             gridValues = [0, 1]
         } else if dataEntries.count >= 4 {
-            gridValues = [0, 0.25, 0.50, 0.75, 1]
+            gridValues = [0, 0.33, 0.66, 1]
         }
 		
         if let gridValues = gridValues {
@@ -183,15 +183,15 @@ class LineChart: UIView {
 				let height = value * gridLayer.frame.size.height
 				
 				let path = UIBezierPath()
-				path.move(to: CGPoint(x: 0, y: height))
-				path.addLine(to: CGPoint(x: gridLayer.frame.size.width, y: height))
+				path.move(to: CGPoint(x: 0, y: height-10))
+				path.addLine(to: CGPoint(x: gridLayer.frame.size.width, y: height-10))
 				
 				// Vertical Line Layer
 				let lineLayer = verticalLineLayer(path: path)
 				gridLayer.addSublayer(lineLayer)
 				
 				let min = 0
-				let max = 20000
+				let max = 10000
 				var lineValue: Int = 0
 				var minMaxGap: CGFloat = 0
 				minMaxGap = CGFloat(max - min) * topHorizontalLine
@@ -226,7 +226,7 @@ class LineChart: UIView {
 	
 	// Create Horizontal Text Label
 	private func horizontalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
-		let x = lineGap * CGFloat(value) - lineGap/2 + 20
+		let x = (lineGap * CGFloat(value) ) + lineGap*1.8
 		let y = mainLayer.frame.size.height - bottomSpace/2 - 8
 		
 		var textLayer = CATextLayer()
@@ -238,13 +238,13 @@ class LineChart: UIView {
 	
 	// Create Vertical Text Label
 	private func verticalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
-		let x = frame.width - width - 16
-		let y = height - 16
+		let x = frame.width - width - 15
+		let y = height - 26
 		
 		var textLayer = CATextLayer()
 		textLayer.frame = CGRect(x: x, y: y, width: width, height: 16)
 		textLayer.alignmentMode = .right
-		styleTextLayer(&textLayer, value:  "\(value)")
+		styleTextLayer(&textLayer, value:  "\(Int(round(Float(value)/1000)*1000))")
 		return textLayer
 	}
 	

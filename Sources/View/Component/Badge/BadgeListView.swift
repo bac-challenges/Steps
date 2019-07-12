@@ -85,7 +85,7 @@ extension BadgeListView {
 		
 		detailLabel.anchor(top: topAnchor, right: layoutMarginsGuide.rightAnchor)
 		
-		scrollView.anchor(top: titleLabel.bottomAnchor, paddingTop: 10,
+		scrollView.anchor(top: titleLabel.bottomAnchor, paddingTop: 20,
 						  left: leftAnchor,
 						  right: rightAnchor,
 						  height: 180)

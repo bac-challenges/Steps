@@ -33,11 +33,6 @@ import Foundation
 import CoreData
 
 class Badge: NSManagedObject {
-	
-	@nonobjc public class func fetchRequest() -> NSFetchRequest<Badge> {
-		return NSFetchRequest<Badge>(entityName: "Badge")
-	}
-	
 	@NSManaged public var steps: Int32
 	@NSManaged public var name: String
 	@NSManaged public var image: String
