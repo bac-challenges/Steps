@@ -34,7 +34,7 @@ import UIKit
 
 class StepsViewModel {
 	
-	private lazy var store = CoreDataManager.shared
+	private lazy var store = CoreDataStore.shared
 }
 
 // MARK: - Data Management

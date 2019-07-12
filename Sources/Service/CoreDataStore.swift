@@ -32,9 +32,9 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
+class CoreDataStore {
 	
-	public static let shared = CoreDataManager()
+	public static let shared = CoreDataStore()
 	
 	// Core Data stack
 	lazy var persistentContainer: NSPersistentContainer = {
@@ -70,17 +70,17 @@ class CoreDataManager {
 
 // MARK: -
 #warning("Add error handling")
-extension CoreDataManager {
+extension CoreDataStore {
 	
 	func insertItem<T>() -> T {
 		return NSEntityDescription.insertNewObject(forEntityName: "\(T.self)", into: context) as! T
 	}
 	
-	func fetchItems<T>(predicate: String = "") -> [T] {
+	func fetchItems<T>(predicate: String? = nil) -> [T] {
 		
 		let itemsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(T.self)")
 		
-		if predicate != "" {
+		if let predicate = predicate {
 			itemsFetchRequest.predicate = NSPredicate(format: predicate)
 		}
 		

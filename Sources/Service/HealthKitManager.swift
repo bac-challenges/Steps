@@ -36,7 +36,7 @@ struct HealthKitManager {
 	
 	// Singleton
 	public static let shared = HealthKitManager()
-	private let store = CoreDataManager.shared
+	private let store = CoreDataStore.shared
 	
 	private let healthStore = HKHealthStore()
 

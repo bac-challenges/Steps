@@ -37,7 +37,7 @@ class BootstrapManager {
 	// Shared instance
 	public static let shared = BootstrapManager()
 	
-	private let store = CoreDataManager.shared
+	private let store = CoreDataStore.shared
 	
 	// Configure app
 	func preflight(completion: @escaping (Bool) -> Void) {
