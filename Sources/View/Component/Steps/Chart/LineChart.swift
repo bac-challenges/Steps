@@ -175,7 +175,7 @@ class LineChart: UIView {
         if dataEntries.count < 4 && dataEntries.count > 0 {
             gridValues = [0, 1]
         } else if dataEntries.count >= 4 {
-            gridValues = [0, 0.25, 0.50, 0.75, 1]
+            gridValues = [0, 0.33, 0.66, 1]
         }
 		
         if let gridValues = gridValues {
