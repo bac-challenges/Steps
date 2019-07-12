@@ -30,17 +30,14 @@
 //
 
 import Foundation
+import CoreData
 
-struct DailySteps {
-	let value: Int
-	let date: Date
-}
-
-extension DailySteps: Comparable {
-	static func <(lhs: DailySteps, rhs: DailySteps) -> Bool {
-		return lhs.value < rhs.value
+class Steps: NSManagedObject {
+	
+	@nonobjc public class func fetchRequest() -> NSFetchRequest<Steps> {
+		return NSFetchRequest<Steps>(entityName: "Steps")
 	}
-	static func ==(lhs: DailySteps, rhs: DailySteps) -> Bool {
-		return lhs.value == rhs.value
-	}
+	
+	@NSManaged public var steps: Int32
+	@NSManaged public var date: Date
 }

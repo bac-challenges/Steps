@@ -70,7 +70,7 @@ class CoreDataManager {
 #warning("Add error handling")
 extension CoreDataManager {
 	
-	func createItem<T>() -> T {
+	func insertItem<T>() -> T {
 		return NSEntityDescription.insertNewObject(forEntityName: "\(T.self)", into: context) as! T
 	}
 	

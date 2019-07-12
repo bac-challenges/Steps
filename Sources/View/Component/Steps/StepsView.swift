@@ -56,7 +56,14 @@ extension StepsView: Configurable {
 	func configure(_ model: StepsViewModel) {
 		detailLabel.text = model.stepsCountText
 		subtitleLabel.text = model.stepsDateRangeText
-		chart.dataEntries = model.dailySteps
+		
+		// Convert Steps to PointEntry
+		if let steps = model.steps {
+			chart.dataEntries = steps.map {
+				PointEntry(value: Int($0.steps),
+						   label: $0.date.toString())
+			}
+		}
 	}
 }
 

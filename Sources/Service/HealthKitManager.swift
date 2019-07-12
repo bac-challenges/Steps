@@ -36,6 +36,7 @@ struct HealthKitManager {
 	
 	// Singleton
 	public static let shared = HealthKitManager()
+	private let store = CoreDataManager.shared
 	
 	private let healthStore = HKHealthStore()
 
@@ -76,7 +77,7 @@ extension HealthKitManager {
 	///		- startDate: Count start date
 	/// 	- endDate: Count end date
 	///		- completion: A block that this method calls as soon as the read operation is complete.
-	public func readStepsCollection(startDate start: Date, endDate end: Date, completion: @escaping ([DailySteps]) -> Void) {
+	public func readStepsCollection(startDate start: Date, endDate end: Date, completion: @escaping ([Steps]) -> Void) {
 		
 		var interval = DateComponents()
 		interval.day = 1
@@ -93,7 +94,7 @@ extension HealthKitManager {
 				fatalError("*** An error occurred while calculating the statistics: \(error.debugDescription) ***")
 			}
 			
-			var dailyStepsCollection = [DailySteps]()
+			var dailyStepsCollection = [Steps]()
 
 			statsCollection.enumerateStatistics(from: start, to: end)  { statistics, stop  in
 				
@@ -101,9 +102,14 @@ extension HealthKitManager {
 					let date = statistics.startDate
 					let value = quantity.doubleValue(for: HKUnit.count())
 					
-					dailyStepsCollection.append(DailySteps(value: Int(value), date: date))
+					let steps: Steps = self.store.insertItem()
+					steps.steps = Int32(value)
+					steps.date = date
+					
+					dailyStepsCollection.append(steps)
 				}
 			}
+			self.store.saveContext()
 			completion(dailyStepsCollection)
 		}
 		healthStore.execute(query)
@@ -185,7 +191,7 @@ extension HealthKitManager {
 	}
 	
 	/// Read sample steps data
-	func readSampleSteps(completion: @escaping ([DailySteps]) -> Void) {
+	func readSampleSteps(completion: @escaping ([Steps]) -> Void) {
 		readStepsCollection(startDate: Date.startOfMonth, endDate: Date(), completion: completion)
 	}
 	
@@ -206,7 +212,7 @@ extension HealthKitManager {
 		var result = [SampleData]()
 		
 		while date <= endDate {
-			let steps = Double(Int.random(in: 100...3000))
+			let steps = Double(Int.random(in: 0...5000))
 			result.append(SampleData(steps: steps,
 									 startDate: date,
 									 endDate: endDate))

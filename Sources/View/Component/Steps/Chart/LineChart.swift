@@ -8,6 +8,20 @@
 
 import UIKit
 
+struct PointEntry {
+	let value: Int
+	let label: String
+}
+
+extension PointEntry: Comparable {
+	static func <(lhs: PointEntry, rhs: PointEntry) -> Bool {
+		return lhs.value < rhs.value
+	}
+	static func ==(lhs: PointEntry, rhs: PointEntry) -> Bool {
+		return lhs.value == rhs.value
+	}
+}
+
 class LineChart: UIView {
     
     /// Gap between each point
@@ -22,7 +36,7 @@ class LineChart: UIView {
     /// The top most horizontal line in the chart will be 10% higher than the highest value in the chart
     let topHorizontalLine: CGFloat = 100.0 / 100.0
     
-    var dataEntries: [DailySteps]? {
+    var dataEntries: [PointEntry]? {
         didSet {
             self.setNeedsLayout()
         }
@@ -102,7 +116,7 @@ class LineChart: UIView {
     }
     
     // Convert an array of PointEntry to an array of CGPoint on dataLayer coordinate system
-    private func convertDataEntriesToPoints(entries: [DailySteps]) -> [CGPoint] {
+    private func convertDataEntriesToPoints(entries: [PointEntry]) -> [CGPoint] {
 		
         if let max = entries.max()?.value, let min = entries.min()?.value {
             

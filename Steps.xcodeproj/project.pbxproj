@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60102F5222D74EAF00953033 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60102F5122D74EAF00953033 /* Badge.swift */; };
+		60102F8222D85A9000953033 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60102F8122D85A9000953033 /* Steps.swift */; };
 		60590DF822CF818900F848B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60590DF622CF818900F848B1 /* Localizable.strings */; };
 		60590DFA22CF86E600F848B1 /* BadgeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60590DF922CF86E600F848B1 /* BadgeItemView.swift */; };
 		60664F8F22CF1CA0004506FB /* SF-Compact-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */; };
@@ -35,7 +36,6 @@
 		60BEFA8E22D03B5E0081A9EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA8D22D03B5E0081A9EC /* UIImage.swift */; };
 		60BEFA9722D08B3D0081A9EC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9622D08B3D0081A9EC /* Formatter.swift */; };
 		60BEFA9922D08B710081A9EC /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEFA9822D08B710081A9EC /* Numeric.swift */; };
-		60C5DABF22D6A57F0062499B /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DABE22D6A57F0062499B /* DailySteps.swift */; };
 		60C5DAC222D6BE7A0062499B /* StateChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DAC122D6BE7A0062499B /* StateChanger.swift */; };
 		60C5DAC422D6BE960062499B /* StateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DAC322D6BE960062499B /* StateProvider.swift */; };
 		60C5DAC622D6BEC40062499B /* StateContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DAC522D6BEC40062499B /* StateContainerController.swift */; };
@@ -55,6 +55,7 @@
 /* Begin PBXFileReference section */
 		60102F5122D74EAF00953033 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		60102F5922D7788B00953033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Prototype.storyboard; sourceTree = "<group>"; };
+		60102F8122D85A9000953033 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 		60590DF722CF818900F848B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		60590DF922CF86E600F848B1 /* BadgeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeItemView.swift; sourceTree = "<group>"; };
 		60664F8E22CF1BD7004506FB /* SF-Compact-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Semibold.otf"; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		60BEFA8D22D03B5E0081A9EC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		60BEFA9622D08B3D0081A9EC /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		60BEFA9822D08B710081A9EC /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
-		60C5DABE22D6A57F0062499B /* DailySteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySteps.swift; sourceTree = "<group>"; };
 		60C5DAC122D6BE7A0062499B /* StateChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateChanger.swift; sourceTree = "<group>"; };
 		60C5DAC322D6BE960062499B /* StateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProvider.swift; sourceTree = "<group>"; };
 		60C5DAC522D6BEC40062499B /* StateContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateContainerController.swift; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 		606ABF8422CE489C00EE7BAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				60102F8122D85A9000953033 /* Steps.swift */,
 				60102F5122D74EAF00953033 /* Badge.swift */,
-				60C5DABE22D6A57F0062499B /* DailySteps.swift */,
 				606ABF7122CE432000EE7BAB /* Steps.xcdatamodeld */,
 			);
 			path = Model;
@@ -450,12 +450,12 @@
 				60C5DAC822D70FA40062499B /* UIViewController.swift in Sources */,
 				60664FA722CF2C04004506FB /* Configurable.swift in Sources */,
 				609DBBDE22D3942500A353C8 /* UITableView.swift in Sources */,
+				60102F8222D85A9000953033 /* Steps.swift in Sources */,
 				606ABF6B22CE432000EE7BAB /* AppDelegate.swift in Sources */,
 				60F2125322D3F7D70082745A /* BootstrapManager.swift in Sources */,
 				60102F5222D74EAF00953033 /* Badge.swift in Sources */,
 				60664F9622CF2432004506FB /* ProfileCell.swift in Sources */,
 				60664FAD22CF6394004506FB /* StepsViewModel.swift in Sources */,
-				60C5DABF22D6A57F0062499B /* DailySteps.swift in Sources */,
 				60C5DAC222D6BE7A0062499B /* StateChanger.swift in Sources */,
 				60590DFA22CF86E600F848B1 /* BadgeItemView.swift in Sources */,
 				60664F9922CF25DC004506FB /* StepsCell.swift in Sources */,
