@@ -34,8 +34,6 @@ import UIKit
 
 class StepsViewModel {
 	
-	public var steps: [Steps]?
-	
 	private lazy var store = CoreDataManager.shared
 }
 
@@ -47,7 +45,6 @@ extension StepsViewModel {
 		DispatchQueue.main.async {
 			HealthKitManager.shared.readSampleSteps { result in
 				DispatchQueue.main.sync {
-					self.steps = result
 					completion()
 				}
 			}
@@ -58,34 +55,28 @@ extension StepsViewModel {
 // MARK: - StepsCell
 extension StepsViewModel {
 	
+	var steps: [Steps] {
+		return store.fetchItems()
+	}
+
 	var isDataAvailable: Bool {
-		guard let dailySteps = steps  else {
-			return false
-		}
-		return dailySteps.count == 0 ? false:true
+		return steps.count == 0 ? false : true
 	}
 	
 	var stepsCountText: String {
-		guard let steps = steps else {
-			return "0"
-		}
-		
 		return steps.compactMap { $0.steps }
 					.reduce(0) { $0 + $1 }
 					.format()
 	}
 	
 	var stepsCount: Int {
-		guard let steps = steps else {
-			return 0
-		}
 		return steps.compactMap { Int($0.steps) }
 					.reduce(0) { $0 + $1 }
 	}
 	
 	var stepsDateRangeText: String {
-		if let start = steps?.first?.date.toString("MMM dd"),
-			let end = steps?.last?.date.toString("MMM dd YYYY") {
+		if let start = steps.first?.date.toString("MMM dd"),
+			let end = steps.last?.date.toString("MMM dd YYYY") {
 			return "\(start) - \(end)"
 		}
 		return "N/A"

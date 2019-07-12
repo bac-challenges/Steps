@@ -49,7 +49,9 @@ class CoreDataManager {
 	
 	// Context
 	var context: NSManagedObjectContext {
-		return persistentContainer.viewContext
+		let context = persistentContainer.viewContext
+		context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+		return context
 	}
 	
 	// Core Data Saving support
@@ -75,8 +77,13 @@ extension CoreDataManager {
 	}
 	
 	func fetchItems<T>(predicate: String = "") -> [T] {
+		
 		let itemsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(T.self)")
-		itemsFetchRequest.predicate = NSPredicate(format: predicate)
+		
+		if predicate != "" {
+			itemsFetchRequest.predicate = NSPredicate(format: predicate)
+		}
+		
 		return try! context.fetch(itemsFetchRequest) as! [T]
 	}
 	
