@@ -37,7 +37,7 @@ class BootstrapManager {
 	// Shared instance
 	public static let shared = BootstrapManager()
 	
-	private let manager = CoreDataManager.shared
+	private let store = CoreDataManager.shared
 	
 	// Configure app
 	func preflight(completion: @escaping (Bool) -> Void) {
@@ -55,11 +55,11 @@ class BootstrapManager {
 	private func populateBadges() {
 		let badges: [Int32] = [10,15,20,25,30,35,40]
 		badges.forEach { item in
-			let badge: Badge = manager.createItem()
+			let badge: Badge = store.insertItem()
 			badge.steps = item
 			badge.name = "badge_\(item)"
 			badge.image = "\(item)k"
-			manager.saveContext()
+			store.saveContext()
 		}
 	}
 	
