@@ -34,7 +34,7 @@ class LineChart: UIView {
     let bottomSpace: CGFloat = 10.0
     
     /// The top most horizontal line in the chart will be 10% higher than the highest value in the chart
-    let topHorizontalLine: CGFloat = 110.0 / 100.0
+    let topHorizontalLine: CGFloat = 120.0 / 100.0
     
     var dataEntries: [PointEntry]? {
         didSet {
@@ -118,8 +118,8 @@ class LineChart: UIView {
     // Convert an array of PointEntry to an array of CGPoint on dataLayer coordinate system
     private func convertDataEntriesToPoints(entries: [PointEntry]) -> [CGPoint] {
 		
-        if let max = entries.max()?.value, let min = entries.min()?.value {
-            
+        if let min = entries.min()?.value {
+            let max = 18000
             var result: [CGPoint] = []
             let minMaxRange: CGFloat = CGFloat(max - min) * topHorizontalLine
             
@@ -191,7 +191,7 @@ class LineChart: UIView {
 				gridLayer.addSublayer(lineLayer)
 				
 				let min = 0
-				let max = 20000
+				let max = 10000
 				var lineValue: Int = 0
 				var minMaxGap: CGFloat = 0
 				minMaxGap = CGFloat(max - min) * topHorizontalLine
@@ -226,12 +226,12 @@ class LineChart: UIView {
 	
 	// Create Horizontal Text Label
 	private func horizontalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
-		let x = (lineGap * CGFloat(value) ) + lineGap*2
+		let x = (lineGap * CGFloat(value) ) + lineGap*1.8
 		let y = mainLayer.frame.size.height - bottomSpace/2 - 8
 		
 		var textLayer = CATextLayer()
 		textLayer.frame = CGRect(x: x, y: y, width: width, height: height)
-		textLayer.alignmentMode = .center
+		textLayer.alignmentMode = .left
 		styleTextLayer(&textLayer, value: "\(value)")
 		return textLayer
 	}
@@ -239,12 +239,12 @@ class LineChart: UIView {
 	// Create Vertical Text Label
 	private func verticalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
 		let x = frame.width - width - 15
-		let y = height - 30
+		let y = height - 26
 		
 		var textLayer = CATextLayer()
 		textLayer.frame = CGRect(x: x, y: y, width: width, height: 16)
 		textLayer.alignmentMode = .right
-		styleTextLayer(&textLayer, value:  "\(value)")
+		styleTextLayer(&textLayer, value:  "\(Int(round(Float(value)/1000)*1000))")
 		return textLayer
 	}
 	

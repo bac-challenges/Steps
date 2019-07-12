@@ -69,7 +69,6 @@ class CoreDataStore {
 }
 
 // MARK: -
-#warning("Add error handling")
 extension CoreDataStore {
 	
 	func insertItem<T>() -> T {

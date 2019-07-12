@@ -212,7 +212,7 @@ extension HealthKitManager {
 		var result = [SampleData]()
 		
 		while date <= endDate {
-			let steps = Double(Int.random(in: 2000...7000))
+			let steps = Double(Int.random(in: 1500...3500))
 			result.append(SampleData(steps: steps,
 									 startDate: date,
 									 endDate: endDate))
