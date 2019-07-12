@@ -89,7 +89,7 @@ extension BadgeCell {
 						 left: layoutMarginsGuide.leftAnchor,
 						 right: layoutMarginsGuide.rightAnchor)
 		
-		listView.anchor(top: layoutMarginsGuide.topAnchor,
+		listView.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 10,
 						bottom: layoutMarginsGuide.bottomAnchor,
 						left: leftAnchor,
 						right: rightAnchor,

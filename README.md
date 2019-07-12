@@ -55,5 +55,5 @@ class Steps: NSManagedObject {
 
 - Japanese
 
-> All translations provied by [Lokalise.co](https://www.Lokalise.co) are automated and used for test purposes only. Default localisation is `de_DE` and can be changed in `Edit Scheme > Run > Application Language`.
+> All translations, provied by [Lokalise.co](https://www.Lokalise.co), are automated and used for test purposes only. Default localisation is `de_DE` and can be changed in `Edit Scheme>Run>Application Language`.
 

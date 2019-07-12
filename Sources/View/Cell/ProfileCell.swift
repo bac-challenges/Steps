@@ -59,8 +59,8 @@ extension  ProfileCell {
 	}
 	
 	private func setupLayout() {
-		profileImage.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 10,
-							bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 10,
+		profileImage.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 14,
+							bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 6,
 							width: 180, height:180,
 							centerX: centerXAnchor)
 	}

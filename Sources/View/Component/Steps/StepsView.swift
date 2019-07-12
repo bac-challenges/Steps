@@ -77,9 +77,9 @@ extension StepsView {
 	}
 	
 	private func setupLayout() {
-		titleLabel.anchor(top: layoutMarginsGuide.topAnchor, left: layoutMarginsGuide.leftAnchor)
+		titleLabel.anchor(top: topAnchor, left: layoutMarginsGuide.leftAnchor)
 		detailLabel.anchor(top: titleLabel.topAnchor, right: layoutMarginsGuide.rightAnchor)
-		subtitleLabel.anchor(top: titleLabel.bottomAnchor, left: titleLabel.leftAnchor)
+		subtitleLabel.anchor(top: titleLabel.bottomAnchor, paddingTop: -2,  left: titleLabel.leftAnchor)
 		chart.anchor(bottom: bottomAnchor, left: leftAnchor, right: rightAnchor, height: 160)
 	}
 }
