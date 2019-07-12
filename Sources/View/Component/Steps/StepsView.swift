@@ -74,12 +74,10 @@ extension StepsView {
 		addSubview(subtitleLabel)
 		addSubview(chart)
 		setupLayout()
-		debugMode()
-		chart.debugMode()
 	}
 	
 	private func setupLayout() {
-		titleLabel.anchor(top: topAnchor, left: layoutMarginsGuide.leftAnchor)
+		titleLabel.anchor(top: topAnchor, left: layoutMarginsGuide.leftAnchor, paddingLeft: 10)
 		detailLabel.anchor(top: titleLabel.topAnchor, right: layoutMarginsGuide.rightAnchor)
 		subtitleLabel.anchor(top: titleLabel.bottomAnchor, paddingTop: -2, left: titleLabel.leftAnchor)
 		chart.anchor(bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 14,

@@ -87,7 +87,7 @@ extension  StepsController {
 		tableView.contentInsetAdjustmentBehavior = .automatic
 		
 		// Debug
-		tableView.backgroundView = UIImageView(image: UIImage(named: "Reference"))
+		//tableView.backgroundView = UIImageView(image: UIImage(named: "Reference"))
 	}
 }
 

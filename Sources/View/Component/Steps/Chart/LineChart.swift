@@ -28,13 +28,13 @@ class LineChart: UIView {
     var lineGap: CGFloat = 10
     
     /// preseved space at top of the chart
-    let topSpace: CGFloat = 40.0
+    let topSpace: CGFloat = 28.0
     
     /// preserved space at bottom of the chart to show labels along the Y axis
-    let bottomSpace: CGFloat = 40.0
+    let bottomSpace: CGFloat = 10.0
     
     /// The top most horizontal line in the chart will be 10% higher than the highest value in the chart
-    let topHorizontalLine: CGFloat = 100.0 / 100.0
+    let topHorizontalLine: CGFloat = 110.0 / 100.0
     
     var dataEntries: [PointEntry]? {
         didSet {
@@ -125,7 +125,7 @@ class LineChart: UIView {
             
             for i in 0..<entries.count {
                 let height = dataLayer.frame.height * (1 - ((CGFloat(entries[i].value) - CGFloat(min)) / minMaxRange))
-                let point = CGPoint(x: CGFloat(i) * lineGap + 30, y: height)
+                let point = CGPoint(x: CGFloat(i) * lineGap + 30, y: height-20)
                 result.append(point)
             }
             return result
@@ -183,8 +183,8 @@ class LineChart: UIView {
 				let height = value * gridLayer.frame.size.height
 				
 				let path = UIBezierPath()
-				path.move(to: CGPoint(x: 0, y: height))
-				path.addLine(to: CGPoint(x: gridLayer.frame.size.width, y: height))
+				path.move(to: CGPoint(x: 0, y: height-10))
+				path.addLine(to: CGPoint(x: gridLayer.frame.size.width, y: height-10))
 				
 				// Vertical Line Layer
 				let lineLayer = verticalLineLayer(path: path)
@@ -226,20 +226,20 @@ class LineChart: UIView {
 	
 	// Create Horizontal Text Label
 	private func horizontalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
-		let x = lineGap * CGFloat(value) - lineGap/2 + 20
+		let x = (lineGap * CGFloat(value) ) + lineGap*2
 		let y = mainLayer.frame.size.height - bottomSpace/2 - 8
 		
 		var textLayer = CATextLayer()
 		textLayer.frame = CGRect(x: x, y: y, width: width, height: height)
-		textLayer.alignmentMode = .left
+		textLayer.alignmentMode = .center
 		styleTextLayer(&textLayer, value: "\(value)")
 		return textLayer
 	}
 	
 	// Create Vertical Text Label
 	private func verticalTextLabel(width: CGFloat, height: CGFloat, value: Int) -> CATextLayer {
-		let x = frame.width - width - 16
-		let y = height - 16
+		let x = frame.width - width - 15
+		let y = height - 30
 		
 		var textLayer = CATextLayer()
 		textLayer.frame = CGRect(x: x, y: y, width: width, height: 16)
