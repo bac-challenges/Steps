@@ -66,7 +66,7 @@ extension StepsView: Configurable {
 // MARK: - UI
 extension StepsView {
 	private func setupView() {
-		backgroundColor = .black
+//		backgroundColor = .black
 		preservesSuperviewLayoutMargins = true
 		isHidden = true
 		addSubview(titleLabel)
@@ -74,7 +74,7 @@ extension StepsView {
 		addSubview(subtitleLabel)
 		addSubview(chart)
 		setupLayout()
-		
+		debugMode()
 		chart.debugMode()
 	}
 	

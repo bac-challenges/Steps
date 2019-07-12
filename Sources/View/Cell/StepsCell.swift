@@ -67,7 +67,7 @@ extension StepsCell: Configurable {
 extension StepsCell {
 	private func setupView() {
 		selectionStyle = .none
-		backgroundColor = .black
+		backgroundColor = .clear
 		addSubview(stepsView)
 		addSubview(noStepsView)
 		layoutView()

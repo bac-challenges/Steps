@@ -71,7 +71,7 @@ extension BadgeCell: Configurable {
 extension BadgeCell {
 	private func setupView() {
 		selectionStyle = .none
-		backgroundColor = .black
+		backgroundColor = .clear
 		preservesSuperviewLayoutMargins = true
 		addSubview(listView)
 		addSubview(emptyView)

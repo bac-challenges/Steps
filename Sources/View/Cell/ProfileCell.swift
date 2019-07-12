@@ -52,7 +52,7 @@ class ProfileCell: UITableViewCell {
 extension  ProfileCell {
 	private func setupView() {
 		selectionStyle = .none
-		backgroundColor = .black
+		backgroundColor = .clear
 		preservesSuperviewLayoutMargins = true
 		addSubview(profileImage)
 		setupLayout()
@@ -60,7 +60,7 @@ extension  ProfileCell {
 	
 	private func setupLayout() {
 		profileImage.anchor(top: layoutMarginsGuide.topAnchor, paddingTop: 14,
-							bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 6,
+							bottom: layoutMarginsGuide.bottomAnchor, paddingBottom: 3,
 							width: 180, height:180,
 							centerX: centerXAnchor)
 	}
