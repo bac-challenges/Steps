@@ -85,6 +85,9 @@ extension  StepsController {
 		tableView.estimatedRowHeight = 280
 		tableView.rowHeight = UITableView.automaticDimension
 		tableView.contentInsetAdjustmentBehavior = .automatic
+		
+		// Debug
+		tableView.backgroundView = UIImageView(image: UIImage(named: "Reference"))
 	}
 }
 
