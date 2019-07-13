@@ -2,7 +2,7 @@
 
 ### General
 
-- Swift version 5.0 (no changes to the code from 4.2)
+- Swift version 5.0
 - iPhone iOS 12.2 - portrait orientation only
 - XCode 10.2.1
 - macOS 10.15 Beta 3
@@ -15,7 +15,7 @@ Requests `HealthKit` data access
 
 Initial data for `Badges` (*Achievements*) inserted in `CoreData`
 
-### Models
+### Model
 
 ```swift
 class Badge: NSManagedObject {
