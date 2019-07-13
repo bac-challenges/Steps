@@ -36,7 +36,6 @@ class BootstrapManager {
 	
 	// Shared instance
 	public static let shared = BootstrapManager()
-	
 	private let store = CoreDataStore.shared
 	
 	// Configure app

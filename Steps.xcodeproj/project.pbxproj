@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		600739FB22D8ACEB003B70D5 /* iPhoneXS.idraw in Resources */ = {isa = PBXBuildFile; fileRef = 600739FA22D8ACEB003B70D5 /* iPhoneXS.idraw */; };
 		60102F5222D74EAF00953033 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60102F5122D74EAF00953033 /* Badge.swift */; };
 		60102F8222D85A9000953033 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60102F8122D85A9000953033 /* Steps.swift */; };
 		60590DF822CF818900F848B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60590DF622CF818900F848B1 /* Localizable.strings */; };
@@ -50,8 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		600739FA22D8ACEB003B70D5 /* iPhoneXS.idraw */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPhoneXS.idraw; sourceTree = "<group>"; };
-		600739FC22D8AD1E003B70D5 /* Prototype.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Prototype.storyboard; sourceTree = "<group>"; };
 		60102F5122D74EAF00953033 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		60102F8122D85A9000953033 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 		60590DF722CF818900F848B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -122,15 +119,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		60280F3A22D72A3F00B9CF62 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				600739FC22D8AD1E003B70D5 /* Prototype.storyboard */,
-				600739FA22D8ACEB003B70D5 /* iPhoneXS.idraw */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
 		60590DF422CF7CC800F848B1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +221,6 @@
 				606ABF7F22CE436700EE7BAB /* Steps.entitlements */,
 				60664FDE22CF7C02004506FB /* Locale */,
 				60590DF422CF7CC800F848B1 /* Assets */,
-				60280F3A22D72A3F00B9CF62 /* Other */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -396,7 +383,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				60664FDC22CF79FA004506FB /* InfoPlist.strings in Resources */,
-				600739FB22D8ACEB003B70D5 /* iPhoneXS.idraw in Resources */,
 				60590DF822CF818900F848B1 /* Localizable.strings in Resources */,
 				60664FC022CF754C004506FB /* LaunchScreen.storyboard in Resources */,
 				606ABF7522CE432200EE7BAB /* Assets.xcassets in Resources */,
