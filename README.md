@@ -9,7 +9,7 @@
 - Code based UI
 - No external libraries
 
-### Initial run
+### Preflight
 
 Requests `HealthKit` data access
 
